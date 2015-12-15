@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/47ce2d09-da6e-4e4b-9580-96d4c40107da.htm" />
+  <HelpTOCNode Id="e8017d42-7edb-4327-9a43-b38d02275a93" Title="Version History" Url="html/e8a9b86d-6795-428a-bdbe-e34ae3c860a7.htm">
+    <HelpTOCNode Title="Version 1.0.0.0" Url="html/e28d106e-ea87-44ad-a76d-925255a4b03b.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="f2aacc9c-1941-498e-b310-3f3d9a6289a9" Title="Ampl.System" Url="html/N_Ampl_System.htm">
+    <HelpTOCNode Id="ac5aa8cf-a186-4910-bf78-556cdae89b82" Title="Check Class" Url="html/T_Ampl_System_Check.htm">
+      <HelpTOCNode Id="bf5cda3c-d46e-4617-b93e-28e51fab2870" Title="Check Methods" Url="html/Methods_T_Ampl_System_Check.htm">
+        <HelpTOCNode Title="NotNull(T) Method " Url="html/M_Ampl_System_Check_NotNull__1.htm" />
+        <HelpTOCNode Title="NotNullOrEmptyString Method " Url="html/M_Ampl_System_Check_NotNullOrEmptyString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="42ab306d-52ff-4564-8ba7-5389fc56828e" Title="DictionaryExtensions Class" Url="html/T_Ampl_System_DictionaryExtensions.htm">
+      <HelpTOCNode Id="1a8cafa1-fb1b-4a42-b16e-297e05754f4b" Title="DictionaryExtensions Methods" Url="html/Methods_T_Ampl_System_DictionaryExtensions.htm">
+        <HelpTOCNode Title="IncludeObjectProperties(T) Method " Url="html/M_Ampl_System_DictionaryExtensions_IncludeObjectProperties__1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dc5ae4f3-ae9d-443f-bc9c-668b7bf4654d" Title="NullCheckExtensions Class" Url="html/T_Ampl_System_NullCheckExtensions.htm">
+      <HelpTOCNode Id="cd8766e5-c57c-40e6-97b2-5ae7ab9fb0f4" Title="NullCheckExtensions Methods" Url="html/Methods_T_Ampl_System_NullCheckExtensions.htm">
+        <HelpTOCNode Title="Do(TInput) Method " Url="html/M_Ampl_System_NullCheckExtensions_Do__1.htm" />
+        <HelpTOCNode Title="If(TInput) Method " Url="html/M_Ampl_System_NullCheckExtensions_If__1.htm" />
+        <HelpTOCNode Title="Return(TInput, TResult) Method " Url="html/M_Ampl_System_NullCheckExtensions_Return__2.htm" />
+        <HelpTOCNode Title="With(TInput, TResult) Method " Url="html/M_Ampl_System_NullCheckExtensions_With__2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="StringBetweenOptions Enumeration" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+    <HelpTOCNode Id="ce877289-9915-45cb-90cd-2a50f74a3f0f" Title="StringExtensions Class" Url="html/T_Ampl_System_StringExtensions.htm">
+      <HelpTOCNode Id="b500cbdc-dbf6-4f62-bb18-0ab5ea232a89" Title="StringExtensions Methods" Url="html/Methods_T_Ampl_System_StringExtensions.htm">
+        <HelpTOCNode Title="Between Method " Url="html/M_Ampl_System_StringExtensions_Between.htm" />
+        <HelpTOCNode Title="ToDecimal Method " Url="html/M_Ampl_System_StringExtensions_ToDecimal.htm" />
+        <HelpTOCNode Title="ToInt Method " Url="html/M_Ampl_System_StringExtensions_ToInt.htm" />
+        <HelpTOCNode Title="ToNullableDateTime Method " Url="html/M_Ampl_System_StringExtensions_ToNullableDateTime.htm" />
+        <HelpTOCNode Title="ToNullableDecimal Method " Url="html/M_Ampl_System_StringExtensions_ToNullableDecimal.htm" />
+        <HelpTOCNode Title="ToNullableInt Method " Url="html/M_Ampl_System_StringExtensions_ToNullableInt.htm" />
+        <HelpTOCNode Title="ToNullIfWhiteSpace Method " Url="html/M_Ampl_System_StringExtensions_ToNullIfWhiteSpace.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

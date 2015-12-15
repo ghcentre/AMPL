@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Ampl.System namespace" Url="html/N_Ampl_System.htm" />
+  <HelpKINode Title="Ampl.System.Check class" Url="html/T_Ampl_System_Check.htm" />
+  <HelpKINode Title="Ampl.System.DictionaryExtensions class" Url="html/T_Ampl_System_DictionaryExtensions.htm" />
+  <HelpKINode Title="Ampl.System.NullCheckExtensions class" Url="html/T_Ampl_System_NullCheckExtensions.htm" />
+  <HelpKINode Title="Ampl.System.StringBetweenOptions enumeration" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="Ampl.System.StringExtensions class" Url="html/T_Ampl_System_StringExtensions.htm" />
+  <HelpKINode Title="Between method" Url="html/M_Ampl_System_StringExtensions_Between.htm" />
+  <HelpKINode Title="Check class">
+    <HelpKINode Title="Check Class" Url="html/T_Ampl_System_Check.htm" />
+    <HelpKINode Title="about Check class" Url="html/T_Ampl_System_Check.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Ampl_System_Check.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Check.NotNull(Of T) method" Url="html/M_Ampl_System_Check_NotNull__1.htm" />
+  <HelpKINode Title="Check.NotNull&lt;T&gt; method" Url="html/M_Ampl_System_Check_NotNull__1.htm" />
+  <HelpKINode Title="Check.NotNullOrEmptyString method" Url="html/M_Ampl_System_Check_NotNullOrEmptyString.htm" />
+  <HelpKINode Title="DictionaryExtensions class">
+    <HelpKINode Title="DictionaryExtensions Class" Url="html/T_Ampl_System_DictionaryExtensions.htm" />
+    <HelpKINode Title="about DictionaryExtensions class" Url="html/T_Ampl_System_DictionaryExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Ampl_System_DictionaryExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DictionaryExtensions.IncludeObjectProperties(Of T) method" Url="html/M_Ampl_System_DictionaryExtensions_IncludeObjectProperties__1.htm" />
+  <HelpKINode Title="DictionaryExtensions.IncludeObjectProperties&lt;T&gt; method" Url="html/M_Ampl_System_DictionaryExtensions_IncludeObjectProperties__1.htm" />
+  <HelpKINode Title="Do(Of TInput) method" Url="html/M_Ampl_System_NullCheckExtensions_Do__1.htm" />
+  <HelpKINode Title="Do&lt;TInput&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_Do__1.htm" />
+  <HelpKINode Title="FallbackToSource enumeration member" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="If(Of TInput) method" Url="html/M_Ampl_System_NullCheckExtensions_If__1.htm" />
+  <HelpKINode Title="If&lt;TInput&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_If__1.htm" />
+  <HelpKINode Title="IncludeEnd enumeration member" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="IncludeObjectProperties(Of T) method" Url="html/M_Ampl_System_DictionaryExtensions_IncludeObjectProperties__1.htm" />
+  <HelpKINode Title="IncludeObjectProperties&lt;T&gt; method" Url="html/M_Ampl_System_DictionaryExtensions_IncludeObjectProperties__1.htm" />
+  <HelpKINode Title="IncludeStart enumeration member" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="IncludeStartEnd enumeration member" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="None enumeration member" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="NotNull(Of T) method" Url="html/M_Ampl_System_Check_NotNull__1.htm" />
+  <HelpKINode Title="NotNull&lt;T&gt; method" Url="html/M_Ampl_System_Check_NotNull__1.htm" />
+  <HelpKINode Title="NotNullOrEmptyString method" Url="html/M_Ampl_System_Check_NotNullOrEmptyString.htm" />
+  <HelpKINode Title="NullCheckExtensions class">
+    <HelpKINode Title="NullCheckExtensions Class" Url="html/T_Ampl_System_NullCheckExtensions.htm" />
+    <HelpKINode Title="about NullCheckExtensions class" Url="html/T_Ampl_System_NullCheckExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Ampl_System_NullCheckExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NullCheckExtensions.Do(Of TInput) method" Url="html/M_Ampl_System_NullCheckExtensions_Do__1.htm" />
+  <HelpKINode Title="NullCheckExtensions.Do&lt;TInput&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_Do__1.htm" />
+  <HelpKINode Title="NullCheckExtensions.If(Of TInput) method" Url="html/M_Ampl_System_NullCheckExtensions_If__1.htm" />
+  <HelpKINode Title="NullCheckExtensions.If&lt;TInput&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_If__1.htm" />
+  <HelpKINode Title="NullCheckExtensions.Return(Of TInput, TResult) method" Url="html/M_Ampl_System_NullCheckExtensions_Return__2.htm" />
+  <HelpKINode Title="NullCheckExtensions.Return&lt;TInput, TResult&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_Return__2.htm" />
+  <HelpKINode Title="NullCheckExtensions.With(Of TInput, TResult) method" Url="html/M_Ampl_System_NullCheckExtensions_With__2.htm" />
+  <HelpKINode Title="NullCheckExtensions.With&lt;TInput, TResult&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_With__2.htm" />
+  <HelpKINode Title="Return(Of TInput, TResult) method" Url="html/M_Ampl_System_NullCheckExtensions_Return__2.htm" />
+  <HelpKINode Title="Return&lt;TInput, TResult&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_Return__2.htm" />
+  <HelpKINode Title="StringBetweenOptions enumeration" Url="html/T_Ampl_System_StringBetweenOptions.htm" />
+  <HelpKINode Title="StringExtensions class">
+    <HelpKINode Title="StringExtensions Class" Url="html/T_Ampl_System_StringExtensions.htm" />
+    <HelpKINode Title="about StringExtensions class" Url="html/T_Ampl_System_StringExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Ampl_System_StringExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StringExtensions.Between method" Url="html/M_Ampl_System_StringExtensions_Between.htm" />
+  <HelpKINode Title="StringExtensions.ToDecimal method" Url="html/M_Ampl_System_StringExtensions_ToDecimal.htm" />
+  <HelpKINode Title="StringExtensions.ToInt method" Url="html/M_Ampl_System_StringExtensions_ToInt.htm" />
+  <HelpKINode Title="StringExtensions.ToNullableDateTime method" Url="html/M_Ampl_System_StringExtensions_ToNullableDateTime.htm" />
+  <HelpKINode Title="StringExtensions.ToNullableDecimal method" Url="html/M_Ampl_System_StringExtensions_ToNullableDecimal.htm" />
+  <HelpKINode Title="StringExtensions.ToNullableInt method" Url="html/M_Ampl_System_StringExtensions_ToNullableInt.htm" />
+  <HelpKINode Title="StringExtensions.ToNullIfWhiteSpace method" Url="html/M_Ampl_System_StringExtensions_ToNullIfWhiteSpace.htm" />
+  <HelpKINode Title="ToDecimal method" Url="html/M_Ampl_System_StringExtensions_ToDecimal.htm" />
+  <HelpKINode Title="ToInt method" Url="html/M_Ampl_System_StringExtensions_ToInt.htm" />
+  <HelpKINode Title="ToNullableDateTime method" Url="html/M_Ampl_System_StringExtensions_ToNullableDateTime.htm" />
+  <HelpKINode Title="ToNullableDecimal method" Url="html/M_Ampl_System_StringExtensions_ToNullableDecimal.htm" />
+  <HelpKINode Title="ToNullableInt method" Url="html/M_Ampl_System_StringExtensions_ToNullableInt.htm" />
+  <HelpKINode Title="ToNullIfWhiteSpace method" Url="html/M_Ampl_System_StringExtensions_ToNullIfWhiteSpace.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/e28d106e-ea87-44ad-a76d-925255a4b03b.htm" />
+    <HelpKINode Title="history" Url="html/e8a9b86d-6795-428a-bdbe-e34ae3c860a7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/47ce2d09-da6e-4e4b-9580-96d4c40107da.htm" />
+  <HelpKINode Title="With(Of TInput, TResult) method" Url="html/M_Ampl_System_NullCheckExtensions_With__2.htm" />
+  <HelpKINode Title="With&lt;TInput, TResult&gt; method" Url="html/M_Ampl_System_NullCheckExtensions_With__2.htm" />
+</HelpKI>
