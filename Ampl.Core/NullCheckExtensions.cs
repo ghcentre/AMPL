@@ -240,7 +240,6 @@ namespace Ampl.System
     /// <param name="input"></param>
     /// <param name="predicate"></param>
     /// <returns></returns>
-    [Obsolete("This extension method is obsolete. Use C# 6.0 NULL propagation (?. or ?[] operators).")]
     public static TInput If<TInput>(this TInput input, Predicate<TInput> predicate)
     {
       if(input == null)
