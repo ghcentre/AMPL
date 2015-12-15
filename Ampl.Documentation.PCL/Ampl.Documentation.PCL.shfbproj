@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3b79341b-7054-49be-afa6-3db54c56c3a6</ProjectGuid>
+    <SHFBSchemaVersion>2015.6.5.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Ampl.Documentation.PCL</AssemblyName>
+    <RootNamespace>Ampl.Documentation.PCL</RootNamespace>
+    <Name>Ampl.Documentation.PCL</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Portable Library 4.5</FrameworkVersion>
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>Ampl.Documentation.PCL</HtmlHelpName>
+    <Language>en-US</Language>
+    <TransformComponentArguments>
+      <Argument Key="logoFile" Value="Help.png" xmlns="" />
+      <Argument Key="logoHeight" Value="" xmlns="" />
+      <Argument Key="logoWidth" Value="" xmlns="" />
+      <Argument Key="logoAltText" Value="" xmlns="" />
+      <Argument Key="logoPlacement" Value="left" xmlns="" />
+      <Argument Key="logoAlignment" Value="left" xmlns="" />
+      <Argument Key="maxVersionParts" Value="" xmlns="" />
+    </TransformComponentArguments>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\Ampl.Core\Ampl.Core.csproj" />
+    </DocumentationSources>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CleanIntermediates>True</CleanIntermediates>
+    <PlugInConfigurations>
+    </PlugInConfigurations>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>MemberName</NamingMethod>
+    <HelpTitle>Advanced Multi-Purpose Library</HelpTitle>
+    <FooterText>Copyright 2015 &amp;lt%3ba href=&amp;quot%3bhttp://ghcentre.com&amp;quot%3b&amp;gt%3bGHCentre.com&amp;lt%3b/a&amp;gt%3b</FooterText>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+    <Folder Include="Content\VersionHistory" />
+    <Folder Include="Help\" />
+    <Folder Include="Help\fti\" />
+    <Folder Include="Help\html\" />
+    <Folder Include="Help\icons\" />
+    <Folder Include="Help\scripts\" />
+    <Folder Include="Help\styles\" />
+    <Folder Include="Help\toc\" />
+    <Folder Include="icons" />
+    <Folder Include="media" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\VersionHistory\v1.0.0.0.aml" />
+    <None Include="Content\VersionHistory\VersionHistory.aml" />
+    <None Include="Content\Welcome.aml" />
+    <None Include="Help\fti\FTI_100.json" />
+    <None Include="Help\fti\FTI_101.json" />
+    <None Include="Help\fti\FTI_102.json" />
+    <None Include="Help\fti\FTI_103.json" />
+    <None Include="Help\fti\FTI_104.json" />
+    <None Include="Help\fti\FTI_105.json" />
+    <None Include="Help\fti\FTI_107.json" />
+    <None Include="Help\fti\FTI_108.json" />
+    <None Include="Help\fti\FTI_109.json" />
+    <None Include="Help\fti\FTI_110.json" />
+    <None Include="Help\fti\FTI_111.json" />
+    <None Include="Help\fti\FTI_112.json" />
+    <None Include="Help\fti\FTI_114.json" />
+    <None Include="Help\fti\FTI_115.json" />
+    <None Include="Help\fti\FTI_116.json" />
+    <None Include="Help\fti\FTI_117.json" />
+    <None Include="Help\fti\FTI_118.json" />
+    <None Include="Help\fti\FTI_119.json" />
+    <None Include="Help\fti\FTI_120.json" />
+    <None Include="Help\fti\FTI_95.json" />
+    <None Include="Help\fti\FTI_97.json" />
+    <None Include="Help\fti\FTI_98.json" />
+    <None Include="Help\fti\FTI_99.json" />
+    <None Include="Help\fti\FTI_Files.json" />
+    <None Include="Help\icons\favicon.ico" />
+    <None Include="Help\LastBuild.log" />
+    <None Include="Help\SearchHelp.inc.php" />
+    <None Include="Help\SearchHelp.php" />
+    <None Include="Help\toc\057a3522-ca59-df17-2ec6-1131847994c6.xml" />
+    <None Include="Help\toc\0ecf40d7-e853-04ed-8dbc-7ee2c7222496.xml" />
+    <None Include="Help\toc\289c3cc3-8918-a53a-87bf-0472a2dfb72e.xml" />
+    <None Include="Help\toc\4ea8b423-1fbc-81a8-839a-f1fa0dc53ef6.xml" />
+    <None Include="Help\toc\8f11aedb-3a36-4130-9ddd-0f703d55361b.xml" />
+    <None Include="Help\toc\905e16ff-3bae-8673-2e62-30e7fac37ca4.xml" />
+    <None Include="Help\toc\a9a3dda6-373c-7529-45cc-e9c370d48e0a.xml" />
+    <None Include="Help\toc\e8a9b86d-6795-428a-bdbe-e34ae3c860a7.xml" />
+    <None Include="Help\toc\eca4fe75-e56d-861e-ef2b-bc94cf99ff6c.xml" />
+    <None Include="Help\toc\f99f9a07-209b-fc0c-8b4e-5963e31baae5.xml" />
+    <None Include="Help\toc\roottoc.xml" />
+    <None Include="Help\WebKI.xml" />
+    <None Include="Help\WebTOC.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ContentLayout Include="ContentLayout.content" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\html\057a3522-ca59-df17-2ec6-1131847994c6.htm" />
+    <Content Include="Help\html\0ecf40d7-e853-04ed-8dbc-7ee2c7222496.htm" />
+    <Content Include="Help\html\13a1371b-9e81-d2c9-725f-bd47cf68932c.htm" />
+    <Content Include="Help\html\13a6f9a6-b618-c233-230f-38c6ed2dcd27.htm" />
+    <Content Include="Help\html\289c3cc3-8918-a53a-87bf-0472a2dfb72e.htm" />
+    <Content Include="Help\html\2c97e88e-5333-b836-ff1f-7ed97a0672bb.htm" />
+    <Content Include="Help\html\47ce2d09-da6e-4e4b-9580-96d4c40107da.htm" />
+    <Content Include="Help\html\4ea8b423-1fbc-81a8-839a-f1fa0dc53ef6.htm" />
+    <Content Include="Help\html\5227d1a5-eeb5-480a-9d8e-b116d0c3efe8.htm" />
+    <Content Include="Help\html\79ab0752-051f-0f36-35ae-73c99109998f.htm" />
+    <Content Include="Help\html\79dbd231-010a-8e9e-237a-a6033639547b.htm" />
+    <Content Include="Help\html\8e3cd29d-01a4-cac3-4a09-7c711990b0e3.htm" />
+    <Content Include="Help\html\8f11aedb-3a36-4130-9ddd-0f703d55361b.htm" />
+    <Content Include="Help\html\905e16ff-3bae-8673-2e62-30e7fac37ca4.htm" />
+    <Content Include="Help\html\9dfac526-b5d4-e67d-f0c1-dab5a28690f9.htm" />
+    <Content Include="Help\html\a9a3dda6-373c-7529-45cc-e9c370d48e0a.htm" />
+    <Content Include="Help\html\ab89eeac-d3bd-ca7c-7d7e-419c3848715a.htm" />
+    <Content Include="Help\html\b61d2057-d799-6f34-e74c-e210d20660d7.htm" />
+    <Content Include="Help\html\c3466afd-22e6-09ce-9475-7caf7c8452c5.htm" />
+    <Content Include="Help\html\dfa0917c-1ced-b302-a454-cdc0b65e30a5.htm" />
+    <Content Include="Help\html\e28d106e-ea87-44ad-a76d-925255a4b03b.htm" />
+    <Content Include="Help\html\e8a9b86d-6795-428a-bdbe-e34ae3c860a7.htm" />
+    <Content Include="Help\html\ec5f985a-7a6e-d9b7-a618-d3c1ce458295.htm" />
+    <Content Include="Help\html\eca4fe75-e56d-861e-ef2b-bc94cf99ff6c.htm" />
+    <Content Include="Help\html\f60cad2d-0408-7e55-7961-bb1476954783.htm" />
+    <Content Include="Help\html\f72c2729-7548-b518-b240-1a3feb8d4b3f.htm" />
+    <Content Include="Help\html\f99f9a07-209b-fc0c-8b4e-5963e31baae5.htm" />
+    <Content Include="Help\index.html" />
+    <Content Include="Help\scripts\branding-Website.js" />
+    <Content Include="Help\scripts\branding.js" />
+    <Content Include="Help\scripts\highlight.js" />
+    <Content Include="Help\scripts\jquery-1.11.0.min.js" />
+    <Content Include="Help\search.html" />
+    <Content Include="Help\SearchHelp.aspx" />
+    <Content Include="Help\styles\branding-cs-CZ.css" />
+    <Content Include="Help\styles\branding-de-DE.css" />
+    <Content Include="Help\styles\branding-en-US.css" />
+    <Content Include="Help\styles\branding-es-ES.css" />
+    <Content Include="Help\styles\branding-fr-FR.css" />
+    <Content Include="Help\styles\branding-Help1.css" />
+    <Content Include="Help\styles\branding-HelpViewer.css" />
+    <Content Include="Help\styles\branding-it-IT.css" />
+    <Content Include="Help\styles\branding-ja-JP.css" />
+    <Content Include="Help\styles\branding-ko-KR.css" />
+    <Content Include="Help\styles\branding-pl-PL.css" />
+    <Content Include="Help\styles\branding-pt-BR.css" />
+    <Content Include="Help\styles\branding-ru-RU.css" />
+    <Content Include="Help\styles\branding-tr-TR.css" />
+    <Content Include="Help\styles\branding-Website.css" />
+    <Content Include="Help\styles\branding-zh-CN.css" />
+    <Content Include="Help\styles\branding-zh-TW.css" />
+    <Content Include="Help\styles\branding.css" />
+    <Content Include="Help\styles\highlight.css" />
+    <Content Include="Help\Web.Config" />
+    <Content Include="icons\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Help\icons\AlertCaution.png">
+      <ImageId>AlertCaution</ImageId>
+      <AlternateText>Alert Caution</AlternateText>
+    </Image>
+    <Image Include="Help\icons\AlertNote.png">
+      <ImageId>AlertNote</ImageId>
+      <AlternateText>Alert Note</AlternateText>
+    </Image>
+    <Image Include="Help\icons\AlertSecurity.png">
+      <ImageId>AlertSecurity</ImageId>
+      <AlternateText>Alert Security</AlternateText>
+    </Image>
+    <Image Include="Help\icons\CFW.gif">
+      <ImageId>CFW</ImageId>
+      <AlternateText>CFW</AlternateText>
+    </Image>
+    <Image Include="Help\icons\CodeExample.png">
+      <ImageId>CodeExample</ImageId>
+      <AlternateText>Code Example</AlternateText>
+    </Image>
+    <Image Include="Help\icons\Help.png">
+      <ImageId>Help</ImageId>
+      <AlternateText>Help</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privclass.gif">
+      <ImageId>privclass</ImageId>
+      <AlternateText>privclass</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privdelegate.gif">
+      <ImageId>privdelegate</ImageId>
+      <AlternateText>privdelegate</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privenumeration.gif">
+      <ImageId>privenumeration</ImageId>
+      <AlternateText>privenumeration</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privevent.gif">
+      <ImageId>privevent</ImageId>
+      <AlternateText>privevent</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privextension.gif">
+      <ImageId>privextension</ImageId>
+      <AlternateText>privextension</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privfield.gif">
+      <ImageId>privfield</ImageId>
+      <AlternateText>privfield</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privinterface.gif">
+      <ImageId>privinterface</ImageId>
+      <AlternateText>privinterface</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privmethod.gif">
+      <ImageId>privmethod</ImageId>
+      <AlternateText>privmethod</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privproperty.gif">
+      <ImageId>privproperty</ImageId>
+      <AlternateText>privproperty</AlternateText>
+    </Image>
+    <Image Include="Help\icons\privstructure.gif">
+      <ImageId>privstructure</ImageId>
+      <AlternateText>privstructure</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protclass.gif">
+      <ImageId>protclass</ImageId>
+      <AlternateText>protclass</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protdelegate.gif">
+      <ImageId>protdelegate</ImageId>
+      <AlternateText>protdelegate</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protenumeration.gif">
+      <ImageId>protenumeration</ImageId>
+      <AlternateText>protenumeration</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protevent.gif">
+      <ImageId>protevent</ImageId>
+      <AlternateText>protevent</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protextension.gif">
+      <ImageId>protextension</ImageId>
+      <AlternateText>protextension</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protfield.gif">
+      <ImageId>protfield</ImageId>
+      <AlternateText>protfield</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protinterface.gif">
+      <ImageId>protinterface</ImageId>
+      <AlternateText>protinterface</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protmethod.gif">
+      <ImageId>protmethod</ImageId>
+      <AlternateText>protmethod</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protoperator.gif">
+      <ImageId>protoperator</ImageId>
+      <AlternateText>protoperator</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protproperty.gif">
+      <ImageId>protproperty</ImageId>
+      <AlternateText>protproperty</AlternateText>
+    </Image>
+    <Image Include="Help\icons\protstructure.gif">
+      <ImageId>protstructure</ImageId>
+      <AlternateText>protstructure</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubclass.gif">
+      <ImageId>pubclass</ImageId>
+      <AlternateText>pubclass</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubdelegate.gif">
+      <ImageId>pubdelegate</ImageId>
+      <AlternateText>pubdelegate</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubenumeration.gif">
+      <ImageId>pubenumeration</ImageId>
+      <AlternateText>pubenumeration</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubevent.gif">
+      <ImageId>pubevent</ImageId>
+      <AlternateText>pubevent</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubextension.gif">
+      <ImageId>pubextension</ImageId>
+      <AlternateText>pubextension</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubfield.gif">
+      <ImageId>pubfield</ImageId>
+      <AlternateText>pubfield</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubinterface.gif">
+      <ImageId>pubinterface</ImageId>
+      <AlternateText>pubinterface</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubmethod.gif">
+      <ImageId>pubmethod</ImageId>
+      <AlternateText>pubmethod</AlternateText>
+    </Image>
+    <Image Include="Help\icons\puboperator.gif">
+      <ImageId>puboperator</ImageId>
+      <AlternateText>puboperator</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubproperty.gif">
+      <ImageId>pubproperty</ImageId>
+      <AlternateText>pubproperty</AlternateText>
+    </Image>
+    <Image Include="Help\icons\pubstructure.gif">
+      <ImageId>pubstructure</ImageId>
+      <AlternateText>pubstructure</AlternateText>
+    </Image>
+    <Image Include="Help\icons\Search.png">
+      <ImageId>Search</ImageId>
+      <AlternateText>Search</AlternateText>
+    </Image>
+    <Image Include="Help\icons\SectionCollapsed.png">
+      <ImageId>SectionCollapsed</ImageId>
+      <AlternateText>Section Collapsed</AlternateText>
+    </Image>
+    <Image Include="Help\icons\SectionExpanded.png">
+      <ImageId>SectionExpanded</ImageId>
+      <AlternateText>Section Expanded</AlternateText>
+    </Image>
+    <Image Include="Help\icons\slMobile.gif">
+      <ImageId>slMobile</ImageId>
+      <AlternateText>sl Mobile</AlternateText>
+    </Image>
+    <Image Include="Help\icons\static.gif">
+      <ImageId>static</ImageId>
+      <AlternateText>static</AlternateText>
+    </Image>
+    <Image Include="Help\icons\TocClose.gif">
+      <ImageId>TocClose</ImageId>
+      <AlternateText>Toc Close</AlternateText>
+    </Image>
+    <Image Include="Help\icons\TocCollapsed.gif">
+      <ImageId>TocCollapsed</ImageId>
+      <AlternateText>Toc Collapsed</AlternateText>
+    </Image>
+    <Image Include="Help\icons\TocExpanded.gif">
+      <ImageId>TocExpanded</ImageId>
+      <AlternateText>Toc Expanded</AlternateText>
+    </Image>
+    <Image Include="Help\icons\TocOpen.gif">
+      <ImageId>TocOpen</ImageId>
+      <AlternateText>Toc Open</AlternateText>
+    </Image>
+    <Image Include="Help\icons\xna.gif">
+      <ImageId>xna</ImageId>
+      <AlternateText>xna</AlternateText>
+    </Image>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+  <!-- The pre-build and post-build event properties must appear *after* the targets file import in order to be
+			 evaluated correctly. -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+</Project>
