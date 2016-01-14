@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,13 @@ namespace Ampl.System
   /// </summary>
   public static class Check
   {
+    /// <summary>
+    /// Informs FxCop that method parameter on which this attribute is applies is checked for null with custom method.
+    /// </summary>
+    sealed class ValidatedNotNullAttribute : Attribute
+    {
+    }
+
     /// <summary>
     /// Throws an <see cref="ArgumentNullException"/> if the given value is null.
     /// </summary>
@@ -46,7 +54,11 @@ namespace Ampl.System
     /// }
     /// </code>
     /// </example>
-    public static T NotNull<T>(T argumentValue, string argumentName = null)
+    [SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly",
+      Justification = "ArgumentNullException parameterless constructor called explicitly to indicate than no parameter name is given.")]
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+      Justification = "The default values assigned for optional parameters are always default values.")]
+    public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
     {
       if(argumentValue == null)
       {
@@ -63,6 +75,8 @@ namespace Ampl.System
     /// <param name="argumentValue"></param>
     /// <param name="argumentName"></param>
     /// <returns></returns>
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed", 
+      Justification = "The default values assigned for optional parameters are always default values.")]
     public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
     {
       NotNull(argumentValue, argumentName);

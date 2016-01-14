@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace Ampl.System
         return default(TResult);
       }
 
+      Check.NotNull(evaluatorResult, nameof(evaluatorResult));
       return evaluatorResult(input);
     }
 
@@ -224,6 +226,8 @@ namespace Ampl.System
       {
         return fallbackValue;
       }
+
+      Check.NotNull(evaluatorResult, nameof(evaluatorResult));
       return evaluatorResult(input);
     }
 
@@ -246,6 +250,8 @@ namespace Ampl.System
       {
         return default(TInput);
       }
+
+      Check.NotNull(predicate, nameof(predicate));
       return predicate(input) ? input : default(TInput);
     }
 
@@ -262,6 +268,8 @@ namespace Ampl.System
       {
         return default(TInput);
       }
+
+      Check.NotNull(action, nameof(action));
       action(input);
       return input;
     }

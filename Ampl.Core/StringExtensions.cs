@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace Ampl.System
@@ -113,6 +114,8 @@ namespace Ampl.System
     /// }
     /// </code>
     /// </example>
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+      Justification = "The default values assigned for optional parameters are always default values.")]
     public static string Between(
       this string source,
       string start,
@@ -197,16 +200,20 @@ namespace Ampl.System
     /// <summary>
     /// Converts the string representation of a number to its 32-bit signed integer equivalent.
     /// </summary>
-    /// <param name="source">A <see cref="String" /> containing a number to convert.</param>
-    /// <param name="fallbackValue">A 32-bit signed <see cref="Int32"/> containing fallback value.</param>
+    /// <param name="source">A <see cref="string" /> containing a number to convert.</param>
+    /// <param name="fallbackValue">A 32-bit signed <see cref="int"/> containing fallback value.</param>
     /// <returns>A 32-bit signed integer equivalent to the number contained in <paramref name="source"/>.
     /// If the <paramref name="source"/> does not contain the string representation of a 32-bit signed number,
     /// the method returns <paramref name="fallbackValue"/>.</returns>
     /// <remarks>
     /// <para>The method doesn't throw any exception.</para>
-    /// <para>Unlike the <see cref="Int32.Parse(String)"/> mehtod this method does not allow leading whitespaces
+    /// <para>Unlike the <see cref="int.Parse(string)"/> mehtod this method does not allow leading whitespaces
     /// in <paramref name="source"/>.</para>
     /// </remarks>
+    [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "int",
+      Justification = "The type name is important in the identifier.")]
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+      Justification = "The default values assigned for optional parameters are always default values.")]
     public static int ToInt(this string source, int fallbackValue = 0)
     {
       int result;
@@ -315,6 +322,10 @@ namespace Ampl.System
     /// <remarks>
     /// <para>The method doesn't throw any exception.</para>
     /// </remarks>
+    [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "decimal",
+      Justification = "The type name is important in the identifier.")]
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+      Justification = "The default values assigned for optional parameters are always default values.")]
     public static decimal ToDecimal(this string source, decimal fallbackValue = 0.0M, bool useFallbackCulture = true)
     {
       decimal result;
@@ -332,6 +343,8 @@ namespace Ampl.System
     /// <remarks>
     /// <para>The method doesn't throw any exception.</para>
     /// </remarks>
+    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+      Justification = "The default values assigned for optional parameters are always default values.")]
     public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
     {
       decimal result;
@@ -340,6 +353,8 @@ namespace Ampl.System
 
     #region ToDecimalInternal
 
+    [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
+      Justification = "Catch block catches conversion exceptions only.")]
     private static bool ToDecimalInternal(string source, out decimal result, bool useFallbackCulture)
     {
       result = 0.0M;
