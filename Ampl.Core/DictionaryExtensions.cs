@@ -28,8 +28,8 @@ namespace Ampl.System
     /// the <paramref name="anonymousType"/> is <see langword="null"/>.</exception>
     public static T IncludeObjectProperties<T>(this T dictionary, object anonymousType) where T : IDictionary<string, object>
     {
-      Check.NotNull(dictionary, "dictionary");
-      Check.NotNull(anonymousType, "anonymousType");
+      Check.NotNull(dictionary, nameof(dictionary));
+      Check.NotNull(anonymousType, nameof(anonymousType));
       var dict = anonymousType.GetType().GetRuntimeProperties().ToDictionary(
         prop => prop.Name,
         prop => prop.GetValue(anonymousType, null));

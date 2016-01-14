@@ -386,8 +386,9 @@ namespace Ampl.System
     /// </returns>
     /// <remarks>
     /// <para>The method does not throw any exception.</para>
-    /// <para>The conversion fails if the <paramref name="source"/> parameter is null, is an empty string (""),
-    /// or does not contain a valid string representation of a date and time.</para>
+    /// <para>The conversion fails if the <paramref name="source"/> parameter is <see langword="null"/>,
+    /// is an empty string (""), or does not contain a valid string
+    /// representation of a date and time.</para>
     /// </remarks>
     public static DateTime? ToNullableDateTime(this string source)
     {

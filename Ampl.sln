@@ -14,6 +14,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Optimization", "Ampl.Web.Optimization\Ampl.Web.Optimization.csproj", "{A6145A7F-8671-4480-B99F-D0F67EE30D2F}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation.PCL", "Ampl.Documentation.PCL\Ampl.Documentation.PCL.shfbproj", "{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72DBFD44-295F-4252-AFE4-2D3793755AA4} = {72DBFD44-295F-4252-AFE4-2D3793755AA4}
+		{A6145A7F-8671-4480-B99F-D0F67EE30D2F} = {A6145A7F-8671-4480-B99F-D0F67EE30D2F}
+		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7} = {0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}
+		{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF} = {C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,7 +48,6 @@ Global
 		{A6145A7F-8671-4480-B99F-D0F67EE30D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6145A7F-8671-4480-B99F-D0F67EE30D2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Check.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
