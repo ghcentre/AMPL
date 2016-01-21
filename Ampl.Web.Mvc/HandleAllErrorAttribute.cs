@@ -39,7 +39,7 @@ namespace Ampl.Web.Mvc
     /// <exception cref="ArgumentNullException">The <paramref name="filterContext"/> is null.</exception>
     public override void OnException(ExceptionContext filterContext)
     {
-      Check.NotNull(filterContext, "filterContext");
+      Check.NotNull(filterContext, nameof(filterContext));
 
       //
       // If custom errors are disabled, we need to let the normal ASP.NET exception handler

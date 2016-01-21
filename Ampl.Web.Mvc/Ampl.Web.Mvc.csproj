@@ -73,6 +73,7 @@
     <Compile Include="HandleAllErrorAttribute.cs" />
     <Compile Include="Html\HtmlHelperValidationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceActionAuthorizeAttribute.cs" />
     <Compile Include="ShortNameExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
