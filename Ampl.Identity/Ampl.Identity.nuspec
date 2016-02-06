@@ -12,10 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2014-2015 GHCentre.com</copyright>
-    <tags>ghcentre ampl core portable</tags>
+    <copyright>Copyright 2014-2016 GHCentre.com</copyright>
+    <tags>ghcentre ampl identity</tags>
   </metadata>
-  <files>
-    <file src="bin\debug\ru\Ampl.Core.resources.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ru"/>
-  </files>
 </package>

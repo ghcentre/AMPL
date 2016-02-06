@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using Ampl.Identity;
 
-namespace Autoparts.Web
+namespace Ampl.Web.Mvc
 {
   public class ResourceActionAuthorizeAttribute : AuthorizeAttribute
   {
@@ -13,7 +12,7 @@ namespace Autoparts.Web
     private string _action;
     private string[] _resources;
 
-    private const string _label = "Ampl.Web.Mvc.Authorization.Mvc.ClaimsAuthorizeAttribute";
+    private const string _label = "Ampl.Web.Mvc.ResourceActionAuthorizeAttribute";
 
     public ResourceActionAuthorizeAttribute()
     {
@@ -25,13 +24,13 @@ namespace Autoparts.Web
       _resources = resources;
     }
 
-    public override void OnAuthorization(System.Web.Mvc.AuthorizationContext filterContext)
+    public override void OnAuthorization(global::System.Web.Mvc.AuthorizationContext filterContext)
     {
       filterContext.HttpContext.Items[_label] = filterContext;
       base.OnAuthorization(filterContext);
     }
 
-    protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)
+    protected override bool AuthorizeCore(HttpContextBase httpContext)
     {
       var principal = httpContext.User as ClaimsPrincipal;
 
@@ -46,12 +45,12 @@ namespace Autoparts.Web
       }
       else
       {
-        var filterContext = httpContext.Items[_label] as System.Web.Mvc.AuthorizationContext;
+        var filterContext = httpContext.Items[_label] as global::System.Web.Mvc.AuthorizationContext;
         return CheckAccess(principal, filterContext);
       }
     }
 
-    protected virtual bool CheckAccess(ClaimsPrincipal principal, System.Web.Mvc.AuthorizationContext filterContext)
+    protected virtual bool CheckAccess(ClaimsPrincipal principal, global::System.Web.Mvc.AuthorizationContext filterContext)
     {
       var action = filterContext.RouteData.Values["action"] as string;
       var controller = filterContext.RouteData.Values["controller"] as string;
@@ -59,7 +58,7 @@ namespace Autoparts.Web
       return ClaimsAuthorization.CheckAccess(principal, action, controller);
     }
 
-    protected override void HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext filterContext)
+    protected override void HandleUnauthorizedRequest(global::System.Web.Mvc.AuthorizationContext filterContext)
     {
       //
       // send 401 Unauthorized to anonymous users

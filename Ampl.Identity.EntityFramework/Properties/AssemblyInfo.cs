@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AMPL Identity")]
-[assembly: AssemblyDescription("AMPL extensions for Windows Identity Foundation.")]
+[assembly: AssemblyTitle("AMPL Identity EntityFramework")]
+[assembly: AssemblyDescription("AMPL extensions for EntityFramework implementation for the Windows Identity Foundation.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GHCentre.com")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("58463fd3-ed6a-4284-b9dd-91b2bf879137")]
+[assembly: Guid("982e21f0-6618-4c5b-92e8-b5045889207e")]
 
 // Version information for an assembly consists of the following four values:
 //
