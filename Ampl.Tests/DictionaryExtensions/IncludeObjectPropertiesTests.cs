@@ -6,7 +6,7 @@ using Ampl.System;
 namespace Ampl.System.Tests
 {
   [TestClass]
-  public class DictionaryExtensions_Test
+  public class IncludeObjectPropertiesTests
   {
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
