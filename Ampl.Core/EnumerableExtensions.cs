@@ -23,5 +23,20 @@ namespace Ampl.System
     {
       return source ?? Enumerable.Empty<T>();
     }
+
+    public static bool In<T>(this T source, params T[] checkValues)
+    {
+      return source.In(checkValues as IEnumerable<T>);
+    }
+
+    public static bool In<T>(this T source, IEnumerable<T> checkValues)
+    {
+      return checkValues.ToEmptyIfNull().Any(x => x.Equals(source));
+    }
+
+    public static T[] Yield<T>(this T source)
+    {
+      return new[] { source };
+    }
   }
 }

@@ -58,6 +58,8 @@
     <Compile Include="DictionaryExtensions\GetValueOrDefaultTests.cs" />
     <Compile Include="DisposableExtensions\DisposableExtensions_Test.cs" />
     <Compile Include="EnumerableExtensions\ToEmptyIfNullTest.cs" />
+    <Compile Include="EnumerableExtensions\InTest.cs" />
+    <Compile Include="EnumerableExtensions\YieldTest.cs" />
     <Compile Include="NullCheckExtensions\NullCheckExtensions_Test.cs" />
     <Compile Include="NullCheckExtensions\Return_Test.cs" />
     <Compile Include="NullCheckExtensions\DoTest.cs" />
