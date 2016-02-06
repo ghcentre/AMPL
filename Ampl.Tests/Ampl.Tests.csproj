@@ -54,10 +54,13 @@
   <ItemGroup>
     <Compile Include="Check\Check_Test.cs" />
     <Compile Include="ConsoleProcessRunner\ConsoleProcessRunnerTest.cs" />
-    <Compile Include="DictionaryExtensions\DictionaryExtensions_Test.cs" />
+    <Compile Include="DictionaryExtensions\IncludeObjectPropertiesTests.cs" />
+    <Compile Include="DictionaryExtensions\GetValueOrDefaultTests.cs" />
     <Compile Include="DisposableExtensions\DisposableExtensions_Test.cs" />
+    <Compile Include="EnumerableExtensions\ToEmptyIfNullTest.cs" />
     <Compile Include="NullCheckExtensions\NullCheckExtensions_Test.cs" />
     <Compile Include="NullCheckExtensions\Return_Test.cs" />
+    <Compile Include="NullCheckExtensions\DoTest.cs" />
     <Compile Include="NullCheckExtensions\With1_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions\Between_Test.cs" />
