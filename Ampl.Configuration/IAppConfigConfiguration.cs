@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Ampl.Configuration
 {
-  public interface IAppConfigConfiguration
+  public interface IAppConfigConfiguration : ICloneable
   {
     void AddConverter(IAppConfigConverter converter);
 
     IEnumerable<IAppConfigConverter> GetConverters();
 
-    void AddValueResolver(string keyResolveFrom, string keyResolveTo);
+    void AddKeyResolver(string from, string to);
 
-    string GetValueResolver(string key);
+    string GetKeyResolver(string key);
   }
 }

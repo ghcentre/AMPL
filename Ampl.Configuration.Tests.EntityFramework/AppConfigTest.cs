@@ -73,17 +73,17 @@ namespace Ampl.Configuration.Tests.EntityFramework
       _db.SaveChanges();
 
       _cfg = new AppConfig(_db);
-      _cfg.Configuration.AddValueResolver("SomeNestedConfig.TestingString",
-                                          "TestingString");
-      _cfg.Configuration.AddValueResolver("SomeNestedConfig.AnotherNestedConfig.TestingString",
-                                          "SomeNestedConfig.TestingString");
+      _cfg.Configuration.AddKeyResolver(from: "SomeNestedConfig.TestingString",
+                                        to: "TestingString");
+      _cfg.Configuration.AddKeyResolver(from: "SomeNestedConfig.AnotherNestedConfig.TestingString",
+                                        to: "SomeNestedConfig.TestingString");
 
-      _cfg.Configuration.AddValueResolver("TwoConfig.Value", "OneConfig.Value");
-      _cfg.Configuration.AddValueResolver("ThreeConfig.Value", "TwoConfig.Value");
+      _cfg.Configuration.AddKeyResolver("TwoConfig.Value", "OneConfig.Value");
+      _cfg.Configuration.AddKeyResolver("ThreeConfig.Value", "TwoConfig.Value");
 
-      _cfg.Configuration.AddValueResolver("TestingStringList2", "TestingStringList");
+      _cfg.Configuration.AddKeyResolver("TestingStringList2", "TestingStringList");
 
-      _cfg.Configuration.AddValueResolver("Email.UserName", "Defaults.UserName");
+      _cfg.Configuration.AddKeyResolver("Email.UserName", "Defaults.UserName");
     }
 
     [TestCleanup]

@@ -34,14 +34,30 @@ namespace Ampl.Configuration
       return _converters.ToArray();
     }
 
-    public void AddValueResolver(string keyResolveFrom, string keyResolveTo)
+    public void AddKeyResolver(string from, string to)
     {
-      _resolvers[keyResolveFrom] = keyResolveTo;
+      _resolvers[from] = to;
     }
 
-    public string GetValueResolver(string key)
+    public string GetKeyResolver(string key)
     {
       return _resolvers.GetValueOrDefault(key);
+    }
+
+    public object Clone()
+    {
+      var result = new AppConfigDefaultConfiguration();
+
+      result._converters.Clear();
+      result._converters.AddRange(_converters);
+
+      result._resolvers.Clear();
+      foreach(string key in _resolvers.Keys)
+      {
+        result._resolvers[key] = _resolvers[key];
+      }
+
+      return result;
     }
   }
 }
