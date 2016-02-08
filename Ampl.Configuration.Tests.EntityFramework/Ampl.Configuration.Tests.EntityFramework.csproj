@@ -34,9 +34,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Ampl.Configuration.Tests.EntityFramework.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.1.10.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.1.10.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.1.12.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.1.12.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -67,16 +73,22 @@
   <ItemGroup>
     <Compile Include="AmplTestContext.cs" />
     <Compile Include="AppConfigItem.cs" />
+    <Compile Include="AppConfigKeyResolver.cs" />
     <Compile Include="AppConfigTransaction.cs" />
     <Compile Include="Migrations\201602060726580_M001.cs" />
     <Compile Include="Migrations\201602060726580_M001.Designer.cs">
       <DependentUpon>201602060726580_M001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602080914255_M002.cs" />
+    <Compile Include="Migrations\201602080914255_M002.Designer.cs">
+      <DependentUpon>201602080914255_M002.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppConfigTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Ampl.Configuration.Tests.EntityFramework.pfx" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -89,6 +101,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602060726580_M001.resx">
       <DependentUpon>201602060726580_M001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602080914255_M002.resx">
+      <DependentUpon>201602080914255_M002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Choose>

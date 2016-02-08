@@ -8,10 +8,9 @@ using Ampl.System;
 
 namespace Ampl.Configuration
 {
-  class AppConfigDefaultConfiguration : IAppConfigConfiguration
+  public class AppConfigDefaultConfiguration : IAppConfigConfiguration
   {
     private List<IAppConfigConverter> _converters = new List<IAppConfigConverter>();
-    private Dictionary<string, string> _resolvers = new Dictionary<string, string>();
 
     public AppConfigDefaultConfiguration()
     {
@@ -24,7 +23,7 @@ namespace Ampl.Configuration
       AddConverter(new NullableDecimalConverter());
     }
 
-    public void AddConverter(IAppConfigConverter converter)
+    internal void AddConverter(IAppConfigConverter converter)
     {
       _converters.Add(Check.NotNull(converter, nameof(converter)));
     }
@@ -34,30 +33,9 @@ namespace Ampl.Configuration
       return _converters.ToArray();
     }
 
-    public void AddKeyResolver(string from, string to)
+    public string ResolveDefaultKey(string key)
     {
-      _resolvers[from] = to;
-    }
-
-    public string GetKeyResolver(string key)
-    {
-      return _resolvers.GetValueOrDefault(key);
-    }
-
-    public object Clone()
-    {
-      var result = new AppConfigDefaultConfiguration();
-
-      result._converters.Clear();
-      result._converters.AddRange(_converters);
-
-      result._resolvers.Clear();
-      foreach(string key in _resolvers.Keys)
-      {
-        result._resolvers[key] = _resolvers[key];
-      }
-
-      return result;
+      return null; // no key resolvers by default
     }
   }
 }

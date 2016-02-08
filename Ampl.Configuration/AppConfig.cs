@@ -13,14 +13,23 @@ namespace Ampl.Configuration
   {
     private IAppConfigRepository _repository;
 
-    public AppConfig(IAppConfigRepository repository)
+    public AppConfig(IAppConfigRepository repository, IAppConfigConfiguration configuration = null)
     {
       _repository = Check.NotNull(repository, nameof(repository));
+
+      if(configuration != null)
+      {
+        Configuration = configuration;
+      }
+      else
+      {
+        Configuration = ConfigurationFactory();
+      }
     }
 
-    public static IAppConfigConfiguration DefaultConfiguration { get; set; } = new AppConfigDefaultConfiguration();
+    public static Func<IAppConfigConfiguration> ConfigurationFactory { get; set; } = () => new AppConfigDefaultConfiguration();
 
-    public IAppConfigConfiguration Configuration { get; set; } = (IAppConfigConfiguration)DefaultConfiguration.Clone();
+    public IAppConfigConfiguration Configuration { get; set; }
 
     private IAppConfigEntity GetEntityUsingResolvers(string key, bool useResolvers)
     {
@@ -29,7 +38,7 @@ namespace Ampl.Configuration
       {
         while(entity?.Value == null)
         {
-          key = Configuration.GetKeyResolver(key);
+          key = Configuration.ResolveDefaultKey(key);
           if(key == null)
           {
             break;
@@ -52,7 +61,7 @@ namespace Ampl.Configuration
       {
         while(entities.Count == 0)
         {
-          key = Configuration.GetKeyResolver(key);
+          key = Configuration.ResolveDefaultKey(key);
           if(key == null)
           {
             break;

@@ -48,18 +48,24 @@ namespace Ampl.Tests.AppConfig
     }
 
     [TestMethod]
-    public void DefaultConfiguration_Clones()
+    public void AppConfig_DefaultConfiguration()
     {
-      int defaultConverterCount = Ampl.Configuration.AppConfig.DefaultConfiguration.GetConverters().Count();
-      Ampl.Configuration.AppConfig.DefaultConfiguration.AddKeyResolver("from", "to");
-      Assert.IsTrue("to" == Ampl.Configuration.AppConfig.DefaultConfiguration.GetKeyResolver("from"));
+      var config = new Ampl.Configuration.AppConfig(new Repository());
+      Assert.IsTrue(config.Configuration.GetType() == typeof(Ampl.Configuration.AppConfigDefaultConfiguration));
+    }
 
-      var cfg = new Ampl.Configuration.AppConfig(new Repository());
-      Assert.AreEqual(defaultConverterCount, cfg.Configuration.GetConverters().Count());
-      Assert.IsTrue("to" == cfg.Configuration.GetKeyResolver("from"));
+    [TestMethod]
+    public void AppConfig_DefaultConfiguration_ConvertersExist()
+    {
+      var defaultConfig = new Ampl.Configuration.AppConfigDefaultConfiguration();
+      Assert.IsTrue(defaultConfig.GetConverters().Count() > 0);
+    }
 
-      cfg.Configuration.AddKeyResolver("from1", "to1");
-      Assert.AreEqual(null, Ampl.Configuration.AppConfig.DefaultConfiguration.GetKeyResolver("from1"));
+    [TestMethod]
+    public void AppConfig_DefaultConfiguration_Resolver_NonExistentKey()
+    {
+      var defaultConfig = new Ampl.Configuration.AppConfigDefaultConfiguration();
+      Assert.IsNull(defaultConfig.ResolveDefaultKey("This.Is.NonExistent.Key"));
     }
   }
 }

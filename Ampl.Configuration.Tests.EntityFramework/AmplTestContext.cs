@@ -8,13 +8,14 @@ using Ampl.System;
 
 namespace Ampl.Configuration.Tests.EntityFramework
 {
-  public class AmplTestContext : DbContext, IAppConfigRepository
+  public class AmplTestContext : DbContext, IAppConfigRepository, IAppConfigConfiguration
   {
     public AmplTestContext() : base("AmplTest")
     {
     }
 
     public virtual DbSet<AppConfigItem> AppConfigItems { get; set; }
+    public virtual DbSet<AppConfigKeyResolver> AppConfigKeyResolvers { get; set; }
 
     public IAppConfigTransaction BeginAppConfigTransaction()
     {
@@ -55,6 +56,16 @@ namespace Ampl.Configuration.Tests.EntityFramework
     public void SaveAppConfigChanges()
     {
       SaveChanges();
+    }
+
+    public IEnumerable<IAppConfigConverter> GetConverters()
+    {
+      return new AppConfigDefaultConfiguration().GetConverters();
+    }
+
+    public string ResolveDefaultKey(string key)
+    {
+      return AppConfigKeyResolvers.Find(key)?.ToKey;
     }
 
     public void SetAppConfigEntity(IAppConfigEntity entity)

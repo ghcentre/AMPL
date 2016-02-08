@@ -70,20 +70,36 @@ namespace Ampl.Configuration.Tests.EntityFramework
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "Email.Ports[0]", Value = "110" });
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "Email.Ports[1]", Value = "995" });
 
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "SomeNestedConfig.TestingString",
+        ToKey = "TestingString"
+      });
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "SomeNestedConfig.AnotherNestedConfig.TestingString",
+        ToKey = "SomeNestedConfig.TestingString"
+      });
+
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "TwoConfig.Value",
+        ToKey = "OneConfig.Value"
+      });
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "ThreeConfig.Value",
+        ToKey = "TwoConfig.Value"
+      });
+
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "TestingStringList2",
+        ToKey = "TestingStringList"
+      });
+      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+        FromKey = "Email.UserName",
+        ToKey = "Defaults.UserName"
+      });
+
       _db.SaveChanges();
 
-      _cfg = new AppConfig(_db);
-      _cfg.Configuration.AddKeyResolver(from: "SomeNestedConfig.TestingString",
-                                        to: "TestingString");
-      _cfg.Configuration.AddKeyResolver(from: "SomeNestedConfig.AnotherNestedConfig.TestingString",
-                                        to: "SomeNestedConfig.TestingString");
-
-      _cfg.Configuration.AddKeyResolver("TwoConfig.Value", "OneConfig.Value");
-      _cfg.Configuration.AddKeyResolver("ThreeConfig.Value", "TwoConfig.Value");
-
-      _cfg.Configuration.AddKeyResolver("TestingStringList2", "TestingStringList");
-
-      _cfg.Configuration.AddKeyResolver("Email.UserName", "Defaults.UserName");
+      _cfg = new AppConfig(_db, _db);
     }
 
     [TestCleanup]
