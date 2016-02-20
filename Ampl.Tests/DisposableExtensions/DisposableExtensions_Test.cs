@@ -5,55 +5,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ampl.Tests.DisposableExtensions
 {
-  public static class DisposableExtensions
-  {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TReturn"></typeparam>
-    /// <param name="obj"></param>
-    /// <param name="func"></param>
-    /// <returns></returns>
-    /// <example>
-    /// <code>
-    /// //
-    /// // Reads entire text file
-    /// // After the file contents are read, the StreamReader is disposed.
-    /// //
-    /// string contents = new StreamReader(@"c:\windows\win.ini").Use(sr => sr.ReadToEnd());
-    /// </code>
-    /// </example>
-    public static TReturn Use<T, TReturn>(this T obj, Func<T, TReturn> func) where T : class, IDisposable
-    {
-      if(obj == null)
-      {
-        return default(TReturn);
-      }
-
-      Check.NotNull(func, nameof(func));
-      using(obj)
-      {
-        return func(obj);
-      }
-    }
-
-    //public static T Use<T>(this T obj, Action<T> action) where T : class, IDisposable
-    //{
-    //  if(obj == null)
-    //  {
-    //    return default(T);
-    //  }
-
-    //  Check.NotNull(action, nameof(action));
-    //  using(obj)
-    //  {
-    //    action(obj);
-    //  }
-    //  return obj;
-    //}
-  }
-
   public class DisposableTestClass : IDisposable
   {
     public bool Disposed { get; private set; }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Check.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="DisposableExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Messages.Designer.cs">
