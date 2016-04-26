@@ -114,7 +114,9 @@ namespace Ampl.System
     /// }
     /// </code>
     /// </example>
-    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+    [SuppressMessage(
+      "Microsoft.Design",
+      "CA1026:DefaultParametersShouldNotBeUsed",
       Justification = "The default values assigned for optional parameters are always default values.")]
     public static string Between(
       this string source,
@@ -210,9 +212,14 @@ namespace Ampl.System
     /// <para>Unlike the <see cref="int.Parse(string)"/> mehtod this method does not allow leading whitespaces
     /// in <paramref name="source"/>.</para>
     /// </remarks>
-    [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "int",
+    [SuppressMessage(
+      "Microsoft.Naming",
+      "CA1720:IdentifiersShouldNotContainTypeNames",
+      MessageId = "int",
       Justification = "The type name is important in the identifier.")]
-    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+    [SuppressMessage(
+      "Microsoft.Design",
+      "CA1026:DefaultParametersShouldNotBeUsed",
       Justification = "The default values assigned for optional parameters are always default values.")]
     public static int ToInt(this string source, int fallbackValue = 0)
     {
@@ -410,6 +417,5 @@ namespace Ampl.System
       DateTime result;
       return DateTime.TryParse(source, out result) ? (DateTime?)result : null;
     }
-
   }
 }

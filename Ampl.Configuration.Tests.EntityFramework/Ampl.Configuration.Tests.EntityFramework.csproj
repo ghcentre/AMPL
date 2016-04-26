@@ -41,8 +41,8 @@
     <AssemblyOriginatorKeyFile>Ampl.Configuration.Tests.EntityFramework.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.1.12.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.1.12.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.1.15.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.1.15.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

@@ -38,5 +38,10 @@ namespace Ampl.System
     {
       return new[] { source };
     }
+
+    public static string JoinWith<T>(this IEnumerable<T> values, string separator)
+    {
+      return string.Join(separator, values);
+    }
   }
 }

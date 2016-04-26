@@ -37,20 +37,20 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.Authorization.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.1.10.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.1.10.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.1.15.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.1.15.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity, Version=2.1.10.0, Culture=neutral, PublicKeyToken=aed9577ef9a00d5e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Identity.2.1.10.0\lib\net45\Ampl.Identity.dll</HintPath>
+    <Reference Include="Ampl.Identity, Version=2.1.15.0, Culture=neutral, PublicKeyToken=aed9577ef9a00d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Identity.2.1.15.0\lib\net45\Ampl.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity.EntityFramework, Version=2.1.10.0, Culture=neutral, PublicKeyToken=95fc0700b0c6ccad, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Identity.EntityFramework.2.1.10.0\lib\net45\Ampl.Identity.EntityFramework.dll</HintPath>
+    <Reference Include="Ampl.Identity.EntityFramework, Version=2.1.15.0, Culture=neutral, PublicKeyToken=95fc0700b0c6ccad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Identity.EntityFramework.2.1.15.0\lib\net45\Ampl.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.1.10.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.1.10.0\lib\net45\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=2.1.15.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.1.15.0\lib\net45\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
