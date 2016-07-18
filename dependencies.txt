@@ -1,0 +1,12 @@
+Ampl.Configuration            -> Ampl.Core
+Ampl.Core                     -> (none)
+Ampl.Identity                 -> Ampl.Core
+Ampl.Identity.EntityFramework -> EntityFramework
+Ampl.System                   -> (none)
+Ampl.Web.Mvc                  -> AmplCore,
+                                 Microsoft.AspNet.Mvc
+Ampl.Web.Mvc.Authorization    -> Ampl.Identity,
+                                 Ampl.Identity.EntityFramework,
+                                 Ampl.Web.Mvc
+Ampl.Web.Optimization.nuspec  -> Microsoft.AspNet.Web.Optimization
+

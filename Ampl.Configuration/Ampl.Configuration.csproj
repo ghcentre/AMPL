@@ -60,6 +60,7 @@
     <Compile Include="IAppConfigEntity.cs" />
     <Compile Include="IAppConfigRepository.cs" />
     <Compile Include="IAppConfigTransaction.cs" />
+    <Compile Include="InternalAppConfigEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

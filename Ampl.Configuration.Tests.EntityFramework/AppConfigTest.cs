@@ -66,9 +66,40 @@ namespace Ampl.Configuration.Tests.EntityFramework
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClass.Password", Value = "Pass" });
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClass.UserPass", Value = "Oops" });
 
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[0].UserName", Value = "John" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[0].Password", Value = "Doe" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[0].Port", Value = "25" });
+
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[1].UserName", Value = "Alex" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[1].Password", Value = "Donkey" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[1].Port", Value = "110" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[1].Ports[0]", Value = "995" });
+
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[2].UserName", Value = "Lara" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[2].Password", Value = "Croft" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[2].Port", Value = "6666" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[2].Ports[0]", Value = "6667" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClasses[2].Ports[1]", Value = "7000" });
+
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "Email.Password", Value = "Pass" });
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "Email.Ports[0]", Value = "110" });
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "Email.Ports[1]", Value = "995" });
+
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Doe].UserName", Value = "John" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Doe].Password", Value = "Doe" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Doe].Port", Value = "25" });
+
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Donkey].UserName", Value = "Alex" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Donkey].Password", Value = "Donkey" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Donkey].Port", Value = "110" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Donkey].Ports[0]", Value = "995" });
+
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].UserName", Value = "Lara" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Password", Value = "Croft" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Port", Value = "6666" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Ports[0]", Value = "6667" });
+      _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Ports[1]", Value = "7000" });
+
 
       _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
         FromKey = "SomeNestedConfig.TestingString",
@@ -106,6 +137,7 @@ namespace Ampl.Configuration.Tests.EntityFramework
     public void TestCleanup()
     {
       _tr.Rollback();
+      //_tr.Commit();
       _tr.Dispose();
       _db.Dispose();
     }
@@ -241,6 +273,7 @@ namespace Ampl.Configuration.Tests.EntityFramework
     {
       Assert.AreEqual(_testString, _cfg.Get<string>("SomeNestedConfig.TestingString"));
       Assert.AreEqual(null, _cfg.Get<string>("SomeNestedConfig.TestingString", false));
+      Dictionary<string, object> dic;
     }
 
     [TestMethod]
@@ -310,6 +343,17 @@ namespace Ampl.Configuration.Tests.EntityFramework
       public List<int> Ports { get; set; }
     }
 
+    public class TestClass2
+    {
+      public string UserName { get; set; }
+      public string Password { get; set; }
+
+      public int Port;
+
+      public Dictionary<string, int> Ports { get; set; }
+    }
+
+
     [TestMethod]
     public void Get_Class_Existing()
     {
@@ -345,6 +389,56 @@ namespace Ampl.Configuration.Tests.EntityFramework
     {
       var obj = _cfg.Get<TestClass1>("Email");
       Assert.AreEqual(2, obj.Ports.Count);
+    }
+
+    [TestMethod]
+    public void Get_CollectionOfClasses()
+    {
+      var obj = _cfg.Get<List<TestClass1>>("TestClasses");
+      Assert.AreEqual(3, obj.Count);
+      Assert.AreEqual(0, obj[0].Ports.Count);
+      Assert.AreEqual(1, obj[1].Ports.Count);
+      Assert.AreEqual(2, obj[2].Ports.Count);
+    }
+
+    [TestMethod]
+    public void Get_DictionaryOfClasses()
+    {
+      var obj = _cfg.Get<Dictionary<string, TestClass1>>("TestClasses");
+      Assert.AreEqual(3, obj.Count);
+      Assert.AreEqual(0, obj["0"].Ports.Count);
+      Assert.AreEqual(1, obj["1"].Ports.Count);
+      Assert.AreEqual(2, obj["2"].Ports.Count);
+    }
+
+    [TestMethod]
+    public void Get_ListOfClasses_With_Dictionaries()
+    {
+      var obj = _cfg.Get<List<TestClass2>>("TestClasses");
+      Assert.AreEqual(3, obj.Count);
+      Assert.AreEqual(0, obj[0].Ports.Count);
+      Assert.AreEqual(1, obj[1].Ports.Count);
+      Assert.AreEqual(2, obj[2].Ports.Count);
+    }
+
+    [TestMethod]
+    public void Get_DictionaryOfClasses_With_Dictionaries()
+    {
+      var obj = _cfg.Get<Dictionary<string, TestClass2>>("ObjectDictionary");
+      Assert.AreEqual(3, obj.Count);
+      Assert.AreEqual(0, obj["Doe"].Ports.Count);
+      Assert.AreEqual(1, obj["Donkey"].Ports.Count);
+      Assert.AreEqual(2, obj["Croft"].Ports.Count);
+      Assert.IsFalse(obj.ContainsKey("NonExistentKey"));
+    }
+
+
+
+    [TestMethod]
+    public void Get_Class_FromCollection_ByIndex()
+    {
+      var obj = _cfg.Get<TestClass1>("TestClasses[0]");
+      Assert.IsTrue(obj.UserName == "John");
     }
 
     [TestMethod]
@@ -401,5 +495,78 @@ namespace Ampl.Configuration.Tests.EntityFramework
       _cfg.Set("TestObject", testClass1);
       Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("TestObject")) == 2);
     }
+
+    [TestMethod]
+    public void Set_Collection_Of_Classes()
+    {
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ClassList")) == 0);
+      var list = new[] {
+        new TestClass1() { UserName = "1", Password = null, Port = 3, Ports = null },
+        new TestClass1() { UserName = "2", Password = "22", Port = 4, Ports = new List<int>() { 1, 2, 3 } },
+      };
+      _cfg.Set("ClassList", list);
+
+      //
+      // won't set public fields
+      //
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ClassList")) == 7);
+    }
+
+    [TestMethod]
+    public void Set_ObjectWithCollection()
+    {
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ObjectWithCollection")) == 0);
+      var obj = new TestClass1() {
+        UserName = "1",
+        Password = "2",
+        Port = 3,
+        Ports = new List<int>() { 1, 2, 3 }
+      };
+      _cfg.Set("ObjectWithCollection", obj);
+
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ObjectWithCollection")) == 5);
+    }
+
+    [TestMethod]
+    public void Set_ObjectWithDictionary()
+    {
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ObjectWithDictionary")) == 0);
+      var obj = new TestClass2() {
+        UserName = "1",
+        Password = "2",
+        Port = 3,
+        Ports = new Dictionary<string, int>() { { "a", 1 }, { "aa", 2 }, { "abc", 3 } }
+      };
+
+      
+      _cfg.Set("ObjectWithDictionary", obj);
+
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("ObjectWithDictionary")) == 5);
+    }
+
+    [TestMethod]
+    public void Set_Dictionary_Of_Objects_WithDictionary()
+    {
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("DicObjDic")) == 0);
+
+      var obj = new Dictionary<string, TestClass2>() {
+        { "one", new TestClass2() {
+                    UserName = "1", Password = "2",
+                    Ports = new Dictionary<string, int>() { { "a", 1 }, { "aa", 2 }, { "abc", 3 } }
+                 }
+        },
+        { "two", new TestClass2() {
+                    UserName = "3", Password = "4",
+                    Ports = new Dictionary<string, int>() { { "x", 1 }, { "y", 2 } }
+                 }
+        },
+      };
+
+      _cfg.Set("DicObjDic", obj);
+
+      Assert.IsTrue(_db.AppConfigItems.Count(x => x.Key.StartsWith("DicObjDic")) == 9);
+    }
+
+
   }
 }

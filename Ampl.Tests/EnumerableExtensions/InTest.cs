@@ -38,5 +38,22 @@ namespace Ampl.Tests.EnumerableExtensions
       double[] checks = null;
       Assert.IsFalse(arg.In(checks));
     }
+
+    [TestMethod]
+    public void In_Args()
+    {
+      int arg = 456;
+      bool result = arg.In(0, 1, 1, 1, 456, 2, -100);
+      Assert.IsTrue(result);
+    }
+
+    [TestMethod]
+    public void In_Enumerable2()
+    {
+      double arg = 345.22;
+      double[] checks = new[] { 0, -300, 45, 345.22 };
+      bool result = arg.In(checks);
+      Assert.IsTrue(result);
+    }
   }
 }

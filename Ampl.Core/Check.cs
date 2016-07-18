@@ -54,9 +54,13 @@ namespace Ampl.System
     /// }
     /// </code>
     /// </example>
-    [SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly",
+    [SuppressMessage(
+      "Microsoft.Usage",
+      "CA2208:InstantiateArgumentExceptionsCorrectly",
       Justification = "ArgumentNullException parameterless constructor called explicitly to indicate than no parameter name is given.")]
-    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+    [SuppressMessage(
+      "Microsoft.Design",
+      "CA1026:DefaultParametersShouldNotBeUsed",
       Justification = "The default values assigned for optional parameters are always default values.")]
     public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
     {
@@ -75,7 +79,9 @@ namespace Ampl.System
     /// <param name="argumentValue"></param>
     /// <param name="argumentName"></param>
     /// <returns></returns>
-    [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed", 
+    [SuppressMessage(
+      "Microsoft.Design",
+      "CA1026:DefaultParametersShouldNotBeUsed", 
       Justification = "The default values assigned for optional parameters are always default values.")]
     public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
     {

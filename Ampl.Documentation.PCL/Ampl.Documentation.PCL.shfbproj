@@ -47,7 +47,7 @@
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Advanced Multi-Purpose Library</HelpTitle>
-    <FooterText>Copyright 2015 &amp;lt%3ba href=&amp;quot%3bhttp://ghcentre.com&amp;quot%3b&amp;gt%3bGHCentre.com&amp;lt%3b/a&amp;gt%3b</FooterText>
+    <FooterText>Copyright 2016 &amp;lt%3ba href=&amp;quot%3bhttp://ghcentre.com&amp;quot%3b&amp;gt%3bGHCentre.com&amp;lt%3b/a&amp;gt%3b</FooterText>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
