@@ -1,0 +1,12 @@
+﻿@using System.Linq
+@if(Model == null)
+{
+  @ViewData.ModelMetadata.NullDisplayText
+}
+else
+{
+  @(Html.GetDropDownListItems().FirstOrDefault(x => x.Selected)?.Text)
+}
+
+
+

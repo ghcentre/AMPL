@@ -8,5 +8,5 @@ Ampl.Web.Mvc                  -> AmplCore,
 Ampl.Web.Mvc.Authorization    -> Ampl.Identity,
                                  Ampl.Identity.EntityFramework,
                                  Ampl.Web.Mvc
-Ampl.Web.Optimization.nuspec  -> Microsoft.AspNet.Web.Optimization
+Ampl.Web.Optimization         -> Microsoft.AspNet.Web.Optimization
 

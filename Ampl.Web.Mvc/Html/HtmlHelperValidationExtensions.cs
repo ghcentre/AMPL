@@ -26,7 +26,7 @@ namespace Ampl.Web.Mvc.Html
       string error,
       string success)
     {
-      Check.NotNull(htmlHelper, "htmlHelper");
+      Check.NotNull(htmlHelper, nameof(htmlHelper));
 
       if(htmlHelper.ViewData.Model == null)
       {

@@ -71,16 +71,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessDeniedResult.cs" />
+    <Compile Include="Html\EditorTemplateHelpers.cs" />
+    <Compile Include="EditorTemplateConfiguration.cs" />
+    <Compile Include="ControllerBaseAlertExtensions.cs" />
+    <Compile Include="DelayedRenderExtensions.cs" />
     <Compile Include="HandleAllErrorAttribute.cs" />
+    <Compile Include="Html\DropDownListHelper.cs" />
+    <Compile Include="Html\HtmlHelperAlertExtensions.cs" />
     <Compile Include="Html\HtmlHelperValidationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortNameExtensions.cs" />
+    <Compile Include="DropDownListAttribute.cs" />
+    <Compile Include="ShowForDisplayAttribute.cs" />
+    <Compile Include="ViewModels\AlertViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Ampl.Web.Mvc.pfx" />
+    <None Include="content\Views\Shared.Sample\DisplayTemplates\DropDownList.cshtml" />
+    <None Include="content\Views\Shared.Sample\DisplayTemplates\Object.cshtml" />
+    <None Include="content\Views\Shared.Sample\EditorTemplates\DropDownList.cshtml" />
     <None Include="content\Views\web.config.transform" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="content\Views\Shared.Sample\_AlertViewPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
