@@ -28,9 +28,24 @@ namespace Ampl.Web.Mvc
     public string LabelClass { get; set; } = (DefaultConfiguration?.LabelClass ?? "col-xs-12 col-sm-4 col-md-3");
 
     /// <summary>
-    /// CSS Classfor the editor column.
+    /// CSS Class for the editor column.
     /// </summary>
     public string EditorClass { get; set; } = (DefaultConfiguration?.EditorClass ?? "col-xs-12 col-sm-8 col-md-9");
+
+    /// <summary>
+    /// CSS Class fot the editor column without label column.
+    /// </summary>
+    public string EditorOffsetClass
+    {
+      get
+      {
+        return $" {LabelClass}"
+          .Replace("-xs-", "-xs-offset-")
+          .Replace("-sm-", "-sm-offset-")
+          .Replace("-md-", "-md-offset-")
+          .Replace("-lg-", "-lg-offset-");
+      }
+    }
 
     /// <summary>
     /// Gets or sets the value specifying whether or not to override container properties.
@@ -42,5 +57,10 @@ namespace Ampl.Web.Mvc
     /// <see cref="EditorTemplateConfiguration.OverrideContainerProperties"/> to true.
     /// </remarks>
     public bool OverrideContainerProperties { get; set; } = (DefaultConfiguration?.OverrideContainerProperties ?? true);
+
+    /// <summary>
+    /// Display checkbox label in Editor Templates.
+    /// </summary>
+    public bool SeparateCheckboxLabel { get; set; } = (DefaultConfiguration?.SeparateCheckboxLabel ?? false);
   }
 }

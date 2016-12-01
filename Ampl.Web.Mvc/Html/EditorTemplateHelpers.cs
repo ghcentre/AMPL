@@ -13,12 +13,12 @@ namespace Ampl.Web.Mvc.Html
   public static class EditorTemplateHelpers
   {
     /// <summary>
-    /// Determines whether to show complex object property.
+    /// Determines whether to show complex object property in read-only views
     /// </summary>
     /// <param name="modelMetadata">Model metadata.</param>
     /// <param name="templateInfo">Template info.</param>
     /// <returns></returns>
-    public static bool ShouldShowProperty(ModelMetadata modelMetadata, TemplateInfo templateInfo)
+    public static bool ShouldDisplayProperty(ModelMetadata modelMetadata, TemplateInfo templateInfo)
     {
       if(modelMetadata == null || templateInfo == null)
       {
@@ -31,7 +31,26 @@ namespace Ampl.Web.Mvc.Html
              !templateInfo.Visited(modelMetadata);
     }
 
-    public static void OverrideContainerProperties(ViewDataDictionary containerViewData, ModelMetadata modelMetadata, TemplateInfo templateInfo, EditorTemplateConfiguration configuration = null)
+    /// <summary>
+    /// Determines whether to show complex object property in editor views.
+    /// </summary>
+    /// <param name="modelMetadata">Model metadata.</param>
+    /// <param name="templateInfo">Template info.</param>
+    /// <returns></returns>
+    public static bool ShouldEditProperty(ModelMetadata modelMetadata, TemplateInfo templateInfo)
+    {
+      if(modelMetadata == null || templateInfo == null)
+      {
+        return false;
+      }
+
+      return modelMetadata.ShowForEdit &&
+             //metadata.ModelType != typeof(System.Data.Entity.EntityState) &&
+             //!metadata.IsComplexType &&
+             !templateInfo.Visited(modelMetadata);
+    }
+
+    public static void OverrideContainerProperties(bool readOnlyView, ViewDataDictionary containerViewData, ModelMetadata modelMetadata, TemplateInfo templateInfo, EditorTemplateConfiguration configuration = null)
     {
       if(containerViewData == null || modelMetadata == null)
       {
@@ -44,7 +63,11 @@ namespace Ampl.Web.Mvc.Html
         return;
       }
 
-      foreach(var propertyMetadata in modelMetadata.Properties.Where(pm => ShouldShowProperty(pm, templateInfo)))
+      foreach(var propertyMetadata in modelMetadata.Properties
+                                        .Where(pm => readOnlyView
+                                                       ? ShouldDisplayProperty(pm, templateInfo)
+                                                       : ShouldEditProperty(pm, templateInfo))
+             )
       {
         string propertyName = propertyMetadata.PropertyName;
         if(containerViewData.Keys.Contains(propertyName))

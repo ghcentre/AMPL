@@ -1,0 +1,5 @@
+﻿@model object
+@Html.TextBox(
+  "",
+  Model == null ? "" : Model.ToString(),
+  new { @class = "form-control", @type = "number" })

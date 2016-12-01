@@ -33,31 +33,47 @@ namespace Ampl.Web.Mvc.Html
         return null;
       }
 
-      bool hasError = HasError(
+      bool? hasError = HasError(
         htmlHelper,
         ModelMetadata.FromStringExpression(expression, htmlHelper.ViewData),
         expression);
-      return new MvcHtmlString(hasError ? error : success);
+
+      if(hasError.HasValue)
+      {
+        return new MvcHtmlString(hasError.Value ? error : success);
+      }
+      return null;
     }
 
-    private static bool HasError(this HtmlHelper htmlHelper, ModelMetadata modelMetadata, string expression)
+    /// <summary>
+    /// Checks whether the property has validation error
+    /// </summary>
+    /// <param name="htmlHelper"></param>
+    /// <param name="modelMetadata"></param>
+    /// <param name="expression"></param>
+    /// <returns>
+    /// null - not validated (e.g. HTTP GET)
+    /// true = error
+    /// false = success
+    /// </returns>
+    private static bool? HasError(this HtmlHelper htmlHelper, ModelMetadata modelMetadata, string expression)
     {
       string modelName = htmlHelper.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(expression);
       FormContext formContext = htmlHelper.ViewContext.FormContext;
       if(formContext == null)
       {
-        return false;
+        return null;
       }
 
       if(!htmlHelper.ViewData.ModelState.ContainsKey(modelName))
       {
-        return false;
+        return null;
       }
 
       ModelState modelState = htmlHelper.ViewData.ModelState[modelName];
       if(modelState == null)
       {
-        return false;
+        return null;
       }
 
       ModelErrorCollection modelErrors = modelState.Errors;

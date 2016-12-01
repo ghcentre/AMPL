@@ -21,10 +21,11 @@
     return;
   }
 
-  EditorTemplateHelpers.OverrideContainerProperties(Html.ViewDataContainer.ViewData, modelMetadata, templateInfo, config);
+  EditorTemplateHelpers.OverrideContainerProperties(true, Html.ViewDataContainer.ViewData, modelMetadata, templateInfo, config);
 }
 <div class="form form-horizontal">
-  @foreach(var propertyMetadata in modelMetadata.Properties.Where(pm => EditorTemplateHelpers.ShouldShowProperty(pm, templateInfo)))
+  @foreach(var propertyMetadata in modelMetadata.Properties
+                                     .Where(pm => EditorTemplateHelpers.ShouldDisplayProperty(pm, templateInfo)))
   {
     if(config.RenderNullProperties || propertyMetadata.Model != null)
     {
