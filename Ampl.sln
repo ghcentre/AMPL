@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates", "Ampl.Web.Mvc.EditorTemplates\Ampl.Web.Mvc.EditorTemplates.csproj", "{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}"
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation.PCL", "Ampl.Documentation.PCL\Ampl.Documentation.PCL.shfbproj", "{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation.NET", "Ampl.Documentation.NET\Ampl.Documentation.NET.shfbproj", "{F730183E-0494-42FC-944B-3D2A341EAD66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F730183E-0494-42FC-944B-3D2A341EAD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F730183E-0494-42FC-944B-3D2A341EAD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,18 +6,37 @@ using Ampl.Identity;
 
 namespace Ampl.Web.Mvc
 {
+  /// <summary>
+  /// Performs authorization based on Action/Resource scheme.
+  /// </summary>
   public class ResourceActionAuthorizeAttribute : AuthorizeAttribute
   {
-
     private string _action;
     private string[] _resources;
 
     private const string _label = "Ampl.Web.Mvc.ResourceActionAuthorizeAttribute";
 
+    /// <summary>
+    /// Gets or sets the value indicating that this attribute acts as a global filter set by GlobalFiltersCollection.
+    /// </summary>
+    /// <remarks>
+    /// When this property is set to <see langword="true"/>, the attribute disables itself
+    /// if an AuthorizeAttribute is applied to action or controller.
+    /// </remarks>
+    public bool IsGlobalFilter { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ResourceActionAuthorizeAttribute"/> class.
+    /// </summary>
     public ResourceActionAuthorizeAttribute()
     {
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ResourceActionAuthorizeAttribute"/> class.
+    /// </summary>
+    /// <param name="action">Action to authorize against.</param>
+    /// <param name="resources">Resources to authorize against.</param>
     public ResourceActionAuthorizeAttribute(string action, params string[] resources)
     {
       _action = action;
@@ -27,6 +46,16 @@ namespace Ampl.Web.Mvc
     public override void OnAuthorization(global::System.Web.Mvc.AuthorizationContext filterContext)
     {
       filterContext.HttpContext.Items[_label] = filterContext;
+      if(IsGlobalFilter)
+      {
+        bool skipAuthorization =
+          filterContext.ActionDescriptor.IsDefined(typeof(AuthorizeAttribute), true) ||
+          filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AuthorizeAttribute), true);
+        if(skipAuthorization)
+        {
+          return;
+        }
+      }
       base.OnAuthorization(filterContext);
     }
 

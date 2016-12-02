@@ -71,9 +71,9 @@ namespace Ampl.Identity
     public static bool CheckAccess(ClaimsPrincipal principal, string action, params string[] resources)
     {
       var context = CreateAuthorizationContext(
-          principal,
-          action,
-          resources);
+        principal,
+        action,
+        resources);
 
       return CheckAccess(context);
     }
@@ -179,9 +179,9 @@ namespace Ampl.Identity
       }
 
       return new AuthorizationContext(
-          principal,
-          resourceClaims,
-          actionClaims);
+        principal,
+        resourceClaims,
+        actionClaims);
     }
   }
 }

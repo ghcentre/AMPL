@@ -59,7 +59,7 @@ namespace Ampl.Tests.NullCheckExtensions
     {
       Exception innerException = _model
         .With(m => m.Response).With(r => r.Error).With(e => e.Exception)
-        .If(e => e is Exception)
+        .If(e => e.Message != null)
         .With(e => e.InnerException);
       Assert.IsNotNull(innerException);
     }
