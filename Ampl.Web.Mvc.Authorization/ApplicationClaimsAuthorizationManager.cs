@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Xml;
-using Ampl.Identity.EntityFramework;
+using Ampl.Identity;
 using Ampl.System;
 
 namespace Ampl.Web.Mvc
@@ -142,7 +142,7 @@ namespace Ampl.Web.Mvc
       // then 4 ACL must evaluate to Allow:
       //  (Read,Balance) (Read,Accout) (Write,Balance) (Write,Account)
       //
-      var acls = _db.GetAccessControlLists().OrderBy(acl => acl.Position).ToList();
+      var acls = _authStore.GetAccessControlLists().OrderBy(acl => acl.Position).ToList();
       foreach(var action in context.Action)
       {
         foreach(var resource in context.Resource)
@@ -154,25 +154,25 @@ namespace Ampl.Web.Mvc
       return allowed;
     }
 
-    IAuthorizationDbContext _db;
+    IAuthorizationStore _authStore;
 
     public override void LoadCustomConfiguration(XmlNodeList nodelist)
     {
       foreach(XmlNode node in nodelist)
       {
-        if(node.Name == "applicationDbContext")
+        if(node.Name == "authorizationStore")
         {
           foreach(XmlAttribute attribute in node.Attributes)
           {
             if(attribute.Name == "type")
             {
               Type type = (Type)new TypeNameConverter().ConvertFrom(attribute.Value);
-              _db = (Activator.CreateInstance(type) as IAuthorizationDbContext);
-              if(_db == null)
+              _authStore = (Activator.CreateInstance(type) as IAuthorizationStore);
+              if(_authStore == null)
               {
                 throw new InvalidOperationException(
-                  "ApplicationDbContext provided for ApplicationClaimsAuthorizationManager " +
-                  "does not implement the IAuthorizationDbContext interface.");
+                  "The Authorization Store provided for ApplicationClaimsAuthorizationManager " +
+                  "does not implement the IAuthorizationStore interface.");
               }
               break;
             }
@@ -180,10 +180,10 @@ namespace Ampl.Web.Mvc
           break;
         }
       }
-      if(_db == null)
+      if(_authStore == null)
       {
         throw new InvalidOperationException(
-          "No ApplicationDbContext configured in ApplicationClaimsAuthorizationManager configuration.");
+          "No Authorization Store configured in ApplicationClaimsAuthorizationManager configuration.");
       }
     }
   }

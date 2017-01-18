@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,6 +63,7 @@
     <Compile Include="EnumerableExtensions\InTest.cs" />
     <Compile Include="EnumerableExtensions\JoinWithTest.cs" />
     <Compile Include="EnumerableExtensions\YieldTest.cs" />
+    <Compile Include="EnumExtensions\EnumExtensions_Test.cs" />
     <Compile Include="NullCheckExtensions\NullCheckExtensions_Test.cs" />
     <Compile Include="NullCheckExtensions\Return_Test.cs" />
     <Compile Include="NullCheckExtensions\DoTest.cs" />

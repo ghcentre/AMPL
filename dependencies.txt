@@ -1,22 +1,25 @@
-Ampl.Configuration            -> Ampl.Core
-
 Ampl.Core                     -> (none)
 
-Ampl.Identity                 -> Ampl.Core
-
-Ampl.Identity.EntityFramework -> EntityFramework
-
 Ampl.System                   -> (none)
+
+Ampl.Configuration            -> Ampl.Core
+
+Ampl.Identity                 -> Ampl.Core
 
 Ampl.Web.Mvc                  -> Ampl.Core,
                                  Microsoft.AspNet.Mvc
 
-Ampl.Web.Mvc.Authorization    -> Ampl.Identity,
-                                 Ampl.Identity.EntityFramework,
+Ampl.Web.Mvc.Authorization    -> Ampl.Core
+                                 Ampl.Identity,
                                  Ampl.Web.Mvc
 
 Ampl.Web.Mvc.EditorTemplates  -> Ampl.Core
                                  Ampl.Web.Mvc
 
 Ampl.Web.Optimization         -> Microsoft.AspNet.Web.Optimization
+
+
+(obsolete)
+Ampl.Identity.EntityFramework -> EntityFramework
+
 

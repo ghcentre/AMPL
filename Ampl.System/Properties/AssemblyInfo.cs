@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GHCentre.com")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
-[assembly: AssemblyCopyright("Copyright © 2014-2016 George Harder's Centre.")]
+[assembly: AssemblyCopyright("Copyright © 2014-2017 George Harder's Centre.")]
 [assembly: AssemblyTrademark("AMPL")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.34")]
-[assembly: AssemblyFileVersion("2.1.34")]
+[assembly: AssemblyVersion("2.1.36")]
+[assembly: AssemblyFileVersion("2.1.36")]
 [assembly: NeutralResourcesLanguageAttribute("en")]
