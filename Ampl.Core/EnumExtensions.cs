@@ -24,12 +24,30 @@ namespace Ampl.System
 
     public static string GetDisplayName(this Enum source)
     {
-      return GetFirstDisplayAttribute(source)?.Name;
+      return GetFirstDisplayAttribute(source)?.GetName();
     }
 
     public static string GetDisplayDescription(this Enum source)
     {
-      return GetFirstDisplayAttribute(source)?.Description;
+      return GetFirstDisplayAttribute(source)?.GetDescription();
+    }
+
+    public static T ParseValue<T>(this T enumeration, string source, bool ignoreCase = false)
+      where T : struct, IComparable, IFormattable
+    {
+      return (T)Enum.Parse(typeof(T), source, ignoreCase);
+    }
+
+    public static T? ParseAsNullable<T>(this T enumeration, string source, bool ignoreCase = false)
+      where T : struct, IComparable, IFormattable
+    {
+      T result;
+      bool success = Enum.TryParse<T>(source, ignoreCase, out result);
+      if(!success)
+      {
+        return null;
+      }
+      return result;
     }
   }
 }

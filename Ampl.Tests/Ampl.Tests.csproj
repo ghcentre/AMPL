@@ -63,12 +63,19 @@
     <Compile Include="EnumerableExtensions\InTest.cs" />
     <Compile Include="EnumerableExtensions\JoinWithTest.cs" />
     <Compile Include="EnumerableExtensions\YieldTest.cs" />
-    <Compile Include="EnumExtensions\EnumExtensions_Test.cs" />
+    <Compile Include="EnumExtensions\ParseAsNullable_Test.cs" />
+    <Compile Include="EnumExtensions\Parse_Test.cs" />
+    <Compile Include="EnumExtensions\GetDisplayNameDescription_Test.cs" />
     <Compile Include="NullCheckExtensions\NullCheckExtensions_Test.cs" />
     <Compile Include="NullCheckExtensions\Return_Test.cs" />
     <Compile Include="NullCheckExtensions\DoTest.cs" />
     <Compile Include="NullCheckExtensions\With1_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StringExtensions\Between_Test.cs" />
     <Compile Include="StringExtensions\ToNullableDateTime_Test.cs" />
     <Compile Include="StringExtensions\ToNullableDecimal_Test.cs" />
@@ -95,7 +102,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

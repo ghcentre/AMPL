@@ -6,7 +6,7 @@ using Ampl.System;
 namespace Ampl.Tests.EnumExtensions
 {
   [TestClass]
-  public class EnumExtensions_Test
+  public class GetDisplayNameDescription_Test
   {
     public enum TestEnum
     {
@@ -15,7 +15,11 @@ namespace Ampl.Tests.EnumExtensions
 
       [Display()]
       Two = 2,
-      Three
+
+      Three,
+
+      [Display(ResourceType = typeof(Properties.Resources), Name = "String1", Description = "String2")]
+      Four,
     }
 
     [TestMethod]
@@ -57,5 +61,26 @@ namespace Ampl.Tests.EnumExtensions
 
       Assert.IsNull(displayName);
     }
+
+    [TestMethod]
+    public void DisplayName_AttributeWithResource_ReturnsActualString()
+    {
+      var four = TestEnum.Four;
+
+      string displayName = four.GetDisplayName();
+
+      Assert.AreEqual("String value", displayName);
+    }
+
+    [TestMethod]
+    public void DisplayDescription_AttributeWithResource_ReturnsActualString()
+    {
+      var four = TestEnum.Four;
+
+      string displayDescription = four.GetDisplayDescription();
+
+      Assert.AreEqual("String2 value", displayDescription);
+    }
+
   }
 }
