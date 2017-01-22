@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Identity", "Ampl.Ident
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.Authorization", "Ampl.Web.Mvc.Authorization\Ampl.Web.Mvc.Authorization.csproj", "{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Identity.EntityFramework", "Ampl.Identity.EntityFramework\Ampl.Identity.EntityFramework.csproj", "{982E21F0-6618-4C5B-92E8-B5045889207E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration", "Ampl.Configuration\Ampl.Configuration.csproj", "{2950E026-D26D-4300-84FE-F35CA801CD51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.EntityFramework", "Ampl.Configuration.Tests.EntityFramework\Ampl.Configuration.Tests.EntityFramework.csproj", "{17645A61-4BC8-486E-AD48-8416551AA241}"
@@ -63,10 +61,6 @@ Global
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{982E21F0-6618-4C5B-92E8-B5045889207E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{982E21F0-6618-4C5B-92E8-B5045889207E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{982E21F0-6618-4C5B-92E8-B5045889207E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{982E21F0-6618-4C5B-92E8-B5045889207E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2950E026-D26D-4300-84FE-F35CA801CD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2950E026-D26D-4300-84FE-F35CA801CD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2950E026-D26D-4300-84FE-F35CA801CD51}.Release|Any CPU.ActiveCfg = Release|Any CPU

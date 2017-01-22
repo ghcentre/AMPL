@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Linq;
 
 namespace Ampl.System
 {
@@ -416,6 +418,34 @@ namespace Ampl.System
     {
       DateTime result;
       return DateTime.TryParse(source, out result) ? (DateTime?)result : null;
+    }
+
+    //
+    // http://stackoverflow.com/a/15111719
+    //
+    private static IEnumerable<string> GraphemeClusters(string s)
+    {
+      var enumerator = StringInfo.GetTextElementEnumerator(s);
+      while(enumerator.MoveNext())
+      {
+        yield return (string)enumerator.Current;
+      }
+    }
+
+    /// <summary>
+    /// Returns a copy of the source string with characters reversed.
+    /// </summary>
+    /// <param name="source">The source string.</param>
+    /// <returns>The copy of the <paramref name="source"/> with characters reversed.</returns>
+    /// <remarks>Unicode surrogate pairs are processed correctly.</remarks>
+    public static string Reverse(this string source)
+    {
+      if(string.IsNullOrEmpty(source))
+      {
+        return source;
+      }
+
+      return GraphemeClusters(source).Reverse().JoinWith(string.Empty);
     }
   }
 }

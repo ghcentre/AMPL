@@ -273,7 +273,7 @@ namespace Ampl.Configuration.Tests.EntityFramework
     {
       Assert.AreEqual(_testString, _cfg.Get<string>("SomeNestedConfig.TestingString"));
       Assert.AreEqual(null, _cfg.Get<string>("SomeNestedConfig.TestingString", false));
-      Dictionary<string, object> dic;
+      //Dictionary<string, object> dic;
     }
 
     [TestMethod]
