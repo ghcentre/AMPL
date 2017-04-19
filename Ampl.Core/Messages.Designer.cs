@@ -62,6 +62,15 @@ namespace Ampl.System {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input string was not in a correct format..
+        /// </summary>
+        internal static string InputStringWasNotInACorrectFormat {
+            get {
+                return ResourceManager.GetString("InputStringWasNotInACorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value cannot be an empty string..
         /// </summary>
         internal static string ValueCannotBeAnEmptyString {

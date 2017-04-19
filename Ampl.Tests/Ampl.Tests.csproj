@@ -76,6 +76,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ShortGuid\ShortGuid_Test.cs" />
     <Compile Include="StringExtensions\RemoveHtmlTags_Test.cs" />
     <Compile Include="StringExtensions\RemoveBetween_Test.cs" />
     <Compile Include="StringExtensions\Reverse_Test.cs" />
