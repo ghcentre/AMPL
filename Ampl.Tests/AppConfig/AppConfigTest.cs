@@ -9,7 +9,7 @@ namespace Ampl.Tests.AppConfig
   [TestClass]
   public class AppConfigTest
   {
-    class Repository : Ampl.Configuration.IAppConfigRepository
+    class Repository : Ampl.Configuration.IAppConfigStore
     {
       public IAppConfigTransaction BeginAppConfigTransaction()
       {

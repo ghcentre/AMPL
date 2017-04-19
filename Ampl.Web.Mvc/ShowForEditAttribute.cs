@@ -9,11 +9,11 @@ namespace Ampl.Web.Mvc
 {
   /// <summary>
   /// Provides an attribute which, applied to the property of the model,
-  /// controls whether this property is visible in read-only views.
+  /// controls whether this property is visible in read-write views.
   /// </summary>
   /// <example>
   /// <para>In the following example, the <c>FileContents</c> property
-  /// is visible in read-write (edit) views only.</para>
+  /// is visible in read-only (edit) views only.</para>
   /// <code>
   ///   public class SampleViewModel
   ///   {
@@ -21,25 +21,25 @@ namespace Ampl.Web.Mvc
   ///     
   ///     [Display(Name = "UploadNewFile")]
   ///     [DataType(DataType.Upload)]
-  ///     [ShowForDisplay(false)]
+  ///     [ShowForEdit(false)]
   ///     public HttpPostedFileBase FileContents { get; set; }
   ///   }
   /// </code>
   /// </example>
   [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-  public sealed class ShowForDisplayAttribute : Attribute, IMetadataAware
+  public sealed class ShowForEditAttribute : Attribute, IMetadataAware
   {
-    private bool _showForDisplay;
+    private bool _showForEdit;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ShowForDisplayAttribute"/> class.
     /// </summary>
-    /// <param name="showForDisplay"><see langword="true" /> to display the property
-    /// this attrubute is applies to, in read-only views,
-    /// or <see langword="false"/> to hide the property in read-only views.</param>
-    public ShowForDisplayAttribute(bool showForDisplay)
+    /// <param name="showForEdit"><see langword="true" /> to display the property
+    /// this attrubute is applies to, in read-write views,
+    /// or <see langword="false"/> to hide the property in read-write views.</param>
+    public ShowForEditAttribute(bool showForEdit)
     {
-      _showForDisplay = showForDisplay;
+      _showForEdit = showForEdit;
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace Ampl.Web.Mvc
     /// <param name="metadata">The model metadata.</param>
     public void OnMetadataCreated(ModelMetadata metadata)
     {
-      metadata.ShowForDisplay = _showForDisplay;
+      metadata.ShowForEdit = _showForEdit;
     }
   }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ampl.Configuration
 {
-  public interface IAppConfigRepository
+  public interface IAppConfigStore
   {
     IAppConfigEntity GetAppConfigEntity(string key);
 

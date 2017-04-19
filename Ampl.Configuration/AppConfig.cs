@@ -11,11 +11,11 @@ namespace Ampl.Configuration
 {
   public class AppConfig
   {
-    private IAppConfigRepository _repository;
+    private IAppConfigStore _store;
 
-    public AppConfig(IAppConfigRepository repository, IAppConfigConfiguration configuration = null)
+    public AppConfig(IAppConfigStore store, IAppConfigConfiguration configuration = null)
     {
-      _repository = Check.NotNull(repository, nameof(repository));
+      _store = Check.NotNull(store, nameof(store));
 
       if(configuration != null)
       {
@@ -33,7 +33,7 @@ namespace Ampl.Configuration
 
     private IAppConfigEntity GetEntityUsingResolvers(string key, bool useResolvers)
     {
-      IAppConfigEntity entity = _repository.GetAppConfigEntity(key);
+      IAppConfigEntity entity = _store.GetAppConfigEntity(key);
       if(useResolvers)
       {
         while(entity?.Value == null)
@@ -43,7 +43,7 @@ namespace Ampl.Configuration
           {
             break;
           }
-          entity = _repository.GetAppConfigEntity(key);
+          entity = _store.GetAppConfigEntity(key);
         }
       }
       return entity;
@@ -56,7 +56,7 @@ namespace Ampl.Configuration
         throw new InvalidOperationException();
       }
 
-      var entities = _repository.GetAppConfigEntities(key + keyOperator).ToList();
+      var entities = _store.GetAppConfigEntities(key + keyOperator).ToList();
       if(!useResolvers)
       {
         return entities;
@@ -70,7 +70,7 @@ namespace Ampl.Configuration
         {
           break;
         }
-        entities = _repository.GetAppConfigEntities(key + keyOperator).ToList();
+        entities = _store.GetAppConfigEntities(key + keyOperator).ToList();
       }
       var newEntities = entities
         .Select(x => new InternalAppConfigEntity() {
@@ -311,25 +311,25 @@ namespace Ampl.Configuration
 
     private void SetEntity(string key, string value)
     {
-      var entity = _repository.CreateAppConfigEntity();
+      var entity = _store.CreateAppConfigEntity();
       entity.Key = key;
       entity.Value = value;
-      _repository.SetAppConfigEntity(entity);
+      _store.SetAppConfigEntity(entity);
     }
 
     private void SetNullEntity(string key)
     {
       foreach(var oldEntity in GetEntitiesUsingResolvers(key, ".", false))
       {
-        _repository.DeleteAppConfigEntity(oldEntity);
+        _store.DeleteAppConfigEntity(oldEntity);
       }
 
       foreach(var oldEntity in GetEntitiesUsingResolvers(key, "[", false))
       {
-        _repository.DeleteAppConfigEntity(oldEntity);
+        _store.DeleteAppConfigEntity(oldEntity);
       }
 
-      _repository.SaveAppConfigChanges();
+      _store.SaveAppConfigChanges();
       SetEntity(key, null);
     }
 
@@ -361,9 +361,9 @@ namespace Ampl.Configuration
         //
         foreach(var oldEntity in GetEntitiesUsingResolvers(key, "[", false))
         {
-          _repository.DeleteAppConfigEntity(oldEntity);
+          _store.DeleteAppConfigEntity(oldEntity);
         }
-        _repository.SaveAppConfigChanges();
+        _store.SaveAppConfigChanges();
 
 
         if(value != null)
@@ -398,9 +398,9 @@ namespace Ampl.Configuration
         //
         foreach(var oldEntity in GetEntitiesUsingResolvers(key, "[", false))
         {
-          _repository.DeleteAppConfigEntity(oldEntity);
+          _store.DeleteAppConfigEntity(oldEntity);
         }
-        _repository.SaveAppConfigChanges();
+        _store.SaveAppConfigChanges();
 
         if(value != null)
         {
@@ -431,9 +431,9 @@ namespace Ampl.Configuration
       //
       foreach(var oldEntity in GetEntitiesUsingResolvers(key, ".", false))
       {
-        _repository.DeleteAppConfigEntity(oldEntity);
+        _store.DeleteAppConfigEntity(oldEntity);
       }
-      _repository.SaveAppConfigChanges();
+      _store.SaveAppConfigChanges();
 
       if(value != null)
       {
@@ -451,12 +451,12 @@ namespace Ampl.Configuration
       Check.NotNull(key, nameof(key));
       var sourceType = typeof(T);
 
-      using(var transaction = _repository.BeginAppConfigTransaction())
+      using(var transaction = _store.BeginAppConfigTransaction())
       {
         try
         {
           InternalSet(sourceType, key, value);
-          _repository.SaveAppConfigChanges();
+          _store.SaveAppConfigChanges();
           transaction.Commit();
         }
         catch

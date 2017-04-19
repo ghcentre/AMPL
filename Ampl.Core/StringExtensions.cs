@@ -191,6 +191,75 @@ namespace Ampl.System
     }
 
     /// <summary>
+    /// TODO: RemoveBetween
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="start"></param>
+    /// <param name="end"></param>
+    /// <param name="comparison"></param>
+    /// <returns></returns>
+    public static string RemoveBetween(
+      this string source,
+      string start,
+      string end,
+      StringComparison comparison = StringComparison.CurrentCulture)
+    {
+      while(true)
+      {
+        if(string.IsNullOrEmpty(source))
+        {
+          return source;
+        }
+
+        start = start ?? string.Empty;
+        end = end ?? string.Empty;
+        if(start == string.Empty && end == string.Empty)
+        {
+          return source;
+        }
+
+        int startPos = source.IndexOf(start, comparison);
+        if(startPos == -1)
+        {
+          return source;
+        }
+
+        int endPos = string.IsNullOrEmpty(end) ? source.Length : source.IndexOf(end, startPos, comparison);
+        if(endPos == -1)
+        {
+          return source;
+        }
+        source = source.Remove(startPos, endPos + end.Length - startPos);
+      }
+    }
+
+    public static string RemoveHtmlTags(this string source)
+    {
+      if(string.IsNullOrEmpty(source))
+      {
+        return source;
+      }
+      source = source.RemoveBetween("<!--", "-->");
+      source = source.Replace("<", " <");
+      source = source.RemoveBetween("<", ">");
+      source = source.Replace("\n", " ");
+      source = source.Replace("\r", string.Empty);
+      while(source.Contains("  "))
+      {
+        source = source.Replace("  ", " ");
+      }
+      if(source.StartsWith(" "))
+      {
+        source = source.Substring(1);
+      }
+      if(source.EndsWith(" "))
+      {
+        source = source.Substring(0, source.Length - 1);
+      }
+      return source;
+    }
+
+    /// <summary>
     /// Converts <see langword="null" />, empty or whitespace string to <see langword="null" /> leaving other strings as is. 
     /// </summary>
     /// <param name="source">The string to test and convert.</param>

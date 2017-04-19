@@ -8,7 +8,7 @@ using Ampl.System;
 
 namespace Ampl.Configuration.Tests.EntityFramework
 {
-  public class AmplTestContext : DbContext, IAppConfigRepository, IAppConfigConfiguration
+  public class AmplTestContext : DbContext, IAppConfigStore, IAppConfigConfiguration
   {
     public AmplTestContext() : base("AmplTest")
     {

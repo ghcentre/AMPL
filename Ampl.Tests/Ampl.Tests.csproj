@@ -76,6 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="StringExtensions\RemoveHtmlTags_Test.cs" />
+    <Compile Include="StringExtensions\RemoveBetween_Test.cs" />
     <Compile Include="StringExtensions\Reverse_Test.cs" />
     <Compile Include="StringExtensions\Between_Test.cs" />
     <Compile Include="StringExtensions\ToNullableDateTime_Test.cs" />
