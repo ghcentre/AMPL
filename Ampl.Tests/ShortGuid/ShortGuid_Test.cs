@@ -50,6 +50,15 @@ namespace Ampl.Tests.ShortGuid_Tests
     }
 
     [TestMethod]
+    [ExpectedException(typeof(FormatException))]
+    public void Parse_InvalidChars_Throws()
+    {
+      string argument = "!@#$%67890123456789012";
+
+      ShortGuid result = ShortGuid.Parse(argument);
+    }
+
+    [TestMethod]
     public void ToString_Parse_Equals()
     {
       var guid = Guid.NewGuid();
