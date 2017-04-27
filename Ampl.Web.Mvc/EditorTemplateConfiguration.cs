@@ -18,7 +18,7 @@ namespace Ampl.Web.Mvc
     public static EditorTemplateConfiguration DefaultConfiguration { get; set; } = new EditorTemplateConfiguration();
 
     /// <summary>
-    /// <see langword="true" /> to render null properties, or <see langword="false" /> otherwise.s
+    /// <see langword="true" /> to render null properties, or <see langword="false" /> otherwise.
     /// </summary>
     public bool RenderNullProperties { get; set; } = (DefaultConfiguration?.RenderNullProperties ?? true);
 

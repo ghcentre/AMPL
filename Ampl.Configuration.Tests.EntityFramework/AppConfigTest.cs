@@ -100,8 +100,14 @@ namespace Ampl.Configuration.Tests.EntityFramework
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Ports[0]", Value = "6667" });
       _db.AppConfigItems.Add(new AppConfigItem() { Key = "ObjectDictionary[Croft].Ports[1]", Value = "7000" });
 
+      //_db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClassWithDefaults.StringPropertyWithDefault", Value = "Database String Property 1" });
+      //_db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClassWithDefaults.StringPropertyWithoutDefault", Value = "Database String Property 2" });
+      //_db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClassWithDefaults.IntegerPropertyWithDefault", Value = "10" });
+      //_db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClassWithDefaults.IntegerPropertyWithoutDefault", Value = "20" });
 
-      _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
+      //_db.AppConfigItems.Add(new AppConfigItem() { Key = "TestClassWithDefaultsWithMissingProperties.SomeProperty", Value = "20" });
+
+    _db.AppConfigKeyResolvers.Add(new AppConfigKeyResolver() {
         FromKey = "SomeNestedConfig.TestingString",
         ToKey = "TestingString"
       });
@@ -288,6 +294,28 @@ namespace Ampl.Configuration.Tests.EntityFramework
       Assert.AreEqual(_testInt, _cfg.Get<int>("ThreeConfig.Value"));
     }
 
+    //[TestMethod]
+    //public void Get_ObjectExisting_WithConstructorDefaults()
+    //{
+    //  var result = _cfg.Get<TestClassWithDefaults>("TestClassWithDefaults");
+
+    //  Assert.AreEqual("Database String Property 1", result.StringPropertyWithDefault);
+    //  Assert.AreEqual("Database String Property 2", result.StringPropertyWithoutDefault);
+    //  Assert.AreEqual(10, result.IntegerPropertyWithDefault);
+    //  Assert.AreEqual(20, result.IntegerPropertyWithoutDefault);
+    //}
+
+    //[TestMethod]
+    //public void Get_ObjectNotExisting_WithConstructorDefaults()
+    //{
+    //  var result = _cfg.Get<TestClassWithDefaults>("TestClassWithDefaultsWithMissingProperties");
+
+    //  Assert.AreEqual("Database String Property 1", result.StringPropertyWithDefault);
+    //  Assert.AreEqual("Database String Property 2", result.StringPropertyWithoutDefault);
+    //  Assert.AreEqual(10, result.IntegerPropertyWithDefault);
+    //  Assert.AreEqual(20, result.IntegerPropertyWithoutDefault);
+    //}
+
     [TestMethod]
     public void Get_List_String()
     {
@@ -351,6 +379,15 @@ namespace Ampl.Configuration.Tests.EntityFramework
       public int Port;
 
       public Dictionary<string, int> Ports { get; set; }
+    }
+
+    public class TestClassWithDefaults
+    {
+      public string StringPropertyWithDefault { get; set; } = "Default for StringProperty";
+      public string StringPropertyWithoutDefault { get; set; }
+
+      public int IntegerPropertyWithDefault { get; set; } = 5;
+      public int IntegerPropertyWithoutDefault { get; set; }
     }
 
 
@@ -431,8 +468,6 @@ namespace Ampl.Configuration.Tests.EntityFramework
       Assert.AreEqual(2, obj["Croft"].Ports.Count);
       Assert.IsFalse(obj.ContainsKey("NonExistentKey"));
     }
-
-
 
     [TestMethod]
     public void Get_Class_FromCollection_ByIndex()

@@ -25,7 +25,8 @@ namespace Ampl.Web.Mvc
     /// <param name="heading">The alert heading. Default is no heading.</param>
     /// <param name="dismissible"><see langword="true" /> to make alert dismissible. The default
     /// is <see langword="false" /></param>
-    public static void AddAlert(this ControllerBase controllerBase,
+    public static void AddAlert(
+      this ControllerBase controllerBase,
       string text,
       AlertContextualClass alertContextualClass = AlertContextualClass.Success,
       string heading = null,

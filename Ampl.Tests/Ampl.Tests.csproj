@@ -88,6 +88,7 @@
     <Compile Include="StringExtensions\ToInt_Test.cs" />
     <Compile Include="StringExtensions\NullIfWhitespace_Test.cs" />
     <Compile Include="EmptyStringTest.cs" />
+    <Compile Include="TypeExtensions\TypeExtensions_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ampl.Configuration\Ampl.Configuration.csproj">
@@ -112,6 +113,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
