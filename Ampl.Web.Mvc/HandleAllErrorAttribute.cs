@@ -62,7 +62,7 @@ namespace Ampl.Web.Mvc
       HandleErrorInfo model = new HandleErrorInfo(filterContext.Exception,
         controllerName, actionName);
 
-      filterContext.Result = new ViewResult {
+      filterContext.Result = new ViewResult() {
         ViewName = View,
         MasterName = Master,
         ViewData = new ViewDataDictionary<HandleErrorInfo>(model),
