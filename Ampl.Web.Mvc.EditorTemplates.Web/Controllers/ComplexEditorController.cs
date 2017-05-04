@@ -53,6 +53,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
 
     public ActionResult DropDownListEditor(bool createModel)
     {
+      //global::System.Threading.Thread.CurrentThread.CurrentUICulture = new global::System.Globalization.CultureInfo("ru-RU");
       return HandleGetAction(createModel, () => new DropDownListEditorViewModel());
     }
 

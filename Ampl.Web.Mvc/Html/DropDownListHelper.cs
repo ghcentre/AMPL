@@ -62,7 +62,7 @@ namespace Ampl.Web.Mvc.Html
           var getMethodInfo = propertyInfo.GetGetMethod();
           if(getMethodInfo != null)
           {
-            if(getMethodInfo.IsStatic && container == null)
+            if(!getMethodInfo.IsStatic && container == null)
             {
               return Enumerable.Empty<SelectListItem>();
             }
@@ -73,12 +73,13 @@ namespace Ampl.Web.Mvc.Html
 
       var itemList = (items == null) ? new List<SelectListItem>() : items.ToList();
 
-      bool hasDefault = !htmlHelper.ViewData.ModelMetadata.IsRequired;
+      bool hasDefault = !htmlHelper.ViewData.ModelMetadata.IsRequired ||
+                        container == null;
       if(hasDefault)
       {
         itemList.Insert(0, new SelectListItem() {
           Value = string.Empty,
-          Text = "(значение не присвоено)"
+          Text = htmlHelper.ViewData.ModelMetadata.NullDisplayText ?? Messages.DropDownListDefaultNullDisplayText
         });
       }
 

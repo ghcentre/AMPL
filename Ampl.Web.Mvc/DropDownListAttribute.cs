@@ -72,10 +72,6 @@ namespace Ampl.Web.Mvc
       {
         metadata.TemplateHint = "DropDownList";
       }
-      if(string.IsNullOrEmpty(metadata.NullDisplayText))
-      {
-        metadata.NullDisplayText = "(значение не присвоено)";
-      }
     }
   }
 }
