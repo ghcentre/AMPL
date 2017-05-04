@@ -1,0 +1,31 @@
+﻿@{
+  ViewBag.Title = "EditorForModel";
+  ViewBag.SubTitle = "for complex types";
+}
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Numerics</h2>
+    <p>
+      <code>EditorForModel()</code> for model containing the following types:
+      <code>short, ushort, int, uint, long, ulong</code> and its nullable equivalents.
+    </p>
+    <p>
+      @Html.ActionLink("Null model", "NumericEditor", null, new { createModel = false }, new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model", "NumericEditor", null, new { createModel = true }, new { @class = "btn btn-default" })
+    </p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Drop Down List</h2>
+    <p><code>EditorForModel()</code> with drop down list</p>
+    <p>
+      @Html.ActionLink("Null model", "DropDownListEditor", null, new { createModel = false }, new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model", "DropDownListEditor", null, new { createModel = true }, new { @class = "btn btn-default" })
+    </p>
+  </div>
+</div>
+
+

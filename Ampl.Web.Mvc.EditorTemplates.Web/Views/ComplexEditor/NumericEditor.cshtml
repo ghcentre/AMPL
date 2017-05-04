@@ -1,0 +1,24 @@
+﻿@model NumericEditorViewModel
+@{
+  ViewBag.Title = "EditorForModel";
+  ViewBag.SubTitle = "for complex type containing Ints";
+}
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+
+@using(Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+  @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+  @Html.AntiForgeryToken()
+  @Html.EditorForModel()
+  <div class="form-group">
+    <div class="@EditorTemplateConfiguration.DefaultConfiguration.EditorOffsetClass
+                @EditorTemplateConfiguration.DefaultConfiguration.EditorClass">
+      <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+  </div>
+}
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,19 @@
+a.__color-inherit,
+.__a-color-inherit a
+{
+  color: inherit;
+}
+
+a.__color-inherit:hover,
+a.__color-inherit:focus,
+.__a-color-inherit a:hover,
+.__a-color-inherit a:focus
+{
+  color: inherit;
+}
+
+a.__no-underline:hover,
+.__a-no-underline a:hover
+{
+  text-decoration: none;
+}

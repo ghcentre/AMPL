@@ -1,7 +1,9 @@
 ﻿@{
-    ViewBag.Title = "About";
+  ViewBag.Title = "About";
+  ViewBag.SubTitle = "the application";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+@section LeadText { @ViewBag.Message }
 
 <p>Use this area to provide additional information.</p>

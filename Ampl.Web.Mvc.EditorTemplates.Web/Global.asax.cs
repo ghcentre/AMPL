@@ -8,7 +8,7 @@ using System.Web.Routing;
 
 namespace Ampl.Web.Mvc.EditorTemplates.Web
 {
-  public class MvcApplication : System.Web.HttpApplication
+  public class MvcApplication : global::System.Web.HttpApplication
   {
     protected void Application_Start()
     {

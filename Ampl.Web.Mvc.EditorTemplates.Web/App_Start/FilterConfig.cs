@@ -7,7 +7,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web
   {
     public static void RegisterGlobalFilters(GlobalFilterCollection filters)
     {
-      filters.Add(new HandleErrorAttribute());
+      filters.Add(new HandleAllErrorAttribute());
     }
   }
 }

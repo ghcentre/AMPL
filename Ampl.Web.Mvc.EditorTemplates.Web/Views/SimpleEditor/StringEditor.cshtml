@@ -1,0 +1,20 @@
+﻿@model string
+@{
+  ViewBag.Title = "EditorForModel";
+  ViewBag.Title = "for string";
+}
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+
+@using(Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal " }))
+{
+  @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+  @Html.AntiForgeryToken()
+  @Html.EditorForModel("", "ss")
+  <div class="form-group">
+    <div class="@EditorTemplateConfiguration.DefaultConfiguration.EditorOffsetClass @EditorTemplateConfiguration.DefaultConfiguration.EditorClass">
+      <input class="btn btn-primary" type="submit" value="Submit" />
+    </div>
+  </div>
+}
+         
