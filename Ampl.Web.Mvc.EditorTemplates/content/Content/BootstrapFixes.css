@@ -1,0 +1,43 @@
+﻿/*
+ * AMPL Bootstrap 3.x Fixes
+ */
+
+/*
+ * Eliminate 2px gap between button group at left of input in an input group
+ */
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group
+{
+  margin-right: -2px;
+}
+
+/*
+ * Hide Html.ValidationMessageFor() and Html.ValidationSummary() for valid model states.
+ */
+.field-validation-valid
+{
+  display: none;
+}
+
+.validation-summary-valid
+{
+  display: none;
+}
+
+/*
+ * Widen DefinitionTerm for Bootstrap DLs.
+ */
+@media (min-width: 768px)
+{
+  .dl-horizontal dt
+  {
+    width: 220px;
+  }
+
+  .dl-horizontal dd
+  {
+    margin-left: 240px;
+  }
+}
+
+

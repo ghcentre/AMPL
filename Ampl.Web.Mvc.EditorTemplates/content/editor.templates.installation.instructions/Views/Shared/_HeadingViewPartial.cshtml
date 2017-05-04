@@ -1,0 +1,27 @@
+﻿@using Ampl.System;
+@{
+  bool isHeadingDefined = ViewData["IsHeadingDefined"]?.ToString() == bool.TrueString;
+  bool isSubHeadingDefined = ViewData["IsSubHeadingDefined"]?.ToString() == bool.TrueString;
+  bool isLeadTextDefined = ViewData["IsLeadTextDefined"]?.ToString() == bool.TrueString;
+}
+@if(isHeadingDefined || isLeadTextDefined)
+{
+  <div class="row">
+    <div class="col-xs-12 page-header">
+      @if(isHeadingDefined)
+      {
+        <h1>
+          @((ViewData["HeadingRenderer"] as Func<HelperResult>)?.Invoke())
+          @if(isSubHeadingDefined)
+          {
+            <small>@((ViewData["SubHeadingRenderer"] as Func<HelperResult>)?.Invoke())</small>
+          }
+        </h1>
+      }
+      @if(isLeadTextDefined)
+      {
+        <div class="lead">@((ViewData["LeadTextRenderer"] as Func<HelperResult>)?.Invoke())</div>
+      }
+    </div>
+  </div>
+}

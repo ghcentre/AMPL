@@ -1,0 +1,8 @@
+﻿Layout Sections:
+
+ViewBag.Heading
+ViewBag.SubHeading
+
+LeadText
+
+Scripts

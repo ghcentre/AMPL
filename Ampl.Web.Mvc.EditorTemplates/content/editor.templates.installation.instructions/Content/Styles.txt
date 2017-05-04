@@ -1,0 +1,17 @@
+﻿BootstrapFixes.css      various changes and enhancements for Bootstrap 3.x
+Classes.css             additional useful classes
+Margins.css             classes that specify top and bottom margins
+Paddings.css            classes that specify top and bottom paddings
+
+
+Specify these style sheets in ~/App_Start/BundleConfig.cs:
+
+      bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/Fonts.css",
+                "~/Content/bootstrap.css",
+                "~/Content/BootstrapFixes.css",
+                "~/Content/site.css",
+                "~/Content/Classes.css",
+                "~/Content/Margins.css",
+                "~/Content/Paddings.css"
+                ).ForceOrder());

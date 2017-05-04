@@ -1,0 +1,13 @@
+﻿The source files are sorted by name when added to ScriptBundle
+or StyleBundle.
+
+This can cause problems (e.g. jQuery must be included before scripts which ise it
+or CSS @import directive must be first in CSS file).
+
+Add the .ForceOrder() call to the ScriptBundle or StyleBundle
+to force the order of source files in the minified file:
+
+      bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                  "~/Scripts/jquery-{version}.js").ForceOrder());
+
+

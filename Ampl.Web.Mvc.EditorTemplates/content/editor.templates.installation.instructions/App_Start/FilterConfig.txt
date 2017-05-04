@@ -1,0 +1,6 @@
+﻿Add the HandleAllErrorAttribute instead of the HandleErrorAttribute:
+
+public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+{
+  filters.Add(new HandleAllErrorAttribute());
+}

@@ -80,18 +80,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="content\editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml" />
+    <None Include="content\editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
+    <None Include="content\editor.templates.installation.instructions\Web.config" />
     <None Include="content\Views\Shared\DisplayTemplates\DropDownList.cshtml" />
     <None Include="content\Views\Shared\DisplayTemplates\Object.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Byte.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Color.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\DropDownList.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\Int32.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Object.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\String.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\_NumberPartial.cshtml" />
     <None Include="content\Views\Shared\_AlertViewPartial.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="content\Content\BootstrapClasses.css" />
+    <Content Include="content\Content\BootstrapFixes.css" />
+    <Content Include="content\Content\Margins.css" />
+    <Content Include="content\Content\Paddings.css" />
+    <Content Include="content\editor.templates.installation.instructions\App_Start\BundleConfig.txt" />
+    <Content Include="content\editor.templates.installation.instructions\App_Start\FilterConfig.txt" />
+    <Content Include="content\editor.templates.installation.instructions\Content\BootstrapFixes.txt" />
+    <Content Include="content\editor.templates.installation.instructions\Scripts\ampl.bootstrap.jquery.validate.txt" />
+    <Content Include="content\editor.templates.installation.instructions\Views\Shared\_Layout.Sections.txt" />
+    <Content Include="content\Scripts\ampl.bootstrap.jquery.validate.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
