@@ -26,12 +26,6 @@ namespace Ampl.Web.Mvc.Html
     {
       Check.NotNull(htmlHelper, nameof(htmlHelper));
 
-      var container = htmlHelper.ViewData.ModelMetadata.Container;
-      if(container == null)
-      {
-        return Enumerable.Empty<SelectListItem>();
-      }
-
       var containerType = htmlHelper.ViewData.ModelMetadata.ContainerType;
       var dropDownListAttribute = (DropDownListAttribute)containerType
         .GetProperty(htmlHelper.ViewData.ModelMetadata.PropertyName)
@@ -48,10 +42,16 @@ namespace Ampl.Web.Mvc.Html
         return Enumerable.Empty<SelectListItem>();
       }
 
+      var container = htmlHelper.ViewData.ModelMetadata.Container;
       IEnumerable<SelectListItem> items = null;
+
       var methodInfo = containerType.GetMethod(methodOrPropertyName);
       if(methodInfo != null)
       {
+        if(!methodInfo.IsStatic && container == null)
+        {
+          return Enumerable.Empty<SelectListItem>();
+        }
         items = (IEnumerable<SelectListItem>)methodInfo.Invoke(container, new object[] { });
       }
       else
@@ -59,7 +59,15 @@ namespace Ampl.Web.Mvc.Html
         var propertyInfo = containerType.GetProperty(methodOrPropertyName);
         if(propertyInfo != null)
         {
-          items = (IEnumerable<SelectListItem>)propertyInfo.GetValue(container);
+          var getMethodInfo = propertyInfo.GetGetMethod();
+          if(getMethodInfo != null)
+          {
+            if(getMethodInfo.IsStatic && container == null)
+            {
+              return Enumerable.Empty<SelectListItem>();
+            }
+            items = (IEnumerable<SelectListItem>)propertyInfo.GetValue(container);
+          }
         }
       }
 
