@@ -11,7 +11,7 @@ namespace Ampl.Web.Mvc.Html
   /// <summary>
   /// Provides a set of <see langword="static" /> methods for the drop down list.
   /// </summary>
-  public static class DropDownListHelpers
+  public static class HtmlHelperDropDownListExtensions
   {
     /// <summary>
     /// Gets the sequence of <see cref="SelectListItem"/> for the drop down list.
