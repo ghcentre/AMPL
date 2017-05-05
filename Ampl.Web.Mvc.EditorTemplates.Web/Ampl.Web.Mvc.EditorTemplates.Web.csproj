@@ -51,10 +51,6 @@
       <HintPath>..\packages\Ampl.Core.2.1.41\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.1.43.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.1.43\lib\net45\Ampl.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.1.38.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
       <HintPath>..\packages\Ampl.Web.Optimization.2.1.38\lib\net45\Ampl.Web.Optimization.dll</HintPath>
       <Private>True</Private>
@@ -236,6 +232,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ampl.Web.Mvc\Ampl.Web.Mvc.csproj">
+      <Project>{72dbfd44-295f-4252-afe4-2d3793755aa4}</Project>
+      <Name>Ampl.Web.Mvc</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

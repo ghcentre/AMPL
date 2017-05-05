@@ -9,7 +9,15 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
   public class EditableCollectionEditorViewModel : CollectionEditorViewModel
   {
     [Display(Order = 20000)]
-    [UIHint("EditableCollection")]
+    [EditableCollection(ItemFactory = "NewBranch")]
     public IEnumerable<BranchInfo> Branches { get; set; }
+
+    public static BranchInfo NewBranch()
+    {
+      return new BranchInfo() {
+        CountryCode = "RU",
+        CountryName = "Роисся"
+      };
+    }
   }
 }
