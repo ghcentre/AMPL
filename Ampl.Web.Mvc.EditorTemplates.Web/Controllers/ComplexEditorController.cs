@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Ampl.Web.Mvc.EditorTemplates.Web.Models;
@@ -17,14 +19,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
 
     private ActionResult HandleGetAction<T>(bool createModel, Func<T> modelFactory)
     {
-      if(createModel)
-      {
-        return View(modelFactory());
-      }
-      else
-      {
-        return View();
-      }
+      return createModel ? View(modelFactory()) : View();
     }
 
     private ActionResult HandlePostAction<T>(T model)
@@ -64,5 +59,56 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
       return HandlePostAction(model);
     }
 
+    private IEnumerable<CollectionEditorViewModel.BranchInfo> GetBranches()
+    {
+      var wc = new WebClient() { Encoding = Encoding.UTF8 };
+      return wc.DownloadString("https://www.artlebedev.ru/tools/country-list/tab/")
+                .Replace("\r", string.Empty)
+                .Split('\n')
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Split('\t'))
+                .Where(x => x.Length >= 8 && x[7] == "Западная Европа")
+                .Select(x => new CollectionEditorViewModel.BranchInfo() {
+                  CountryName = x[2],
+                  CountryCode = x[3],
+                  NumberOfEmployees = null
+                });
+    }
+
+    public ActionResult FixedCollectionEditor(bool createModel)
+    {
+      return HandleGetAction(
+        createModel,
+        () => new FixedCollectionEditorViewModel() {
+                    Branches = GetBranches(),
+                    Ints = new int[5],
+                    NullableInts = new int?[5],
+                    NullablesRequired = Enumerable.Range(0, 3)
+                                          .Select(x => new FixedCollectionEditorViewModel.NullableRequired())
+                  });
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult FixedCollectionEditor(FixedCollectionEditorViewModel model)
+    {
+      return HandlePostAction(model);
+    }
+
+    public ActionResult EditableCollectionEditor(bool createModel, bool generateInitialCollection = false)
+    {
+      return HandleGetAction(
+        createModel,
+        () => new EditableCollectionEditorViewModel() { Branches = generateInitialCollection ? GetBranches() : null }
+      );
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult EditableCollectionEditor(EditableCollectionEditorViewModel model)
+    {
+      return HandlePostAction(model);
+    }
   }
 }

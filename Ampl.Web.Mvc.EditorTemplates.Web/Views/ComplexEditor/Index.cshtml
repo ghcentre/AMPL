@@ -13,8 +13,16 @@
       <code>short, ushort, int, uint, long, ulong</code> and its nullable equivalents.
     </p>
     <p>
-      @Html.ActionLink("Null model", "NumericEditor", null, new { createModel = false }, new { @class = "btn btn-default" })
-      @Html.ActionLink("Non-Null model", "NumericEditor", null, new { createModel = true }, new { @class = "btn btn-default" })
+      @Html.ActionLink("Null model",
+                       "NumericEditor",
+                       null,
+                       new { createModel = false },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model",
+                       "NumericEditor",
+                       null,
+                       new { createModel = true },
+                       new { @class = "btn btn-default" })
     </p>
   </div>
 
@@ -22,8 +30,61 @@
     <h2>Drop Down List</h2>
     <p><code>EditorForModel()</code> with drop down list</p>
     <p>
-      @Html.ActionLink("Null model", "DropDownListEditor", null, new { createModel = false }, new { @class = "btn btn-default" })
-      @Html.ActionLink("Non-Null model", "DropDownListEditor", null, new { createModel = true }, new { @class = "btn btn-default" })
+      @Html.ActionLink("Null model",
+                       "DropDownListEditor",
+                       null,
+                       new { createModel = false },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model",
+                       "DropDownListEditor",
+                       null,
+                       new { createModel = true },
+                       new { @class = "btn btn-default" })
+    </p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Fixed Collection</h2>
+    <p>
+      <code>EditorForModel()</code> for a model with collection.
+      You cannot add or remove colleciton items, you can edit items' properties, however
+    </p>
+    <p>
+      @Html.ActionLink("Null model",
+                       "FixedCollectionEditor",
+                       null,
+                       new { createModel = false },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model",
+                       "FixedCollectionEditor",
+                       null,
+                       new { createModel = true },
+                       new { @class = "btn btn-default" })
+    </p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Editable Collection</h2>
+    <p>
+      <code>EditorForModel()</code> for a model with collection.
+      You can add or remove items and edit items' properties.
+    </p>
+    <p>
+      @Html.ActionLink("Null model",
+                       "EditableCollectionEditor",
+                       null,
+                       new { createModel = false },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model with Null collection",
+                       "EditableCollectionEditor",
+                       null,
+                       new { createModel = true },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model with Non-Null collection",
+                       "EditableCollectionEditor",
+                       null,
+                       new { createModel = true, generateInitialCollection = true },
+                       new { @class = "btn btn-default" })
     </p>
   </div>
 </div>

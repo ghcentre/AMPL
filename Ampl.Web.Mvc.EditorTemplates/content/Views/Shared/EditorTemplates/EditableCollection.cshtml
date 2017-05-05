@@ -1,0 +1,118 @@
+﻿@model object
+@using System.Collections;
+@using System.Globalization;
+@using Ampl.System;
+@if(Model != null && (Model is IEnumerable))
+{
+  IEnumerable collection = (Model as IEnumerable);
+  string oldPrefix = ViewData.TemplateInfo.HtmlFieldPrefix;
+  string indexName = string.Format(CultureInfo.InvariantCulture, "{0}.Index", oldPrefix);
+
+  int index = 0;
+  var typeInCollection = Model.GetType().ExtractGenericInterface(typeof(IEnumerable<>))?.GetGenericArguments()[0]
+                         ?? typeof(string);
+  bool isNullableType = Nullable.GetUnderlyingType(typeInCollection) != null;
+  var oldModel = Model;
+  var oldMetadata = Html.ViewData.ModelMetadata;
+
+  string collectionHtmlId = string.Format(CultureInfo.InvariantCulture, "AmplEditableCollection-{0}", Guid.NewGuid());
+  string newItemIndex = Guid.NewGuid().ToString();
+
+  try
+  {
+    ViewData.TemplateInfo.HtmlFieldPrefix = "";
+
+    <div id="@collectionHtmlId">
+      @foreach(object item in collection)
+      {
+        var itemType = (item != null && !isNullableType) ? item.GetType() : typeInCollection;
+        var typeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => item, itemType);
+        string fieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, index);
+
+        Html.ViewData.Model = item;
+        Html.ViewData.ModelMetadata = typeMetadata;
+
+        <div class="row _CollectionItem">
+          <div class="col-xs-11">
+            <div class="form-group" style="margin-left: 0; margin-right: 0">
+              @Html.Hidden(indexName, index)
+              @Html.EditorFor(model => model, null, fieldName)
+            </div>
+          </div>
+          <div class="col-xs-1 text-right"><button class="btn btn-danger _RemoveButton">&times;</button></div>
+        </div>
+
+        index++;
+      }
+
+      <div class="row _CollectionItem" style="display: none">
+        <div class="col-xs-11">
+          <div class="form-group _InsertTarget" style="margin-left: 0; margin-right: 0">
+          </div>
+        </div>
+        <div class="col-xs-1 text-right"><button class="btn btn-danger _RemoveButton">&times;</button></div>
+      </div>
+
+      <div class="row _AddButtonRow">
+        <div class="col-xs-11">
+          <div style="display: none" class="_NewItemSource">
+            @{
+              var newModel = Activator.CreateInstance(typeInCollection);
+              var newModelTypeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => newModel, typeInCollection);
+              string newModelFieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, newItemIndex);
+
+              Html.ViewData.Model = newModel;
+              Html.ViewData.ModelMetadata = newModelTypeMetadata;
+              @(Html.Hidden(indexName, newItemIndex).ToHtmlString() +
+                Html.EditorFor(model => model, null, newModelFieldName).ToHtmlString())
+            }
+          </div>
+        </div>
+        <div class="col-xs-1 text-right"><button class="btn btn-success _AddButton">+</button></div>
+      </div>
+    </div>
+
+  }
+  finally
+  {
+    ViewData.TemplateInfo.HtmlFieldPrefix = oldPrefix;
+    Html.ViewData.Model = oldModel;
+    Html.ViewData.ModelMetadata = oldMetadata;
+  }
+
+  using(Html.BeginDelayed())
+  {
+    <script type="text/javascript">
+      $(function()
+      {
+        $(document).on('click', '#@(collectionHtmlId) ._RemoveButton', function()
+        {
+          $(this).closest('._CollectionItem').remove();
+          return false;
+        });
+
+        $('#@(collectionHtmlId) ._AddButton').click(function()
+        {
+          var parent = $(this).closest('._AddButtonRow');
+          var source = parent.prev();
+          var clone = source.clone();
+          clone.insertBefore(source);
+          var text = parent.find('._NewItemSource')[0].textContent;
+          var id = Math.random().toString().replace('.', '');
+          text = text.split('@(newItemIndex)').join(id);
+          clone.find('._InsertTarget').append($(text));
+          clone.show();
+          if($.validator && $.validator.unobtrusive)
+          {
+            var form = clone.closest('form');
+            form.removeData('validator');
+            form.removeData('unobtrusiveValidation');
+            $.validator.unobtrusive.parse(form);
+            $.validator.unobtrusive.parse(document);
+          }
+          return false;
+        });
+      });
+    </script>
+  }
+}

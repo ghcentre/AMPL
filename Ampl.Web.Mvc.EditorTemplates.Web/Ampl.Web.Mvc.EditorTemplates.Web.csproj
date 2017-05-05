@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,10 +44,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ampl.Core, Version=2.1.41.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
       <HintPath>..\packages\Ampl.Core.2.1.41\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ampl.Web.Mvc, Version=2.1.43.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.1.43\lib\net45\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.1.38.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
@@ -135,7 +141,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Alert\AlertViewModel.cs" />
+    <Compile Include="Models\ComplexEditor\EditableCollectionEditorViewModel.cs" />
+    <Compile Include="Models\ComplexEditor\FixedCollectionEditorViewModel.cs" />
     <Compile Include="Models\ComplexEditor\DropDownListEditorViewModel.cs" />
+    <Compile Include="Models\ComplexEditor\CollectionEditorViewModel.cs" />
     <Compile Include="Models\ComplexEditor\NumericEditorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,6 +215,10 @@
     <Content Include="Views\Shared\EditorTemplates\UInt64.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int16.cshtml" />
     <Content Include="Views\ComplexEditor\DropDownListEditor.cshtml" />
+    <Content Include="Views\ComplexEditor\FixedCollectionEditor.cshtml" />
+    <Content Include="Views\ComplexEditor\EditableCollectionEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Collection.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EditableCollection.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\SimpleEditor\Index.cshtml" />
@@ -223,12 +236,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ampl.Web.Mvc\Ampl.Web.Mvc.csproj">
-      <Project>{72dbfd44-295f-4252-afe4-2d3793755aa4}</Project>
-      <Name>Ampl.Web.Mvc</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

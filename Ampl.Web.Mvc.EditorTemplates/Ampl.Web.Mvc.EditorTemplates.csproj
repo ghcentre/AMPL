@@ -87,11 +87,17 @@
     <None Include="content\Views\Shared\DisplayTemplates\Object.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Byte.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\Collection.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Color.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\DropDownList.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\Int16.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Int32.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\Int64.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Object.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\String.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\UInt16.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\UInt32.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\UInt64.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\_NumberPartial.cshtml" />
     <None Include="content\Views\Shared\_AlertViewPartial.cshtml" />
     <None Include="packages.config" />
