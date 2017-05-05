@@ -58,12 +58,12 @@ namespace Ampl.Web.Mvc
     /// Gets the model's property or method name which is used to retrieve the sequence of <see cref="SelectListItem"/>
     /// to fill the drop down list.
     /// </summary>
-    /// <remarks>The method or property name must be public and non-static.</remarks>
+    /// <remarks>The method or property name must be public and may be <see langword="static"/>.</remarks>
     /// <value>The name of the property or method.</value>
     public string ItemContainer { get; private set; }
 
     /// <summary>
-    ///Provides metadata to the model metadata creation process.
+    /// Provides metadata to the model metadata creation process.
     /// </summary>
     /// <param name="metadata">The model metadata.</param>
     public void OnMetadataCreated(ModelMetadata metadata)
