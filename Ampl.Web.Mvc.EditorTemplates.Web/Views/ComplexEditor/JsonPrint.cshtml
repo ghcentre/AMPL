@@ -1,0 +1,13 @@
+﻿@model string
+@{
+  ViewBag.Title = "JSON";
+  ViewBag.SubTitle = $"for model {Model.GetType().ToString()}";
+}
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+<pre>@Html.DisplayForModel()</pre>
+
+<div>
+  @Html.ActionLink("Details", "Details", new { id = ViewBag.ID }, new { @class = "btn btn-default" })
+  @Html.ActionLink("To Index", "Index", null, new { @class = "btn btn-link" })
+</div>

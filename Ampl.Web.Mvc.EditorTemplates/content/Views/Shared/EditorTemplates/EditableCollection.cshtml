@@ -2,6 +2,7 @@
 @using System.Collections;
 @using System.Globalization;
 @using Ampl.System;
+@using Ampl.Web.Mvc;
 @if(Model != null && (Model is IEnumerable))
 {
   IEnumerable collection = (Model as IEnumerable);
@@ -15,14 +16,14 @@
   var oldModel = Model;
   var oldMetadata = Html.ViewData.ModelMetadata;
 
-  string collectionHtmlId = string.Format(CultureInfo.InvariantCulture, "AmplEditableCollection-{0}", Guid.NewGuid());
+  string collectionHtmlID = string.Format(CultureInfo.InvariantCulture, "AmplEditableCollection-{0}", Guid.NewGuid());
   string newItemIndex = Guid.NewGuid().ToString();
 
   try
   {
     ViewData.TemplateInfo.HtmlFieldPrefix = "";
 
-    <div id="@collectionHtmlId">
+    <div id="@collectionHtmlID">
       @foreach(object item in collection)
       {
         var itemType = (item != null && !isNullableType) ? item.GetType() : typeInCollection;
@@ -57,12 +58,13 @@
         <div class="col-xs-11">
           <div style="display: none" class="_NewItemSource">
             @{
-              var newModel = Activator.CreateInstance(typeInCollection);
+              var newModel = EditableCollectionHelpers.CreateCollectionItem(oldMetadata, typeInCollection);
               var newModelTypeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => newModel, typeInCollection);
               string newModelFieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, newItemIndex);
 
               Html.ViewData.Model = newModel;
               Html.ViewData.ModelMetadata = newModelTypeMetadata;
+
               @(Html.Hidden(indexName, newItemIndex).ToHtmlString() +
                 Html.EditorFor(model => model, null, newModelFieldName).ToHtmlString())
             }
@@ -71,7 +73,6 @@
         <div class="col-xs-1 text-right"><button class="btn btn-success _AddButton">+</button></div>
       </div>
     </div>
-
   }
   finally
   {
@@ -85,13 +86,13 @@
     <script type="text/javascript">
       $(function()
       {
-        $(document).on('click', '#@(collectionHtmlId) ._RemoveButton', function()
+        $(document).on('click', '#@collectionHtmlID ._RemoveButton', function()
         {
           $(this).closest('._CollectionItem').remove();
           return false;
         });
 
-        $('#@(collectionHtmlId) ._AddButton').click(function()
+        $('#@collectionHtmlID ._AddButton').click(function()
         {
           var parent = $(this).closest('._AddButtonRow');
           var source = parent.prev();

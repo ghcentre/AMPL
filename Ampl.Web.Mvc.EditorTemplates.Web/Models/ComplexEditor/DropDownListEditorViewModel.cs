@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
 {
@@ -51,6 +52,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
     public int Color4 { get; set; }
 
     [ScaffoldColumn(false)]
+    [JsonIgnore]
     public IEnumerable<SelectListItem> ColorsInstance
     {
       get

@@ -4,6 +4,7 @@
   var templateInfo = viewData.TemplateInfo;
   var modelMetadata = viewData.ModelMetadata;
   var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+               ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
                ?? EditorTemplateConfiguration.DefaultConfiguration;
 
   EditorTemplateHelpers.OverrideContainerProperties(false, Html.ViewDataContainer.ViewData, modelMetadata, templateInfo, config);
@@ -12,7 +13,7 @@
                                          .Where(pm => EditorTemplateHelpers.ShouldEditProperty(pm, templateInfo)))
 {
   bool skipLabel = new[] { typeof(bool), typeof(bool?) }.Any(t => t == propertyMetadata.ModelType) &&
-                   !config.SeparateCheckboxLabel;
+                                                                  !config.SeparateCheckboxLabel;
   if(propertyMetadata.HideSurroundingHtml)
   {
     @Html.Editor(propertyMetadata.PropertyName)

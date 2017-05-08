@@ -90,6 +90,7 @@
     <None Include="content\Views\Shared\EditorTemplates\Collection.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Color.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\DropDownList.cshtml" />
+    <None Include="content\Views\Shared\EditorTemplates\EditableCollection.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Int16.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Int32.cshtml" />
     <None Include="content\Views\Shared\EditorTemplates\Int64.cshtml" />
@@ -104,13 +105,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Content\BootstrapClasses.css" />
     <Content Include="content\Content\BootstrapFixes.css" />
+    <Content Include="content\Content\Classes.css" />
     <Content Include="content\Content\Margins.css" />
     <Content Include="content\Content\Paddings.css" />
     <Content Include="content\editor.templates.installation.instructions\App_Start\BundleConfig.txt" />
     <Content Include="content\editor.templates.installation.instructions\App_Start\FilterConfig.txt" />
-    <Content Include="content\editor.templates.installation.instructions\Content\BootstrapFixes.txt" />
+    <Content Include="content\editor.templates.installation.instructions\Content\Styles.txt" />
     <Content Include="content\editor.templates.installation.instructions\Scripts\ampl.bootstrap.jquery.validate.txt" />
     <Content Include="content\editor.templates.installation.instructions\Views\Shared\_Layout.Sections.txt" />
     <Content Include="content\Scripts\ampl.bootstrap.jquery.validate.js" />

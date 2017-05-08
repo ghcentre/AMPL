@@ -5,34 +5,21 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Ampl.System;
 using Ampl.Web.Mvc.EditorTemplates.Web.Models;
 using Newtonsoft.Json;
 
 namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
 {
-  public class ComplexEditorController : Controller
+  public class ComplexEditorController : ModelTesterControllerBase
   {
+    private static Dictionary<string, object> _models = new Dictionary<string, object>();
+
     public ActionResult Index()
     {
       return View();
     }
 
-    private ActionResult HandleGetAction<T>(bool createModel, Func<T> modelFactory)
-    {
-      return createModel ? View(modelFactory()) : View();
-    }
-
-    private ActionResult HandlePostAction<T>(T model)
-    {
-      if(!ModelState.IsValid)
-      {
-        this.AddAlert("ModelState is not valid.", ViewModels.AlertContextualClass.Warning, "Validation", true);
-        return View(model);
-      }
-
-      this.AddAlert(new HtmlString($"The model is: <pre>{JsonConvert.SerializeObject(model, Formatting.Indented)}</pre>").ToHtmlString());
-      return RedirectToAction("Index");
-    }
 
     public ActionResult NumericEditor(bool createModel)
     {
@@ -93,6 +80,9 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
     [ValidateAntiForgeryToken]
     public ActionResult FixedCollectionEditor(FixedCollectionEditorViewModel model)
     {
+      TempData["EditorTemplateConfiguration"] = new EditorTemplateConfiguration() {
+        MaximumTemplateDepth = 1
+      };
       return HandlePostAction(model);
     }
 

@@ -4,9 +4,10 @@
   var templateInfo = viewData.TemplateInfo;
   var modelMetadata = viewData.ModelMetadata;
   var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+               ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
                ?? EditorTemplateConfiguration.DefaultConfiguration;
 
-  if(templateInfo.TemplateDepth > 1)
+  if(templateInfo.TemplateDepth > config.MaximumTemplateDepth)
   {
     <div class="form-control-static">
       @if(modelMetadata.Model == null)
@@ -25,13 +26,14 @@
 }
 <div class="form form-horizontal">
   @foreach(var propertyMetadata in modelMetadata.Properties
-                                     .Where(pm => EditorTemplateHelpers.ShouldDisplayProperty(pm, templateInfo)))
+                                             .Where(pm => EditorTemplateHelpers.ShouldDisplayProperty(pm, templateInfo)))
   {
     if(config.RenderNullProperties || propertyMetadata.Model != null)
     {
       string propertyName = propertyMetadata.PropertyName;
       if(propertyMetadata.HideSurroundingHtml)
       {
+        <text>h</text>
         @Html.Display(propertyName)
       }
       else
@@ -42,9 +44,16 @@
             @Html.Label(propertyName, new { @class = $"{config.LabelClass} control-label" })
           }
           <div class="@config.EditorClass">
-            <div class="form-control-static">
+            @if(propertyMetadata.IsComplexType)
+            {
               @Html.Display(propertyName)
-            </div>
+            }
+            else
+            {
+              <div class="form-control-static">
+                @Html.Display(propertyName)
+              </div>
+            }
           </div>
         </div>
       }
