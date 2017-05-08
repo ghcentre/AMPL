@@ -1,7 +1,7 @@
 ﻿@model object
 @{
-  ViewBag.Title = "View Model";
-  ViewBag.SubTitle = $"for model {Model.GetType().ToString()}";
+  ViewBag.Title = "DisplayForModel";
+  ViewBag.SubTitle = $"for {Model.GetType().ToString()}";
 }
 @section Heading { @ViewBag.Title }
 @section SubHeading { @ViewBag.SubTitle }

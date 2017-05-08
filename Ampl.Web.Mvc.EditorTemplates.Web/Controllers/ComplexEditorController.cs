@@ -98,6 +98,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
     [ValidateAntiForgeryToken]
     public ActionResult EditableCollectionEditor(EditableCollectionEditorViewModel model)
     {
+      TempData["EditorTemplateConfiguration"] = new EditorTemplateConfiguration() { MaximumTemplateDepth = 3 };
       return HandlePostAction(model);
     }
   }
