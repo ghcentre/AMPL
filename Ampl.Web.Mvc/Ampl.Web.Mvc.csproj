@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ampl.Web.Mvc</RootNamespace>
     <AssemblyName>Ampl.Web.Mvc</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,8 +39,8 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.1.40.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.1.40\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.0\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
