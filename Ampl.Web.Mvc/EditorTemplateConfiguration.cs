@@ -62,5 +62,11 @@ namespace Ampl.Web.Mvc
     /// Display checkbox label in Editor Templates.
     /// </summary>
     public bool SeparateCheckboxLabel { get; set; } = (DefaultConfiguration?.SeparateCheckboxLabel ?? false);
+
+    /// <summary>
+    /// Maximum depth of nested templates Html.DisplayForModel() can render.
+    /// </summary>
+    /// <remarks>For all properties that exceed MaximumTmeplateDepth, the SimpleText is rendered.</remarks>
+    public int MaximumTemplateDepth { get; set; } = (DefaultConfiguration?.MaximumTemplateDepth ?? 1);
   }
 }

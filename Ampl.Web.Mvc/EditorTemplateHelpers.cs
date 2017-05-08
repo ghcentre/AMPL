@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Ampl.Web.Mvc.Html
+namespace Ampl.Web.Mvc
 {
   /// <summary>
   /// Helpers for the Display and Editor Templates.
@@ -50,7 +50,12 @@ namespace Ampl.Web.Mvc.Html
              !templateInfo.Visited(modelMetadata);
     }
 
-    public static void OverrideContainerProperties(bool readOnlyView, ViewDataDictionary containerViewData, ModelMetadata modelMetadata, TemplateInfo templateInfo, EditorTemplateConfiguration configuration = null)
+    public static void OverrideContainerProperties(
+      bool readOnlyView,
+      ViewDataDictionary containerViewData,
+      ModelMetadata modelMetadata,
+      TemplateInfo templateInfo,
+      EditorTemplateConfiguration configuration = null)
     {
       if(containerViewData == null || modelMetadata == null)
       {

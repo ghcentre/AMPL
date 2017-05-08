@@ -73,7 +73,7 @@
     <Compile Include="AccessDeniedResult.cs" />
     <Compile Include="EditableCollectionHelpers.cs" />
     <Compile Include="EditableCollectionAttribute.cs" />
-    <Compile Include="Html\EditorTemplateHelpers.cs" />
+    <Compile Include="EditorTemplateHelpers.cs" />
     <Compile Include="EditorTemplateConfiguration.cs" />
     <Compile Include="ControllerBaseAlertExtensions.cs" />
     <Compile Include="DelayedRenderExtensions.cs" />
