@@ -39,8 +39,8 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.2.0\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.2\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -87,11 +87,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
-    <Compile Include="Messages.ru.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.ru.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortNameExtensions.cs" />
     <Compile Include="DropDownListAttribute.cs" />
@@ -102,11 +97,6 @@
   <ItemGroup>
     <None Include="Ampl.Web.Mvc.pfx" />
     <None Include="content\Views\web.config.transform" />
-    <EmbeddedResource Include="Messages.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.ru.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +104,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Messages.ru.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

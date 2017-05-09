@@ -44,8 +44,8 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.1.41.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.1.41\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.2\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

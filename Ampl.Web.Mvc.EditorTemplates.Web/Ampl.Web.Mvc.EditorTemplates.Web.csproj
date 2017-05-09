@@ -47,12 +47,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.2.0\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.2\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.2.0\lib\net461\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.2.1\lib\net461\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
