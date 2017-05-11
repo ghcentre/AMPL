@@ -43,7 +43,11 @@ namespace Ampl.Web.Mvc
           .Replace("-xs-", "-xs-offset-")
           .Replace("-sm-", "-sm-offset-")
           .Replace("-md-", "-md-offset-")
-          .Replace("-lg-", "-lg-offset-");
+          .Replace("-lg-", "-lg-offset-")
+          .Replace("col-xs-offset-12", string.Empty)
+          .Replace("col-sm-offset-12", string.Empty)
+          .Replace("col-md-offset-12", string.Empty)
+          .Replace("col-lg-offset-12", string.Empty);
       }
     }
 
