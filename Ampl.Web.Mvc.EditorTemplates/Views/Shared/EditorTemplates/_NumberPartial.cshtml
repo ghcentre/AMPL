@@ -1,0 +1,7 @@
+﻿@model object
+@{
+  object htmlAttributes = ViewData.ModelMetadata.IsReadOnly
+    ? (object)new { @type = "number", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark, @readonly = "readonly" }
+    : (object)new { @type = "number", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark };
+}
+@Html.TextBox("", Model?.ToString() ?? "", htmlAttributes)

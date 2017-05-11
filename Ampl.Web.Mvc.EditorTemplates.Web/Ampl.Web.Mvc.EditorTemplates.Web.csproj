@@ -47,12 +47,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.2.2\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.3\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.2.1\lib\net461\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=2.2.3.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.2.3\lib\net461\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
@@ -159,19 +159,11 @@
     <Content Include="Content\Fonts.css" />
     <Content Include="Content\Margins.css" />
     <Content Include="Content\Paddings.css" />
-    <Content Include="editor.templates.installation.instructions\App_Start\BundleConfig.txt" />
-    <Content Include="editor.templates.installation.instructions\App_Start\FilterConfig.txt" />
-    <Content Include="editor.templates.installation.instructions\Content\Styles.txt" />
-    <Content Include="editor.templates.installation.instructions\Scripts\ampl.bootstrap.jquery.validate.txt" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.Sections.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ampl.bootstrap.jquery.validate.js" />
-    <Content Include="editor.templates.installation.instructions\Web.config" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

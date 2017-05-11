@@ -15,8 +15,4 @@
     <copyright>Copyright 2014-2016 GHCentre.com</copyright>
     <tags>ghcentre ampl web mvc editor templates</tags>
   </metadata>
-
-  <files>
-    <file src="content\**\*" target="content\" />
-  </files>
 </package>
