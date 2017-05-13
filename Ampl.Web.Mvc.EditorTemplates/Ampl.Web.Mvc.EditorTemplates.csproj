@@ -124,6 +124,8 @@
     <Content Include="Views\Shared\EditorTemplates\UInt64.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_NumberPartial.cshtml" />
     <Content Include="Views\Shared\_AlertViewPartial.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

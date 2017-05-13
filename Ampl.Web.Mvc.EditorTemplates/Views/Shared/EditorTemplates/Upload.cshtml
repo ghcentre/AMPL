@@ -1,0 +1,6 @@
+﻿@model HttpPostedFileBase
+<input type="file"
+       name="@ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName("")"
+       id="@ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldId("")"
+       class="form-control"
+       placeholder="@ViewData.ModelMetadata.Watermark" />

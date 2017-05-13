@@ -15,5 +15,4 @@ copy /y %WEBDIR%\Views\Shared\_AlertViewPartial.cshtml .\Views\Shared\
 
 for %%i in (_HeadingViewPartial.cshtml _Layout.cshtml) do copy /y %WEBDIR%\Views\Shared\%%i .\editor.templates.installation.instructions\Views\Shared\
 
-
 pause
