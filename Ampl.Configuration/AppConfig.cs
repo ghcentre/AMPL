@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Ampl.Configuration
 {
-  public class AppConfig
+  public class AppConfig : IAppConfig
   {
     private IAppConfigStore _store;
 

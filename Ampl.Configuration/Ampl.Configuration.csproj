@@ -55,6 +55,7 @@
     <Compile Include="AppConfig.cs" />
     <Compile Include="AppConfigDefaultConfiguration.cs" />
     <Compile Include="DefaultAppConfigConverters.cs" />
+    <Compile Include="IAppConfig.cs" />
     <Compile Include="IAppConfigConfiguration.cs" />
     <Compile Include="IAppConfigConverter.cs" />
     <Compile Include="IAppConfigEntity.cs" />
