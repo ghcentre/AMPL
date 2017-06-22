@@ -44,25 +44,25 @@ namespace Ampl.Tests.NullCheckExtensions
       Assert.IsNotNull(exception);
     }
 
-    [TestMethod]
-    public void If_Chaining_false_null()
-    {
-      Exception innerException = _model
-        .With(m => m.Response).With(r => r.Error).With(e => e.Exception)
-        .If(e => e is ArgumentException)
-        .With(e => e.InnerException);
-      Assert.IsNull(innerException);
-    }
+    //[TestMethod]
+    //public void If_Chaining_false_null()
+    //{
+    //  Exception innerException = _model
+    //    .With(m => m.Response).With(r => r.Error).With(e => e.Exception)
+    //    .If(e => e is ArgumentException)
+    //    .With(e => e.InnerException);
+    //  Assert.IsNull(innerException);
+    //}
 
-    [TestMethod]
-    public void If_Chaining_true_notnull()
-    {
-      Exception innerException = _model
-        .With(m => m.Response).With(r => r.Error).With(e => e.Exception)
-        .If(e => e.Message != null)
-        .With(e => e.InnerException);
-      Assert.IsNotNull(innerException);
-    }
+    //[TestMethod]
+    //public void If_Chaining_true_notnull()
+    //{
+    //  Exception innerException = _model
+    //    .With(m => m.Response).With(r => r.Error).With(e => e.Exception)
+    //    .If(e => e.Message != null)
+    //    .With(e => e.InnerException);
+    //  Assert.IsNotNull(innerException);
+    //}
 
     [TestMethod]
     public void Do_Chaining()

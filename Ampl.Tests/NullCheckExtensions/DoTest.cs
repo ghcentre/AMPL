@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ampl.System;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Ampl.Tests.NullCheckExtensions
 {
@@ -38,9 +40,10 @@ namespace Ampl.Tests.NullCheckExtensions
     public void Do_NullableHas_No_Value()
     {
       int? nullableInt = null;
-      int i = 0;
-      nullableInt.Do(x => i = 1);
-      Assert.AreEqual(0, i);
+      int n = 0;
+      nullableInt.Do(x => n = 1);
+      Assert.AreEqual(0, n);
+
     }
   }
 }
