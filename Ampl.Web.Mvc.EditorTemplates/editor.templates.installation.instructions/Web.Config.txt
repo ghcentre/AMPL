@@ -1,0 +1,7 @@
+﻿To get localized validation messages, it's important to set the approprivate culture in web.config.
+
+For example, to display messages in Russian (Russia), add the following to web.config:
+
+configuration/system.web
+  <globalization requestEncoding="utf-8" responseEncoding="utf-8" culture="ru-RU" uiCulture="ru-RU" />
+
