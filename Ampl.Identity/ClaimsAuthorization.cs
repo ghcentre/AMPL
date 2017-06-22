@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IdentityModel.Configuration;
+using System.IdentityModel.Services;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
@@ -32,8 +33,11 @@ namespace Ampl.Identity
 
     public static ClaimsAuthorizationManager CustomAuthorizationManager { get; set; }
 
+    //
+    // changed from new IdentityConfiguration().ClaimsAuthorizationManager to be IoC-aware
+    //
     private static Lazy<ClaimsAuthorizationManager> _claimsAuthorizationManager = new Lazy<ClaimsAuthorizationManager>(
-      () => new IdentityConfiguration().ClaimsAuthorizationManager);
+      () => FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager);
 
     /// <summary>
     /// Gets the registered authorization manager.
@@ -70,11 +74,9 @@ namespace Ampl.Identity
 
     public static bool CheckAccess(ClaimsPrincipal principal, string action, params string[] resources)
     {
-      var context = CreateAuthorizationContext(
-        principal,
-        action,
-        resources);
-
+      var context = CreateAuthorizationContext(principal,
+                                               action,
+                                               resources);
       return CheckAccess(context);
     }
 

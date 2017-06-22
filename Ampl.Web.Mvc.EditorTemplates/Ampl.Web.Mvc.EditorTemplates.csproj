@@ -105,6 +105,7 @@
     <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
     <Content Include="editor.templates.installation.instructions\Web.config" />
     <None Include="packages.config" />
+    <Content Include="editor.templates.installation.instructions\Web.Config.txt" />
     <Content Include="Views\Shared\DisplayTemplates\Collection.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Object.cshtml" />
