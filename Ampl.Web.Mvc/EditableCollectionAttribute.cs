@@ -27,7 +27,7 @@ namespace Ampl.Web.Mvc
   ///     //
   ///     // This example uses method to initialize a new collection item.
   ///     //
-  ///     public SampleCollectionItemViewModel CreateItem()
+  ///     public static SampleCollectionItemViewModel CreateItem()
   ///     {
   ///       return new SampleCollectionItemViewModel() {
   ///         StringProperty = "Some Value"
