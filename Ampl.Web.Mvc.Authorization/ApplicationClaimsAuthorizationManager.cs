@@ -9,8 +9,58 @@ using Ampl.System;
 
 namespace Ampl.Web.Mvc
 {
+  #region
+  /// <summary>
+  /// Provides the (database)store-based implementation of the <see cref="ClaimsAuthorizationManager"/>. 
+  /// </summary>
+  /// <remarks>
+  /// <para>To use custom Claims authorization manager in a Web application,
+  ///       right after DI container initialization, use the
+  ///       <c>FederatedAuthentication.FederationConfigurationCreated</c> event to wire up the manager:
+  ///       <em>(example is for Autofac, but other DIs behave similarily)</em></para>
+  /// <code>
+  ///   FederatedAuthentication.FederationConfigurationCreated += (_s, _e) =>
+  ///     {
+  ///       _e.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager =
+  ///         container.Resolve&lt;ClaimsAuthorizationManager&gt;();
+  ///     };
+  /// </code>
+  /// <para>Alternatively, the Web.config configuration method may be used:</para>
+  /// <code>
+  ///   &lt;configSections&gt;
+  ///     &lt;section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" /&gt;
+  ///   &lt;/configSections&gt;
+  ///   &lt;system.identityModel&gt;
+  ///     &lt;identityConfiguration&gt;
+  ///       &lt;claimsAuthorizationManager type="Ampl.Web.Mvc.ApplicationClaimsAuthorizationManager, Ampl.Web.Mvc.Authorization" &gt;
+  ///         &lt;authorizationStore type="FULL.TYPE.OF.STORE.IMPLEMENTING.IAuthorizationStore, ASSEMBLY.NAME" /&gt;
+  ///       &lt;/claimsAuthorizationManager&gt;
+  ///     &lt;/identityConfiguration&gt;
+  ///   &lt;/system.identityModel&gt;
+  /// </code>
+  /// <para>This method requires <see cref="IAuthorizationStore"/> implementation to have parameterless constructor.</para>
+  /// </remarks>
+  #endregion
   public class ApplicationClaimsAuthorizationManager : ClaimsAuthorizationManager
   {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ApplicationClaimsAuthorizationManager"/> class.
+    /// </summary>
+    /// <remarks>Web.config/App.config initialization in required to properly set the Authorization Store.
+    /// See the class <b>Remarks</b> section.</remarks>
+    public ApplicationClaimsAuthorizationManager()
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ApplicationClaimsAuthorizationManager"/> class.
+    /// </summary>
+    /// <param name="authStore">The authorization store.</param>
+    public ApplicationClaimsAuthorizationManager(IAuthorizationStore authStore) : this()
+    {
+      _authStore = Check.NotNull(authStore, nameof(authStore));
+    }
+
     private bool MatchesAction(string aclAction, string actualAction)
     {
       //
