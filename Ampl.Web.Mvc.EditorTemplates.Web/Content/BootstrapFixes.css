@@ -40,4 +40,11 @@
   }
 }
 
+/* 
+ * Remove 20px margin from Lead inside PageHeader
+ */
+.page-header .lead
+{
+  margin-bottom: 0;
+}
 
