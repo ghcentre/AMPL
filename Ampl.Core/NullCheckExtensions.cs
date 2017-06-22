@@ -30,7 +30,7 @@ namespace Ampl.System
     /// </code>
     /// </example>
     public static TResult With<TInput, TResult>(this TInput input,
-      Func<TInput, TResult> evaluatorResult)
+                                                Func<TInput, TResult> evaluatorResult)
     {
       if(input == null)
       {
@@ -210,7 +210,8 @@ namespace Ampl.System
  */
 
     /// <summary>
-    /// Evaluates the <paramref name="evaluatorResult"/> function only if <paramref name="input"/> is not <see langword="null"/>.
+    /// Evaluates the <paramref name="evaluatorResult"/> function
+    /// only if <paramref name="input"/> is not <see langword="null"/>.
     /// </summary>
     /// <typeparam name="TInput"></typeparam>
     /// <typeparam name="TResult"></typeparam>
@@ -219,8 +220,8 @@ namespace Ampl.System
     /// <param name="fallbackValue"></param>
     /// <returns></returns>
     public static TResult Return<TInput, TResult>(this TInput input,
-      Func<TInput, TResult> evaluatorResult,
-      TResult fallbackValue)
+                                                  Func<TInput, TResult> evaluatorResult,
+                                                  TResult fallbackValue)
     {
       if(input == null)
       {
@@ -237,23 +238,23 @@ namespace Ampl.System
     //  return o != null;
     //}
 
-    /// <summary>
-    /// Evaluates the predicate if input is not <see langword="null"/>.
-    /// </summary>
-    /// <typeparam name="TInput"></typeparam>
-    /// <param name="input"></param>
-    /// <param name="predicate"></param>
-    /// <returns></returns>
-    public static TInput If<TInput>(this TInput input, Predicate<TInput> predicate)
-    {
-      if(input == null)
-      {
-        return default(TInput);
-      }
+    ///// <summary>
+    ///// Evaluates the predicate if input is not <see langword="null"/>.
+    ///// </summary>
+    ///// <typeparam name="TInput"></typeparam>
+    ///// <param name="input"></param>
+    ///// <param name="predicate"></param>
+    ///// <returns></returns>
+    //public static TInput If<TInput>(this TInput input, Predicate<TInput> predicate)
+    //{
+    //  if(input == null)
+    //  {
+    //    return default(TInput);
+    //  }
 
-      Check.NotNull(predicate, nameof(predicate));
-      return predicate(input) ? input : default(TInput);
-    }
+    //  Check.NotNull(predicate, nameof(predicate));
+    //  return predicate(input) ? input : default(TInput);
+    //}
 
     /// <summary>
     /// Evaluates the action if input is not <see langword="null"/>.
