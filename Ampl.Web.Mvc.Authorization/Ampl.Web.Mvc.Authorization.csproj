@@ -100,7 +100,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ampl.Web.Mvc.Html\LinkExtensions.cs" />
+    <Compile Include="Ampl.Web.Mvc.Html - Copy\LinkExtensions.cs" />
+    <Compile Include="Ampl.Web.Mvc\LinkExtensions.cs" />
     <Compile Include="ApplicationClaimsAuthorizationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceActionAuthorizeAttribute.cs" />
