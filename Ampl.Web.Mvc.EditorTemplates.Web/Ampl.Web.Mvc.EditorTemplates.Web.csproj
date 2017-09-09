@@ -232,6 +232,10 @@
     <Content Include="Views\ComplexEditor\JsonPrint.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Collection.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\SimpleEditor\Index.cshtml" />
