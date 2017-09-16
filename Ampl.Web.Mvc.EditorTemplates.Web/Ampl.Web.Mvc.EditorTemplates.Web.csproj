@@ -51,8 +51,8 @@
       <HintPath>..\packages\Ampl.Core.2.2.13\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.2.7.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.2.7\lib\net461\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=2.2.18.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.2.18\lib\net461\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
@@ -146,6 +146,7 @@
     <Compile Include="Models\ComplexEditor\FixedCollectionEditorViewModel.cs" />
     <Compile Include="Models\ComplexEditor\DropDownListEditorViewModel.cs" />
     <Compile Include="Models\ComplexEditor\CollectionEditorViewModel.cs" />
+    <Compile Include="Models\ComplexEditor\DateTimeEditorViewModel.cs" />
     <Compile Include="Models\ComplexEditor\NumericEditorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,8 +173,105 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\ampl.globalize.fetch.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cldr\main\en\ca-buddhist.json" />
+    <Content Include="Scripts\cldr\main\en\ca-chinese.json" />
+    <Content Include="Scripts\cldr\main\en\ca-coptic.json" />
+    <Content Include="Scripts\cldr\main\en\ca-dangi.json" />
+    <Content Include="Scripts\cldr\main\en\ca-ethiopic-amete-alem.json" />
+    <Content Include="Scripts\cldr\main\en\ca-ethiopic.json" />
+    <Content Include="Scripts\cldr\main\en\ca-generic.json" />
+    <Content Include="Scripts\cldr\main\en\ca-gregorian.json" />
+    <Content Include="Scripts\cldr\main\en\ca-hebrew.json" />
+    <Content Include="Scripts\cldr\main\en\ca-indian.json" />
+    <Content Include="Scripts\cldr\main\en\ca-islamic-civil.json" />
+    <Content Include="Scripts\cldr\main\en\ca-islamic-rgsa.json" />
+    <Content Include="Scripts\cldr\main\en\ca-islamic-tbla.json" />
+    <Content Include="Scripts\cldr\main\en\ca-islamic-umalqura.json" />
+    <Content Include="Scripts\cldr\main\en\ca-islamic.json" />
+    <Content Include="Scripts\cldr\main\en\ca-japanese.json" />
+    <Content Include="Scripts\cldr\main\en\ca-persian.json" />
+    <Content Include="Scripts\cldr\main\en\ca-roc.json" />
+    <Content Include="Scripts\cldr\main\en\characters.json" />
+    <Content Include="Scripts\cldr\main\en\contextTransforms.json" />
+    <Content Include="Scripts\cldr\main\en\currencies.json" />
+    <Content Include="Scripts\cldr\main\en\dateFields.json" />
+    <Content Include="Scripts\cldr\main\en\delimiters.json" />
+    <Content Include="Scripts\cldr\main\en\languages.json" />
+    <Content Include="Scripts\cldr\main\en\layout.json" />
+    <Content Include="Scripts\cldr\main\en\listPatterns.json" />
+    <Content Include="Scripts\cldr\main\en\localeDisplayNames.json" />
+    <Content Include="Scripts\cldr\main\en\measurementSystemNames.json" />
+    <Content Include="Scripts\cldr\main\en\numbers.json" />
+    <Content Include="Scripts\cldr\main\en\posix.json" />
+    <Content Include="Scripts\cldr\main\en\scripts.json" />
+    <Content Include="Scripts\cldr\main\en\territories.json" />
+    <Content Include="Scripts\cldr\main\en\timeZoneNames.json" />
+    <Content Include="Scripts\cldr\main\en\units.json" />
+    <Content Include="Scripts\cldr\main\en\variants.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-buddhist.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-chinese.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-coptic.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-dangi.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-ethiopic-amete-alem.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-ethiopic.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-generic.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-gregorian.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-hebrew.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-indian.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-islamic-civil.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-islamic-rgsa.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-islamic-tbla.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-islamic-umalqura.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-islamic.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-japanese.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-persian.json" />
+    <Content Include="Scripts\cldr\main\ru\ca-roc.json" />
+    <Content Include="Scripts\cldr\main\ru\characters.json" />
+    <Content Include="Scripts\cldr\main\ru\contextTransforms.json" />
+    <Content Include="Scripts\cldr\main\ru\currencies.json" />
+    <Content Include="Scripts\cldr\main\ru\dateFields.json" />
+    <Content Include="Scripts\cldr\main\ru\delimiters.json" />
+    <Content Include="Scripts\cldr\main\ru\languages.json" />
+    <Content Include="Scripts\cldr\main\ru\layout.json" />
+    <Content Include="Scripts\cldr\main\ru\listPatterns.json" />
+    <Content Include="Scripts\cldr\main\ru\localeDisplayNames.json" />
+    <Content Include="Scripts\cldr\main\ru\measurementSystemNames.json" />
+    <Content Include="Scripts\cldr\main\ru\numbers.json" />
+    <Content Include="Scripts\cldr\main\ru\posix.json" />
+    <Content Include="Scripts\cldr\main\ru\scripts.json" />
+    <Content Include="Scripts\cldr\main\ru\territories.json" />
+    <Content Include="Scripts\cldr\main\ru\timeZoneNames.json" />
+    <Content Include="Scripts\cldr\main\ru\units.json" />
+    <Content Include="Scripts\cldr\main\ru\variants.json" />
+    <Content Include="Scripts\cldr\supplemental\aliases.json" />
+    <Content Include="Scripts\cldr\supplemental\calendarData.json" />
+    <Content Include="Scripts\cldr\supplemental\calendarPreferenceData.json" />
+    <Content Include="Scripts\cldr\supplemental\characterFallbacks.json" />
+    <Content Include="Scripts\cldr\supplemental\codeMappings.json" />
+    <Content Include="Scripts\cldr\supplemental\currencyData.json" />
+    <Content Include="Scripts\cldr\supplemental\dayPeriods.json" />
+    <Content Include="Scripts\cldr\supplemental\gender.json" />
+    <Content Include="Scripts\cldr\supplemental\languageData.json" />
+    <Content Include="Scripts\cldr\supplemental\languageMatching.json" />
+    <Content Include="Scripts\cldr\supplemental\likelySubtags.json" />
+    <Content Include="Scripts\cldr\supplemental\measurementData.json" />
+    <Content Include="Scripts\cldr\supplemental\metaZones.json" />
+    <Content Include="Scripts\cldr\supplemental\numberingSystems.json" />
+    <Content Include="Scripts\cldr\supplemental\ordinals.json" />
+    <Content Include="Scripts\cldr\supplemental\parentLocales.json" />
+    <Content Include="Scripts\cldr\supplemental\plurals.json" />
+    <Content Include="Scripts\cldr\supplemental\primaryZones.json" />
+    <Content Include="Scripts\cldr\supplemental\references.json" />
+    <Content Include="Scripts\cldr\supplemental\telephoneCodeData.json" />
+    <Content Include="Scripts\cldr\supplemental\territoryContainment.json" />
+    <Content Include="Scripts\cldr\supplemental\territoryInfo.json" />
+    <Content Include="Scripts\cldr\supplemental\timeData.json" />
+    <Content Include="Scripts\cldr\supplemental\unitPreferenceData.json" />
+    <Content Include="Scripts\cldr\supplemental\weekData.json" />
+    <Content Include="Scripts\cldr\supplemental\windowsZones.json" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -205,6 +303,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ampl.jqurey.validate.unobtrusive.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -250,6 +349,9 @@
     <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\ComplexEditor\DateTimeEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\SimpleEditor\Index.cshtml" />

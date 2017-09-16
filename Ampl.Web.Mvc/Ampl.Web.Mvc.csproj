@@ -39,11 +39,12 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.2.3\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=2.2.13.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.13\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -72,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessDeniedResult.cs" />
+    <Compile Include="DateTimeValidationAttribute.cs" />
     <Compile Include="EditableCollectionHelpers.cs" />
     <Compile Include="EditableCollectionAttribute.cs" />
     <Compile Include="EditorTemplateHelpers.cs" />

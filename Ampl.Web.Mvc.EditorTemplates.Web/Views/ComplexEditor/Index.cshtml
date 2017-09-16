@@ -27,6 +27,26 @@
   </div>
 
   <div class="col-md-4">
+    <h2>Dates and Datetimes</h2>
+    <p>
+      <code>EditorForModel()</code> for model containing the following types:
+      <code>DateTime</code> and its nullable equivalents.
+    </p>
+    <p>
+      @Html.ActionLink("Null model",
+                       "DateTimeEditor",
+                       null,
+                       new { createModel = false },
+                       new { @class = "btn btn-default" })
+      @Html.ActionLink("Non-Null model",
+                       "DateTimeEditor",
+                       null,
+                       new { createModel = true },
+                       new { @class = "btn btn-default" })
+    </p>
+  </div>
+
+  <div class="col-md-4">
     <h2>Drop Down List</h2>
     <p><code>EditorForModel()</code> with drop down list</p>
     <p>

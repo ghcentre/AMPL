@@ -68,5 +68,23 @@ namespace Ampl.Web.Mvc {
                 return ResourceManager.GetString("DropDownListDefaultNullDisplayText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field {0} must be a datetime..
+        /// </summary>
+        internal static string FieldMustBeADateTime {
+            get {
+                return ResourceManager.GetString("FieldMustBeADateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field {0} must be a time..
+        /// </summary>
+        internal static string FieldMustBeATime {
+            get {
+                return ResourceManager.GetString("FieldMustBeATime", resourceCulture);
+            }
+        }
     }
 }

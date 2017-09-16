@@ -35,8 +35,8 @@
       <HintPath>..\packages\Ampl.Core.2.2.13\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.2.7.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.2.7\lib\net461\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=2.2.18.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.2.18\lib\net461\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0b264092cd0fdc9e, processorArchitecture=MSIL">
@@ -100,12 +100,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
-    <Content Include="editor.templates.installation.instructions\Web.config" />
-    <None Include="packages.config" />
-    <Content Include="editor.templates.installation.instructions\Web.Config.txt" />
     <Content Include="Views\Shared\DisplayTemplates\Collection.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Object.cshtml" />
@@ -125,8 +119,119 @@
     <Content Include="Views\Shared\EditorTemplates\UInt64.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_NumberPartial.cshtml" />
     <Content Include="Views\Shared\_AlertViewPartial.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\Upload.cshtml" />
+    <None Include="app.config" />
+    <Content Include="editor.templates.installation.instructions\Content\Site.css" />
+    <Content Include="editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml" />
+    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
+    <Content Include="editor.templates.installation.instructions\Web.config" />
+    <None Include="packages.config" />
+    <Content Include="editor.templates.installation.instructions\Web.Config.txt" />
+    <Content Include="Scripts\ampl.globalize.fetch.js" />
+    <Content Include="Scripts\ampl.jqurey.validate.unobtrusive.js" />
+    <None Include="Scripts\cldr\main\en\ca-buddhist.json" />
+    <None Include="Scripts\cldr\main\en\ca-chinese.json" />
+    <None Include="Scripts\cldr\main\en\ca-coptic.json" />
+    <None Include="Scripts\cldr\main\en\ca-dangi.json" />
+    <None Include="Scripts\cldr\main\en\ca-ethiopic-amete-alem.json" />
+    <None Include="Scripts\cldr\main\en\ca-ethiopic.json" />
+    <None Include="Scripts\cldr\main\en\ca-generic.json" />
+    <None Include="Scripts\cldr\main\en\ca-gregorian.json" />
+    <None Include="Scripts\cldr\main\en\ca-hebrew.json" />
+    <None Include="Scripts\cldr\main\en\ca-indian.json" />
+    <None Include="Scripts\cldr\main\en\ca-islamic-civil.json" />
+    <None Include="Scripts\cldr\main\en\ca-islamic-rgsa.json" />
+    <None Include="Scripts\cldr\main\en\ca-islamic-tbla.json" />
+    <None Include="Scripts\cldr\main\en\ca-islamic-umalqura.json" />
+    <None Include="Scripts\cldr\main\en\ca-islamic.json" />
+    <None Include="Scripts\cldr\main\en\ca-japanese.json" />
+    <None Include="Scripts\cldr\main\en\ca-persian.json" />
+    <None Include="Scripts\cldr\main\en\ca-roc.json" />
+    <None Include="Scripts\cldr\main\en\characters.json" />
+    <None Include="Scripts\cldr\main\en\contextTransforms.json" />
+    <None Include="Scripts\cldr\main\en\currencies.json" />
+    <None Include="Scripts\cldr\main\en\dateFields.json" />
+    <None Include="Scripts\cldr\main\en\delimiters.json" />
+    <None Include="Scripts\cldr\main\en\languages.json" />
+    <None Include="Scripts\cldr\main\en\layout.json" />
+    <None Include="Scripts\cldr\main\en\listPatterns.json" />
+    <None Include="Scripts\cldr\main\en\localeDisplayNames.json" />
+    <None Include="Scripts\cldr\main\en\measurementSystemNames.json" />
+    <None Include="Scripts\cldr\main\en\numbers.json" />
+    <None Include="Scripts\cldr\main\en\posix.json" />
+    <None Include="Scripts\cldr\main\en\scripts.json" />
+    <None Include="Scripts\cldr\main\en\territories.json" />
+    <None Include="Scripts\cldr\main\en\timeZoneNames.json" />
+    <None Include="Scripts\cldr\main\en\units.json" />
+    <None Include="Scripts\cldr\main\en\variants.json" />
+    <None Include="Scripts\cldr\main\ru\ca-buddhist.json" />
+    <None Include="Scripts\cldr\main\ru\ca-chinese.json" />
+    <None Include="Scripts\cldr\main\ru\ca-coptic.json" />
+    <None Include="Scripts\cldr\main\ru\ca-dangi.json" />
+    <None Include="Scripts\cldr\main\ru\ca-ethiopic-amete-alem.json" />
+    <None Include="Scripts\cldr\main\ru\ca-ethiopic.json" />
+    <None Include="Scripts\cldr\main\ru\ca-generic.json" />
+    <None Include="Scripts\cldr\main\ru\ca-gregorian.json" />
+    <None Include="Scripts\cldr\main\ru\ca-hebrew.json" />
+    <None Include="Scripts\cldr\main\ru\ca-indian.json" />
+    <None Include="Scripts\cldr\main\ru\ca-islamic-civil.json" />
+    <None Include="Scripts\cldr\main\ru\ca-islamic-rgsa.json" />
+    <None Include="Scripts\cldr\main\ru\ca-islamic-tbla.json" />
+    <None Include="Scripts\cldr\main\ru\ca-islamic-umalqura.json" />
+    <None Include="Scripts\cldr\main\ru\ca-islamic.json" />
+    <None Include="Scripts\cldr\main\ru\ca-japanese.json" />
+    <None Include="Scripts\cldr\main\ru\ca-persian.json" />
+    <None Include="Scripts\cldr\main\ru\ca-roc.json" />
+    <None Include="Scripts\cldr\main\ru\characters.json" />
+    <None Include="Scripts\cldr\main\ru\contextTransforms.json" />
+    <None Include="Scripts\cldr\main\ru\currencies.json" />
+    <None Include="Scripts\cldr\main\ru\dateFields.json" />
+    <None Include="Scripts\cldr\main\ru\delimiters.json" />
+    <None Include="Scripts\cldr\main\ru\languages.json" />
+    <None Include="Scripts\cldr\main\ru\layout.json" />
+    <None Include="Scripts\cldr\main\ru\listPatterns.json" />
+    <None Include="Scripts\cldr\main\ru\localeDisplayNames.json" />
+    <None Include="Scripts\cldr\main\ru\measurementSystemNames.json" />
+    <None Include="Scripts\cldr\main\ru\numbers.json" />
+    <None Include="Scripts\cldr\main\ru\posix.json" />
+    <None Include="Scripts\cldr\main\ru\scripts.json" />
+    <None Include="Scripts\cldr\main\ru\territories.json" />
+    <None Include="Scripts\cldr\main\ru\timeZoneNames.json" />
+    <None Include="Scripts\cldr\main\ru\units.json" />
+    <None Include="Scripts\cldr\main\ru\variants.json" />
+    <None Include="Scripts\cldr\supplemental\aliases.json" />
+    <None Include="Scripts\cldr\supplemental\calendarData.json" />
+    <None Include="Scripts\cldr\supplemental\calendarPreferenceData.json" />
+    <None Include="Scripts\cldr\supplemental\characterFallbacks.json" />
+    <None Include="Scripts\cldr\supplemental\codeMappings.json" />
+    <None Include="Scripts\cldr\supplemental\currencyData.json" />
+    <None Include="Scripts\cldr\supplemental\dayPeriods.json" />
+    <None Include="Scripts\cldr\supplemental\gender.json" />
+    <None Include="Scripts\cldr\supplemental\languageData.json" />
+    <None Include="Scripts\cldr\supplemental\languageMatching.json" />
+    <None Include="Scripts\cldr\supplemental\likelySubtags.json" />
+    <None Include="Scripts\cldr\supplemental\measurementData.json" />
+    <None Include="Scripts\cldr\supplemental\metaZones.json" />
+    <None Include="Scripts\cldr\supplemental\numberingSystems.json" />
+    <None Include="Scripts\cldr\supplemental\ordinals.json" />
+    <None Include="Scripts\cldr\supplemental\parentLocales.json" />
+    <None Include="Scripts\cldr\supplemental\plurals.json" />
+    <None Include="Scripts\cldr\supplemental\primaryZones.json" />
+    <None Include="Scripts\cldr\supplemental\references.json" />
+    <None Include="Scripts\cldr\supplemental\telephoneCodeData.json" />
+    <None Include="Scripts\cldr\supplemental\territoryContainment.json" />
+    <None Include="Scripts\cldr\supplemental\territoryInfo.json" />
+    <None Include="Scripts\cldr\supplemental\timeData.json" />
+    <None Include="Scripts\cldr\supplemental\unitPreferenceData.json" />
+    <None Include="Scripts\cldr\supplemental\weekData.json" />
+    <None Include="Scripts\cldr\supplemental\windowsZones.json" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -135,7 +240,6 @@
     <Content Include="content\Fonts.css" />
     <Content Include="content\Margins.css" />
     <Content Include="content\Paddings.css" />
-    <Content Include="content\Site.css" />
     <Content Include="editor.templates.installation.instructions\App_Start\BundleConfig.txt" />
     <Content Include="editor.templates.installation.instructions\App_Start\FilterConfig.txt" />
     <Content Include="editor.templates.installation.instructions\Content\Styles.txt" />

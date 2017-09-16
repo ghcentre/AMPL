@@ -20,7 +20,6 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
       return View();
     }
 
-
     public ActionResult NumericEditor(bool createModel)
     {
       return HandleGetAction(createModel, () => new NumericEditorViewModel());
@@ -29,6 +28,18 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
     [HttpPost]
     [ValidateAntiForgeryToken]
     public ActionResult NumericEditor(NumericEditorViewModel model)
+    {
+      return HandlePostAction(model);
+    }
+
+    public ActionResult DateTimeEditor(bool createModel)
+    {
+      return HandleGetAction(createModel, () => new DateTimeEditorViewModel());
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult DateTimeEditor(DateTimeEditorViewModel model)
     {
       return HandlePostAction(model);
     }

@@ -120,4 +120,10 @@
   <data name="DropDownListDefaultNullDisplayText" xml:space="preserve">
     <value>(значение не присвоено)</value>
   </data>
+  <data name="FieldMustBeADateTime" xml:space="preserve">
+    <value>Поле {0} должно содержать дату и время.</value>
+  </data>
+  <data name="FieldMustBeATime" xml:space="preserve">
+    <value>Поле {0} должно содержать время.</value>
+  </data>
 </root>
