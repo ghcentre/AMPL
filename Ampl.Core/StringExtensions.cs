@@ -120,12 +120,11 @@ namespace Ampl.System
       "Microsoft.Design",
       "CA1026:DefaultParametersShouldNotBeUsed",
       Justification = "The default values assigned for optional parameters are always default values.")]
-    public static string Between(
-      this string source,
-      string start,
-      string end,
-      StringBetweenOptions options = StringBetweenOptions.None,
-      StringComparison comparison = StringComparison.CurrentCulture)
+    public static string Between(this string source,
+                                 string start,
+                                 string end,
+                                 StringBetweenOptions options = StringBetweenOptions.None,
+                                 StringComparison comparison = StringComparison.CurrentCulture)
     {
       if(source == null)
       {
@@ -198,11 +197,10 @@ namespace Ampl.System
     /// <param name="end"></param>
     /// <param name="comparison"></param>
     /// <returns></returns>
-    public static string RemoveBetween(
-      this string source,
-      string start,
-      string end,
-      StringComparison comparison = StringComparison.CurrentCulture)
+    public static string RemoveBetween(this string source,
+                                       string start,
+                                       string end,
+                                       StringComparison comparison = StringComparison.CurrentCulture)
     {
       while(true)
       {

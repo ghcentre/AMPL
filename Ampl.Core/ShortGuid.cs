@@ -11,9 +11,9 @@ namespace Ampl.System
   {
     private readonly Guid _guid;
 
-    public ShortGuid(Guid guid)
+    public ShortGuid(Guid value)
     {
-      _guid = guid;
+      _guid = value;
     }
 
     public Guid Guid => _guid;

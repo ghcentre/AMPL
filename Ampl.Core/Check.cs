@@ -15,7 +15,7 @@ namespace Ampl.System
     /// <summary>
     /// Informs FxCop that method parameter on which this attribute is applies is checked for null with custom method.
     /// </summary>
-    sealed class ValidatedNotNullAttribute : Attribute
+    private sealed class ValidatedNotNullAttribute : Attribute
     {
     }
 

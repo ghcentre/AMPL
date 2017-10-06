@@ -30,17 +30,20 @@ namespace Ampl.System
       return GetFirstDisplayAttribute(source)?.GetDescription();
     }
 
-    public static T ParseValue<T>(this T enumeration, string source, bool ignoreCase = false)
+    public static T ParseValue<T>(this T enumeration,
+                                  string source,
+                                  bool ignoreCase = false)
       where T : struct, IComparable, IFormattable
     {
       return (T)Enum.Parse(typeof(T), source, ignoreCase);
     }
 
-    public static T? ParseAsNullable<T>(this T enumeration, string source, bool ignoreCase = false)
+    public static T? ParseAsNullable<T>(this T enumeration,
+                                        string source,
+                                        bool ignoreCase = false)
       where T : struct, IComparable, IFormattable
     {
-      T result;
-      bool success = Enum.TryParse<T>(source, ignoreCase, out result);
+      bool success = Enum.TryParse<T>(source, ignoreCase, out T result);
       if(!success)
       {
         return null;
