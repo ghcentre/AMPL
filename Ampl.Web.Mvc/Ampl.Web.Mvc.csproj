@@ -36,7 +36,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ampl.Core, Version=2.2.13.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
@@ -97,7 +98,7 @@
     <Compile Include="ViewModels\AlertViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ampl.Web.Mvc.pfx" />
+    <None Include="Ampl.Web.Mvc.snk" />
     <None Include="content\Views\web.config.transform" />
     <None Include="packages.config" />
   </ItemGroup>

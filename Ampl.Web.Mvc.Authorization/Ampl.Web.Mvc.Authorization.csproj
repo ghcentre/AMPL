@@ -35,7 +35,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.Authorization.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ampl.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
@@ -107,7 +108,7 @@
     <Compile Include="ResourceActionAuthorizeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ampl.Web.Mvc.Authorization.pfx" />
+    <None Include="Ampl.Web.Mvc.Authorization.snk" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

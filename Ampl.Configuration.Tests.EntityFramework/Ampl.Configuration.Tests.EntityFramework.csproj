@@ -36,10 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Ampl.Configuration.Tests.EntityFramework.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -85,7 +86,6 @@
     <Compile Include="AppConfigTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ampl.Configuration.Tests.EntityFramework.pfx" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
