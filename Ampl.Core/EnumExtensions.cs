@@ -12,14 +12,12 @@ namespace Ampl.System
   {
     private static DisplayAttribute GetFirstDisplayAttribute(Enum source)
     {
-      return source?
-        .GetType()
-        .GetTypeInfo()
-        .GetDeclaredField(source.ToString())
-        //.First()
-        .GetCustomAttributes(typeof(DisplayAttribute), false)
-        .Select(x => x as DisplayAttribute)
-        .FirstOrDefault();
+      return source?.GetType()
+                    .GetTypeInfo()
+                    .GetDeclaredField(source.ToString())
+                    .GetCustomAttributes(typeof(DisplayAttribute), false)
+                    .Select(x => x as DisplayAttribute)
+                    .FirstOrDefault();
     }
 
     public static string GetDisplayName(this Enum source)
