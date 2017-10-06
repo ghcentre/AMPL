@@ -13,8 +13,7 @@ Ampl.Web.Mvc.Authorization    -> Ampl.Core
                                  Ampl.Identity,
                                  Ampl.Web.Mvc
 
-Ampl.Web.Mvc.SecondaryLogon    -> Ampl.Core
-
+Ampl.Web.Mvc.SecondaryLogon   -> Ampl.Core
 
 Ampl.Web.Mvc.EditorTemplates  -> Ampl.Core
                                  Ampl.Web.Mvc
