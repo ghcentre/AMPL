@@ -36,6 +36,20 @@
     <DocumentationSources>
       <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\Ampl.Core.dll" />
       <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\Ampl.Core.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\Ampl.Configuration.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\Ampl.Configuration.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.xml" />
+      <DocumentationSource sourceFile="..\Ampl.System\bin\Debug\Ampl.System.dll" />
+      <DocumentationSource sourceFile="..\Ampl.System\bin\Debug\Ampl.System.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.Authorization\bin\Debug\Ampl.Web.Mvc.Authorization.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.Authorization\bin\Debug\Ampl.Web.Mvc.Authorization.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.SecondaryLogon\bin\Debug\Ampl.Web.Mvc.SecondaryLogon.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.SecondaryLogon\bin\Debug\Ampl.Web.Mvc.SecondaryLogon.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.xml" />
     </DocumentationSources>
     <PlugInConfigurations>
     </PlugInConfigurations>
@@ -50,6 +64,7 @@
     <NamingMethod>Guid</NamingMethod>
     <HelpTitle>Advanced Multi-Purpose Library</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <FooterText>Copyright 2014-2017 George Harder&amp;#39%3bs Centre.</FooterText>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
@@ -71,13 +86,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Content" />
-    <Folder Include="Content\VersionHistory" />
     <Folder Include="icons" />
     <Folder Include="media" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\VersionHistory\v1.0.0.0.aml" />
-    <None Include="Content\VersionHistory\VersionHistory.aml" />
     <None Include="Content\Welcome.aml" />
   </ItemGroup>
   <ItemGroup>
