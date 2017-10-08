@@ -38,29 +38,23 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.Authorization.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=9da6c799e359b15f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.2.2.3\lib\portable45-net45+win8+wp8+wpa81\Ampl.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ampl.Core, Version=2.2.30.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.2.2.30\lib\portable40-net45+sl5\Ampl.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Identity, Version=2.2.3.0, Culture=neutral, PublicKeyToken=aed9577ef9a00d5e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Identity.2.2.3\lib\net461\Ampl.Identity.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ampl.Identity, Version=2.2.30.0, Culture=neutral, PublicKeyToken=480e5d27837e45bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Identity.2.2.30\lib\net461\Ampl.Identity.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=2.2.3.0, Culture=neutral, PublicKeyToken=e06dcc72ec28df69, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.2.2.3\lib\net461\Ampl.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ampl.Web.Mvc, Version=2.2.30.0, Culture=neutral, PublicKeyToken=1f0335352aac49af, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.2.2.30\lib\net461\Ampl.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -70,27 +64,21 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

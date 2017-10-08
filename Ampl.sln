@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Core", "Ampl.Core\Ampl.Core.csproj", "{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}"
 EndProject
@@ -23,15 +23,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates", "Ampl.Web.Mvc.EditorTemplates\Ampl.Web.Mvc.EditorTemplates.csproj", "{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation.PCL", "Ampl.Documentation.PCL\Ampl.Documentation.PCL.shfbproj", "{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}"
-EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation.NET", "Ampl.Documentation.NET\Ampl.Documentation.NET.shfbproj", "{F730183E-0494-42FC-944B-3D2A341EAD66}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates.Web", "Ampl.Web.Mvc.EditorTemplates.Web\Ampl.Web.Mvc.EditorTemplates.Web.csproj", "{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmplAndroidTest", "AmplAndroidTest\AmplAndroidTest.csproj", "{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.SecondaryLogon", "Ampl.Web.Mvc.SecondaryLogon\Ampl.Web.Mvc.SecondaryLogon.csproj", "{2DD37540-30FC-4F41-9C3C-DF252788B761}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation", "Ampl.Documentation\Ampl.Documentation.shfbproj", "{377ADFBC-F2DE-4151-A413-217F66659960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Test.Portable", "Ampl.Test.Portable\Ampl.Test.Portable.csproj", "{60B72096-54F9-4C0F-8066-13111709C373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,10 +79,6 @@ Global
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B79341B-7054-49BE-AFA6-3DB54C56C3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F730183E-0494-42FC-944B-3D2A341EAD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F730183E-0494-42FC-944B-3D2A341EAD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,8 +93,19 @@ Global
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377ADFBC-F2DE-4151-A413-217F66659960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377ADFBC-F2DE-4151-A413-217F66659960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377ADFBC-F2DE-4151-A413-217F66659960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377ADFBC-F2DE-4151-A413-217F66659960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B72096-54F9-4C0F-8066-13111709C373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B72096-54F9-4C0F-8066-13111709C373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B72096-54F9-4C0F-8066-13111709C373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B72096-54F9-4C0F-8066-13111709C373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB15F492-4F8F-492B-8F25-918DBB798475}
 	EndGlobalSection
 EndGlobal

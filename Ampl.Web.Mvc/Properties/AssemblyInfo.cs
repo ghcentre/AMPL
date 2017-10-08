@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyTitle("AMPL Web MVC")]
 [assembly: AssemblyDescription("AMPL extensions for ASP.NET MVC.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GHCentre.com")]
+[assembly: AssemblyCompany("GHCentre")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
 [assembly: AssemblyCopyright("Copyright © 2014-2017 George Harder's Centre.")]
 [assembly: AssemblyTrademark("AMPL")]
@@ -33,6 +33,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.18")]
-[assembly: AssemblyFileVersion("2.2.18")]
+[assembly: AssemblyVersion("2.2.30")]
+[assembly: AssemblyFileVersion("2.2.30")]
 [assembly: NeutralResourcesLanguageAttribute("en")]

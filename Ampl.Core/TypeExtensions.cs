@@ -35,7 +35,10 @@ namespace Ampl.System
         return thisType;
       }
 
-      foreach(var implementedInterfaceType in thisType.GetTypeInfo().ImplementedInterfaces)
+      foreach(var implementedInterfaceType in 
+                  //thisType.GetTypeInfo().ImplementedInterfaces
+                  thisType.GetInterfaces()
+             )
       {
         if(MatchesGenericTypeDefinition(implementedInterfaceType, interfaceType))
         {
@@ -50,8 +53,9 @@ namespace Ampl.System
 
     private static bool MatchesGenericTypeDefinition(Type checkType, Type genericTypeDefinition)
     {
-      var ti = checkType.GetTypeInfo();
-      return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
+      //var ti = checkType.GetTypeInfo();
+      //return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
+      return checkType.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
     }
 
     #endregion

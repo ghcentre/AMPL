@@ -16,6 +16,6 @@
     <tags>ghcentre ampl core portable</tags>
   </metadata>
   <files>
-    <file src="bin\debug\ru\Ampl.Core.resources.dll" target="lib\portable45-net45+win8+wp8+wpa81\ru"/>
+    <file src="bin\Debug\ru\Ampl.Core.resources.dll" target="lib\portable40-net45+sl5\ru\Ampl.Core.resources.dll" />
   </files>
 </package>

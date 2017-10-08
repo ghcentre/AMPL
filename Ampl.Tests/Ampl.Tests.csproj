@@ -55,6 +55,36 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AppConfig\AppConfigTest.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\AlternativeExceptionCondition.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\AlternativeExceptionHelper.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\CollectionHelpers.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\Condition.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ConditionValidator.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ConstraintViolationType.enum.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\DefaultComparer.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\EnsuresValidator.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\PostconditionException.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\RequiresValidator.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\RequiresWithCustomExceptionValidator.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\SR.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\StringificationExtensions.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\Throw.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Collection.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Boolean.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Byte.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.DateTime.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Decimal.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Double.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.IComparable.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Int16.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Int32.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Int64.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Compare.Single.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Evaluation.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Null.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.String.cs" />
+    <Compile Include="App_Packages\Conditions.1.2.0.1\ValidatorExtensions.Type.cs" />
     <Compile Include="Check\Check_Test.cs" />
     <Compile Include="ConsoleProcessRunner\ConsoleProcessRunnerTest.cs" />
     <Compile Include="DictionaryExtensions\IncludeObjectPropertiesTests.cs" />
@@ -106,15 +136,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="App_Packages\Conditions.1.2.0.1\ExceptionMessages.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

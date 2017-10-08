@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Ampl Configuration")]
 [assembly: AssemblyDescription("AMPL configuration related APIs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GHCentre.com")]
+[assembly: AssemblyCompany("GHCentre")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
 [assembly: AssemblyCopyright("Copyright © 2014-2017 George Harder's Centre.")]
 [assembly: AssemblyTrademark("AMPL")]
@@ -34,7 +34,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.8")]
-[assembly: AssemblyFileVersion("2.2.8")]
+[assembly: AssemblyVersion("2.2.30")]
+[assembly: AssemblyFileVersion("2.2.30")]
 
 [assembly: InternalsVisibleTo("Ampl.Configuration.Test.EntityFramework, PublicKey = 0024000004800000940000000602000000240000525341310004000001000100bd81338a606e0f604ad2bba60c1c077799cec504bc2fe257c887c0ccc2b91f9a13befb834130c7869cf49c987bae6bff2ac61b6def88c17cf169eeec80b12cea20f99e8ef43cdd6be1e4e7d54491a68ad495a8b8bdca08fb7dd0bef9e297dcd69da47883b9c6442f577135fba670bc93d53af4ae8cec8c374aa65ecd64435692")]
