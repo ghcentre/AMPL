@@ -5,7 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Ampl.System</RootNamespace>
-    <Version>3.0.0</Version>
+    <Version>3.0.0-alpha</Version>
     <Authors>GHCentre</Authors>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
@@ -17,6 +17,7 @@
     <PackageTags>ghcentre ampl annotations metadata</PackageTags>
     <AssemblyVersion>3.0.0</AssemblyVersion>
     <FileVersion>3.0.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
