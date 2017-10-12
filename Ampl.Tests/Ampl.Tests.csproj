@@ -67,15 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="StringExtensions\RemoveHtmlTags_Test.cs" />
-    <Compile Include="StringExtensions\RemoveBetween_Test.cs" />
-    <Compile Include="StringExtensions\Reverse_Test.cs" />
-    <Compile Include="StringExtensions\ToNullableDateTime_Test.cs" />
-    <Compile Include="StringExtensions\ToNullableDecimal_Test.cs" />
-    <Compile Include="StringExtensions\ToDecimal_Test.cs" />
-    <Compile Include="StringExtensions\ToNullableInt_Test.cs" />
-    <Compile Include="StringExtensions\ToInt_Test.cs" />
-    <Compile Include="StringExtensions\NullIfWhitespace_Test.cs" />
     <Compile Include="TypeExtensions\TypeExtensions_Test.cs" />
   </ItemGroup>
   <ItemGroup>
