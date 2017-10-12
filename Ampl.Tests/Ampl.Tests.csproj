@@ -70,7 +70,6 @@
     <Compile Include="StringExtensions\RemoveHtmlTags_Test.cs" />
     <Compile Include="StringExtensions\RemoveBetween_Test.cs" />
     <Compile Include="StringExtensions\Reverse_Test.cs" />
-    <Compile Include="StringExtensions\Between_Test.cs" />
     <Compile Include="StringExtensions\ToNullableDateTime_Test.cs" />
     <Compile Include="StringExtensions\ToNullableDecimal_Test.cs" />
     <Compile Include="StringExtensions\ToDecimal_Test.cs" />
@@ -80,10 +79,6 @@
     <Compile Include="TypeExtensions\TypeExtensions_Test.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ampl.Configuration\Ampl.Configuration.csproj">
-      <Project>{2950e026-d26d-4300-84fe-f35ca801cd51}</Project>
-      <Name>Ampl.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ampl.System\Ampl.System.csproj">
       <Project>{0323dbb5-efcc-46ab-ba27-aba38fad23c7}</Project>
       <Name>Ampl.System</Name>

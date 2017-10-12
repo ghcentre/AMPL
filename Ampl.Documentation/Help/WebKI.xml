@@ -25,22 +25,6 @@
   <HelpKINode Title="AlertViewModel.Heading property" Url="html/57a2b05d-ca33-9b34-22c7-185e56fa3c4a.htm" />
   <HelpKINode Title="AlertViewModel.Text property" Url="html/82b8115c-aaf8-f81c-ae77-0840e4751be6.htm" />
   <HelpKINode Title="Allow property" Url="html/47e33d52-07e1-3a0a-e267-5d061dc0cbec.htm" />
-  <HelpKINode Title="Ampl.Configuration namespace" Url="html/272f0014-cada-3381-65f0-1ced5cb75383.htm" />
-  <HelpKINode Title="Ampl.Configuration.AppConfig class" Url="html/303dc07e-6454-029e-27f7-f281fe916024.htm" />
-  <HelpKINode Title="Ampl.Configuration.AppConfigDefaultConfiguration class" Url="html/45dcc473-eb5d-edb6-7d48-a53e4b3f4bb6.htm" />
-  <HelpKINode Title="Ampl.Configuration.BoolConverter class" Url="html/3bb2e743-dd0d-c8b8-999f-6a9cd7ec329f.htm" />
-  <HelpKINode Title="Ampl.Configuration.DecimalConverter class" Url="html/78f87d96-6b49-5b59-28a0-5e7ed06d3ce7.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfig interface" Url="html/f7b85e4b-e962-e52b-28fd-9a97461ddfea.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfigConfiguration interface" Url="html/728f56a6-603b-b244-de89-804d8a872854.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfigConverter interface" Url="html/7b108b64-778c-5929-7a88-cbb3b13645bf.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfigEntity interface" Url="html/b830abb2-e3ee-4bd4-7ef0-97515fef1851.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfigStore interface" Url="html/4b6b2221-aa3c-90ee-52af-e1c1b0161a9b.htm" />
-  <HelpKINode Title="Ampl.Configuration.IAppConfigTransaction interface" Url="html/0343f1a2-8aa0-8129-d0f6-a4260b01ab65.htm" />
-  <HelpKINode Title="Ampl.Configuration.IntConverter class" Url="html/c484f692-4439-0142-e135-1231d76f34c5.htm" />
-  <HelpKINode Title="Ampl.Configuration.NullableBoolConverter class" Url="html/bec2f6d2-f2e6-71d7-a4a2-01cbc7737c13.htm" />
-  <HelpKINode Title="Ampl.Configuration.NullableDecimalConverter class" Url="html/4aaf7a76-af00-1248-68c9-e000d3faae7b.htm" />
-  <HelpKINode Title="Ampl.Configuration.NullableIntConverter class" Url="html/df13bb0e-1ede-e146-f13c-26fa4d533bd6.htm" />
-  <HelpKINode Title="Ampl.Configuration.StringConverter class" Url="html/1c765595-1afb-f625-bc68-f1cf98dfbdf1.htm" />
   <HelpKINode Title="Ampl.Diagnostics namespace" Url="html/bcbe9d5b-0d2d-c1d0-3369-d38e46be3028.htm" />
   <HelpKINode Title="Ampl.Diagnostics.ConsoleProcessRunner class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
   <HelpKINode Title="Ampl.Identity namespace" Url="html/985509bc-8000-6f13-0607-7152e352e3ce.htm" />
@@ -81,29 +65,6 @@
   <HelpKINode Title="Ampl.Web.Mvc.ViewModels.AlertViewModel class" Url="html/d9272220-711d-0b2d-db36-2855d4b23e0c.htm" />
   <HelpKINode Title="Ampl.Web.Optimization namespace" Url="html/f78178d5-f8f5-e400-c15c-078795ff22d0.htm" />
   <HelpKINode Title="Ampl.Web.Optimization.BundleExtensions class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
-  <HelpKINode Title="AppConfig class">
-    <HelpKINode Title="AppConfig Class" Url="html/303dc07e-6454-029e-27f7-f281fe916024.htm" />
-    <HelpKINode Title="about AppConfig class" Url="html/303dc07e-6454-029e-27f7-f281fe916024.htm" />
-    <HelpKINode Title="constructor" Url="html/afc70e29-a7e2-8c27-aefa-5c8899d804df.htm" />
-    <HelpKINode Title="methods" Url="html/d85993ce-b2a5-9d56-6387-d50895d63316.htm" />
-    <HelpKINode Title="properties" Url="html/713913dc-d32b-411b-359d-d9265c36314a.htm" />
-  </HelpKINode>
-  <HelpKINode Title="AppConfig.AppConfig constructor" Url="html/afc70e29-a7e2-8c27-aefa-5c8899d804df.htm" />
-  <HelpKINode Title="AppConfig.Configuration property" Url="html/67e8606e-e321-7c1c-ccba-7e2d3a98f53a.htm" />
-  <HelpKINode Title="AppConfig.ConfigurationFactory property" Url="html/4cab969a-9787-bde3-2be7-cc399f41ea80.htm" />
-  <HelpKINode Title="AppConfig.Get(Of T) method" Url="html/401959d2-c5e9-fdbd-bc25-f19cd815ec38.htm" />
-  <HelpKINode Title="AppConfig.Get&lt;T&gt; method" Url="html/401959d2-c5e9-fdbd-bc25-f19cd815ec38.htm" />
-  <HelpKINode Title="AppConfig.Set(Of T) method" Url="html/913495c4-afc0-3edf-12e1-03e7b8479914.htm" />
-  <HelpKINode Title="AppConfig.Set&lt;T&gt; method" Url="html/913495c4-afc0-3edf-12e1-03e7b8479914.htm" />
-  <HelpKINode Title="AppConfigDefaultConfiguration class">
-    <HelpKINode Title="AppConfigDefaultConfiguration Class" Url="html/45dcc473-eb5d-edb6-7d48-a53e4b3f4bb6.htm" />
-    <HelpKINode Title="about AppConfigDefaultConfiguration class" Url="html/45dcc473-eb5d-edb6-7d48-a53e4b3f4bb6.htm" />
-    <HelpKINode Title="constructor" Url="html/c17c70d6-8bc7-8823-976d-ca1292c05871.htm" />
-    <HelpKINode Title="methods" Url="html/0b713840-bfab-6555-dfe2-1360ff004013.htm" />
-  </HelpKINode>
-  <HelpKINode Title="AppConfigDefaultConfiguration.AppConfigDefaultConfiguration constructor" Url="html/c17c70d6-8bc7-8823-976d-ca1292c05871.htm" />
-  <HelpKINode Title="AppConfigDefaultConfiguration.GetConverters method" Url="html/7b11da67-7fe0-a1dc-6f99-cdfc18f35ba5.htm" />
-  <HelpKINode Title="AppConfigDefaultConfiguration.ResolveDefaultKey method" Url="html/3e869967-20f6-acc2-fb4b-459b8c6e58bc.htm" />
   <HelpKINode Title="ApplicationClaimsAuthorizationManager class">
     <HelpKINode Title="ApplicationClaimsAuthorizationManager Class" Url="html/985b4e38-6491-d7c7-d2db-c3fdc3c7fb5c.htm" />
     <HelpKINode Title="about ApplicationClaimsAuthorizationManager class" Url="html/985b4e38-6491-d7c7-d2db-c3fdc3c7fb5c.htm" />
@@ -117,34 +78,13 @@
   <HelpKINode Title="AuthorizeCore method" Url="html/4f8b264f-8827-9351-f9f0-7d2521d26d6c.htm" />
   <HelpKINode Title="AuthorizedAction method" Url="html/f155a4a2-3d27-062d-2fb6-bdc368707720.htm" />
   <HelpKINode Title="AuthorizedActionLink method" Url="html/6679e14e-c66d-85e9-1979-209b0b9a5c6e.htm" />
-  <HelpKINode Title="BeginAppConfigTransaction method" Url="html/6008a24c-258a-d4fe-ca16-2a08b91e24ae.htm" />
   <HelpKINode Title="BeginDelayed method" Url="html/dbfdadb7-7e23-4a19-1516-cad5efdae8ce.htm" />
-  <HelpKINode Title="BoolConverter class">
-    <HelpKINode Title="BoolConverter Class" Url="html/3bb2e743-dd0d-c8b8-999f-6a9cd7ec329f.htm" />
-    <HelpKINode Title="about BoolConverter class" Url="html/3bb2e743-dd0d-c8b8-999f-6a9cd7ec329f.htm" />
-    <HelpKINode Title="constructor" Url="html/0fe4cd9e-3cf9-197a-1e6d-a657f5f7dea2.htm" />
-    <HelpKINode Title="methods" Url="html/2cc2a23f-f07f-7a28-b04a-63b2f8911a8c.htm" />
-  </HelpKINode>
-  <HelpKINode Title="BoolConverter.BoolConverter constructor" Url="html/0fe4cd9e-3cf9-197a-1e6d-a657f5f7dea2.htm" />
-  <HelpKINode Title="BoolConverter.CanConvert method" Url="html/2470011f-d882-fa76-a3c0-54457c64f00c.htm" />
-  <HelpKINode Title="BoolConverter.ReadEntity method" Url="html/876a05c3-eead-766f-c842-a0f8133a16fd.htm" />
-  <HelpKINode Title="BoolConverter.WriteEntity method" Url="html/97d8f92c-93ed-cee7-2e19-a4f73b238ef9.htm" />
   <HelpKINode Title="BundleExtensions class">
     <HelpKINode Title="BundleExtensions Class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
     <HelpKINode Title="about BundleExtensions class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
     <HelpKINode Title="methods" Url="html/be18eb9f-3842-2c83-51c8-c354f1c606d0.htm" />
   </HelpKINode>
   <HelpKINode Title="BundleExtensions.ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
-  <HelpKINode Title="CanConvert method">
-    <HelpKINode Title="BoolConverter.CanConvert Method " Url="html/2470011f-d882-fa76-a3c0-54457c64f00c.htm" />
-    <HelpKINode Title="DecimalConverter.CanConvert Method " Url="html/33e50abc-20d0-a7b7-f267-5f5e71ac7092.htm" />
-    <HelpKINode Title="IAppConfigConverter.CanConvert Method " Url="html/b1eac578-fd51-feca-a78b-ef94d3c3f4b8.htm" />
-    <HelpKINode Title="IntConverter.CanConvert Method " Url="html/6f5b89ec-7e03-953d-9c1c-efb0291c7a90.htm" />
-    <HelpKINode Title="NullableBoolConverter.CanConvert Method " Url="html/79afe48b-c8e5-c0c6-3b88-6c477c19488c.htm" />
-    <HelpKINode Title="NullableDecimalConverter.CanConvert Method " Url="html/af7d0a4e-dc4d-e122-c62c-cf630727e49f.htm" />
-    <HelpKINode Title="NullableIntConverter.CanConvert Method " Url="html/68331222-e465-c453-8ba7-c5beef968f69.htm" />
-    <HelpKINode Title="StringConverter.CanConvert Method " Url="html/0505faf1-6bc2-1e80-003f-1d8e1b60dd5b.htm" />
-  </HelpKINode>
   <HelpKINode Title="CheckAccess method">
     <HelpKINode Title="ApplicationClaimsAuthorizationManager.CheckAccess Method " Url="html/451f7099-9bce-b3eb-c747-8d2eae917cdd.htm" />
     <HelpKINode Title="ClaimsAuthorization.CheckAccess Method " Url="html/d45a8a0d-3cef-9044-4edc-cb376c7fcdc2.htm" />
@@ -164,9 +104,6 @@
   <HelpKINode Title="ClaimsAuthorization.CustomAuthorizationManager property" Url="html/46116804-65bb-da9c-0977-de28154c3880.htm" />
   <HelpKINode Title="ClaimsAuthorization.EnforceAuthorizationManagerImplementation property" Url="html/9b7dcb86-8996-0b18-6de4-d644e41eaa4c.htm" />
   <HelpKINode Title="ClaimsAuthorization.ResourceType field" Url="html/01d3852e-bb06-29c9-accc-0b9e3dd66747.htm" />
-  <HelpKINode Title="Commit method" Url="html/59a5ab9a-6229-ca84-5fc3-e6c279596dc2.htm" />
-  <HelpKINode Title="Configuration property" Url="html/67e8606e-e321-7c1c-ccba-7e2d3a98f53a.htm" />
-  <HelpKINode Title="ConfigurationFactory property" Url="html/4cab969a-9787-bde3-2be7-cc399f41ea80.htm" />
   <HelpKINode Title="ConsoleProcessRunner class">
     <HelpKINode Title="ConsoleProcessRunner Class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
     <HelpKINode Title="about ConsoleProcessRunner class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
@@ -189,7 +126,6 @@
     <HelpKINode Title="methods" Url="html/5178fad5-29bb-90cf-4ad5-c51a05364992.htm" />
   </HelpKINode>
   <HelpKINode Title="ControllerBaseAlertExtensions.AddAlert method" Url="html/0ba7e269-92a5-4f3e-b950-86d7de31bc48.htm" />
-  <HelpKINode Title="CreateAppConfigEntity method" Url="html/a73138a5-99c0-81b3-f0f8-e9024880d681.htm" />
   <HelpKINode Title="CreateAuthorizationContext method" Url="html/45aaad28-93d7-fab5-c79b-3f738f23da6a.htm" />
   <HelpKINode Title="CreateCollectionItem method" Url="html/11fbc759-c17b-cb12-5178-1e011cf83cf8.htm" />
   <HelpKINode Title="CustomAuthorizationManager property" Url="html/46116804-65bb-da9c-0977-de28154c3880.htm" />
@@ -205,16 +141,6 @@
   <HelpKINode Title="DateTimeValidationAttribute.DateTimeValidationAttribute constructor" Url="html/e66868ab-3dc0-9c22-820a-0ae62559de84.htm" />
   <HelpKINode Title="DateTimeValidationAttribute.GetClientValidationRules method" Url="html/67028c3b-01ab-814c-b8ec-d424ad8b14f2.htm" />
   <HelpKINode Title="DateTimeValidationAttribute.IsValid method" Url="html/b1a4fabe-2bca-d256-3812-dc5f45adf74b.htm" />
-  <HelpKINode Title="DecimalConverter class">
-    <HelpKINode Title="DecimalConverter Class" Url="html/78f87d96-6b49-5b59-28a0-5e7ed06d3ce7.htm" />
-    <HelpKINode Title="about DecimalConverter class" Url="html/78f87d96-6b49-5b59-28a0-5e7ed06d3ce7.htm" />
-    <HelpKINode Title="constructor" Url="html/6d7a975c-569f-02f5-218a-6e6017af8991.htm" />
-    <HelpKINode Title="methods" Url="html/931b26b8-994a-13a3-1eb0-ff6b1481b622.htm" />
-  </HelpKINode>
-  <HelpKINode Title="DecimalConverter.CanConvert method" Url="html/33e50abc-20d0-a7b7-f267-5f5e71ac7092.htm" />
-  <HelpKINode Title="DecimalConverter.DecimalConverter constructor" Url="html/6d7a975c-569f-02f5-218a-6e6017af8991.htm" />
-  <HelpKINode Title="DecimalConverter.ReadEntity method" Url="html/96e62350-4462-45df-d96c-08aaa1ade99a.htm" />
-  <HelpKINode Title="DecimalConverter.WriteEntity method" Url="html/3fef8aac-e0e0-af1a-c938-78bb7d18e7ff.htm" />
   <HelpKINode Title="DefaultConfiguration property" Url="html/633a97de-089a-9f7a-0695-4b10c5ab5fd1.htm" />
   <HelpKINode Title="DelayedRenderExtensions class">
     <HelpKINode Title="DelayedRenderExtensions Class" Url="html/41b34df5-cf72-b161-5653-b4dbe0d279c7.htm" />
@@ -223,7 +149,6 @@
   </HelpKINode>
   <HelpKINode Title="DelayedRenderExtensions.BeginDelayed method" Url="html/dbfdadb7-7e23-4a19-1516-cad5efdae8ce.htm" />
   <HelpKINode Title="DelayedRenderExtensions.RenderDelayed method" Url="html/1361f681-d3fb-5cc4-f8ae-614d92775926.htm" />
-  <HelpKINode Title="DeleteAppConfigEntity method" Url="html/8606ca4d-4787-1926-0e98-065598c1cde3.htm" />
   <HelpKINode Title="Dismissible property" Url="html/1a370997-0d5e-e4d6-566f-a589cf8ce4e0.htm" />
   <HelpKINode Title="DropDownListAttribute class">
     <HelpKINode Title="DropDownListAttribute Class" Url="html/14a598ff-9ba7-a514-f746-3d4944f2df4d.htm" />
@@ -281,24 +206,10 @@
   <HelpKINode Title="Error property" Url="html/67882dcf-7427-c8bf-c646-59a173b68b46.htm" />
   <HelpKINode Title="ExitCode property" Url="html/995cc0e4-eb2e-6b72-465c-ec9ce074a5d4.htm" />
   <HelpKINode Title="ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
-  <HelpKINode Title="Get(Of T) method">
-    <HelpKINode Title="AppConfig.Get(T) Method " Url="html/401959d2-c5e9-fdbd-bc25-f19cd815ec38.htm" />
-    <HelpKINode Title="IAppConfig.Get(T) Method " Url="html/05e1ff30-959b-0e3c-9164-77e7e8d83770.htm" />
-  </HelpKINode>
-  <HelpKINode Title="Get&lt;T&gt; method">
-    <HelpKINode Title="AppConfig.Get(T) Method " Url="html/401959d2-c5e9-fdbd-bc25-f19cd815ec38.htm" />
-    <HelpKINode Title="IAppConfig.Get(T) Method " Url="html/05e1ff30-959b-0e3c-9164-77e7e8d83770.htm" />
-  </HelpKINode>
   <HelpKINode Title="GetAccessControlLists method" Url="html/c78714ed-5a1e-12c7-58d4-2e42ee766b04.htm" />
   <HelpKINode Title="GetAlertViewModels(Of TModel) method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
   <HelpKINode Title="GetAlertViewModels&lt;TModel&gt; method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
-  <HelpKINode Title="GetAppConfigEntities method" Url="html/ed83c509-24b3-05ea-9e77-122d7ad1fbc0.htm" />
-  <HelpKINode Title="GetAppConfigEntity method" Url="html/7ea4eb55-c63d-5572-56bf-d9c3bb459e58.htm" />
   <HelpKINode Title="GetClientValidationRules method" Url="html/67028c3b-01ab-814c-b8ec-d424ad8b14f2.htm" />
-  <HelpKINode Title="GetConverters method">
-    <HelpKINode Title="AppConfigDefaultConfiguration.GetConverters Method " Url="html/7b11da67-7fe0-a1dc-6f99-cdfc18f35ba5.htm" />
-    <HelpKINode Title="IAppConfigConfiguration.GetConverters Method " Url="html/52bd1da5-8c33-b718-7d25-95932c652ba4.htm" />
-  </HelpKINode>
   <HelpKINode Title="GetDropDownListItems(Of TModel) method" Url="html/ff7d8134-dcd3-dd81-3ed9-71b503a13348.htm" />
   <HelpKINode Title="GetDropDownListItems&lt;TModel&gt; method" Url="html/ff7d8134-dcd3-dd81-3ed9-71b503a13348.htm" />
   <HelpKINode Title="HandleAllErrorAttribute class">
@@ -344,56 +255,6 @@
   <HelpKINode Title="IAccessControlList.Resources property" Url="html/493cad09-d147-f76f-ddad-eea1bb728110.htm" />
   <HelpKINode Title="IAccessControlList.Roles property" Url="html/aa226122-7f47-27d9-b28a-bdde77923b31.htm" />
   <HelpKINode Title="IAccessControlList.Users property" Url="html/c07c6747-2875-aa6c-c852-c2c56fd79b34.htm" />
-  <HelpKINode Title="IAppConfig interface">
-    <HelpKINode Title="IAppConfig Interface" Url="html/f7b85e4b-e962-e52b-28fd-9a97461ddfea.htm" />
-    <HelpKINode Title="about IAppConfig interface" Url="html/f7b85e4b-e962-e52b-28fd-9a97461ddfea.htm" />
-    <HelpKINode Title="methods" Url="html/e31e9f95-96a5-ebd1-22f8-bf683265bdcd.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfig.Get(Of T) method" Url="html/05e1ff30-959b-0e3c-9164-77e7e8d83770.htm" />
-  <HelpKINode Title="IAppConfig.Get&lt;T&gt; method" Url="html/05e1ff30-959b-0e3c-9164-77e7e8d83770.htm" />
-  <HelpKINode Title="IAppConfig.Set(Of T) method" Url="html/6e091fa1-da0b-7801-cd96-e423dff6bd6b.htm" />
-  <HelpKINode Title="IAppConfig.Set&lt;T&gt; method" Url="html/6e091fa1-da0b-7801-cd96-e423dff6bd6b.htm" />
-  <HelpKINode Title="IAppConfigConfiguration interface">
-    <HelpKINode Title="IAppConfigConfiguration Interface" Url="html/728f56a6-603b-b244-de89-804d8a872854.htm" />
-    <HelpKINode Title="about IAppConfigConfiguration interface" Url="html/728f56a6-603b-b244-de89-804d8a872854.htm" />
-    <HelpKINode Title="methods" Url="html/a7b6ca8e-f38a-d251-7d2a-5e58681fd16f.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfigConfiguration.GetConverters method" Url="html/52bd1da5-8c33-b718-7d25-95932c652ba4.htm" />
-  <HelpKINode Title="IAppConfigConfiguration.ResolveDefaultKey method" Url="html/ab362d1d-eb4d-45f0-3bb8-44344fc49ebb.htm" />
-  <HelpKINode Title="IAppConfigConverter interface">
-    <HelpKINode Title="IAppConfigConverter Interface" Url="html/7b108b64-778c-5929-7a88-cbb3b13645bf.htm" />
-    <HelpKINode Title="about IAppConfigConverter interface" Url="html/7b108b64-778c-5929-7a88-cbb3b13645bf.htm" />
-    <HelpKINode Title="methods" Url="html/8aaa19f5-3cc4-96bc-a2db-d972f793f472.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfigConverter.CanConvert method" Url="html/b1eac578-fd51-feca-a78b-ef94d3c3f4b8.htm" />
-  <HelpKINode Title="IAppConfigConverter.ReadEntity method" Url="html/66a80bd6-2e8d-8447-9fb3-86bf8f874f72.htm" />
-  <HelpKINode Title="IAppConfigConverter.WriteEntity method" Url="html/d19af742-f151-8ac3-3d2a-df0c5c8ecb4d.htm" />
-  <HelpKINode Title="IAppConfigEntity interface">
-    <HelpKINode Title="IAppConfigEntity Interface" Url="html/b830abb2-e3ee-4bd4-7ef0-97515fef1851.htm" />
-    <HelpKINode Title="about IAppConfigEntity interface" Url="html/b830abb2-e3ee-4bd4-7ef0-97515fef1851.htm" />
-    <HelpKINode Title="properties" Url="html/fac82677-6448-0a71-ac67-4cf35aa4be53.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfigEntity.Key property" Url="html/29ea61c8-9686-dc99-f750-21c64366efa4.htm" />
-  <HelpKINode Title="IAppConfigEntity.Value property" Url="html/b039bc1c-821c-3b0f-bff0-b13158f3f2b2.htm" />
-  <HelpKINode Title="IAppConfigStore interface">
-    <HelpKINode Title="IAppConfigStore Interface" Url="html/4b6b2221-aa3c-90ee-52af-e1c1b0161a9b.htm" />
-    <HelpKINode Title="about IAppConfigStore interface" Url="html/4b6b2221-aa3c-90ee-52af-e1c1b0161a9b.htm" />
-    <HelpKINode Title="methods" Url="html/663408b1-aff0-cbb7-3335-9de879eff395.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfigStore.BeginAppConfigTransaction method" Url="html/6008a24c-258a-d4fe-ca16-2a08b91e24ae.htm" />
-  <HelpKINode Title="IAppConfigStore.CreateAppConfigEntity method" Url="html/a73138a5-99c0-81b3-f0f8-e9024880d681.htm" />
-  <HelpKINode Title="IAppConfigStore.DeleteAppConfigEntity method" Url="html/8606ca4d-4787-1926-0e98-065598c1cde3.htm" />
-  <HelpKINode Title="IAppConfigStore.GetAppConfigEntities method" Url="html/ed83c509-24b3-05ea-9e77-122d7ad1fbc0.htm" />
-  <HelpKINode Title="IAppConfigStore.GetAppConfigEntity method" Url="html/7ea4eb55-c63d-5572-56bf-d9c3bb459e58.htm" />
-  <HelpKINode Title="IAppConfigStore.SaveAppConfigChanges method" Url="html/f77777fb-5528-125a-d240-29097dee14cf.htm" />
-  <HelpKINode Title="IAppConfigStore.SetAppConfigEntity method" Url="html/f0085326-4b06-af75-153f-c1784bf0f8c5.htm" />
-  <HelpKINode Title="IAppConfigTransaction interface">
-    <HelpKINode Title="IAppConfigTransaction Interface" Url="html/0343f1a2-8aa0-8129-d0f6-a4260b01ab65.htm" />
-    <HelpKINode Title="about IAppConfigTransaction interface" Url="html/0343f1a2-8aa0-8129-d0f6-a4260b01ab65.htm" />
-    <HelpKINode Title="methods" Url="html/9a006979-9539-e26e-71d6-247272324f59.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAppConfigTransaction.Commit method" Url="html/59a5ab9a-6229-ca84-5fc3-e6c279596dc2.htm" />
-  <HelpKINode Title="IAppConfigTransaction.Rollback method" Url="html/16218f97-3325-556a-cbb2-6693197b5de2.htm" />
   <HelpKINode Title="IAuthorizationStore interface">
     <HelpKINode Title="IAuthorizationStore Interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
     <HelpKINode Title="about IAuthorizationStore interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
@@ -401,16 +262,6 @@
   </HelpKINode>
   <HelpKINode Title="IAuthorizationStore.GetAccessControlLists method" Url="html/c78714ed-5a1e-12c7-58d4-2e42ee766b04.htm" />
   <HelpKINode Title="Info enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
-  <HelpKINode Title="IntConverter class">
-    <HelpKINode Title="IntConverter Class" Url="html/c484f692-4439-0142-e135-1231d76f34c5.htm" />
-    <HelpKINode Title="about IntConverter class" Url="html/c484f692-4439-0142-e135-1231d76f34c5.htm" />
-    <HelpKINode Title="constructor" Url="html/7af1e297-2e7f-39d0-2616-9d2db4d87de0.htm" />
-    <HelpKINode Title="methods" Url="html/a1cc2c48-1805-c227-963b-3d26456423cc.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IntConverter.CanConvert method" Url="html/6f5b89ec-7e03-953d-9c1c-efb0291c7a90.htm" />
-  <HelpKINode Title="IntConverter.IntConverter constructor" Url="html/7af1e297-2e7f-39d0-2616-9d2db4d87de0.htm" />
-  <HelpKINode Title="IntConverter.ReadEntity method" Url="html/8bc5ed9a-9e9a-304a-40ba-fdac7c7f24a8.htm" />
-  <HelpKINode Title="IntConverter.WriteEntity method" Url="html/0d138ea7-3ff2-1e14-09fb-160320ce130f.htm" />
   <HelpKINode Title="ISecondaryLogonManager(Of TKey) interface">
     <HelpKINode Title="ISecondaryLogonManager(TKey) Interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
     <HelpKINode Title="about ISecondaryLogonManager(Of TKey) interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
@@ -437,15 +288,14 @@
   <HelpKINode Title="IsValid method" Url="html/b1a4fabe-2bca-d256-3812-dc5f45adf74b.htm" />
   <HelpKINode Title="ItemContainer property" Url="html/18d21b56-5539-f67b-5967-9de84ff9c786.htm" />
   <HelpKINode Title="ItemFactory property" Url="html/9be2b53d-8c91-20f9-4739-58d1d5027851.htm" />
-  <HelpKINode Title="Key property" Url="html/29ea61c8-9686-dc99-f750-21c64366efa4.htm" />
   <HelpKINode Title="LabelClass property" Url="html/c4bcb52e-18c5-0afc-a5d9-0a6ff5636a2c.htm" />
   <HelpKINode Title="LinkExtensions class">
     <HelpKINode Title="LinkExtensions Class" Url="html/82fad4a2-05e4-587f-c2a9-e1dc6d83adfa.htm" />
     <HelpKINode Title="LinkExtensions Class" Url="html/3726fc05-8bed-14a4-e40c-178674c04cc6.htm" />
     <HelpKINode Title="about LinkExtensions class" Url="html/82fad4a2-05e4-587f-c2a9-e1dc6d83adfa.htm" />
     <HelpKINode Title="about LinkExtensions class" Url="html/3726fc05-8bed-14a4-e40c-178674c04cc6.htm" />
-    <HelpKINode Title="methods" Url="html/2e749d08-6201-5d5a-b408-a4d4314ddcf5.htm" />
     <HelpKINode Title="methods" Url="html/8fc67969-d529-cc59-a558-6b98c95c709f.htm" />
+    <HelpKINode Title="methods" Url="html/2e749d08-6201-5d5a-b408-a4d4314ddcf5.htm" />
   </HelpKINode>
   <HelpKINode Title="LinkExtensions.AuthorizedAction method" Url="html/f155a4a2-3d27-062d-2fb6-bdc368707720.htm" />
   <HelpKINode Title="LinkExtensions.AuthorizedActionLink method" Url="html/6679e14e-c66d-85e9-1979-209b0b9a5c6e.htm" />
@@ -459,36 +309,6 @@
     <HelpKINode Title="SecondaryLogonManager(TUser, TKey).LogonAsPreviousUser Method " Url="html/99fe4bb9-93d2-4a58-a5da-b5aef3a47ebe.htm" />
   </HelpKINode>
   <HelpKINode Title="MaximumTemplateDepth property" Url="html/c37e265d-9ad0-5624-1a5e-1845791b07f9.htm" />
-  <HelpKINode Title="NullableBoolConverter class">
-    <HelpKINode Title="NullableBoolConverter Class" Url="html/bec2f6d2-f2e6-71d7-a4a2-01cbc7737c13.htm" />
-    <HelpKINode Title="about NullableBoolConverter class" Url="html/bec2f6d2-f2e6-71d7-a4a2-01cbc7737c13.htm" />
-    <HelpKINode Title="constructor" Url="html/0f81e493-daea-e758-2231-f6626c30e3b4.htm" />
-    <HelpKINode Title="methods" Url="html/96dfd950-7e27-0cda-3339-bc5347c6807d.htm" />
-  </HelpKINode>
-  <HelpKINode Title="NullableBoolConverter.CanConvert method" Url="html/79afe48b-c8e5-c0c6-3b88-6c477c19488c.htm" />
-  <HelpKINode Title="NullableBoolConverter.NullableBoolConverter constructor" Url="html/0f81e493-daea-e758-2231-f6626c30e3b4.htm" />
-  <HelpKINode Title="NullableBoolConverter.ReadEntity method" Url="html/5a3b83d7-1492-1214-bb0d-c6ece294c173.htm" />
-  <HelpKINode Title="NullableBoolConverter.WriteEntity method" Url="html/8526afb9-b855-4559-700a-aa01a5e4eaf0.htm" />
-  <HelpKINode Title="NullableDecimalConverter class">
-    <HelpKINode Title="NullableDecimalConverter Class" Url="html/4aaf7a76-af00-1248-68c9-e000d3faae7b.htm" />
-    <HelpKINode Title="about NullableDecimalConverter class" Url="html/4aaf7a76-af00-1248-68c9-e000d3faae7b.htm" />
-    <HelpKINode Title="constructor" Url="html/b8e21eda-dbb2-1e99-abd1-775431e39512.htm" />
-    <HelpKINode Title="methods" Url="html/859afc23-998b-87b0-8167-32bfb8fc62a2.htm" />
-  </HelpKINode>
-  <HelpKINode Title="NullableDecimalConverter.CanConvert method" Url="html/af7d0a4e-dc4d-e122-c62c-cf630727e49f.htm" />
-  <HelpKINode Title="NullableDecimalConverter.NullableDecimalConverter constructor" Url="html/b8e21eda-dbb2-1e99-abd1-775431e39512.htm" />
-  <HelpKINode Title="NullableDecimalConverter.ReadEntity method" Url="html/fef4e667-300b-3c6e-410e-28a425a27818.htm" />
-  <HelpKINode Title="NullableDecimalConverter.WriteEntity method" Url="html/ee6a2aaa-6109-701b-32ef-be9d0bda4b6b.htm" />
-  <HelpKINode Title="NullableIntConverter class">
-    <HelpKINode Title="NullableIntConverter Class" Url="html/df13bb0e-1ede-e146-f13c-26fa4d533bd6.htm" />
-    <HelpKINode Title="about NullableIntConverter class" Url="html/df13bb0e-1ede-e146-f13c-26fa4d533bd6.htm" />
-    <HelpKINode Title="constructor" Url="html/f7e78ac9-dff6-6194-721f-adc267dcce99.htm" />
-    <HelpKINode Title="methods" Url="html/1ccc3908-deed-ff1a-fe03-89af8a2a15d8.htm" />
-  </HelpKINode>
-  <HelpKINode Title="NullableIntConverter.CanConvert method" Url="html/68331222-e465-c453-8ba7-c5beef968f69.htm" />
-  <HelpKINode Title="NullableIntConverter.NullableIntConverter constructor" Url="html/f7e78ac9-dff6-6194-721f-adc267dcce99.htm" />
-  <HelpKINode Title="NullableIntConverter.ReadEntity method" Url="html/ab05e430-83ff-1ab6-5c0f-cf4b80dfc337.htm" />
-  <HelpKINode Title="NullableIntConverter.WriteEntity method" Url="html/54c15637-26fa-fb88-c7a1-0c94a4334ea2.htm" />
   <HelpKINode Title="OnAuthorization method" Url="html/50fd73af-3f18-c339-35e1-a576b1c6418a.htm" />
   <HelpKINode Title="OnException method" Url="html/3612ca3d-7c70-208c-c2df-ab8f22162b0a.htm" />
   <HelpKINode Title="OnMetadataCreated method">
@@ -503,22 +323,8 @@
   <HelpKINode Title="OverrideContainerProperties property" Url="html/bf099e57-899d-f157-780f-3bbd183ea493.htm" />
   <HelpKINode Title="Position property" Url="html/cb5fea2f-dfd4-3781-bc4e-9d779aea25ad.htm" />
   <HelpKINode Title="PreviousUrl property" Url="html/f571b025-89f4-e721-412e-167a455f084f.htm" />
-  <HelpKINode Title="ReadEntity method">
-    <HelpKINode Title="BoolConverter.ReadEntity Method " Url="html/876a05c3-eead-766f-c842-a0f8133a16fd.htm" />
-    <HelpKINode Title="DecimalConverter.ReadEntity Method " Url="html/96e62350-4462-45df-d96c-08aaa1ade99a.htm" />
-    <HelpKINode Title="IAppConfigConverter.ReadEntity Method " Url="html/66a80bd6-2e8d-8447-9fb3-86bf8f874f72.htm" />
-    <HelpKINode Title="IntConverter.ReadEntity Method " Url="html/8bc5ed9a-9e9a-304a-40ba-fdac7c7f24a8.htm" />
-    <HelpKINode Title="NullableBoolConverter.ReadEntity Method " Url="html/5a3b83d7-1492-1214-bb0d-c6ece294c173.htm" />
-    <HelpKINode Title="NullableDecimalConverter.ReadEntity Method " Url="html/fef4e667-300b-3c6e-410e-28a425a27818.htm" />
-    <HelpKINode Title="NullableIntConverter.ReadEntity Method " Url="html/ab05e430-83ff-1ab6-5c0f-cf4b80dfc337.htm" />
-    <HelpKINode Title="StringConverter.ReadEntity Method " Url="html/ccc3e57e-4e12-69c4-9b53-32ba9a8aec3c.htm" />
-  </HelpKINode>
   <HelpKINode Title="RenderDelayed method" Url="html/1361f681-d3fb-5cc4-f8ae-614d92775926.htm" />
   <HelpKINode Title="RenderNullProperties property" Url="html/06b85312-3e95-1952-8ba2-939ae6e345fb.htm" />
-  <HelpKINode Title="ResolveDefaultKey method">
-    <HelpKINode Title="AppConfigDefaultConfiguration.ResolveDefaultKey Method " Url="html/3e869967-20f6-acc2-fb4b-459b8c6e58bc.htm" />
-    <HelpKINode Title="IAppConfigConfiguration.ResolveDefaultKey Method " Url="html/ab362d1d-eb4d-45f0-3bb8-44344fc49ebb.htm" />
-  </HelpKINode>
   <HelpKINode Title="ResourceActionAuthorizeAttribute class">
     <HelpKINode Title="ResourceActionAuthorizeAttribute Class" Url="html/b0e48b4f-470f-6223-42e1-4b014e6c82aa.htm" />
     <HelpKINode Title="about ResourceActionAuthorizeAttribute class" Url="html/b0e48b4f-470f-6223-42e1-4b014e6c82aa.htm" />
@@ -535,8 +341,6 @@
   <HelpKINode Title="Resources property" Url="html/493cad09-d147-f76f-ddad-eea1bb728110.htm" />
   <HelpKINode Title="ResourceType field" Url="html/01d3852e-bb06-29c9-accc-0b9e3dd66747.htm" />
   <HelpKINode Title="Roles property" Url="html/aa226122-7f47-27d9-b28a-bdde77923b31.htm" />
-  <HelpKINode Title="Rollback method" Url="html/16218f97-3325-556a-cbb2-6693197b5de2.htm" />
-  <HelpKINode Title="SaveAppConfigChanges method" Url="html/f77777fb-5528-125a-d240-29097dee14cf.htm" />
   <HelpKINode Title="SecondaryLogonManager(Of TUser, TKey) class">
     <HelpKINode Title="SecondaryLogonManager(TUser, TKey) Class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
     <HelpKINode Title="about SecondaryLogonManager(Of TUser, TKey) class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
@@ -556,15 +360,6 @@
   <HelpKINode Title="SecondaryLogonManager&lt;TUser, TKey&gt;.LogonAsPreviousUser method" Url="html/99fe4bb9-93d2-4a58-a5da-b5aef3a47ebe.htm" />
   <HelpKINode Title="SecondaryLogonManager&lt;TUser, TKey&gt;.SecondaryLogonManager constructor" Url="html/162885db-2d57-867d-7eef-d9272575ae67.htm" />
   <HelpKINode Title="SeparateCheckboxLabel property" Url="html/29dd92f3-1fc2-a0f3-5fb1-765bb43beddd.htm" />
-  <HelpKINode Title="Set(Of T) method">
-    <HelpKINode Title="AppConfig.Set(T) Method " Url="html/913495c4-afc0-3edf-12e1-03e7b8479914.htm" />
-    <HelpKINode Title="IAppConfig.Set(T) Method " Url="html/6e091fa1-da0b-7801-cd96-e423dff6bd6b.htm" />
-  </HelpKINode>
-  <HelpKINode Title="Set&lt;T&gt; method">
-    <HelpKINode Title="AppConfig.Set(T) Method " Url="html/913495c4-afc0-3edf-12e1-03e7b8479914.htm" />
-    <HelpKINode Title="IAppConfig.Set(T) Method " Url="html/6e091fa1-da0b-7801-cd96-e423dff6bd6b.htm" />
-  </HelpKINode>
-  <HelpKINode Title="SetAppConfigEntity method" Url="html/f0085326-4b06-af75-153f-c1784bf0f8c5.htm" />
   <HelpKINode Title="ShortName method" Url="html/35770b4a-2550-c163-1212-3e363f8d7aa7.htm" />
   <HelpKINode Title="ShortNameExtensions class">
     <HelpKINode Title="ShortNameExtensions Class" Url="html/6e4052f2-95cf-9d20-3bcf-1751a39a80d5.htm" />
@@ -598,16 +393,6 @@
   <HelpKINode Title="ShowForEditAttribute.ShowForEditAttribute constructor" Url="html/69ebcac4-0f6d-938e-ff6a-02792d35b712.htm" />
   <HelpKINode Title="Start method" Url="html/471c457e-cd9a-bba8-4153-8d9a813492d7.htm" />
   <HelpKINode Title="StartInfo property" Url="html/85a7bf59-035d-8a5c-0553-39439eff1a44.htm" />
-  <HelpKINode Title="StringConverter class">
-    <HelpKINode Title="StringConverter Class" Url="html/1c765595-1afb-f625-bc68-f1cf98dfbdf1.htm" />
-    <HelpKINode Title="about StringConverter class" Url="html/1c765595-1afb-f625-bc68-f1cf98dfbdf1.htm" />
-    <HelpKINode Title="constructor" Url="html/739a07f2-a0f0-f2e6-18c1-7434b38dcca6.htm" />
-    <HelpKINode Title="methods" Url="html/2b428e5b-2fa2-c23b-2ca8-1d4a618c4aa0.htm" />
-  </HelpKINode>
-  <HelpKINode Title="StringConverter.CanConvert method" Url="html/0505faf1-6bc2-1e80-003f-1d8e1b60dd5b.htm" />
-  <HelpKINode Title="StringConverter.ReadEntity method" Url="html/ccc3e57e-4e12-69c4-9b53-32ba9a8aec3c.htm" />
-  <HelpKINode Title="StringConverter.StringConverter constructor" Url="html/739a07f2-a0f0-f2e6-18c1-7434b38dcca6.htm" />
-  <HelpKINode Title="StringConverter.WriteEntity method" Url="html/2e53fe70-6d48-a340-ec40-8c9085e9d78d.htm" />
   <HelpKINode Title="Success enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="Success property" Url="html/23dac42d-c37d-eae3-e048-55136569f6b6.htm" />
   <HelpKINode Title="Text property" Url="html/82b8115c-aaf8-f81c-ae77-0840e4751be6.htm" />
@@ -616,17 +401,6 @@
   <HelpKINode Title="ValidationErrorOrSuccess(Of TModel) method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
   <HelpKINode Title="ValidationErrorOrSuccess&lt;TModel&gt; method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
   <HelpKINode Title="ValidationType enumeration" Url="html/b14c98e9-49ee-2721-5a3c-9824f12ed5c0.htm" />
-  <HelpKINode Title="Value property" Url="html/b039bc1c-821c-3b0f-bff0-b13158f3f2b2.htm" />
   <HelpKINode Title="Warning enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="Welcome" Url="html/42a36834-531b-4d84-9584-3961623099a2.htm" />
-  <HelpKINode Title="WriteEntity method">
-    <HelpKINode Title="BoolConverter.WriteEntity Method " Url="html/97d8f92c-93ed-cee7-2e19-a4f73b238ef9.htm" />
-    <HelpKINode Title="DecimalConverter.WriteEntity Method " Url="html/3fef8aac-e0e0-af1a-c938-78bb7d18e7ff.htm" />
-    <HelpKINode Title="IAppConfigConverter.WriteEntity Method " Url="html/d19af742-f151-8ac3-3d2a-df0c5c8ecb4d.htm" />
-    <HelpKINode Title="IntConverter.WriteEntity Method " Url="html/0d138ea7-3ff2-1e14-09fb-160320ce130f.htm" />
-    <HelpKINode Title="NullableBoolConverter.WriteEntity Method " Url="html/8526afb9-b855-4559-700a-aa01a5e4eaf0.htm" />
-    <HelpKINode Title="NullableDecimalConverter.WriteEntity Method " Url="html/ee6a2aaa-6109-701b-32ef-be9d0bda4b6b.htm" />
-    <HelpKINode Title="NullableIntConverter.WriteEntity Method " Url="html/54c15637-26fa-fb88-c7a1-0c94a4334ea2.htm" />
-    <HelpKINode Title="StringConverter.WriteEntity Method " Url="html/2e53fe70-6d48-a340-ec40-8c9085e9d78d.htm" />
-  </HelpKINode>
 </HelpKI>

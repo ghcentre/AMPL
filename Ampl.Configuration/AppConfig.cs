@@ -83,22 +83,33 @@ namespace Ampl.Configuration
 
     private Type GetGenericCollectionInterface(Type type)
     {
-      return type.Yield().Concat(type.GetInterfaces())
-        .FirstOrDefault(x =>
-          x.IsGenericType &&
-          x.GetGenericTypeDefinition() == typeof(ICollection<>) &&
-          x.GetGenericArguments().Length == 1);
+      //return type.Yield().Concat(type.GetInterfaces())
+      //  .FirstOrDefault(x =>
+      //    x.IsGenericType &&
+      //    x.GetGenericTypeDefinition() == typeof(ICollection<>) &&
+      //    x.GetGenericArguments().Length == 1);
+
+      return type.Yield().Concat(type.GetTypeInfo().ImplementedInterfaces)
+                 .FirstOrDefault(x => x.IsConstructedGenericType &&
+                                      x.GetGenericTypeDefinition() == typeof(ICollection<>) &&
+                                      x.GenericTypeArguments.Length == 1);
     }
 
     private Type GetGenericDictionaryInterface(Type type)
     {
-      return type.Yield().Concat(type.GetInterfaces())
-        .FirstOrDefault(x =>
-          x.IsGenericType &&
-          x.GetGenericTypeDefinition() == typeof(IDictionary<,>) &&
-          x.GetGenericArguments().Length == 2 &&
-          (x.GetGenericArguments()[0] == typeof(string) || x.GetGenericArguments()[0] == typeof(object))
-        );
+      //return type.Yield().Concat(type.GetInterfaces())
+      //  .FirstOrDefault(x =>
+      //    x.IsGenericType &&
+      //    x.GetGenericTypeDefinition() == typeof(IDictionary<,>) &&
+      //    x.GetGenericArguments().Length == 2 &&
+      //    (x.GetGenericArguments()[0] == typeof(string) || x.GetGenericArguments()[0] == typeof(object))
+      //  );
+
+      return type.Yield().Concat(type.GetTypeInfo().ImplementedInterfaces)
+                 .FirstOrDefault(x => x.IsConstructedGenericType &&
+                                      x.GetGenericTypeDefinition() == typeof(IDictionary<,>) &&
+                                      x.GenericTypeArguments.Length == 2 &&
+                                      (x.GenericTypeArguments[0].In(typeof(string), typeof(object))));
     }
 
     private static int CompareCollectionKeyIndexes(string key1, string key2)
@@ -221,8 +232,10 @@ namespace Ampl.Configuration
 
       if(genericDictionaryType != null)
       {
-        var argumentType = genericDictionaryType.GetGenericArguments()[1];
-        var addMethodInfo = genericDictionaryType.GetMethod("Add");
+        //var argumentType = genericDictionaryType.GetGenericArguments()[1];
+        var argumentType = genericDictionaryType.GetTypeInfo().GenericTypeArguments[1];
+        //var addMethodInfo = genericDictionaryType.GetMethod("Add");
+        var addMethodInfo = genericDictionaryType.GetTypeInfo().GetDeclaredMethod("Add");
         object dictionary = Activator.CreateInstance(targetType);
 
         if(entities.Count == 0)
@@ -242,7 +255,8 @@ namespace Ampl.Configuration
       }
       else if(genericCollectionType != null)
       {
-        var argumentType = genericCollectionType.GetGenericArguments()[0];
+        //var argumentType = genericCollectionType.GetGenericArguments()[0];
+        var argumentType = genericCollectionType.GenericTypeArguments[0];
 
         //var typeConverter = Configuration.GetConverters().FirstOrDefault(x => x.CanConvert(argumentType));
         //if(typeConverter == null)
@@ -250,7 +264,8 @@ namespace Ampl.Configuration
         //  throw new InvalidOperationException("Only collections of primitive types are supported.");
         //}
 
-        var addMethodInfo = genericCollectionType.GetMethod("Add");
+        //var addMethodInfo = genericCollectionType.GetMethod("Add");
+        var addMethodInfo = genericCollectionType.GetTypeInfo().GetDeclaredMethod("Add");
         object collection = Activator.CreateInstance(targetType);
 
         if(entities.Count == 0)
@@ -284,9 +299,12 @@ namespace Ampl.Configuration
       }
 
       object result = Activator.CreateInstance(targetType);
-      var propertyInfos = targetType
-        .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-        .Where(x => x.CanRead && x.CanWrite);
+      //var propertyInfos = targetType
+      //  .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+      //  .Where(x => x.CanRead && x.CanWrite);
+      var propertyInfos = targetType.GetTypeInfo()
+                                    .DeclaredProperties
+                                    .Where(x => x.CanRead && x.CanWrite && !x.GetMethod.IsStatic);
 
       foreach(var propertyInfo in propertyInfos)
       {
@@ -302,7 +320,8 @@ namespace Ampl.Configuration
       Check.NotNull(key, nameof(key));
       var targetType = typeof(T);
       var result = InternalGet(targetType, key, useResolvers);
-      if(result == null && targetType.IsValueType)
+      //if(result == null && targetType.IsValueType)
+      if(result == null && targetType.GetTypeInfo().IsValueType)
       {
         return (T)Activator.CreateInstance(targetType);
       }
@@ -354,7 +373,8 @@ namespace Ampl.Configuration
 
       if(genericDictionaryType != null)
       {
-        var argumentType = genericDictionaryType.GetGenericArguments()[1];
+        //var argumentType = genericDictionaryType.GetGenericArguments()[1];
+        var argumentType = genericDictionaryType.GenericTypeArguments[1];
 
         //
         // remove old entities
@@ -368,12 +388,16 @@ namespace Ampl.Configuration
 
         if(value != null)
         {
-          var keysPropInfo = genericDictionaryType.GetProperty("Keys");
-          var keysPropGetMethod = keysPropInfo.GetGetMethod();
+          //var keysPropInfo = genericDictionaryType.GetProperty("Keys");
+          var keysPropInfo = genericDictionaryType.GetTypeInfo().GetDeclaredProperty("Keys");
+          //var keysPropGetMethod = keysPropInfo.GetGetMethod();
+          var keysPropGetMethod = keysPropInfo.GetMethod;
           object keys = keysPropGetMethod.Invoke(value, new object[] { });
 
-          var thisPropInfo = genericDictionaryType.GetProperty("Item");
-          var itemPropGetMethod = thisPropInfo.GetGetMethod();
+          //var thisPropInfo = genericDictionaryType.GetProperty("Item");
+          var thisPropInfo = genericDictionaryType.GetTypeInfo().GetDeclaredProperty("Item");
+          //var itemPropGetMethod = thisPropInfo.GetGetMethod();
+          var itemPropGetMethod = thisPropInfo.GetMethod;
 
           foreach(object k in (IEnumerable)keys)
           {
@@ -385,7 +409,8 @@ namespace Ampl.Configuration
       }
       else if(genericCollectionType != null)
       {
-        var argumentType = genericCollectionType.GetGenericArguments()[0];
+        //var argumentType = genericCollectionType.GetGenericArguments()[0];
+        var argumentType = genericCollectionType.GenericTypeArguments[0];
 
         //var typeConverter = Configuration.GetConverters().FirstOrDefault(x => x.CanConvert(argumentType));
         //if(typeConverter == null)
@@ -422,9 +447,12 @@ namespace Ampl.Configuration
       //
       // object types
       //
-      var propertyInfos = sourceType
-        .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-        .Where(x => x.CanRead && x.CanWrite);
+      //var propertyInfos = sourceType
+      //  .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+      //  .Where(x => x.CanRead && x.CanWrite);
+      var propertyInfos = sourceType.GetTypeInfo()
+                                    .DeclaredProperties
+                                    .Where(x => x.CanRead && x.CanWrite && !x.GetMethod.IsStatic);
 
       //
       // remove old entities

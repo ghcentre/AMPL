@@ -88,12 +88,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ampl.Configuration\Ampl.Configuration.csproj">
-      <Project>{2950e026-d26d-4300-84fe-f35ca801cd51}</Project>
-      <Name>Ampl.Configuration</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201602060726580_M001.resx">
       <DependentUpon>201602060726580_M001.cs</DependentUpon>
     </EmbeddedResource>
