@@ -31,8 +31,8 @@ namespace Ampl.System
       Check.NotNull(dictionary, nameof(dictionary));
       Check.NotNull(anonymousType, nameof(anonymousType));
       var dict = anonymousType.GetType()
-                              //.GetRuntimeProperties()
-                              .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                              .GetRuntimeProperties()
+                              //.GetProperties(BindingFlags.Public | BindingFlags.Instance)
                               .ToDictionary(prop => prop.Name,
                                             prop => prop.GetValue(anonymousType, null));
       foreach(var item in dict)

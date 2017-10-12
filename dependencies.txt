@@ -1,4 +1,7 @@
-Ampl.Core                     -> (none)
+Ampl.Core                     -> NETStandard.Library
+
+Ampl.Annotations              -> NETStandard.Library
+                                 System.ComponentModel.Annotations
 
 Ampl.System                   -> (none)
 

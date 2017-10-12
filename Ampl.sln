@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Core", "Ampl.Core\Ampl.Core.csproj", "{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.System", "Ampl.System\Ampl.System.csproj", "{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Tests", "Ampl.Tests\Ampl.Tests.csproj", "{21717421-2523-4291-9186-4545551EB9EB}"
@@ -25,13 +23,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates.Web", "Ampl.Web.Mvc.EditorTemplates.Web\Ampl.Web.Mvc.EditorTemplates.Web.csproj", "{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmplAndroidTest", "AmplAndroidTest\AmplAndroidTest.csproj", "{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.SecondaryLogon", "Ampl.Web.Mvc.SecondaryLogon\Ampl.Web.Mvc.SecondaryLogon.csproj", "{2DD37540-30FC-4F41-9C3C-DF252788B761}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Ampl.Documentation", "Ampl.Documentation\Ampl.Documentation.shfbproj", "{377ADFBC-F2DE-4151-A413-217F66659960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Test.Portable", "Ampl.Test.Portable\Ampl.Test.Portable.csproj", "{60B72096-54F9-4C0F-8066-13111709C373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ampl.Core", "Ampl.Core\Ampl.Core.csproj", "{F8876736-E301-4643-87A2-2BCF589FA48B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Core.Tests", "Ampl.Core.Tests\Ampl.Core.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Annotations", "Ampl.Annotations\Ampl.Annotations.csproj", "{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Annotations.Tests", "Ampl.Annotations.Tests\Ampl.Annotations.Tests.csproj", "{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +41,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,12 +81,6 @@ Global
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91D2D9E6-6475-414B-B6CA-4EE0FFEEDE57}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DD37540-30FC-4F41-9C3C-DF252788B761}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,10 +89,22 @@ Global
 		{377ADFBC-F2DE-4151-A413-217F66659960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{377ADFBC-F2DE-4151-A413-217F66659960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{377ADFBC-F2DE-4151-A413-217F66659960}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60B72096-54F9-4C0F-8066-13111709C373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60B72096-54F9-4C0F-8066-13111709C373}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60B72096-54F9-4C0F-8066-13111709C373}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60B72096-54F9-4C0F-8066-13111709C373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8876736-E301-4643-87A2-2BCF589FA48B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8876736-E301-4643-87A2-2BCF589FA48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8876736-E301-4643-87A2-2BCF589FA48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8876736-E301-4643-87A2-2BCF589FA48B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

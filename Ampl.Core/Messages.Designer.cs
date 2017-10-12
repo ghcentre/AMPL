@@ -8,8 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ampl.System {
-    using System;
+using System.Reflection;
+
+namespace Ampl.System.Resources {
     
     
     /// <summary>
@@ -39,7 +40,7 @@ namespace Ampl.System {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ampl.System.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ampl.System.Messages", typeof(Messages).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

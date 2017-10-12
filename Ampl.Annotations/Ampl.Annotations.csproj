@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>Ampl.System</RootNamespace>
+    <Version>3.0.0</Version>
+    <Authors>GHCentre</Authors>
+    <Company>GHCentre</Company>
+    <Product>GHCentre Advanced Multi-Purpose Library</Product>
+    <Description>AMPL Extensions for Component Metadata Annotations</Description>
+    <Copyright>Copyright © 2014-2017 George Harder's Centre.</Copyright>
+    <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
+    <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
+    <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
+    <PackageTags>ghcentre ampl annotations metadata</PackageTags>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <FileVersion>3.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.4\Ampl.Annotations.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+  </ItemGroup>
+
+</Project>

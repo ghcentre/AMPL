@@ -92,10 +92,6 @@
       <Project>{2950e026-d26d-4300-84fe-f35ca801cd51}</Project>
       <Name>Ampl.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ampl.Core\Ampl.Core.csproj">
-      <Project>{c2f4aae2-c37b-4113-aa3a-293c9739afcf}</Project>
-      <Name>Ampl.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602060726580_M001.resx">
