@@ -95,6 +95,16 @@
       <DependentUpon>201602080914255_M002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ampl.Configuration\Ampl.Configuration.csproj">
+      <Project>{159ae4c3-788d-465f-9bae-53409271de77}</Project>
+      <Name>Ampl.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ampl.Core\Ampl.Core.csproj">
+      <Project>{f8876736-e301-4643-87a2-2bcf589fa48b}</Project>
+      <Name>Ampl.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Identity", "Ampl.Ident
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.Authorization", "Ampl.Web.Mvc.Authorization\Ampl.Web.Mvc.Authorization.csproj", "{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.EntityFramework", "Ampl.Configuration.Tests.EntityFramework\Ampl.Configuration.Tests.EntityFramework.csproj", "{17645A61-4BC8-486E-AD48-8416551AA241}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates", "Ampl.Web.Mvc.EditorTemplates\Ampl.Web.Mvc.EditorTemplates.csproj", "{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc.EditorTemplates.Web", "Ampl.Web.Mvc.EditorTemplates.Web\Ampl.Web.Mvc.EditorTemplates.Web.csproj", "{9091E4D7-3284-4C45-9A24-F7DA7E0B57CE}"
@@ -34,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Annotations.Tests", "Ampl.Annotations.Tests\Ampl.Annotations.Tests.csproj", "{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration", "Ampl.Configuration\Ampl.Configuration.csproj", "{159AE4C3-788D-465F-9BAE-53409271DE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.EF", "Ampl.Configuration.Tests.EF\Ampl.Configuration.Tests.EF.csproj", "{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,6 @@ Global
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F56257F-DDBE-4F4E-8630-61F0D636F8DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17645A61-4BC8-486E-AD48-8416551AA241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17645A61-4BC8-486E-AD48-8416551AA241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17645A61-4BC8-486E-AD48-8416551AA241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17645A61-4BC8-486E-AD48-8416551AA241}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E22B82D-CBED-405A-B2EC-4EC6F6FFE9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{159AE4C3-788D-465F-9BAE-53409271DE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{159AE4C3-788D-465F-9BAE-53409271DE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{159AE4C3-788D-465F-9BAE-53409271DE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
