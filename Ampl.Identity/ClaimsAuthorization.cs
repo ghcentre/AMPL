@@ -36,8 +36,10 @@ namespace Ampl.Identity
     //
     // changed from new IdentityConfiguration().ClaimsAuthorizationManager to be IoC-aware
     //
-    private static Lazy<ClaimsAuthorizationManager> _claimsAuthorizationManager = new Lazy<ClaimsAuthorizationManager>(
-      () => FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager);
+    private static Lazy<ClaimsAuthorizationManager> _claimsAuthorizationManager =
+      new Lazy<ClaimsAuthorizationManager>(() => FederatedAuthentication.FederationConfiguration
+                                                                        .IdentityConfiguration
+                                                                        .ClaimsAuthorizationManager);
 
     /// <summary>
     /// Gets the registered authorization manager.
@@ -103,7 +105,9 @@ namespace Ampl.Identity
       Check.NotNull(actions, "actions");
       Check.NotNull(resources, "resources");
 
-      return CheckAccess(new AuthorizationContext(ClaimsPrincipal.Current, resources, actions));
+      return CheckAccess(new AuthorizationContext(ClaimsPrincipal.Current,
+                                                  resources,
+                                                  actions));
     }
 
     /// <summary>
@@ -117,16 +121,16 @@ namespace Ampl.Identity
       Check.NotNull(action, "action");
       Check.NotNull(resources, "resources");
 
-      var actionCollection = new Collection<Claim>();
-      actionCollection.Add(new Claim(ActionType, action));
+      var actionCollection = new Collection<Claim> { new Claim(ActionType, action) };
       var resourceCollection = new Collection<Claim>();
       foreach(var resource in resources)
       {
         resourceCollection.Add(resource);
       }
 
-      return CheckAccess(new AuthorizationContext(
-          ClaimsPrincipal.Current, resourceCollection, actionCollection));
+      return CheckAccess(new AuthorizationContext(ClaimsPrincipal.Current,
+                                                  resourceCollection,
+                                                  actionCollection));
     }
 
     /// <summary>
