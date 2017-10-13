@@ -1,13 +1,14 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ampl.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ampl.Tests.AppConfig
+namespace Ampl.Configuration.Tests
 {
-  [TestClass]
-  public class AppConfigTest
+  [TestFixture]
+  public class AppConfig_Tests
   {
     class Repository : Ampl.Configuration.IAppConfigStore
     {
@@ -47,21 +48,21 @@ namespace Ampl.Tests.AppConfig
       }
     }
 
-    [TestMethod]
+    [Test]
     public void AppConfig_DefaultConfiguration()
     {
       var config = new Ampl.Configuration.AppConfig(new Repository());
       Assert.IsTrue(config.Configuration.GetType() == typeof(Ampl.Configuration.AppConfigDefaultConfiguration));
     }
 
-    [TestMethod]
+    [Test]
     public void AppConfig_DefaultConfiguration_ConvertersExist()
     {
       var defaultConfig = new Ampl.Configuration.AppConfigDefaultConfiguration();
       Assert.IsTrue(defaultConfig.GetConverters().Count() > 0);
     }
 
-    [TestMethod]
+    [Test]
     public void AppConfig_DefaultConfiguration_Resolver_NonExistentKey()
     {
       var defaultConfig = new Ampl.Configuration.AppConfigDefaultConfiguration();
@@ -69,3 +70,4 @@ namespace Ampl.Tests.AppConfig
     }
   }
 }
+

@@ -69,5 +69,51 @@ namespace Ampl.Core.Tests
       Assert.That((string)dic["StringProp"], Is.SameAs(anon.StringProp));
       Assert.That((string)dic["StringProp"], Is.Not.EqualTo("OldString"));
     }
+
+
+    [Test]
+    public void GetValueOrDefault_NullThis_Throws()
+    {
+      Dictionary<string, string> arg = null;
+      Assert.Throws<ArgumentNullException>(() => arg.GetValueOrDefault("test"));
+    }
+
+    private Dictionary<int, string> _errorMessages = new Dictionary<int, string>() {
+      { 0, "The operation completed successfully" },
+      { 1, "Incorrect function" },
+      { 2, "File not found" },
+      { 3, "Path not found" },
+      { 4, "Cannot open file" },
+      { 5, "Access denied" }
+    };
+
+    [Test]
+    public void GetValueOrDefault_ExistingKey_Returns()
+    {
+      int key = 3;
+      var result = _errorMessages.GetValueOrDefault(key);
+      Assert.That(result, Is.EqualTo("Path not found"));
+    }
+
+    [Test]
+    public void GetValueOrDefault_NonExistingKey_ReturnsNull()
+    {
+      int key = 1000;
+      var result = _errorMessages.GetValueOrDefault(key);
+      Assert.That(result, Is.Null);
+    }
+
+    [Test]
+    public void GetValueOrDefault_ValueTypesNonExistingKey_ReturnsDefault()
+    {
+      var dictionary = new Dictionary<string, int>() {
+        ["one"] = 1,
+        ["two"] = 2,
+        ["three"] = 3
+      };
+      string key = "four";
+      int result = dictionary.GetValueOrDefault(key);
+      Assert.That(result, Is.EqualTo(default(int)));
+    }
   }
 }

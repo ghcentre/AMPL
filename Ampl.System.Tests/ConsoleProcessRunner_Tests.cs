@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Ampl.Diagnostics;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using Ampl.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Ampl.System.Tests
 {
-  [TestClass]
-  public class ConsoleProcessRunnerTest
+  [TestFixture]
+  public class ConsoleProcessRunner_Tests
   {
-    [TestMethod]
-    public void Constructor_defaults()
+    [Test]
+    public void Constructor_SetsDefaults()
     {
       var runner = new ConsoleProcessRunner();
       Assert.IsNotNull(runner.StartInfo);
@@ -17,8 +21,8 @@ namespace Ampl.System.Tests
       Assert.IsFalse(runner.IsRunning);
     }
 
-    [TestMethod]
-    public void Process_writes_to_output()
+    [Test]
+    public void Start_Normal_WritesToOutput()
     {
       var runner = new ConsoleProcessRunner() {
         StartInfo = new ProcessStartInfo("cmd.exe", "/c dir %windir%")
@@ -27,8 +31,8 @@ namespace Ampl.System.Tests
       Assert.IsFalse(string.IsNullOrEmpty(runner.Output));
     }
 
-    [TestMethod]
-    public void Process_writes_to_error()
+    [Test]
+    public void Start_Error_WritesToOutput()
     {
       var runner = new ConsoleProcessRunner() {
         StartInfo = new ProcessStartInfo("cmd.exe", "/c dir %windir%notexist")
@@ -36,6 +40,5 @@ namespace Ampl.System.Tests
       runner.Start();
       Assert.IsFalse(string.IsNullOrEmpty(runner.Error));
     }
-
   }
 }

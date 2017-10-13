@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8EDF4429-251A-416D-BB68-93F227191BCF}</ProjectGuid>
+    <ProjectGuid>{81337C06-7871-44C8-850E-28ABF4F838E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ampl.Core.Tests</RootNamespace>
-    <AssemblyName>Ampl.Core.Tests</AssemblyName>
+    <RootNamespace>Ampl.Configuration.Tests</RootNamespace>
+    <AssemblyName>Ampl.Configuration.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,28 +37,24 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Check_Tests.cs" />
-    <Compile Include="DictionaryExtensions_Tests.cs" />
-    <Compile Include="DisposableExtensions_Tests.cs" />
-    <Compile Include="EnumerableExtensions_Tests.cs" />
-    <Compile Include="EnumExtensions_Tests.cs" />
-    <Compile Include="NullCheckExtensions_Tests.cs" />
+    <Compile Include="AppConfig_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortGuid_Tests.cs" />
-    <Compile Include="StringExtensions_Tests.cs" />
-    <Compile Include="TypeExtensions_Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ampl.Configuration\Ampl.Configuration.csproj">
+      <Project>{159ae4c3-788d-465f-9bae-53409271de77}</Project>
+      <Name>Ampl.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ampl.Core\Ampl.Core.csproj">
+      <Project>{f8876736-e301-4643-87a2-2bcf589fa48b}</Project>
+      <Name>Ampl.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ampl.Core\Ampl.Core.csproj">
-      <Project>{F8876736-E301-4643-87A2-2BCF589FA48B}</Project>
-      <Name>Ampl.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.System", "Ampl.System\Ampl.System.csproj", "{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Tests", "Ampl.Tests\Ampl.Tests.csproj", "{21717421-2523-4291-9186-4545551EB9EB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc", "Ampl.Web.Mvc\Ampl.Web.Mvc.csproj", "{72DBFD44-295F-4252-AFE4-2D3793755AA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Optimization", "Ampl.Web.Optimization\Ampl.Web.Optimization.csproj", "{A6145A7F-8671-4480-B99F-D0F67EE30D2F}"
@@ -27,13 +25,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ampl.Core", "Ampl.Core\Ampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Core.Tests", "Ampl.Core.Tests\Ampl.Core.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Annotations", "Ampl.Annotations\Ampl.Annotations.csproj", "{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ampl.Annotations", "Ampl.Annotations\Ampl.Annotations.csproj", "{DF1CBE1F-8744-4444-8E9B-4E3A0E03B493}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Annotations.Tests", "Ampl.Annotations.Tests\Ampl.Annotations.Tests.csproj", "{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration", "Ampl.Configuration\Ampl.Configuration.csproj", "{159AE4C3-788D-465F-9BAE-53409271DE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ampl.Configuration", "Ampl.Configuration\Ampl.Configuration.csproj", "{159AE4C3-788D-465F-9BAE-53409271DE77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests.EF", "Ampl.Configuration.Tests.EF\Ampl.Configuration.Tests.EF.csproj", "{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Configuration.Tests", "Ampl.Configuration.Tests\Ampl.Configuration.Tests.csproj", "{81337C06-7871-44C8-850E-28ABF4F838E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.System.Tests", "Ampl.System.Tests\Ampl.System.Tests.csproj", "{D3B00981-93FE-454F-90A8-CE1F36E8A84E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +47,6 @@ Global
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0323DBB5-EFCC-46AB-BA27-ABA38FAD23C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21717421-2523-4291-9186-4545551EB9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21717421-2523-4291-9186-4545551EB9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21717421-2523-4291-9186-4545551EB9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21717421-2523-4291-9186-4545551EB9EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72DBFD44-295F-4252-AFE4-2D3793755AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72DBFD44-295F-4252-AFE4-2D3793755AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72DBFD44-295F-4252-AFE4-2D3793755AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,6 +101,14 @@ Global
 		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81337C06-7871-44C8-850E-28ABF4F838E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81337C06-7871-44C8-850E-28ABF4F838E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81337C06-7871-44C8-850E-28ABF4F838E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81337C06-7871-44C8-850E-28ABF4F838E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B00981-93FE-454F-90A8-CE1F36E8A84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B00981-93FE-454F-90A8-CE1F36E8A84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B00981-93FE-454F-90A8-CE1F36E8A84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B00981-93FE-454F-90A8-CE1F36E8A84E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

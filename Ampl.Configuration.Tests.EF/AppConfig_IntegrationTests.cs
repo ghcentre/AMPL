@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Ampl.Configuration.Tests.EF
 {
   [TestFixture]
-  public class AppConfig_Tests
+  public class AppConfig_IntegrationTests
   {
     private AmplTestContext _db;
     private AppConfigStore _store;

@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="AppConfigConfiguration.cs" />
     <Compile Include="AppConfigStore.cs" />
-    <Compile Include="AppConfig_Tests.cs" />
+    <Compile Include="AppConfig_IntegrationTests.cs" />
     <Compile Include="Entities\AmplTestContext.cs" />
     <Compile Include="Entities\AppConfigItem.cs" />
     <Compile Include="Entities\AppConfigKeyResolver.cs" />
