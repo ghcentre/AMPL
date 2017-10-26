@@ -1,11 +1,11 @@
 Ampl.Core                     netstandard20     ->  NETStandard.Library
 
-Ampl.Annotations              netstandard14     ->  NETStandard.Library
+Ampl.Annotations              netstandard20     ->  NETStandard.Library
                                                     System.ComponentModel.Annotations
 
 Ampl.System                   net461            ->  (none)
                                               
-Ampl.Configuration            netstandard14     ->  Ampl.Core
+Ampl.Configuration            netstandard20     ->  Ampl.Core
                                                     NETStandard.Library
                                                     System.ComponentModel.Annotations
 

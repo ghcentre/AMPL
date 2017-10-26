@@ -193,7 +193,8 @@ namespace Ampl.Configuration
       //
       else if(GetGenericCollectionInterface(targetType) != null)
       {
-        list.AddRange(GetEntitiesUsingResolvers(key, "[", useResolvers).ToEmptyIfNull());
+        list.AddRange(GetEntitiesUsingResolvers(key, "[", useResolvers)
+                      ?? Enumerable.Empty<IAppConfigEntity>());
       }
 
       //
@@ -201,7 +202,8 @@ namespace Ampl.Configuration
       //
       else
       {
-        list.AddRange(GetEntitiesUsingResolvers(key, ".", useResolvers).ToEmptyIfNull());
+        list.AddRange(GetEntitiesUsingResolvers(key, ".", useResolvers)
+                      ?? Enumerable.Empty<IAppConfigEntity>());
       }
 
       return list;

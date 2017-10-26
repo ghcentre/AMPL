@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Ampl.System</RootNamespace>
-    <Version>3.0.0-alpha</Version>
+    <Version>3.0.1-alpha</Version>
     <Authors>GHCentre</Authors>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
@@ -15,8 +15,8 @@
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl annotations metadata</PackageTags>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
-    <FileVersion>3.0.0</FileVersion>
+    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <FileVersion>3.0.1</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
