@@ -206,5 +206,47 @@ namespace Ampl.Core.Tests
       // assert
       Assert.That(result, Is.EqualTo(3));
     }
+
+    [Test]
+    public void If_NullThis_ReturnsNull()
+    {
+      // arrange
+      string arg = null;
+      // act
+      var result = arg.If(null);
+      // assert
+      Assert.That(result, Is.Null);
+    }
+
+    [Test]
+    public void If_NotNullThisNullPredicate_Throws()
+    {
+      // arrange
+      string arg = "string";
+      // act - assert
+      Assert.Throws<ArgumentNullException>(() => arg.If(null));
+    }
+
+    [Test]
+    public void If_NotNullBothAndPredicateTrue_ReturnsThis()
+    {
+      // arrange
+      string arg = "string";
+      // act
+      var result = arg.If(x => x.Length > 2);
+      // assert
+      Assert.That(result, Is.SameAs(arg));
+    }
+
+    [Test]
+    public void If_NotNullBothAndPredicateFalse_ReturnsNull()
+    {
+      // arrange
+      string arg = "string";
+      // act
+      var result = arg.If(x => x == "anotherstring");
+      // assert
+      Assert.That(result, Is.Null);
+    }
   }
 }

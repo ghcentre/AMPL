@@ -3,8 +3,16 @@
   <system.web>
     <compilation>
       <assemblies>
-        <add assembly="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-        <add assembly="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+        <!--
+              The "System.Object is not defined" error may appear
+              when editing .cshtml views if PCL projects or packages
+              are referenced.
+              
+              Uncommenting the following lines may help:
+              
+              <add assembly="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+              <add assembly="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+        -->
       </assemblies>
     </compilation>
   </system.web>

@@ -238,23 +238,24 @@ namespace Ampl.System
     //  return o != null;
     //}
 
-    ///// <summary>
-    ///// Evaluates the predicate if input is not <see langword="null"/>.
-    ///// </summary>
-    ///// <typeparam name="TInput"></typeparam>
-    ///// <param name="input"></param>
-    ///// <param name="predicate"></param>
-    ///// <returns></returns>
-    //public static TInput If<TInput>(this TInput input, Predicate<TInput> predicate)
-    //{
-    //  if(input == null)
-    //  {
-    //    return default(TInput);
-    //  }
+    /// <summary>
+    /// Evaluates the predicate if input is not <see langword="null"/>.
+    /// </summary>
+    /// <typeparam name="TInput"></typeparam>
+    /// <param name="input"></param>
+    /// <param name="predicate"></param>
+    /// <returns>If the input is not null and predicate succeeds the method returns input. Otherwise the
+    /// method returns null.</returns>
+    public static TInput If<TInput>(this TInput input, Func<TInput, bool> predicate)
+    {
+      if(input == null)
+      {
+        return default(TInput);
+      }
 
-    //  Check.NotNull(predicate, nameof(predicate));
-    //  return predicate(input) ? input : default(TInput);
-    //}
+      Check.NotNull(predicate, nameof(predicate));
+      return predicate(input) ? input : default(TInput);
+    }
 
     /// <summary>
     /// Evaluates the action if input is not <see langword="null"/>.

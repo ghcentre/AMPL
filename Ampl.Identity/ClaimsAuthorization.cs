@@ -29,7 +29,7 @@ namespace Ampl.Identity
     /// use own implementation.
     /// </summary>
     /// <value>A <see cref="bool"/> value indicating use of own implementation.</value>
-    public static bool EnforceAuthorizationManagerImplementation { get; set; }
+    public static bool EnforceAuthorizationManagerImplementation { get; set; } = true;
 
     public static ClaimsAuthorizationManager CustomAuthorizationManager { get; set; }
 
@@ -44,29 +44,14 @@ namespace Ampl.Identity
     /// <summary>
     /// Gets the registered authorization manager.
     /// </summary>
-    public static ClaimsAuthorizationManager AuthorizationManager
-    {
-      get
-      {
-        if(CustomAuthorizationManager != null)
-        {
-          return CustomAuthorizationManager;
-        }
-
-        return _claimsAuthorizationManager.Value;
-      }
-    }
-
-    static ClaimsAuthorization()
-    {
-      EnforceAuthorizationManagerImplementation = true;
-    }
+    public static ClaimsAuthorizationManager AuthorizationManager =>
+      CustomAuthorizationManager ?? _claimsAuthorizationManager.Value;
 
     /// <summary>
     /// Checks the authorization policy.
     /// </summary>
-    /// <param name="resource">The resource.</param>
     /// <param name="action">The action.</param>
+    /// <param name="resources">The resource.</param>
     /// <returns>true when authorized, otherwise false</returns>
     public static bool CheckAccess(string action, params string[] resources)
     {
@@ -74,7 +59,9 @@ namespace Ampl.Identity
       return CheckAccess(ClaimsPrincipal.Current, action, resources);
     }
 
-    public static bool CheckAccess(ClaimsPrincipal principal, string action, params string[] resources)
+    public static bool CheckAccess(ClaimsPrincipal principal,
+                                   string action,
+                                   params string[] resources)
     {
       var context = CreateAuthorizationContext(principal,
                                                action,
@@ -82,7 +69,9 @@ namespace Ampl.Identity
       return CheckAccess(context);
     }
 
-    public static bool CheckAccess(IPrincipal principal, string action, params string[] resources)
+    public static bool CheckAccess(IPrincipal principal,
+                                   string action,
+                                   params string[] resources)
     {
       var claimsPrincipal = principal as ClaimsPrincipal;
       if(claimsPrincipal == null)
@@ -100,7 +89,8 @@ namespace Ampl.Identity
     /// <param name="actions">The actions.</param>
     /// <param name="resources">The resources.</param>
     /// <returns>true when authorized, otherwise false</returns>
-    public static bool CheckAccess(Collection<Claim> actions, Collection<Claim> resources)
+    public static bool CheckAccess(Collection<Claim> actions,
+                                   Collection<Claim> resources)
     {
       Check.NotNull(actions, "actions");
       Check.NotNull(resources, "resources");
@@ -116,7 +106,8 @@ namespace Ampl.Identity
     /// <param name="action">The action.</param>
     /// <param name="resources">The resources.</param>
     /// <returns>true when authorized, otherwise false</returns>
-    public static bool CheckAccess(string action, params Claim[] resources)
+    public static bool CheckAccess(string action,
+                                   params Claim[] resources)
     {
       Check.NotNull(action, "action");
       Check.NotNull(resources, "resources");
@@ -140,7 +131,9 @@ namespace Ampl.Identity
     /// <param name="resource">The resource name.</param>
     /// <param name="resources">The resources.</param>
     /// <returns>true when authorized, otherwise false</returns>
-    public static bool CheckAccess(string action, string resource, params Claim[] resources)
+    public static bool CheckAccess(string action,
+                                   string resource,
+                                   params Claim[] resources)
     {
       Check.NotNull(action, nameof(action));
       Check.NotNull(resource, nameof(resource));
@@ -171,7 +164,9 @@ namespace Ampl.Identity
       return AuthorizationManager.CheckAccess(context);
     }
 
-    public static AuthorizationContext CreateAuthorizationContext(ClaimsPrincipal principal, string action, params string[] resources)
+    public static AuthorizationContext CreateAuthorizationContext(ClaimsPrincipal principal,
+                                                                  string action,
+                                                                  params string[] resources)
     {
       var actionClaims = new Collection<Claim>() {
         new Claim(ActionType, action)
@@ -184,14 +179,9 @@ namespace Ampl.Identity
         resources.ToList().ForEach(ar => resourceClaims.Add(new Claim(ResourceType, ar)));
       }
 
-      return new AuthorizationContext(
-        principal,
-        resourceClaims,
-        actionClaims);
+      return new AuthorizationContext(principal,
+                                      resourceClaims,
+                                      actionClaims);
     }
   }
 }
-
-
-
-

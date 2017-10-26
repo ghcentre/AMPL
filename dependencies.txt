@@ -1,29 +1,39 @@
-Ampl.Core                     netstandard14   -> NETStandard.Library
+Ampl.Core                     netstandard20     ->  NETStandard.Library
 
-Ampl.Annotations              netstandard14   -> NETStandard.Library
-                                                 System.ComponentModel.Annotations
+Ampl.Annotations              netstandard14     ->  NETStandard.Library
+                                                    System.ComponentModel.Annotations
 
-Ampl.System                   net461          -> (none)
+Ampl.System                   net461            ->  (none)
+                                              
+Ampl.Configuration            netstandard14     ->  Ampl.Core
+                                                    NETStandard.Library
+                                                    System.ComponentModel.Annotations
 
-Ampl.Configuration            netstandard14   -> Ampl.Core
-                                                 NETStandard.Library
-                                                 System.ComponentModel.Annotations
+Ampl.Identity                 net461            ->  Ampl.Core
 
-Ampl.Identity                 -> Ampl.Core
+Ampl.Web.Mvc                  net461            ->  Ampl.Core,
+                                                    Microsoft.AspNet.Mvc
 
-Ampl.Web.Mvc                  -> Ampl.Core,
-                                 Microsoft.AspNet.Mvc
 
-Ampl.Web.Mvc.Authorization    -> Ampl.Core
-                                 Ampl.Identity,
-                                 Ampl.Web.Mvc
+Ampl.Web.Mvc.Authorization    net461            ->  Ampl.Core
+                                                    Ampl.Identity
+                                                    Ampl.Web.Mvc
+                                                    Microsoft.AspNet.Mvc
 
-Ampl.Web.Mvc.SecondaryLogon   -> Ampl.Core
+Ampl.Web.Mvc.SecondaryLogon   net461            ->  Ampl.Core
+                                                    Microsoft.AspNet.Identity.Core
+                                                    Microsoft.AspNet.Identity.Own
+                                                    Microsoft.Owin
+                                                    Microsoft.Owin.Security
+                                                    Microsoft.Owin.Security.Cookies
+                                                    Owin
 
-Ampl.Web.Mvc.EditorTemplates  -> Ampl.Core
-                                 Ampl.Web.Mvc
+Ampl.Web.Optimization         net461            ->  Microsoft.AspNet.Web.Optimization
 
-Ampl.Web.Optimization         -> Microsoft.AspNet.Web.Optimization
+Ampl.Web.Mvc.EditorTemplates  net461            ->  Ampl.Core
+                                                    Ampl.Web.Mvc
+                                                    Ampl.Web.Optimization
+                                                    Microsoft.AspNet.Mvc
 
 
 (obsolete)
