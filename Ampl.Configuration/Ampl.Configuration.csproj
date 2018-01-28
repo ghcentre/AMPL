@@ -5,7 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Configuration.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.1-alpha</Version>
+    <Version>3.0.2</Version>
     <Authors>GHCentre</Authors>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
@@ -15,12 +15,16 @@
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl configuration</PackageTags>
-    <FileVersion>3.0.1</FileVersion>
-    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <FileVersion>3.0.2</FileVersion>
+    <AssemblyVersion>3.0.2</AssemblyVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Ampl.Configuration.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ampl.Core" Version="3.0.1-alpha" />
+    <PackageReference Include="Ampl.Core" Version="3.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
   </ItemGroup>
 
