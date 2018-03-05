@@ -90,6 +90,7 @@
     <Compile Include="ControllerBaseAlertExtensions.cs" />
     <Compile Include="DelayedRenderExtensions.cs" />
     <Compile Include="HandleAllErrorAttribute.cs" />
+    <Compile Include="HtmlStringExtensions.cs" />
     <Compile Include="Html\HtmlHelperDropDownListExtensions.cs" />
     <Compile Include="Html\HtmlHelperAlertExtensions.cs" />
     <Compile Include="Html\HtmlHelperValidationExtensions.cs" />
