@@ -32,7 +32,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web
         "~/Scripts/jquery.validate.unobtrusive.js",
 
         "~/Scripts/ampl.bootstrap.jquery.validate.js",
-        "~/Scripts/ampl.jqurey.validate.unobtrusive.js"
+        "~/Scripts/ampl.jquery.validate.unobtrusive.js"
       ).ForceOrder());
 
       bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
