@@ -2,7 +2,6 @@
 <HelpKI>
   <HelpKINode Title="AccessDeniedResult class">
     <HelpKINode Title="AccessDeniedResult Class" Url="html/44426aa0-db84-9b43-240a-fca715c27714.htm" />
-    <HelpKINode Title="about AccessDeniedResult class" Url="html/44426aa0-db84-9b43-240a-fca715c27714.htm" />
     <HelpKINode Title="constructor" Url="html/3878b101-7b1c-415f-cc30-904692aa00ee.htm" />
     <HelpKINode Title="methods" Url="html/9326211a-04c4-981a-11e9-7744fe5a2d0e.htm" />
     <HelpKINode Title="properties" Url="html/ec14fc1b-2f36-1712-30be-79f0da660747.htm" />
@@ -14,7 +13,6 @@
   <HelpKINode Title="AlertContextualClass enumeration" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="AlertViewModel class">
     <HelpKINode Title="AlertViewModel Class" Url="html/d9272220-711d-0b2d-db36-2855d4b23e0c.htm" />
-    <HelpKINode Title="about AlertViewModel class" Url="html/d9272220-711d-0b2d-db36-2855d4b23e0c.htm" />
     <HelpKINode Title="constructor" Url="html/52ac00de-ca73-0913-565d-673a14c47b2c.htm" />
     <HelpKINode Title="methods" Url="html/c4c41d24-8cdf-1dd7-9fb0-8b65b3857039.htm" />
     <HelpKINode Title="properties" Url="html/9a1e1b43-3278-5334-2ae1-e543a44a529a.htm" />
@@ -49,6 +47,7 @@
   <HelpKINode Title="Ampl.Web.Mvc.Html.HtmlHelperValidationExtensions class" Url="html/574230c2-8253-50db-f611-29cb13ca7df0.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.Html.LinkExtensions class" Url="html/3726fc05-8bed-14a4-e40c-178674c04cc6.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.Html.ShortNameExtensions class" Url="html/6e4052f2-95cf-9d20-3bcf-1751a39a80d5.htm" />
+  <HelpKINode Title="Ampl.Web.Mvc.HtmlStringExtensions class" Url="html/7e5809e8-70a9-b21d-b90f-84e4357324e8.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.LinkExtensions class" Url="html/82fad4a2-05e4-587f-c2a9-e1dc6d83adfa.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.ResourceActionAuthorizeAttribute class" Url="html/b0e48b4f-470f-6223-42e1-4b014e6c82aa.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.SecondaryLogon namespace" Url="html/b256d1f5-cac9-febd-7159-bf4c9dad19a4.htm" />
@@ -67,7 +66,6 @@
   <HelpKINode Title="Ampl.Web.Optimization.BundleExtensions class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
   <HelpKINode Title="ApplicationClaimsAuthorizationManager class">
     <HelpKINode Title="ApplicationClaimsAuthorizationManager Class" Url="html/985b4e38-6491-d7c7-d2db-c3fdc3c7fb5c.htm" />
-    <HelpKINode Title="about ApplicationClaimsAuthorizationManager class" Url="html/985b4e38-6491-d7c7-d2db-c3fdc3c7fb5c.htm" />
     <HelpKINode Title="constructor" Url="html/430d6536-a92d-f15d-7efc-b17bcc7790bb.htm" />
     <HelpKINode Title="methods" Url="html/07e05ba1-c22b-b736-09e3-6ba6a2f76efd.htm" />
   </HelpKINode>
@@ -81,7 +79,6 @@
   <HelpKINode Title="BeginDelayed method" Url="html/dbfdadb7-7e23-4a19-1516-cad5efdae8ce.htm" />
   <HelpKINode Title="BundleExtensions class">
     <HelpKINode Title="BundleExtensions Class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
-    <HelpKINode Title="about BundleExtensions class" Url="html/7d29d77d-4516-b468-90d6-89177a093c0f.htm" />
     <HelpKINode Title="methods" Url="html/be18eb9f-3842-2c83-51c8-c354f1c606d0.htm" />
   </HelpKINode>
   <HelpKINode Title="BundleExtensions.ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
@@ -92,7 +89,6 @@
   </HelpKINode>
   <HelpKINode Title="ClaimsAuthorization class">
     <HelpKINode Title="ClaimsAuthorization Class" Url="html/c47cf7e3-e835-2f79-8e42-40740dfc47fe.htm" />
-    <HelpKINode Title="about ClaimsAuthorization class" Url="html/c47cf7e3-e835-2f79-8e42-40740dfc47fe.htm" />
     <HelpKINode Title="fields" Url="html/62f799e1-106b-8b94-6bc5-ed02578c2e5c.htm" />
     <HelpKINode Title="methods" Url="html/0f73595a-273d-53c2-9b6d-d6dd82f77f5e.htm" />
     <HelpKINode Title="properties" Url="html/85afe6c3-ce8f-4e7d-f553-f5a3b28b2100.htm" />
@@ -106,7 +102,6 @@
   <HelpKINode Title="ClaimsAuthorization.ResourceType field" Url="html/01d3852e-bb06-29c9-accc-0b9e3dd66747.htm" />
   <HelpKINode Title="ConsoleProcessRunner class">
     <HelpKINode Title="ConsoleProcessRunner Class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
-    <HelpKINode Title="about ConsoleProcessRunner class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
     <HelpKINode Title="constructor" Url="html/3105ee2a-cd50-464f-dcb7-f7aa9cfd40d0.htm" />
     <HelpKINode Title="methods" Url="html/79333406-873e-6322-03a2-e4cb7da7aa29.htm" />
     <HelpKINode Title="properties" Url="html/6873c532-26b3-95dc-5ba1-db211a105b49.htm" />
@@ -122,7 +117,6 @@
   <HelpKINode Title="ContextalClass property" Url="html/f3096528-a327-333b-6db5-1ca96ee3c313.htm" />
   <HelpKINode Title="ControllerBaseAlertExtensions class">
     <HelpKINode Title="ControllerBaseAlertExtensions Class" Url="html/eca06510-9b9a-bc05-f186-9388a84ad86a.htm" />
-    <HelpKINode Title="about ControllerBaseAlertExtensions class" Url="html/eca06510-9b9a-bc05-f186-9388a84ad86a.htm" />
     <HelpKINode Title="methods" Url="html/5178fad5-29bb-90cf-4ad5-c51a05364992.htm" />
   </HelpKINode>
   <HelpKINode Title="ControllerBaseAlertExtensions.AddAlert method" Url="html/0ba7e269-92a5-4f3e-b950-86d7de31bc48.htm" />
@@ -133,7 +127,6 @@
   <HelpKINode Title="DateTime enumeration member" Url="html/b14c98e9-49ee-2721-5a3c-9824f12ed5c0.htm" />
   <HelpKINode Title="DateTimeValidationAttribute class">
     <HelpKINode Title="DateTimeValidationAttribute Class" Url="html/9fbe5576-09d4-7925-9a88-749de60a7f35.htm" />
-    <HelpKINode Title="about DateTimeValidationAttribute class" Url="html/9fbe5576-09d4-7925-9a88-749de60a7f35.htm" />
     <HelpKINode Title="constructor" Url="html/e66868ab-3dc0-9c22-820a-0ae62559de84.htm" />
     <HelpKINode Title="methods" Url="html/c7d35662-35a7-63f9-b446-09ff94c289c9.htm" />
     <HelpKINode Title="properties" Url="html/cda4b353-8fc0-0b56-3a99-62759bef1c1c.htm" />
@@ -144,7 +137,6 @@
   <HelpKINode Title="DefaultConfiguration property" Url="html/633a97de-089a-9f7a-0695-4b10c5ab5fd1.htm" />
   <HelpKINode Title="DelayedRenderExtensions class">
     <HelpKINode Title="DelayedRenderExtensions Class" Url="html/41b34df5-cf72-b161-5653-b4dbe0d279c7.htm" />
-    <HelpKINode Title="about DelayedRenderExtensions class" Url="html/41b34df5-cf72-b161-5653-b4dbe0d279c7.htm" />
     <HelpKINode Title="methods" Url="html/06760fff-3958-501c-e5ea-2a9d102e25e3.htm" />
   </HelpKINode>
   <HelpKINode Title="DelayedRenderExtensions.BeginDelayed method" Url="html/dbfdadb7-7e23-4a19-1516-cad5efdae8ce.htm" />
@@ -152,17 +144,16 @@
   <HelpKINode Title="Dismissible property" Url="html/1a370997-0d5e-e4d6-566f-a589cf8ce4e0.htm" />
   <HelpKINode Title="DropDownListAttribute class">
     <HelpKINode Title="DropDownListAttribute Class" Url="html/14a598ff-9ba7-a514-f746-3d4944f2df4d.htm" />
-    <HelpKINode Title="about DropDownListAttribute class" Url="html/14a598ff-9ba7-a514-f746-3d4944f2df4d.htm" />
-    <HelpKINode Title="constructor" Url="html/f97e965c-7506-d715-e55e-a471fe7e99aa.htm" />
+    <HelpKINode Title="constructor" Url="html/e949c57b-226c-50d1-fcc6-42c99fc1796b.htm" />
     <HelpKINode Title="methods" Url="html/b8d0b2a3-c1bc-2853-c53b-cdbd023a3d87.htm" />
     <HelpKINode Title="properties" Url="html/3845c8f7-a2cf-cc6c-f7ed-7053fd59c263.htm" />
   </HelpKINode>
-  <HelpKINode Title="DropDownListAttribute.DropDownListAttribute constructor" Url="html/f97e965c-7506-d715-e55e-a471fe7e99aa.htm" />
+  <HelpKINode Title="DropDownListAttribute.DropDownListAttribute constructor" Url="html/e949c57b-226c-50d1-fcc6-42c99fc1796b.htm" />
+  <HelpKINode Title="DropDownListAttribute.EnumType property" Url="html/acf3d002-7364-d209-e45d-337c0189615b.htm" />
   <HelpKINode Title="DropDownListAttribute.ItemContainer property" Url="html/18d21b56-5539-f67b-5967-9de84ff9c786.htm" />
   <HelpKINode Title="DropDownListAttribute.OnMetadataCreated method" Url="html/1579ecbe-7f14-ff69-ce88-5657b0007d42.htm" />
   <HelpKINode Title="EditableCollectionAttribute class">
     <HelpKINode Title="EditableCollectionAttribute Class" Url="html/42a210ba-7e55-07b1-42ad-896062237049.htm" />
-    <HelpKINode Title="about EditableCollectionAttribute class" Url="html/42a210ba-7e55-07b1-42ad-896062237049.htm" />
     <HelpKINode Title="constructor" Url="html/6469a6c6-2f28-de6e-9c95-d0f0a8be33de.htm" />
     <HelpKINode Title="methods" Url="html/3899b9de-ea2a-1252-41fa-c475bffedd3f.htm" />
     <HelpKINode Title="properties" Url="html/ade083d6-3040-5c99-efff-a8120c1f3242.htm" />
@@ -172,7 +163,6 @@
   <HelpKINode Title="EditableCollectionAttribute.OnMetadataCreated method" Url="html/85ed5744-1e4d-b5eb-efe9-a993056103f9.htm" />
   <HelpKINode Title="EditableCollectionHelpers class">
     <HelpKINode Title="EditableCollectionHelpers Class" Url="html/a5755e20-8aec-1d8f-50b6-f126065c0cd1.htm" />
-    <HelpKINode Title="about EditableCollectionHelpers class" Url="html/a5755e20-8aec-1d8f-50b6-f126065c0cd1.htm" />
     <HelpKINode Title="methods" Url="html/8539d8ad-8245-1dcf-cd97-096ef6cad471.htm" />
   </HelpKINode>
   <HelpKINode Title="EditableCollectionHelpers.CreateCollectionItem method" Url="html/11fbc759-c17b-cb12-5178-1e011cf83cf8.htm" />
@@ -180,7 +170,6 @@
   <HelpKINode Title="EditorOffsetClass property" Url="html/a0122839-cab5-87b4-c8a0-f937136a39b9.htm" />
   <HelpKINode Title="EditorTemplateConfiguration class">
     <HelpKINode Title="EditorTemplateConfiguration Class" Url="html/650da9a8-783f-b224-7aee-f192f9c91fb9.htm" />
-    <HelpKINode Title="about EditorTemplateConfiguration class" Url="html/650da9a8-783f-b224-7aee-f192f9c91fb9.htm" />
     <HelpKINode Title="constructor" Url="html/f59f5717-1f28-bc4d-1d03-7bc738a8f13a.htm" />
     <HelpKINode Title="methods" Url="html/6ed01c5b-d997-e996-4299-29dcb5a255c6.htm" />
     <HelpKINode Title="properties" Url="html/349108c3-4df8-f563-49d7-eb5049aed6bd.htm" />
@@ -196,13 +185,13 @@
   <HelpKINode Title="EditorTemplateConfiguration.SeparateCheckboxLabel property" Url="html/29dd92f3-1fc2-a0f3-5fb1-765bb43beddd.htm" />
   <HelpKINode Title="EditorTemplateHelpers class">
     <HelpKINode Title="EditorTemplateHelpers Class" Url="html/73566ccf-53f0-5966-3710-c20f5c8fcb0c.htm" />
-    <HelpKINode Title="about EditorTemplateHelpers class" Url="html/73566ccf-53f0-5966-3710-c20f5c8fcb0c.htm" />
     <HelpKINode Title="methods" Url="html/a946556b-5e26-c33c-bf72-c3a436b1faa3.htm" />
   </HelpKINode>
   <HelpKINode Title="EditorTemplateHelpers.OverrideContainerProperties method" Url="html/a675f076-a772-3880-7d40-9d5e1f60f5fd.htm" />
   <HelpKINode Title="EditorTemplateHelpers.ShouldDisplayProperty method" Url="html/3a162783-6f7a-7628-37ea-794835cd91b5.htm" />
   <HelpKINode Title="EditorTemplateHelpers.ShouldEditProperty method" Url="html/b1180fe0-6936-20a6-d2b9-e2e9324c2fdf.htm" />
   <HelpKINode Title="EnforceAuthorizationManagerImplementation property" Url="html/9b7dcb86-8996-0b18-6de4-d644e41eaa4c.htm" />
+  <HelpKINode Title="EnumType property" Url="html/acf3d002-7364-d209-e45d-337c0189615b.htm" />
   <HelpKINode Title="Error property" Url="html/67882dcf-7427-c8bf-c646-59a173b68b46.htm" />
   <HelpKINode Title="ExitCode property" Url="html/995cc0e4-eb2e-6b72-465c-ec9ce074a5d4.htm" />
   <HelpKINode Title="ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
@@ -214,7 +203,6 @@
   <HelpKINode Title="GetDropDownListItems&lt;TModel&gt; method" Url="html/ff7d8134-dcd3-dd81-3ed9-71b503a13348.htm" />
   <HelpKINode Title="HandleAllErrorAttribute class">
     <HelpKINode Title="HandleAllErrorAttribute Class" Url="html/40673706-24d1-9667-5a54-6c6a6410696f.htm" />
-    <HelpKINode Title="about HandleAllErrorAttribute class" Url="html/40673706-24d1-9667-5a54-6c6a6410696f.htm" />
     <HelpKINode Title="constructor" Url="html/b36c997b-f92e-d61c-98bb-caace38634f7.htm" />
     <HelpKINode Title="methods" Url="html/a96ecaf5-fbd6-346b-93f9-ad63d0c1f0d9.htm" />
     <HelpKINode Title="properties" Url="html/02463610-dc9d-d9a8-995c-dc4618770ea3.htm" />
@@ -225,28 +213,29 @@
   <HelpKINode Title="Heading property" Url="html/57a2b05d-ca33-9b34-22c7-185e56fa3c4a.htm" />
   <HelpKINode Title="HtmlHelperAlertExtensions class">
     <HelpKINode Title="HtmlHelperAlertExtensions Class" Url="html/9fd45aec-c8d8-abd7-28be-2ae2da1ee39b.htm" />
-    <HelpKINode Title="about HtmlHelperAlertExtensions class" Url="html/9fd45aec-c8d8-abd7-28be-2ae2da1ee39b.htm" />
     <HelpKINode Title="methods" Url="html/a05758ad-7f58-5a19-1deb-d27f9267d6dc.htm" />
   </HelpKINode>
   <HelpKINode Title="HtmlHelperAlertExtensions.GetAlertViewModels(Of TModel) method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
   <HelpKINode Title="HtmlHelperAlertExtensions.GetAlertViewModels&lt;TModel&gt; method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
   <HelpKINode Title="HtmlHelperDropDownListExtensions class">
     <HelpKINode Title="HtmlHelperDropDownListExtensions Class" Url="html/1fafc88a-e26d-78e3-6444-7990e2272ffd.htm" />
-    <HelpKINode Title="about HtmlHelperDropDownListExtensions class" Url="html/1fafc88a-e26d-78e3-6444-7990e2272ffd.htm" />
     <HelpKINode Title="methods" Url="html/c7f9ce54-eb3d-cc98-125d-a3a74ae5286d.htm" />
   </HelpKINode>
   <HelpKINode Title="HtmlHelperDropDownListExtensions.GetDropDownListItems(Of TModel) method" Url="html/ff7d8134-dcd3-dd81-3ed9-71b503a13348.htm" />
   <HelpKINode Title="HtmlHelperDropDownListExtensions.GetDropDownListItems&lt;TModel&gt; method" Url="html/ff7d8134-dcd3-dd81-3ed9-71b503a13348.htm" />
   <HelpKINode Title="HtmlHelperValidationExtensions class">
     <HelpKINode Title="HtmlHelperValidationExtensions Class" Url="html/574230c2-8253-50db-f611-29cb13ca7df0.htm" />
-    <HelpKINode Title="about HtmlHelperValidationExtensions class" Url="html/574230c2-8253-50db-f611-29cb13ca7df0.htm" />
     <HelpKINode Title="methods" Url="html/02fb9033-3c24-295b-e512-415edbf39d2f.htm" />
   </HelpKINode>
   <HelpKINode Title="HtmlHelperValidationExtensions.ValidationErrorOrSuccess(Of TModel) method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
   <HelpKINode Title="HtmlHelperValidationExtensions.ValidationErrorOrSuccess&lt;TModel&gt; method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
+  <HelpKINode Title="HtmlStringExtensions class">
+    <HelpKINode Title="HtmlStringExtensions Class" Url="html/7e5809e8-70a9-b21d-b90f-84e4357324e8.htm" />
+    <HelpKINode Title="methods" Url="html/7c60915e-aa21-4c63-dd8d-d53dd07d76c1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HtmlStringExtensions.IfNotEmpty method" Url="html/e4508ca5-178d-87f0-6b16-20626c3336f2.htm" />
   <HelpKINode Title="IAccessControlList interface">
     <HelpKINode Title="IAccessControlList Interface" Url="html/c015de69-ae1a-5398-981b-4572d456e313.htm" />
-    <HelpKINode Title="about IAccessControlList interface" Url="html/c015de69-ae1a-5398-981b-4572d456e313.htm" />
     <HelpKINode Title="properties" Url="html/8a15d63b-3e7f-3c51-5031-b828a2d3eccd.htm" />
   </HelpKINode>
   <HelpKINode Title="IAccessControlList.Actions property" Url="html/8ceb8d68-bd33-dcde-33bd-13d121b3e8f4.htm" />
@@ -257,28 +246,25 @@
   <HelpKINode Title="IAccessControlList.Users property" Url="html/c07c6747-2875-aa6c-c852-c2c56fd79b34.htm" />
   <HelpKINode Title="IAuthorizationStore interface">
     <HelpKINode Title="IAuthorizationStore Interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
-    <HelpKINode Title="about IAuthorizationStore interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
     <HelpKINode Title="methods" Url="html/305def39-9126-ed9f-f312-212365daa018.htm" />
   </HelpKINode>
   <HelpKINode Title="IAuthorizationStore.GetAccessControlLists method" Url="html/c78714ed-5a1e-12c7-58d4-2e42ee766b04.htm" />
+  <HelpKINode Title="IfNotEmpty method" Url="html/e4508ca5-178d-87f0-6b16-20626c3336f2.htm" />
   <HelpKINode Title="Info enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="ISecondaryLogonManager(Of TKey) interface">
     <HelpKINode Title="ISecondaryLogonManager(TKey) Interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
-    <HelpKINode Title="about ISecondaryLogonManager(Of TKey) interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
     <HelpKINode Title="methods" Url="html/0c0805f5-17cf-9134-524e-968bc7af02bc.htm" />
   </HelpKINode>
   <HelpKINode Title="ISecondaryLogonManager(Of TKey).LogonAs method" Url="html/aef13e0a-4130-563e-d444-3f8e439a93a3.htm" />
   <HelpKINode Title="ISecondaryLogonManager(Of TKey).LogonAsPreviousUser method" Url="html/af87a289-8d23-0c7b-4144-43ccd19a6cf4.htm" />
   <HelpKINode Title="ISecondaryLogonManager&lt;TKey&gt; interface">
     <HelpKINode Title="ISecondaryLogonManager(TKey) Interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
-    <HelpKINode Title="about ISecondaryLogonManager&lt;TKey&gt; interface" Url="html/9a8c53eb-6c38-c1da-769d-722fc4e445a2.htm" />
     <HelpKINode Title="methods" Url="html/0c0805f5-17cf-9134-524e-968bc7af02bc.htm" />
   </HelpKINode>
   <HelpKINode Title="ISecondaryLogonManager&lt;TKey&gt;.LogonAs method" Url="html/aef13e0a-4130-563e-d444-3f8e439a93a3.htm" />
   <HelpKINode Title="ISecondaryLogonManager&lt;TKey&gt;.LogonAsPreviousUser method" Url="html/af87a289-8d23-0c7b-4144-43ccd19a6cf4.htm" />
   <HelpKINode Title="ISecondaryLogonResult interface">
     <HelpKINode Title="ISecondaryLogonResult Interface" Url="html/2b2e6cfd-7f28-2f74-e664-2a220be9a631.htm" />
-    <HelpKINode Title="about ISecondaryLogonResult interface" Url="html/2b2e6cfd-7f28-2f74-e664-2a220be9a631.htm" />
     <HelpKINode Title="properties" Url="html/57f3b56e-5382-173c-9935-c86d3bf80732.htm" />
   </HelpKINode>
   <HelpKINode Title="ISecondaryLogonResult.PreviousUrl property" Url="html/f571b025-89f4-e721-412e-167a455f084f.htm" />
@@ -292,10 +278,8 @@
   <HelpKINode Title="LinkExtensions class">
     <HelpKINode Title="LinkExtensions Class" Url="html/82fad4a2-05e4-587f-c2a9-e1dc6d83adfa.htm" />
     <HelpKINode Title="LinkExtensions Class" Url="html/3726fc05-8bed-14a4-e40c-178674c04cc6.htm" />
-    <HelpKINode Title="about LinkExtensions class" Url="html/82fad4a2-05e4-587f-c2a9-e1dc6d83adfa.htm" />
-    <HelpKINode Title="about LinkExtensions class" Url="html/3726fc05-8bed-14a4-e40c-178674c04cc6.htm" />
-    <HelpKINode Title="methods" Url="html/8fc67969-d529-cc59-a558-6b98c95c709f.htm" />
     <HelpKINode Title="methods" Url="html/2e749d08-6201-5d5a-b408-a4d4314ddcf5.htm" />
+    <HelpKINode Title="methods" Url="html/8fc67969-d529-cc59-a558-6b98c95c709f.htm" />
   </HelpKINode>
   <HelpKINode Title="LinkExtensions.AuthorizedAction method" Url="html/f155a4a2-3d27-062d-2fb6-bdc368707720.htm" />
   <HelpKINode Title="LinkExtensions.AuthorizedActionLink method" Url="html/6679e14e-c66d-85e9-1979-209b0b9a5c6e.htm" />
@@ -327,7 +311,6 @@
   <HelpKINode Title="RenderNullProperties property" Url="html/06b85312-3e95-1952-8ba2-939ae6e345fb.htm" />
   <HelpKINode Title="ResourceActionAuthorizeAttribute class">
     <HelpKINode Title="ResourceActionAuthorizeAttribute Class" Url="html/b0e48b4f-470f-6223-42e1-4b014e6c82aa.htm" />
-    <HelpKINode Title="about ResourceActionAuthorizeAttribute class" Url="html/b0e48b4f-470f-6223-42e1-4b014e6c82aa.htm" />
     <HelpKINode Title="constructor" Url="html/ae8d6b04-cec8-d78b-545f-cdb77a69b5ce.htm" />
     <HelpKINode Title="methods" Url="html/c584fca0-f577-0c00-9786-2930afb3f145.htm" />
     <HelpKINode Title="properties" Url="html/37d1ee93-2670-3af2-5a41-815dbb6259ca.htm" />
@@ -343,7 +326,6 @@
   <HelpKINode Title="Roles property" Url="html/aa226122-7f47-27d9-b28a-bdde77923b31.htm" />
   <HelpKINode Title="SecondaryLogonManager(Of TUser, TKey) class">
     <HelpKINode Title="SecondaryLogonManager(TUser, TKey) Class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
-    <HelpKINode Title="about SecondaryLogonManager(Of TUser, TKey) class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
     <HelpKINode Title="constructor" Url="html/162885db-2d57-867d-7eef-d9272575ae67.htm" />
     <HelpKINode Title="methods" Url="html/abc44e6a-335b-e7ae-1b06-fe3c96ab7f8e.htm" />
   </HelpKINode>
@@ -352,7 +334,6 @@
   <HelpKINode Title="SecondaryLogonManager(Of TUser, TKey).SecondaryLogonManager constructor" Url="html/162885db-2d57-867d-7eef-d9272575ae67.htm" />
   <HelpKINode Title="SecondaryLogonManager&lt;TUser, TKey&gt; class">
     <HelpKINode Title="SecondaryLogonManager(TUser, TKey) Class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
-    <HelpKINode Title="about SecondaryLogonManager&lt;TUser, TKey&gt; class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
     <HelpKINode Title="constructor" Url="html/162885db-2d57-867d-7eef-d9272575ae67.htm" />
     <HelpKINode Title="methods" Url="html/abc44e6a-335b-e7ae-1b06-fe3c96ab7f8e.htm" />
   </HelpKINode>
@@ -363,7 +344,6 @@
   <HelpKINode Title="ShortName method" Url="html/35770b4a-2550-c163-1212-3e363f8d7aa7.htm" />
   <HelpKINode Title="ShortNameExtensions class">
     <HelpKINode Title="ShortNameExtensions Class" Url="html/6e4052f2-95cf-9d20-3bcf-1751a39a80d5.htm" />
-    <HelpKINode Title="about ShortNameExtensions class" Url="html/6e4052f2-95cf-9d20-3bcf-1751a39a80d5.htm" />
     <HelpKINode Title="methods" Url="html/05d3e635-2e45-f59e-9250-2d7c5d740765.htm" />
   </HelpKINode>
   <HelpKINode Title="ShortNameExtensions.ShortName method" Url="html/35770b4a-2550-c163-1212-3e363f8d7aa7.htm" />
@@ -375,7 +355,6 @@
   <HelpKINode Title="ShouldEditProperty method" Url="html/b1180fe0-6936-20a6-d2b9-e2e9324c2fdf.htm" />
   <HelpKINode Title="ShowForDisplayAttribute class">
     <HelpKINode Title="ShowForDisplayAttribute Class" Url="html/17865550-6663-2d56-1329-4ed07978fd5e.htm" />
-    <HelpKINode Title="about ShowForDisplayAttribute class" Url="html/17865550-6663-2d56-1329-4ed07978fd5e.htm" />
     <HelpKINode Title="constructor" Url="html/8d273355-ca8a-5b0e-0874-d91df2f2374b.htm" />
     <HelpKINode Title="methods" Url="html/2be52f57-889b-288e-fa82-843840b7a829.htm" />
     <HelpKINode Title="properties" Url="html/d0ba87b1-9be1-fdc5-d760-e986797b7244.htm" />
@@ -384,7 +363,6 @@
   <HelpKINode Title="ShowForDisplayAttribute.ShowForDisplayAttribute constructor" Url="html/8d273355-ca8a-5b0e-0874-d91df2f2374b.htm" />
   <HelpKINode Title="ShowForEditAttribute class">
     <HelpKINode Title="ShowForEditAttribute Class" Url="html/851aab82-aac3-4dd5-bc02-d18fb1c62b4c.htm" />
-    <HelpKINode Title="about ShowForEditAttribute class" Url="html/851aab82-aac3-4dd5-bc02-d18fb1c62b4c.htm" />
     <HelpKINode Title="constructor" Url="html/69ebcac4-0f6d-938e-ff6a-02792d35b712.htm" />
     <HelpKINode Title="methods" Url="html/92b70dfd-779a-bd91-8f99-ec8a64fa3329.htm" />
     <HelpKINode Title="properties" Url="html/40c676f2-9db1-e178-8c78-4c337229f650.htm" />

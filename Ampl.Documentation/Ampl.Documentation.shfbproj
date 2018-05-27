@@ -64,7 +64,12 @@
     <NamingMethod>Guid</NamingMethod>
     <HelpTitle>Advanced Multi-Purpose Library</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <FooterText>Copyright 2014-2017 George Harder&amp;#39%3bs Centre.</FooterText>
+    <FooterText>
+    </FooterText>
+    <CopyrightHref>https://projects.ghcentre.com/ampl/license/</CopyrightHref>
+    <CopyrightText>Copyright 2014-2018 GHCentre.</CopyrightText>
+    <FeedbackEMailAddress>developers%40ghcentre.com</FeedbackEMailAddress>
+    <FeedbackEMailLinkText>Feedback</FeedbackEMailLinkText>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
