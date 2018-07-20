@@ -7,8 +7,6 @@
     <HelpKINode Title="properties" Url="html/ec14fc1b-2f36-1712-30be-79f0da660747.htm" />
   </HelpKINode>
   <HelpKINode Title="AccessDeniedResult.AccessDeniedResult constructor" Url="html/3878b101-7b1c-415f-cc30-904692aa00ee.htm" />
-  <HelpKINode Title="Actions property" Url="html/8ceb8d68-bd33-dcde-33bd-13d121b3e8f4.htm" />
-  <HelpKINode Title="ActionType field" Url="html/ef223f7e-1d3a-982c-758c-e17583b0999e.htm" />
   <HelpKINode Title="AddAlert method" Url="html/0ba7e269-92a5-4f3e-b950-86d7de31bc48.htm" />
   <HelpKINode Title="AlertContextualClass enumeration" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="AlertViewModel class">
@@ -22,13 +20,8 @@
   <HelpKINode Title="AlertViewModel.Dismissible property" Url="html/1a370997-0d5e-e4d6-566f-a589cf8ce4e0.htm" />
   <HelpKINode Title="AlertViewModel.Heading property" Url="html/57a2b05d-ca33-9b34-22c7-185e56fa3c4a.htm" />
   <HelpKINode Title="AlertViewModel.Text property" Url="html/82b8115c-aaf8-f81c-ae77-0840e4751be6.htm" />
-  <HelpKINode Title="Allow property" Url="html/47e33d52-07e1-3a0a-e267-5d061dc0cbec.htm" />
   <HelpKINode Title="Ampl.Diagnostics namespace" Url="html/bcbe9d5b-0d2d-c1d0-3369-d38e46be3028.htm" />
   <HelpKINode Title="Ampl.Diagnostics.ConsoleProcessRunner class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
-  <HelpKINode Title="Ampl.Identity namespace" Url="html/985509bc-8000-6f13-0607-7152e352e3ce.htm" />
-  <HelpKINode Title="Ampl.Identity.ClaimsAuthorization class" Url="html/c47cf7e3-e835-2f79-8e42-40740dfc47fe.htm" />
-  <HelpKINode Title="Ampl.Identity.IAccessControlList interface" Url="html/c015de69-ae1a-5398-981b-4572d456e313.htm" />
-  <HelpKINode Title="Ampl.Identity.IAuthorizationStore interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
   <HelpKINode Title="Ampl.Web.Mvc namespace" Url="html/e73b897a-1fd5-850c-84d0-1c846829f0ae.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.AccessDeniedResult class" Url="html/44426aa0-db84-9b43-240a-fca715c27714.htm" />
   <HelpKINode Title="Ampl.Web.Mvc.ApplicationClaimsAuthorizationManager class" Url="html/985b4e38-6491-d7c7-d2db-c3fdc3c7fb5c.htm" />
@@ -72,7 +65,6 @@
   <HelpKINode Title="ApplicationClaimsAuthorizationManager.ApplicationClaimsAuthorizationManager constructor" Url="html/430d6536-a92d-f15d-7efc-b17bcc7790bb.htm" />
   <HelpKINode Title="ApplicationClaimsAuthorizationManager.CheckAccess method" Url="html/451f7099-9bce-b3eb-c747-8d2eae917cdd.htm" />
   <HelpKINode Title="ApplicationClaimsAuthorizationManager.LoadCustomConfiguration method" Url="html/fdff0442-ab48-2c1d-16e4-4cde6a2ea5ee.htm" />
-  <HelpKINode Title="AuthorizationManager property" Url="html/b7f57dc1-b501-3427-b7ea-1efa0ff7d31a.htm" />
   <HelpKINode Title="AuthorizeCore method" Url="html/4f8b264f-8827-9351-f9f0-7d2521d26d6c.htm" />
   <HelpKINode Title="AuthorizedAction method" Url="html/f155a4a2-3d27-062d-2fb6-bdc368707720.htm" />
   <HelpKINode Title="AuthorizedActionLink method" Url="html/6679e14e-c66d-85e9-1979-209b0b9a5c6e.htm" />
@@ -84,22 +76,8 @@
   <HelpKINode Title="BundleExtensions.ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
   <HelpKINode Title="CheckAccess method">
     <HelpKINode Title="ApplicationClaimsAuthorizationManager.CheckAccess Method " Url="html/451f7099-9bce-b3eb-c747-8d2eae917cdd.htm" />
-    <HelpKINode Title="ClaimsAuthorization.CheckAccess Method " Url="html/d45a8a0d-3cef-9044-4edc-cb376c7fcdc2.htm" />
     <HelpKINode Title="ResourceActionAuthorizeAttribute.CheckAccess Method " Url="html/cc31dbf7-7c60-04c7-cc8c-7035b6e1a243.htm" />
   </HelpKINode>
-  <HelpKINode Title="ClaimsAuthorization class">
-    <HelpKINode Title="ClaimsAuthorization Class" Url="html/c47cf7e3-e835-2f79-8e42-40740dfc47fe.htm" />
-    <HelpKINode Title="fields" Url="html/62f799e1-106b-8b94-6bc5-ed02578c2e5c.htm" />
-    <HelpKINode Title="methods" Url="html/0f73595a-273d-53c2-9b6d-d6dd82f77f5e.htm" />
-    <HelpKINode Title="properties" Url="html/85afe6c3-ce8f-4e7d-f553-f5a3b28b2100.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ClaimsAuthorization.ActionType field" Url="html/ef223f7e-1d3a-982c-758c-e17583b0999e.htm" />
-  <HelpKINode Title="ClaimsAuthorization.AuthorizationManager property" Url="html/b7f57dc1-b501-3427-b7ea-1efa0ff7d31a.htm" />
-  <HelpKINode Title="ClaimsAuthorization.CheckAccess method" Url="html/d45a8a0d-3cef-9044-4edc-cb376c7fcdc2.htm" />
-  <HelpKINode Title="ClaimsAuthorization.CreateAuthorizationContext method" Url="html/45aaad28-93d7-fab5-c79b-3f738f23da6a.htm" />
-  <HelpKINode Title="ClaimsAuthorization.CustomAuthorizationManager property" Url="html/46116804-65bb-da9c-0977-de28154c3880.htm" />
-  <HelpKINode Title="ClaimsAuthorization.EnforceAuthorizationManagerImplementation property" Url="html/9b7dcb86-8996-0b18-6de4-d644e41eaa4c.htm" />
-  <HelpKINode Title="ClaimsAuthorization.ResourceType field" Url="html/01d3852e-bb06-29c9-accc-0b9e3dd66747.htm" />
   <HelpKINode Title="ConsoleProcessRunner class">
     <HelpKINode Title="ConsoleProcessRunner Class" Url="html/56b5cc4c-ba72-43fe-559d-ab48fee87787.htm" />
     <HelpKINode Title="constructor" Url="html/3105ee2a-cd50-464f-dcb7-f7aa9cfd40d0.htm" />
@@ -120,9 +98,7 @@
     <HelpKINode Title="methods" Url="html/5178fad5-29bb-90cf-4ad5-c51a05364992.htm" />
   </HelpKINode>
   <HelpKINode Title="ControllerBaseAlertExtensions.AddAlert method" Url="html/0ba7e269-92a5-4f3e-b950-86d7de31bc48.htm" />
-  <HelpKINode Title="CreateAuthorizationContext method" Url="html/45aaad28-93d7-fab5-c79b-3f738f23da6a.htm" />
   <HelpKINode Title="CreateCollectionItem method" Url="html/11fbc759-c17b-cb12-5178-1e011cf83cf8.htm" />
-  <HelpKINode Title="CustomAuthorizationManager property" Url="html/46116804-65bb-da9c-0977-de28154c3880.htm" />
   <HelpKINode Title="Danger enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="DateTime enumeration member" Url="html/b14c98e9-49ee-2721-5a3c-9824f12ed5c0.htm" />
   <HelpKINode Title="DateTimeValidationAttribute class">
@@ -190,12 +166,10 @@
   <HelpKINode Title="EditorTemplateHelpers.OverrideContainerProperties method" Url="html/a675f076-a772-3880-7d40-9d5e1f60f5fd.htm" />
   <HelpKINode Title="EditorTemplateHelpers.ShouldDisplayProperty method" Url="html/3a162783-6f7a-7628-37ea-794835cd91b5.htm" />
   <HelpKINode Title="EditorTemplateHelpers.ShouldEditProperty method" Url="html/b1180fe0-6936-20a6-d2b9-e2e9324c2fdf.htm" />
-  <HelpKINode Title="EnforceAuthorizationManagerImplementation property" Url="html/9b7dcb86-8996-0b18-6de4-d644e41eaa4c.htm" />
   <HelpKINode Title="EnumType property" Url="html/acf3d002-7364-d209-e45d-337c0189615b.htm" />
   <HelpKINode Title="Error property" Url="html/67882dcf-7427-c8bf-c646-59a173b68b46.htm" />
   <HelpKINode Title="ExitCode property" Url="html/995cc0e4-eb2e-6b72-465c-ec9ce074a5d4.htm" />
   <HelpKINode Title="ForceOrder method" Url="html/1a474413-4d2c-9253-553a-bcf3efbb7093.htm" />
-  <HelpKINode Title="GetAccessControlLists method" Url="html/c78714ed-5a1e-12c7-58d4-2e42ee766b04.htm" />
   <HelpKINode Title="GetAlertViewModels(Of TModel) method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
   <HelpKINode Title="GetAlertViewModels&lt;TModel&gt; method" Url="html/2ec721fb-3a4f-00e8-7bca-48c779adc160.htm" />
   <HelpKINode Title="GetClientValidationRules method" Url="html/67028c3b-01ab-814c-b8ec-d424ad8b14f2.htm" />
@@ -234,21 +208,6 @@
     <HelpKINode Title="methods" Url="html/7c60915e-aa21-4c63-dd8d-d53dd07d76c1.htm" />
   </HelpKINode>
   <HelpKINode Title="HtmlStringExtensions.IfNotEmpty method" Url="html/e4508ca5-178d-87f0-6b16-20626c3336f2.htm" />
-  <HelpKINode Title="IAccessControlList interface">
-    <HelpKINode Title="IAccessControlList Interface" Url="html/c015de69-ae1a-5398-981b-4572d456e313.htm" />
-    <HelpKINode Title="properties" Url="html/8a15d63b-3e7f-3c51-5031-b828a2d3eccd.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAccessControlList.Actions property" Url="html/8ceb8d68-bd33-dcde-33bd-13d121b3e8f4.htm" />
-  <HelpKINode Title="IAccessControlList.Allow property" Url="html/47e33d52-07e1-3a0a-e267-5d061dc0cbec.htm" />
-  <HelpKINode Title="IAccessControlList.Position property" Url="html/cb5fea2f-dfd4-3781-bc4e-9d779aea25ad.htm" />
-  <HelpKINode Title="IAccessControlList.Resources property" Url="html/493cad09-d147-f76f-ddad-eea1bb728110.htm" />
-  <HelpKINode Title="IAccessControlList.Roles property" Url="html/aa226122-7f47-27d9-b28a-bdde77923b31.htm" />
-  <HelpKINode Title="IAccessControlList.Users property" Url="html/c07c6747-2875-aa6c-c852-c2c56fd79b34.htm" />
-  <HelpKINode Title="IAuthorizationStore interface">
-    <HelpKINode Title="IAuthorizationStore Interface" Url="html/35f15b96-9b0c-d73c-7e24-5e329f177dc7.htm" />
-    <HelpKINode Title="methods" Url="html/305def39-9126-ed9f-f312-212365daa018.htm" />
-  </HelpKINode>
-  <HelpKINode Title="IAuthorizationStore.GetAccessControlLists method" Url="html/c78714ed-5a1e-12c7-58d4-2e42ee766b04.htm" />
   <HelpKINode Title="IfNotEmpty method" Url="html/e4508ca5-178d-87f0-6b16-20626c3336f2.htm" />
   <HelpKINode Title="Info enumeration member" Url="html/3a3fc768-54ce-fc0f-93fa-1fe02579e35d.htm" />
   <HelpKINode Title="ISecondaryLogonManager(Of TKey) interface">
@@ -305,7 +264,6 @@
   <HelpKINode Title="OutputAndError property" Url="html/0bf1ffe2-7791-844b-2855-bda0e25bc371.htm" />
   <HelpKINode Title="OverrideContainerProperties method" Url="html/a675f076-a772-3880-7d40-9d5e1f60f5fd.htm" />
   <HelpKINode Title="OverrideContainerProperties property" Url="html/bf099e57-899d-f157-780f-3bbd183ea493.htm" />
-  <HelpKINode Title="Position property" Url="html/cb5fea2f-dfd4-3781-bc4e-9d779aea25ad.htm" />
   <HelpKINode Title="PreviousUrl property" Url="html/f571b025-89f4-e721-412e-167a455f084f.htm" />
   <HelpKINode Title="RenderDelayed method" Url="html/1361f681-d3fb-5cc4-f8ae-614d92775926.htm" />
   <HelpKINode Title="RenderNullProperties property" Url="html/06b85312-3e95-1952-8ba2-939ae6e345fb.htm" />
@@ -321,9 +279,6 @@
   <HelpKINode Title="ResourceActionAuthorizeAttribute.IsGlobalFilter property" Url="html/1ae3dbb8-ff6e-6d43-e864-3a004b018a79.htm" />
   <HelpKINode Title="ResourceActionAuthorizeAttribute.OnAuthorization method" Url="html/50fd73af-3f18-c339-35e1-a576b1c6418a.htm" />
   <HelpKINode Title="ResourceActionAuthorizeAttribute.ResourceActionAuthorizeAttribute constructor" Url="html/ae8d6b04-cec8-d78b-545f-cdb77a69b5ce.htm" />
-  <HelpKINode Title="Resources property" Url="html/493cad09-d147-f76f-ddad-eea1bb728110.htm" />
-  <HelpKINode Title="ResourceType field" Url="html/01d3852e-bb06-29c9-accc-0b9e3dd66747.htm" />
-  <HelpKINode Title="Roles property" Url="html/aa226122-7f47-27d9-b28a-bdde77923b31.htm" />
   <HelpKINode Title="SecondaryLogonManager(Of TUser, TKey) class">
     <HelpKINode Title="SecondaryLogonManager(TUser, TKey) Class" Url="html/529646b8-b0e2-5414-69b2-d78f1c8f5bea.htm" />
     <HelpKINode Title="constructor" Url="html/162885db-2d57-867d-7eef-d9272575ae67.htm" />
@@ -375,7 +330,6 @@
   <HelpKINode Title="Success property" Url="html/23dac42d-c37d-eae3-e048-55136569f6b6.htm" />
   <HelpKINode Title="Text property" Url="html/82b8115c-aaf8-f81c-ae77-0840e4751be6.htm" />
   <HelpKINode Title="Time enumeration member" Url="html/b14c98e9-49ee-2721-5a3c-9824f12ed5c0.htm" />
-  <HelpKINode Title="Users property" Url="html/c07c6747-2875-aa6c-c852-c2c56fd79b34.htm" />
   <HelpKINode Title="ValidationErrorOrSuccess(Of TModel) method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
   <HelpKINode Title="ValidationErrorOrSuccess&lt;TModel&gt; method" Url="html/1cd1145d-9dfe-53c6-f00d-bbe67bf6f346.htm" />
   <HelpKINode Title="ValidationType enumeration" Url="html/b14c98e9-49ee-2721-5a3c-9824f12ed5c0.htm" />
