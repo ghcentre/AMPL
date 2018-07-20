@@ -32,12 +32,12 @@ namespace Ampl.Core.Tests
     public void TestInitialize()
     {
       _model = new ViewModel() {
-        Response = new Response() {
-          Error = new Error() {
-            Exception = new Exception("Outer exception", new ArgumentException())
-          }
-        }
-      };
+                 Response = new Response() {
+                              Error = new Error() {
+                                        Exception = new Exception("Outer exception", new ArgumentException())
+                                      }
+                            }
+               };
     }
 
     [Test]
