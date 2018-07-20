@@ -1,6 +1,7 @@
 ﻿using Ampl.System.Resources;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace Ampl.System
 {
@@ -59,6 +60,7 @@ namespace Ampl.System
       "Microsoft.Design",
       "CA1026:DefaultParametersShouldNotBeUsed",
       Justification = "The default values assigned for optional parameters are always default values.")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
     {
       if(argumentValue == null)
@@ -80,6 +82,7 @@ namespace Ampl.System
       "Microsoft.Design",
       "CA1026:DefaultParametersShouldNotBeUsed", 
       Justification = "The default values assigned for optional parameters are always default values.")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
     {
       NotNull(argumentValue, argumentName);

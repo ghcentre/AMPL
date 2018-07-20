@@ -1,27 +1,20 @@
 ﻿using Ampl.System.Resources;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ampl.System
 {
   public class ShortGuid
   {
-    private readonly Guid _guid;
-
     public ShortGuid(Guid value)
     {
-      _guid = value;
+      Guid = value;
     }
 
-    public Guid Guid => _guid;
+    public Guid Guid { get; }
 
     public override string ToString()
     {
-      byte[] bytes = _guid.ToByteArray();
+      byte[] bytes = Guid.ToByteArray();
       //
       // "+" => "-"
       // "/" => "_"
@@ -29,7 +22,9 @@ namespace Ampl.System
       //
       // remove trailing "==" as base-64 encoded GUID always ends with "=="
       //
-      string result = Convert.ToBase64String(bytes).Replace("+", "-").Replace("/", "_").Replace("=", string.Empty);
+      string result = Convert.ToBase64String(bytes).Replace("+", "-")
+                                                   .Replace("/", "_")
+                                                   .Replace("=", string.Empty);
       return result;
     }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Ampl.System
@@ -17,6 +18,7 @@ namespace Ampl.System
     /// <remarks>The method calls the <see cref="Task.ConfigureAwait(bool)"/> with the parameter
     /// set to <see langword="false"/>.</remarks>
     /// <seealso cref="Sync{T}(Task{T}, bool?)"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T Sync<T>(this Task<T> task)
     {
       Check.NotNull(task, nameof(task));
@@ -32,6 +34,7 @@ namespace Ampl.System
     /// <see cref="Task.ConfigureAwait(bool)"/> method. If this parameter is <see langword="null"/>,
     /// the <see cref="Task.ConfigureAwait(bool)"/> is not called.</param>
     /// <returns>The method runs the task and waits for it to complete.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T Sync<T>(this Task<T> task, bool? configureAwait)
     {
       Check.NotNull(task, nameof(task));

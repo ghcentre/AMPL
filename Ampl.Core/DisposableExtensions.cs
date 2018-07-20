@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,7 @@ namespace Ampl.System
     /// string contents = new StreamReader(@"c:\windows\win.ini").Use(sr => sr.ReadToEnd());
     /// </code>
     /// </example>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TReturn Use<T, TReturn>(this T obj, Func<T, TReturn> func) where T : class, IDisposable
     {
       if(obj == null)

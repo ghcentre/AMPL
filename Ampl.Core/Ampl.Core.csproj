@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Ampl.System</RootNamespace>
-    <Version>3.4.0</Version>
+    <Version>3.6.0</Version>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
     <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
@@ -14,8 +14,8 @@
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl core portable netstandard</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <FileVersion>3.4.0</FileVersion>
-    <AssemblyVersion>3.4.0</AssemblyVersion>
+    <FileVersion>3.6.0</FileVersion>
+    <AssemblyVersion>3.6.0</AssemblyVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

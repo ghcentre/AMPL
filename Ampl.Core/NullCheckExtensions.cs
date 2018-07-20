@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace Ampl.System
     ///   string heading = s.With(s => $"&lt;h1&gt;{s}&lt;/h1&gt;"; // null if s is null
     /// </code>
     /// </example>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TResult With<TInput, TResult>(this TInput input,
                                                 Func<TInput, TResult> evaluatorResult)
     {
@@ -219,6 +221,7 @@ namespace Ampl.System
     /// <param name="evaluatorResult"></param>
     /// <param name="fallbackValue"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TResult Return<TInput, TResult>(this TInput input,
                                                   Func<TInput, TResult> evaluatorResult,
                                                   TResult fallbackValue)
@@ -246,6 +249,7 @@ namespace Ampl.System
     /// <param name="predicate"></param>
     /// <returns>If the input is not null and predicate succeeds the method returns input. Otherwise the
     /// method returns null.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TInput If<TInput>(this TInput input, Func<TInput, bool> predicate)
     {
       if(input == null)
@@ -264,6 +268,7 @@ namespace Ampl.System
     /// <param name="input"></param>
     /// <param name="action"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TInput Do<TInput>(this TInput input, Action<TInput> action)
     {
       if(input == null)
