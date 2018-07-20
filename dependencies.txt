@@ -27,7 +27,7 @@ Ampl.Web.Http.Authorization   net471            ->  Ampl.Core
                                                     Ampl.Identity
                                                     Microsoft.AspNet.WebApi.Core
 
-Ampl.Web.Mvc.SecondaryLogon   net761            ->  Ampl.Core
+Ampl.Web.Mvc.SecondaryLogon   net471            ->  Ampl.Core
                                                     Microsoft.AspNet.Identity.Core
                                                     Microsoft.AspNet.Identity.Own
                                                     Microsoft.Owin
@@ -35,9 +35,9 @@ Ampl.Web.Mvc.SecondaryLogon   net761            ->  Ampl.Core
                                                     Microsoft.Owin.Security.Cookies
                                                     Owin
 
-Ampl.Web.Optimization         net461            ->  Microsoft.AspNet.Web.Optimization
+Ampl.Web.Optimization         net471            ->  Microsoft.AspNet.Web.Optimization
 
-Ampl.Web.Mvc.EditorTemplates  net461            ->  Ampl.Core
+Ampl.Web.Mvc.EditorTemplates  net471            ->  Ampl.Core
                                                     Ampl.Web.Mvc
                                                     Ampl.Web.Optimization
                                                     Microsoft.AspNet.Mvc
