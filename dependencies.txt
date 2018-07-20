@@ -3,7 +3,7 @@ Ampl.Core                     netstandard20     ->  NETStandard.Library
 Ampl.Annotations              netstandard20     ->  NETStandard.Library
                                                     System.ComponentModel.Annotations
 
-Ampl.System                   net461            ->  (none)
+Ampl.System                   net471            ->  (none)
                                               
 Ampl.Configuration            netstandard20     ->  Ampl.Core
                                                     NETStandard.Library
