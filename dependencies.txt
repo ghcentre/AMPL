@@ -27,7 +27,7 @@ Ampl.Web.Http.Authorization   net471            ->  Ampl.Core
                                                     Ampl.Identity
                                                     Microsoft.AspNet.WebApi.Core
 
-Ampl.Web.Mvc.SecondaryLogon   net461            ->  Ampl.Core
+Ampl.Web.Mvc.SecondaryLogon   net761            ->  Ampl.Core
                                                     Microsoft.AspNet.Identity.Core
                                                     Microsoft.AspNet.Identity.Own
                                                     Microsoft.Owin
