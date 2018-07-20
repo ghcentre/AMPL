@@ -11,7 +11,7 @@ Ampl.Configuration            netstandard20     ->  Ampl.Core
 
 Ampl.Identity                 net471            ->  Ampl.Core
 
-Ampl.Web.Mvc                  net461            ->  Ampl.Core,
+Ampl.Web.Mvc                  net471            ->  Ampl.Core,
                                                     Ampl.Annotations,
                                                     Microsoft.AspNet.Mvc
 
