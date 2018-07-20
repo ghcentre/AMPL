@@ -23,7 +23,7 @@ Ampl.Web.Mvc.Authorization    net471            ->  Ampl.Core
 Ampl.Web.Http                 net471            ->  Ampl.Core
                                                     Microsoft.AspNet.WebApi.Core
 
-Ampl.Web.Http.Authorization   net461            ->  Ampl.Core
+Ampl.Web.Http.Authorization   net471            ->  Ampl.Core
                                                     Ampl.Identity
                                                     Microsoft.AspNet.WebApi.Core
 
