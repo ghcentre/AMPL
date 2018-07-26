@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Http.Authorization
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Http", "Ampl.Web.Http\Ampl.Web.Http.csproj", "{757224AF-4A42-4828-9700-8BC8BDC9CCCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B5F94DF9-1242-4794-A845-4CCEC746611B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EDF4429-251A-416D-BB68-93F227191BCF} = {B5F94DF9-1242-4794-A845-4CCEC746611B}
+		{1A1CBEF1-EA6E-4B72-94CC-AA1B229EF1BA} = {B5F94DF9-1242-4794-A845-4CCEC746611B}
+		{CAD3A6E0-12D9-4FBF-B94F-CFF7294BDF40} = {B5F94DF9-1242-4794-A845-4CCEC746611B}
+		{81337C06-7871-44C8-850E-28ABF4F838E9} = {B5F94DF9-1242-4794-A845-4CCEC746611B}
+		{D3B00981-93FE-454F-90A8-CE1F36E8A84E} = {B5F94DF9-1242-4794-A845-4CCEC746611B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB15F492-4F8F-492B-8F25-918DBB798475}

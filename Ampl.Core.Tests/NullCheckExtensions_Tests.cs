@@ -176,6 +176,18 @@ namespace Ampl.Core.Tests
     }
 
     [Test]
+    public void ReturnWithFunc_NullThis_ReturnsFuncResult()
+    {
+      // arrange
+      string arg = null;
+      Func<int> def = () => 42;
+      // act
+      int result = arg.Return(x => x.Length, def);
+      // assert
+      Assert.That(result, Is.EqualTo(42));
+    }
+
+    [Test]
     public void Return_NullNullable_ReturnsDefault()
     {
       // arrange
