@@ -188,23 +188,24 @@ namespace Ampl.Core.Tests
     }
 
     [Test]
-    public void Return_NullNullable_ReturnsDefault()
+    public void ReturnWithFunc_NullThisNullFunc_Throws()
     {
-      // arrange
-      int? arg = null;
-      // act
-      DateTime result = arg.Return(x => new DateTime(2017, 1, 1), new DateTime(1900, 1, 1));
-      // assert
-      Assert.That(result, Is.EqualTo(new DateTime(1900, 1, 1)));
+      string arg = null;
+      Assert.Throws<ArgumentNullException>(() => arg.Return(x => x.Length, null));
     }
 
     [Test]
     public void Return_NullFunc_Throws()
     {
-      // arrange
       string arg = "arg";
-      // act-assert
       Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null, 1));
+    }
+
+    [Test]
+    public void ReturnWithFunc_NullFunc_Throws()
+    {
+      string arg = "arg";
+      Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null, () => 1));
     }
 
     [Test]
@@ -218,6 +219,18 @@ namespace Ampl.Core.Tests
       // assert
       Assert.That(result, Is.EqualTo(3));
     }
+
+    [Test]
+    public void ReturnFunc_NotNull_ReturnsSameReference()
+    {
+      // arrange
+      string arg = "arg";
+      // act
+      string result = arg.Return(x => x, () => "");
+      // assert
+      Assert.That(result, Is.SameAs(arg));
+    }
+
 
     [Test]
     public void If_NullThis_ReturnsNull()
