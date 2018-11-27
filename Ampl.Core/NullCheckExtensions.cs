@@ -85,7 +85,7 @@ namespace Ampl.System
     {
       if(input == null)
       {
-        Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+        Check.NotNull(fallbackResult, nameof(fallbackResult));
         return fallbackResult();
       }
 
