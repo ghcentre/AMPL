@@ -3,8 +3,6 @@ Ampl.Core                     netstandard20     ->  NETStandard.Library
 Ampl.Annotations              netstandard20     ->  NETStandard.Library
                                                     System.ComponentModel.Annotations
 
-Ampl.System                   net472            ->  (none)
-                                              
 Ampl.Configuration            netstandard20     ->  Ampl.Core
                                                     NETStandard.Library
                                                     System.ComponentModel.Annotations
@@ -45,5 +43,4 @@ Ampl.Web.Mvc.EditorTemplates  net472            ->  Ampl.Core
 
 (obsolete)
 Ampl.Identity.EntityFramework -> EntityFramework
-
-
+Ampl.System                   -> (none)

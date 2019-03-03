@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AMPL System")]
-[assembly: AssemblyDescription("AMPL subset of classes for .NET Framework")]
+[assembly: AssemblyTitle("This package is obsolete. Use Ampl.Core instead.")]
+[assembly: AssemblyDescription("This package is obsolete. Use Ampl.Core instead.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GHCentre")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.8.1")]
+[assembly: AssemblyVersion("4.0.0")]
 //[assembly: AssemblyInformationalVersion("3.0.0-alpha")]
-[assembly: AssemblyFileVersion("3.8.1")]
+[assembly: AssemblyFileVersion("4.0.0")]
 //[assembly: NeutralResourcesLanguageAttribute("en")]
