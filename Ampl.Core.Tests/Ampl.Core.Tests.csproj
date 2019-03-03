@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Check_Tests.cs" />
+    <Compile Include="ConsoleProcessRunner_Test.cs" />
     <Compile Include="DictionaryExtensions_Tests.cs" />
     <Compile Include="DisposableExtensions_Tests.cs" />
     <Compile Include="EnumerableExtensions_Tests.cs" />
