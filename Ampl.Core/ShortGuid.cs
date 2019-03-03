@@ -1,7 +1,7 @@
-﻿using Ampl.System.Resources;
+﻿using Ampl.Core.Resources;
 using System;
 
-namespace Ampl.System
+namespace Ampl.Core
 {
     public class ShortGuid
     {
