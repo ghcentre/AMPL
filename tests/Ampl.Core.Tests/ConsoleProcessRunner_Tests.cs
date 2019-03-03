@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Ampl.Core.Tests
 {
     [TestFixture]
-    public class ConsoleProcessRunner_Test
+    public class ConsoleProcessRunner_Tests
     {
         [Test]
         public void Ctor_SetsDefaults()
