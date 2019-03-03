@@ -5,18 +5,18 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Ampl.System</RootNamespace>
-    <Version>3.7.2</Version>
+    <Version>3.8.1</Version>
     <Authors>GHCentre</Authors>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
     <Description>AMPL Extensions for Component Metadata Annotations</Description>
-    <Copyright>Copyright © 2014-2018 George Harder's Centre.</Copyright>
+    <Copyright>Copyright © 2014-2019 George Harder's Centre.</Copyright>
     <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl annotations metadata</PackageTags>
-    <AssemblyVersion>3.7.2</AssemblyVersion>
-    <FileVersion>3.7.2</FileVersion>
+    <AssemblyVersion>3.8.1</AssemblyVersion>
+    <FileVersion>3.8.1</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
