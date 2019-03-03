@@ -69,9 +69,9 @@ namespace Ampl.Web.Mvc
       }
 
       foreach(var propertyMetadata in modelMetadata.Properties
-                                        .Where(pm => readOnlyView
-                                                       ? ShouldDisplayProperty(pm, templateInfo)
-                                                       : ShouldEditProperty(pm, templateInfo))
+                                                   .Where(pm => readOnlyView
+                                                                  ? ShouldDisplayProperty(pm, templateInfo)
+                                                                  : ShouldEditProperty(pm, templateInfo))
              )
       {
         string propertyName = propertyMetadata.PropertyName;

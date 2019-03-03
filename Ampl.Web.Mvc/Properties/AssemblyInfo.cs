@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GHCentre")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]
-[assembly: AssemblyCopyright("Copyright © 2014-2017 George Harder's Centre.")]
+[assembly: AssemblyCopyright("Copyright © 2014-2019 George Harder's Centre.")]
 [assembly: AssemblyTrademark("AMPL")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +21,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("76877a43-fbbb-4677-b0a0-f5d233b01685")]
+//[assembly: Guid("76877a43-fbbb-4677-b0a0-f5d233b01685")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,6 +33,7 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.30")]
-[assembly: AssemblyFileVersion("2.2.30")]
-[assembly: NeutralResourcesLanguageAttribute("en")]
+[assembly: AssemblyVersion("3.8.1")]
+//[assembly: AssemblyInformationalVersion("3.0.0-alpha")]
+[assembly: AssemblyFileVersion("3.8.1")]
+//[assembly: NeutralResourcesLanguageAttribute("en")]

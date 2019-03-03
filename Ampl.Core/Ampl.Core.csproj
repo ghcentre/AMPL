@@ -1,88 +1,52 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2F4AAE2-C37B-4113-AA3A-293C9739AFCF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Ampl.System</RootNamespace>
-    <AssemblyName>Ampl.Core</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile24</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Ampl.Core.XML</DocumentationFile>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
+    <Version>3.8.1</Version>
+    <Company>GHCentre</Company>
+    <Product>GHCentre Advanced Multi-Purpose Library</Product>
+    <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
+    <Authors>GHCentre</Authors>
+    <Copyright>Copyright © 2014-2019 George Harder's Centre.</Copyright>
+    <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
+    <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
+    <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
+    <PackageTags>ghcentre ampl core portable netstandard</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <FileVersion>3.8.1.0</FileVersion>
+    <AssemblyVersion>3.8.1.0</AssemblyVersion>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Ampl.Core.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NETSTANDARD1_4</DefineConstants>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Check.cs" />
-    <Compile Include="DictionaryExtensions.cs" />
-    <Compile Include="DisposableExtensions.cs" />
-    <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="EnumExtensions.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Messages.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Messages.Designer.cs">
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
-    <Compile Include="Messages.ru.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="NullCheckExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortGuid.cs" />
-    <Compile Include="StringExtensions.cs" />
-    <Compile Include="TypeExtensions.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Include="Messages.resx">
+    <EmbeddedResource Update="Messages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Ampl.System.Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Messages.ru.resx">
-      <LastGenOutput>Messages.ru.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Messages.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Ampl.System.Resources</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Ampl.Core.snk" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

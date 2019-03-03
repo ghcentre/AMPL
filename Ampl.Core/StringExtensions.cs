@@ -423,8 +423,7 @@ namespace Ampl.System
       Justification = "The default values assigned for optional parameters are always default values.")]
     public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
     {
-      decimal result;
-      return ToDecimalInternal(source, out result, useFallbackCulture) ? (decimal?)result : null;
+      return ToDecimalInternal(source, out decimal result, useFallbackCulture) ? (decimal?)result : null;
     }
 
     #region ToDecimalInternal
@@ -483,8 +482,7 @@ namespace Ampl.System
     /// </remarks>
     public static DateTime? ToNullableDateTime(this string source)
     {
-      DateTime result;
-      return DateTime.TryParse(source, out result) ? (DateTime?)result : null;
+      return DateTime.TryParse(source, out var result) ? (DateTime?)result : null;
     }
 
     //

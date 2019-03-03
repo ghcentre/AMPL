@@ -148,7 +148,7 @@ namespace Ampl.Web.Mvc
       //
       if(aclRole == "*")
       {
-        return principal.Claims.ToEmptyIfNull().Any(x => x.Type == ClaimTypes.Role);
+        return (principal.Claims ?? Enumerable.Empty<Claim>()).Any(x => x.Type == ClaimTypes.Role);
       }
 
       //

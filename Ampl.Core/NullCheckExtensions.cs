@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,11 +25,12 @@ namespace Ampl.System
     /// The result of the <paramref name="evaluatorResult"/>, or, <see langword="null"/> if the <paramref name="input"/> is <see langword="null"/>.
     /// </returns>
     /// <example>
-    /// <code>
+    /// <code><![CDATA[
     ///   string s = SomeMethodReturningStringOrNull();
-    ///   string heading = s.With(s => $"&lt;h1&gt;{s}&lt;/h1&gt;"; // null if s is null
-    /// </code>
+    ///   string heading = s.With(s => $"<h1>{s}</h1>"); // null if s is null
+    /// ]]>/// </code>
     /// </example>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TResult With<TInput, TResult>(this TInput input,
                                                 Func<TInput, TResult> evaluatorResult)
     {
@@ -41,174 +43,6 @@ namespace Ampl.System
       return evaluatorResult(input);
     }
 
-/*
-    /// <summary>
-    /// Evaluates the next delegate if the input or the result of the evaluation of the previous delegate is not <see langword="null"/>.
-    /// </summary>
-    /// <typeparam name="TInput">The type of the <paramref name="input"/> argument.</typeparam>
-    /// <typeparam name="TA">The type of the return value of the <paramref name="evaluatorA"/> function.</typeparam>
-    /// <typeparam name="TResult">The type of the return value.</typeparam>
-    /// <param name="input"></param>
-    /// <param name="evaluatorA"></param>
-    /// <param name="evaluatorResult"></param>
-    /// <returns></returns>
-    public static TResult With<TInput, TA, TResult>(this TInput input,
-      Func<TInput, TA> evaluatorA,
-      Func<TA, TResult> evaluatorResult)
-    {
-      if(input == null)
-      {
-        return default(TResult);
-      }
-
-      TA a = evaluatorA(input);
-      if(a == null)
-      {
-        return default(TResult);
-      }
-
-      return evaluatorResult(a);
-    }
-
-    /// <summary>
-    /// Evaluates the next delegate if the input or the result of the evaluation of the previous delegate is not <see langword="null"/>.
-    /// </summary>
-    /// <typeparam name="TInput"></typeparam>
-    /// <typeparam name="TA"></typeparam>
-    /// <typeparam name="TB"></typeparam>
-    /// <typeparam name="TResult"></typeparam>
-    /// <param name="input"></param>
-    /// <param name="evaluatorA"></param>
-    /// <param name="evaluatorB"></param>
-    /// <param name="evaluatorResult"></param>
-    /// <returns></returns>
-    public static TResult With<TInput, TA, TB, TResult>(this TInput input,
-      Func<TInput, TA> evaluatorA,
-      Func<TA, TB> evaluatorB,
-      Func<TB, TResult> evaluatorResult)
-    {
-      if(input == null)
-      {
-        return default(TResult);
-      }
-
-      TA a = evaluatorA(input);
-      if(a == null)
-      {
-        return default(TResult);
-      }
-
-      TB b = evaluatorB(a);
-      if(b == null)
-      {
-        return default(TResult);
-      }
-
-      return evaluatorResult(b);
-    }
-
-    /// <summary>
-    /// Evaluates the next delegate if the input or the result of the evaluation of the previous delegate is not <see langword="null"/>.
-    /// </summary>
-    /// <typeparam name="TInput"></typeparam>
-    /// <typeparam name="TA"></typeparam>
-    /// <typeparam name="TB"></typeparam>
-    /// <typeparam name="TC"></typeparam>
-    /// <typeparam name="TResult"></typeparam>
-    /// <param name="input"></param>
-    /// <param name="evaluatorA"></param>
-    /// <param name="evaluatorB"></param>
-    /// <param name="evaluatorC"></param>
-    /// <param name="evaluatorResult"></param>
-    /// <returns></returns>
-    public static TResult With<TInput, TA, TB, TC, TResult>(this TInput input,
-      Func<TInput, TA> evaluatorA,
-      Func<TA, TB> evaluatorB,
-      Func<TB, TC> evaluatorC,
-      Func<TC, TResult> evaluatorResult)
-    {
-      if(input == null)
-      {
-        return default(TResult);
-      }
-
-      TA a = evaluatorA(input);
-      if(a == null)
-      {
-        return default(TResult);
-      }
-
-      TB b = evaluatorB(a);
-      if(b == null)
-      {
-        return default(TResult);
-      }
-
-      TC c = evaluatorC(b);
-      if(c == null)
-      {
-        return default(TResult);
-      }
-
-      return evaluatorResult(c);
-    }
-
-    /// <summary>
-    /// Evaluates the next delegate if the input or the result of the evaluation of the previous delegate is not <see langword="null"/>.
-    /// </summary>
-    /// <typeparam name="TInput"></typeparam>
-    /// <typeparam name="TA"></typeparam>
-    /// <typeparam name="TB"></typeparam>
-    /// <typeparam name="TC"></typeparam>
-    /// <typeparam name="TD"></typeparam>
-    /// <typeparam name="TResult"></typeparam>
-    /// <param name="input"></param>
-    /// <param name="evaluatorA"></param>
-    /// <param name="evaluatorB"></param>
-    /// <param name="evaluatorC"></param>
-    /// <param name="evaluatorD"></param>
-    /// <param name="evaluatorResult"></param>
-    /// <returns></returns>
-    public static TResult With<TInput, TA, TB, TC, TD, TResult>(this TInput input,
-      Func<TInput, TA> evaluatorA,
-      Func<TA, TB> evaluatorB,
-      Func<TB, TC> evaluatorC,
-      Func<TC, TD> evaluatorD,
-      Func<TD, TResult> evaluatorResult)
-    {
-      if(input == null)
-      {
-        return default(TResult);
-      }
-
-      TA a = evaluatorA(input);
-      if(a == null)
-      {
-        return default(TResult);
-      }
-
-      TB b = evaluatorB(a);
-      if(b == null)
-      {
-        return default(TResult);
-      }
-
-      TC c = evaluatorC(b);
-      if(c == null)
-      {
-        return default(TResult);
-      }
-
-      TD d = evaluatorD(c);
-      if(d == null)
-      {
-        return default(TResult);
-      }
-
-      return evaluatorResult(d);
-    }
- */
-
     /// <summary>
     /// Evaluates the <paramref name="evaluatorResult"/> function
     /// only if <paramref name="input"/> is not <see langword="null"/>.
@@ -219,6 +53,7 @@ namespace Ampl.System
     /// <param name="evaluatorResult"></param>
     /// <param name="fallbackValue"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TResult Return<TInput, TResult>(this TInput input,
                                                   Func<TInput, TResult> evaluatorResult,
                                                   TResult fallbackValue)
@@ -232,29 +67,51 @@ namespace Ampl.System
       return evaluatorResult(input);
     }
 
-    //public static bool ReturnSuccess<TInput>(this TInput o)
-    //  where TInput : class
-    //{
-    //  return o != null;
-    //}
+    /// <summary>
+    /// Evaluates the <paramref name="evaluatorResult"/> only if <paramref name="input"/> is not <see langword="null"/>.
+    /// </summary>
+    /// <typeparam name="TInput">The type of the input value.</typeparam>
+    /// <typeparam name="TResult">The type of the result value.</typeparam>
+    /// <param name="input">The input value.</param>
+    /// <param name="evaluatorResult">The <see cref="Func{T, TResult}"/> has to be evaluated
+    /// if the <paramref name="input"/> is not <see langword="null"/>.</param>
+    /// <param name="fallbackResult">The <see cref="Func{TResult}"/> has to be evaluated
+    /// if the <paramref name="input"/> is <see langword="null"/>.</param>
+    /// <returns>The result of either <c>evaluatorResult</c> or <c>fallbackResult</c></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static TResult Return<TInput, TResult>(this TInput input,
+                                                  Func<TInput, TResult> evaluatorResult,
+                                                  Func<TResult> fallbackResult)
+    {
+      if(input == null)
+      {
+        Check.NotNull(fallbackResult, nameof(fallbackResult));
+        return fallbackResult();
+      }
 
-    ///// <summary>
-    ///// Evaluates the predicate if input is not <see langword="null"/>.
-    ///// </summary>
-    ///// <typeparam name="TInput"></typeparam>
-    ///// <param name="input"></param>
-    ///// <param name="predicate"></param>
-    ///// <returns></returns>
-    //public static TInput If<TInput>(this TInput input, Predicate<TInput> predicate)
-    //{
-    //  if(input == null)
-    //  {
-    //    return default(TInput);
-    //  }
+      Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+      return evaluatorResult(input);
+    }
 
-    //  Check.NotNull(predicate, nameof(predicate));
-    //  return predicate(input) ? input : default(TInput);
-    //}
+    /// <summary>
+    /// Evaluates the predicate if input is not <see langword="null"/>.
+    /// </summary>
+    /// <typeparam name="TInput"></typeparam>
+    /// <param name="input"></param>
+    /// <param name="predicate"></param>
+    /// <returns>If the input is not null and predicate succeeds the method returns input. Otherwise the
+    /// method returns null.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static TInput If<TInput>(this TInput input, Func<TInput, bool> predicate)
+    {
+      if(input == null)
+      {
+        return default(TInput);
+      }
+
+      Check.NotNull(predicate, nameof(predicate));
+      return predicate(input) ? input : default(TInput);
+    }
 
     /// <summary>
     /// Evaluates the action if input is not <see langword="null"/>.
@@ -263,6 +120,7 @@ namespace Ampl.System
     /// <param name="input"></param>
     /// <param name="action"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TInput Do<TInput>(this TInput input, Action<TInput> action)
     {
       if(input == null)

@@ -6,7 +6,9 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using Ampl.Web.Mvc.EditorTemplates.Web.Models.ComplexEditor;
 using Newtonsoft.Json;
+using Ampl.Web.Mvc;
 
 namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
 {
@@ -65,5 +67,13 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
     [DropDownList("GetColorsStatic")]
     [DisplayFormat(NullDisplayText = "(custom NullDisplayText -- color not selected)")]
     public int? Color5 { get; set; }
+
+    [Display(Name = "Car Engine", Description = "DropDownList for non-null Enum Type.")]
+    [DropDownList(typeof(CarEngine))]
+    public CarEngine CarEngine { get; set; }
+
+    [Display(Name = "Car Engine 2", Description = "DropDownList for null Enum Type.")]
+    [DropDownList(typeof(CarEngine))]
+    public CarEngine? CarEngine2 { get; set; }
   }
 }

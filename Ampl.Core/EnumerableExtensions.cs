@@ -11,6 +11,7 @@ namespace Ampl.System
   /// </summary>
   public static class EnumerableExtensions
   {
+    /*
     /// <summary>
     /// Converts the <see langword="null"/> reference to the <see cref="IEnumerable{T}"/> to the empty enumerable.
     /// </summary>
@@ -23,6 +24,7 @@ namespace Ampl.System
     {
       return source ?? Enumerable.Empty<T>();
     }
+    */
 
     /// <summary>
     /// Determines whether an array contains a specified element by using the default equality comparer.
@@ -47,7 +49,7 @@ namespace Ampl.System
     /// otherwise, <see langword="false"/>.</returns>
     public static bool In<T>(this T source, IEnumerable<T> checkValues)
     {
-      return checkValues.ToEmptyIfNull().Contains(source);
+      return (checkValues ?? Enumerable.Empty<T>()).Contains(source);
     }
 
     /// <summary>

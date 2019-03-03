@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Ampl.Diagnostics
 {
@@ -24,7 +21,7 @@ namespace Ampl.Diagnostics
   ///   static void Main(string[] args)
   ///   {
   ///     string arguments = "-extr -dir -nozip -nofix archive.zip";
-  ///     string workingDir = "C:\\temp";
+  ///     string workingDir = @"C:\temp";
   ///     ConsoleProcessRunner runner = new ConsoleProcessRunner();
   ///     runner.StartInfo.FileName = "pkzip25.exe";
   ///     runner.StartInfo.Arguments = arguments;
@@ -64,12 +61,12 @@ namespace Ampl.Diagnostics
       {
         lock(_lockerError)
         {
-          return _sbError.ToString();
+          return _error.ToString();
         }
       }
     }
-    private StringBuilder _sbError = new StringBuilder();
-    private object _lockerError = new object();
+    private StringBuilder _error = new StringBuilder();
+    private readonly object _lockerError = new object();
 
     /// <summary>
     /// Gets the Output stream contents.
@@ -80,12 +77,12 @@ namespace Ampl.Diagnostics
       {
         lock(_lockerOutput)
         {
-          return _sbOutput.ToString();
+          return _output.ToString();
         }
       }
     }
-    private StringBuilder _sbOutput = new StringBuilder();
-    private object _lockerOutput = new object();
+    private StringBuilder _output = new StringBuilder();
+    private readonly object _lockerOutput = new object();
 
     /// <summary>
     /// Gets the contents of both Output and Error streams line-by-line
@@ -97,12 +94,12 @@ namespace Ampl.Diagnostics
       {
         lock(_lockerOutputAndError)
         {
-          return _sbOutputAndError.ToString();
+          return _outputAndError.ToString();
         }
       }
     }
-    private StringBuilder _sbOutputAndError = new StringBuilder();
-    private object _lockerOutputAndError = new object();
+    private StringBuilder _outputAndError = new StringBuilder();
+    private readonly object _lockerOutputAndError = new object();
 
     /// <summary>
     /// Gets the process exit code.
@@ -128,9 +125,9 @@ namespace Ampl.Diagnostics
     {
       using(Process process = new Process())
       {
-        _sbError = new StringBuilder();
-        _sbOutput = new StringBuilder();
-        _sbOutputAndError = new StringBuilder();
+        _error = new StringBuilder();
+        _output = new StringBuilder();
+        _outputAndError = new StringBuilder();
 
         process.StartInfo = StartInfo;
         process.StartInfo.UseShellExecute = false;
@@ -140,8 +137,7 @@ namespace Ampl.Diagnostics
           Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
 
         process.StartInfo.RedirectStandardError = true;
-        process.StartInfo.StandardErrorEncoding =
-          Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
+        process.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
 
         process.OutputDataReceived += new DataReceivedEventHandler(OutputDataReceived);
         process.ErrorDataReceived += new DataReceivedEventHandler(ErrorDataReceived);
@@ -168,12 +164,12 @@ namespace Ampl.Diagnostics
     {
       lock(_lockerError)
       {
-        _sbError.Append(e.Data + Environment.NewLine);
+        _error.Append(e.Data + Environment.NewLine);
       }
 
       lock(_lockerOutputAndError)
       {
-        _sbOutputAndError.Append(e.Data + Environment.NewLine);
+        _outputAndError.Append(e.Data + Environment.NewLine);
       }
     }
 
@@ -181,12 +177,12 @@ namespace Ampl.Diagnostics
     {
       lock(_lockerOutput)
       {
-        _sbOutput.Append(e.Data + Environment.NewLine);
+        _output.Append(e.Data + Environment.NewLine);
       }
 
       lock(_lockerOutputAndError)
       {
-        _sbOutputAndError.Append(e.Data + Environment.NewLine);
+        _outputAndError.Append(e.Data + Environment.NewLine);
       }
     }
 

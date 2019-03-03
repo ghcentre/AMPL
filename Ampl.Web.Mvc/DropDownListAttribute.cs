@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using Ampl.System;
 
 namespace Ampl.Web.Mvc
 {
@@ -55,12 +50,28 @@ namespace Ampl.Web.Mvc
     }
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="DropDownListAttribute"/> class.
+    /// </summary>
+    /// <param name="enumType">The type of the Enum which values are used to construct a sequence of the
+    /// <see cref="SelectListItem"/> to fill the drop down list.</param>
+    public DropDownListAttribute(Type enumType)
+    {
+      EnumType = enumType; 
+    }
+
+    /// <summary>
     /// Gets the model's property or method name which is used to retrieve the sequence of <see cref="SelectListItem"/>
     /// to fill the drop down list.
     /// </summary>
     /// <remarks>The method or property name must be public and may be <see langword="static"/>.</remarks>
     /// <value>The name of the property or method.</value>
     public string ItemContainer { get; private set; }
+
+    /// <summary>
+    /// Gets the Enum type to be used as the source for the sequence of <see cref="SelectListItem"/>
+    /// to fill the drop down list.
+    /// </summary>
+    public Type EnumType { get; private set; }
 
     /// <summary>
     /// Provides metadata to the model metadata creation process.

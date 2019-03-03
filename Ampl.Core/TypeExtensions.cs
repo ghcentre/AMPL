@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ampl.System
 {
@@ -36,8 +32,8 @@ namespace Ampl.System
       }
 
       foreach(var implementedInterfaceType in 
-                  //thisType.GetTypeInfo().ImplementedInterfaces
-                  thisType.GetInterfaces()
+                  thisType.GetTypeInfo().ImplementedInterfaces
+                  //thisType.GetInterfaces()
              )
       {
         if(MatchesGenericTypeDefinition(implementedInterfaceType, interfaceType))
@@ -53,9 +49,9 @@ namespace Ampl.System
 
     private static bool MatchesGenericTypeDefinition(Type checkType, Type genericTypeDefinition)
     {
-      //var ti = checkType.GetTypeInfo();
-      //return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
-      return checkType.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
+      var ti = checkType.GetTypeInfo();
+      return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
+      //return checkType.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
     }
 
     #endregion
