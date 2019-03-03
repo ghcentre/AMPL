@@ -3,19 +3,19 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Ampl.System</RootNamespace>
-    <Version>3.8.0</Version>
+    <Version>3.8.1</Version>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
     <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
     <Authors>GHCentre</Authors>
-    <Copyright>Copyright © 2014-2018 George Harder's Centre.</Copyright>
+    <Copyright>Copyright © 2014-2019 George Harder's Centre.</Copyright>
     <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl core portable netstandard</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <FileVersion>3.8.0.0</FileVersion>
-    <AssemblyVersion>3.8.0.0</AssemblyVersion>
+    <FileVersion>3.8.1.0</FileVersion>
+    <AssemblyVersion>3.8.1.0</AssemblyVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

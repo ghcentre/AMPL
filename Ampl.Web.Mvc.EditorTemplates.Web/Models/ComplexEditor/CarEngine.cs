@@ -4,22 +4,23 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models.ComplexEditor
 {
   public enum CarEngine
   {
-    [Display(Name = "Unknown engine")]
+    [Display(ResourceType = typeof(Resources.ComplexModels), Name = "CarEngine_Unknown")]
     Unknown = 0,
 
-    [Display(Name = "Gasoline engine")]
+    [Display(ResourceType = typeof(Resources.ComplexModels), Name = "CarEngine_Gasoline")]
     Gasoline = 1,
 
-    [Display(Name = "Diesel engine")]
+    //[Display(ResourceType = typeof(Resources.ComplexModels), Name = "CarEngine_Diesel")]
+    [Display(Name = "Diesel (not from resource)")]
     Diesel = 2,
 
-    [Display(Name = "Pure electric")]
+    [Display(Name = "Pure electric (not from resource)")]
     Electric = 3,
 
-    [Display(Name = "Electric + Gasoline Hybrid engine")]
-    HybridGasoline = 3,
+    [Display(ResourceType = typeof(Resources.ComplexModels), Name = "CarEngine_HybridGasoline")]
+    HybridGasoline = 4,
 
-    [Display(Name = "Electric + Diesel Hybrid engine")]
-    HybridDiesel = 4,
+    [Display(ResourceType = typeof(Resources.ComplexModels), Name = "CarEngine_HybridDiesel")]
+    HybridDiesel = 5,
   }
 }

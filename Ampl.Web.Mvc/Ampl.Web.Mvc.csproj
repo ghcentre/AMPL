@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ampl.Web.Mvc</RootNamespace>
     <AssemblyName>Ampl.Web.Mvc</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
@@ -41,11 +41,11 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Annotations, Version=3.7.2.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Annotations.3.7.2\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
+    <Reference Include="Ampl.Annotations, Version=3.8.1.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Annotations.3.8.1\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Core, Version=3.7.1.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.3.7.1\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=3.8.1.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.3.8.1\lib\netstandard2.0\Ampl.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>

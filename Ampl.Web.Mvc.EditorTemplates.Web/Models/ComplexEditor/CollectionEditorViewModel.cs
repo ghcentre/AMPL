@@ -15,7 +15,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
     public class BranchInfo
     {
       [Required]
-      [Display(Name = "Country Name")]
+      [Display(ResourceType = typeof(Resources.ComplexModels), Name = "BranchInfo_CountryName")]
       public string CountryName { get; set; }
 
       [Required]
