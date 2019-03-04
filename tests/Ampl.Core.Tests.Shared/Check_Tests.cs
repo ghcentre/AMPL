@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Ampl.Core.Tests
+namespace Ampl.Core.Tests.Shared
 {
     [TestFixture]
     public class Check_Tests

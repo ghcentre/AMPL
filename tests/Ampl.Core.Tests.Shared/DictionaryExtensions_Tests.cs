@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ampl.Core.Tests
+namespace Ampl.Core.Tests.Shared
 {
     [TestFixture]
     public class DictionaryExtensions_Tests
@@ -75,13 +75,13 @@ namespace Ampl.Core.Tests
         }
 
         private Dictionary<int, string> _errorMessages = new Dictionary<int, string>() {
-      { 0, "The operation completed successfully" },
-      { 1, "Incorrect function" },
-      { 2, "File not found" },
-      { 3, "Path not found" },
-      { 4, "Cannot open file" },
-      { 5, "Access denied" }
-    };
+            { 0, "The operation completed successfully" },
+            { 1, "Incorrect function" },
+            { 2, "File not found" },
+            { 3, "Path not found" },
+            { 4, "Cannot open file" },
+            { 5, "Access denied" }
+        };
 
         [Test]
         public void GetValueOrDefault_ExistingKey_Returns()
