@@ -202,16 +202,16 @@ namespace Ampl.Core
                                            string end,
                                            StringComparison comparison = StringComparison.CurrentCulture)
         {
+            start = start ?? string.Empty;
+            end = end ?? string.Empty;
+            if(start == string.Empty && end == string.Empty)
+            {
+                return source;
+            }
+
             while(true)
             {
                 if(string.IsNullOrEmpty(source))
-                {
-                    return source;
-                }
-
-                start = start ?? string.Empty;
-                end = end ?? string.Empty;
-                if(start == string.Empty && end == string.Empty)
                 {
                     return source;
                 }
