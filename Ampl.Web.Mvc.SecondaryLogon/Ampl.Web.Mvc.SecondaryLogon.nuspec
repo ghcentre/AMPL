@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial Release.</releaseNotes>
-    <copyright>Copyright 2014-2017 GHCentre.com</copyright>
+    <copyright>Copyright 2014-2019 GHCentre.com</copyright>
     <tags>ghcentre ampl web mvc secondary logon</tags>
   </metadata>
 </package>
