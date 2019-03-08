@@ -10,7 +10,7 @@ namespace Ampl.Core
         public static T ParseValue<T>(this T enumeration,
                                       string source,
                                       bool ignoreCase = false)
-          where T : struct, IComparable, IFormattable
+          where T : struct, Enum
         {
             return (T)Enum.Parse(typeof(T), source, ignoreCase);
         }
@@ -18,7 +18,7 @@ namespace Ampl.Core
         public static T? ParseAsNullable<T>(this T enumeration,
                                             string source,
                                             bool ignoreCase = false)
-          where T : struct, IComparable, IFormattable
+          where T : struct, Enum
         {
             bool success = Enum.TryParse<T>(source, ignoreCase, out T result);
             if(!success)
