@@ -40,20 +40,21 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.Authorization.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Annotations, Version=4.0.1.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
-      <HintPath>..\packages\Ampl.Annotations.4.0.1\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
+    <Reference Include="Ampl.Annotations, Version=4.0.3.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
+      <HintPath>..\packages\Ampl.Annotations.4.0.3\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Core, Version=4.0.1.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
-      <HintPath>..\packages\Ampl.Core.4.0.1\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.0.3.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.0.3\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity, Version=4.0.1.0, Culture=neutral, PublicKeyToken=480e5d27837e45bf">
-      <HintPath>..\packages\Ampl.Identity.4.0.1\lib\net472\Ampl.Identity.dll</HintPath>
+    <Reference Include="Ampl.Identity, Version=4.0.3.0, Culture=neutral, PublicKeyToken=480e5d27837e45bf">
+      <HintPath>..\packages\Ampl.Identity.4.0.3\lib\net472\Ampl.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=3.8.1.0, Culture=neutral, PublicKeyToken=1f0335352aac49af, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.3.8.1\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.0.3\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -111,6 +112,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\msbuild\VersionInfo.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
