@@ -43,8 +43,9 @@
     <Reference Include="Ampl.Annotations, Version=3.8.1.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9, processorArchitecture=MSIL">
       <HintPath>..\packages\Ampl.Annotations.3.8.1\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Core, Version=3.8.1.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.3.8.1\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.0.0\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Identity, Version=3.8.1.0, Culture=neutral, PublicKeyToken=480e5d27837e45bf, processorArchitecture=MSIL">
       <HintPath>..\packages\Ampl.Identity.3.8.1\lib\net472\Ampl.Identity.dll</HintPath>
