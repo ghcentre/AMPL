@@ -7,10 +7,20 @@ using System.Reflection;
 
 namespace Ampl.Configuration
 {
+    /// <summary>
+    /// Provides the default implementation of the <see cref="IAppConfig"/> interface.
+    /// </summary>
     public class AppConfig : IAppConfig
     {
         private IAppConfigStore _store;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppConfig"/> class.
+        /// </summary>
+        /// <param name="store">The config store.</param>
+        /// <param name="configuration">The configuration.
+        /// If the value is <see langword="null"/>, the default value /// provided by <see cref="ConfigurationFactory"/>
+        /// is used.</param>
         public AppConfig(IAppConfigStore store, IAppConfigConfiguration configuration = null)
         {
             _store = Check.NotNull(store, nameof(store));
@@ -25,13 +35,22 @@ namespace Ampl.Configuration
             }
         }
 
+        /// <summary>
+        /// Gets or sets the configuration factory.
+        /// </summary>
+        /// <value>The configuration factory used to provide an object implementing <see cref="IAppConfigConfiguration"/>
+        /// if the <see cref="AppConfig.AppConfig(IAppConfigStore, IAppConfigConfiguration)"/> second parameter
+        /// is <see langword="null"/>.</value>
         public static Func<IAppConfigConfiguration> ConfigurationFactory { get; set; } = () => new AppConfigDefaultConfiguration();
 
+        /// <summary>
+        /// The configuration.
+        /// </summary>
         public IAppConfigConfiguration Configuration { get; set; }
 
         private IAppConfigEntity GetEntityUsingResolvers(string key, bool useResolvers)
         {
-            IAppConfigEntity entity = _store.GetAppConfigEntity(key);
+            var entity = _store.GetAppConfigEntity(key);
             if(useResolvers)
             {
                 while(entity?.Value == null)
@@ -315,6 +334,7 @@ namespace Ampl.Configuration
             return result;
         }
 
+        /// <inheritdoc/>
         public T Get<T>(string key, bool useResolvers = true)
         {
             Check.NotNull(key, nameof(key));
@@ -474,6 +494,7 @@ namespace Ampl.Configuration
             }
         }
 
+        /// <inheritdoc/>
         public void Set<T>(string key, T value)
         {
             Check.NotNull(key, nameof(key));

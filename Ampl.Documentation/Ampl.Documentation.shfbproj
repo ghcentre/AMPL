@@ -13,7 +13,7 @@
     <RootNamespace>Ampl.Documentation</RootNamespace>
     <Name>Ampl.Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.6.1</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.7.2</FrameworkVersion>
     <OutputPath>.\Help\</OutputPath>
     <HtmlHelpName>Ampl.Documentation</HtmlHelpName>
     <Language>en-US</Language>
@@ -34,14 +34,8 @@
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <CleanIntermediates>True</CleanIntermediates>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\Ampl.Core.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\Ampl.Core.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\Ampl.Configuration.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\Ampl.Configuration.xml" />
       <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.dll" />
       <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.xml" />
-      <DocumentationSource sourceFile="..\Ampl.System\bin\Debug\Ampl.System.dll" />
-      <DocumentationSource sourceFile="..\Ampl.System\bin\Debug\Ampl.System.xml" />
       <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.dll" />
       <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.xml" />
       <DocumentationSource sourceFile="..\Ampl.Web.Mvc.Authorization\bin\Debug\Ampl.Web.Mvc.Authorization.dll" />
@@ -50,8 +44,26 @@
       <DocumentationSource sourceFile="..\Ampl.Web.Mvc.SecondaryLogon\bin\Debug\Ampl.Web.Mvc.SecondaryLogon.xml" />
       <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.dll" />
       <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Annotations\bin\Debug\netstandard2.0\Ampl.Annotations.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Annotations\bin\Debug\netstandard2.0\Ampl.Annotations.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\netstandard2.0\Ampl.Configuration.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\netstandard2.0\Ampl.Configuration.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\netstandard2.0\Ampl.Core.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\netstandard2.0\Ampl.Core.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Http.Authorization\bin\Debug\Ampl.Web.Http.Authorization.dll" />
+      <DocumentationSource sourceFile="..\Ampl.Web.Http.Authorization\bin\Debug\Ampl.Web.Http.Authorization.xml" />
     </DocumentationSources>
     <PlugInConfigurations>
+      <PlugInConfig id="Assembly Binding Redirection" enabled="True">
+        <configuration useGAC="false">
+          <assemblyBinding />
+          <ignoreIfUnresolved>
+            <assemblyIdentity name="BusinessObjects.Licensing.KeycodeDecoder" />
+            <assemblyIdentity name="Microsoft.VisualStudio.TestTools.UITest.Playback" />
+            <assemblyIdentity name="Newtonsoft.Json" />
+          </ignoreIfUnresolved>
+        </configuration>
+      </PlugInConfig>
     </PlugInConfigurations>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <MaximumGroupParts>2</MaximumGroupParts>

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ampl.Configuration
+﻿namespace Ampl.Configuration
 {
-  internal class InternalAppConfigEntity : IAppConfigEntity
-  {
-    public string Key { get; set; }
+    /// <summary>
+    /// The implementation of <see cref="IAppConfigEntity"/>.
+    /// </summary>
+    internal class InternalAppConfigEntity : IAppConfigEntity
+    {
+        /// <inheritdoc/>
+        public string Key { get; set; }
 
-    public string Value {get; set; }
-  }
+        /// <inheritdoc/>
+        public string Value { get; set; }
+    }
 }

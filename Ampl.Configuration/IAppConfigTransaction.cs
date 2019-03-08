@@ -2,19 +2,19 @@
 
 namespace Ampl.Configuration
 {
-  /// <summary>
-  /// Provides methods for committing or rolling back transactions.
-  /// </summary>
-  public interface IAppConfigTransaction : IDisposable
-  {
     /// <summary>
-    /// Commits the transaction.
+    /// Provides methods for committing or rolling back transactions aganinst the <see cref="IAppConfigStore"/>.
     /// </summary>
-    void Commit();
+    public interface IAppConfigTransaction : IDisposable
+    {
+        /// <summary>
+        /// Commits the transaction.
+        /// </summary>
+        void Commit();
 
-    /// <summary>
-    /// Rolls back the transaction.
-    /// </summary>
-    void Rollback();
-  }
+        /// <summary>
+        /// Rolls back the transaction.
+        /// </summary>
+        void Rollback();
+    }
 }
