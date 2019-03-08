@@ -1,10 +1,10 @@
-﻿using Ampl.System;
+﻿using Ampl.Core;
 using System;
 using System.Web.Http.ModelBinding;
 
 namespace Ampl.Web.Http
 {
-  public static class ModelStateExtensions
+    public static class ModelStateExtensions
   {
     public static void ThrowIfNullOrInvalid<T>(this ModelStateDictionary modelState,
                                                T model,

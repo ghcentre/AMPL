@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Ampl.Core;
+using Ampl.System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using Ampl.System;
 
 namespace Ampl.Web.Mvc.Html
 {
-  /// <summary>
-  /// Provides a set of <see langword="static" /> methods for the drop down list.
-  /// </summary>
-  public static class HtmlHelperDropDownListExtensions
+    /// <summary>
+    /// Provides a set of <see langword="static" /> methods for the drop down list.
+    /// </summary>
+    public static class HtmlHelperDropDownListExtensions
   {
     /// <summary>
     /// Gets the sequence of <see cref="SelectListItem"/> for the drop down list.

@@ -1,5 +1,5 @@
 ﻿using Ampl.Configuration.Tests.EF.Entities;
-using Ampl.System;
+using Ampl.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Ampl.Core;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using Ampl.System;
 
 namespace Ampl.Web.Mvc
 {
-  /// <summary>
-  /// Provides a set of <see langword="static"/> helper methods for EditableCollection support.
-  /// </summary>
-  public static class EditableCollectionHelpers
+    /// <summary>
+    /// Provides a set of <see langword="static"/> helper methods for EditableCollection support.
+    /// </summary>
+    public static class EditableCollectionHelpers
   {
     /// <summary>
     /// Initializes a new instance of the collection item by calling the method or property getter specified in the

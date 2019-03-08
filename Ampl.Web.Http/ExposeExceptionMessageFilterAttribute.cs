@@ -1,4 +1,4 @@
-﻿using Ampl.System;
+﻿using Ampl.Core;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -6,7 +6,7 @@ using System.Web.Http.Filters;
 
 namespace Ampl.Web.Http
 {
-  public class ExposeExceptionMessageFilterAttribute : ExceptionFilterAttribute
+    public class ExposeExceptionMessageFilterAttribute : ExceptionFilterAttribute
   {
     private readonly Type _exceptionType;
     private readonly HttpStatusCode _statusCode;

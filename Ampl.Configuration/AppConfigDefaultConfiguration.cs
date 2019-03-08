@@ -1,9 +1,9 @@
-﻿using Ampl.System;
+﻿using Ampl.Core;
 using System.Collections.Generic;
 
 namespace Ampl.Configuration
 {
-  public class AppConfigDefaultConfiguration : IAppConfigConfiguration
+    public class AppConfigDefaultConfiguration : IAppConfigConfiguration
   {
     private List<IAppConfigConverter> _converters = new List<IAppConfigConverter>();
 

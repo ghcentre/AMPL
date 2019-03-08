@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using Ampl.Core;
 using Ampl.System;
 
 namespace Ampl.Web.Mvc

@@ -1,4 +1,4 @@
-﻿using Ampl.System;
+﻿using Ampl.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,29 +8,29 @@ using System.Web.WebPages;
 
 namespace Ampl.Web.Mvc
 {
-  /// <summary>
-  /// <para>Provides a set of helper methods to render delayed content.</para>
-  /// <para>You may need to delay render e.g. JavaScript code at page bottom, or, from partial views, when
-  /// page sections are unavailable.</para>
-  /// </summary>
-  /// <example>
-  /// <para>At the bottom of ~/Views/Shared/_Layout.cshtml (just before &lt;/body&gt;):</para>
-  /// <code>
-  /// @Html.RenderDelayed();
-  /// </code>
-  /// <para>Any content within <c>Html.BeginDelayed() {</c> and <c>}</c> will be rendered
-  /// when <c>Html.RenderDelayed()</c> is called.</para>
-  /// <para>To delay render some content use:</para>
-  /// <code>
-  /// @using(Html.BeginDelayed())
-  /// {
-  ///   &lt;script&gt;
-  ///     alert('I am rendered at the end of the page!');
-  ///   &lt;/script&gt;
-  /// }
-  /// </code>
-  /// </example>
-  public static class DelayedRenderExtensions
+    /// <summary>
+    /// <para>Provides a set of helper methods to render delayed content.</para>
+    /// <para>You may need to delay render e.g. JavaScript code at page bottom, or, from partial views, when
+    /// page sections are unavailable.</para>
+    /// </summary>
+    /// <example>
+    /// <para>At the bottom of ~/Views/Shared/_Layout.cshtml (just before &lt;/body&gt;):</para>
+    /// <code>
+    /// @Html.RenderDelayed();
+    /// </code>
+    /// <para>Any content within <c>Html.BeginDelayed() {</c> and <c>}</c> will be rendered
+    /// when <c>Html.RenderDelayed()</c> is called.</para>
+    /// <para>To delay render some content use:</para>
+    /// <code>
+    /// @using(Html.BeginDelayed())
+    /// {
+    ///   &lt;script&gt;
+    ///     alert('I am rendered at the end of the page!');
+    ///   &lt;/script&gt;
+    /// }
+    /// </code>
+    /// </example>
+    public static class DelayedRenderExtensions
   {
     #region Get Script List / Create Script List
 

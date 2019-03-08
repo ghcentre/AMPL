@@ -2,7 +2,7 @@
 
 namespace Ampl.Configuration
 {
-  public interface IAppConfigEntity
+    public interface IAppConfigEntity
   {
     [Required]
     string Key { get; set; }

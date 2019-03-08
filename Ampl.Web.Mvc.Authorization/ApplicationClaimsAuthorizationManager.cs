@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Xml;
+using Ampl.Core;
 using Ampl.Identity;
 using Ampl.System;
 

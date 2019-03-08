@@ -1,18 +1,14 @@
-﻿using Ampl.System;
+﻿using Ampl.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.WebPages;
 
 namespace Ampl.Web.Mvc
 {
-  /// <summary>
-  /// Contains the <see langword="static"/> helper methods used in Razor views.
-  /// </summary>
-  public static class HtmlStringExtensions
+    /// <summary>
+    /// Contains the <see langword="static"/> helper methods used in Razor views.
+    /// </summary>
+    public static class HtmlStringExtensions
   {
     /// <summary>
     /// Renders the <paramref name="text"/> delegate only if <paramref name="htmlString"/> if not white space.
@@ -33,7 +29,7 @@ namespace Ampl.Web.Mvc
     /// </example>
     public static HelperResult IfNotEmpty(this IHtmlString htmlString, Func<IHtmlString, HelperResult> text)
     {
-      if(htmlString == null  || htmlString.ToHtmlString().ToNullIfWhiteSpace() == null)
+      if(htmlString == null || htmlString.ToHtmlString().ToNullIfWhiteSpace() == null)
       {
         return null;
       }

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ampl.Configuration
 {
-  public class StringConverter : IAppConfigConverter
+    public class StringConverter : IAppConfigConverter
   {
     public bool CanConvert(Type type) => type.Equals(typeof(string));
     public object ReadEntity(string entityValue) => entityValue;

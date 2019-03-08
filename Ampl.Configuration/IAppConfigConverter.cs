@@ -2,7 +2,7 @@
 
 namespace Ampl.Configuration
 {
-  public interface IAppConfigConverter
+    public interface IAppConfigConverter
   {
     bool CanConvert(Type type);
     object ReadEntity(string entityValue);

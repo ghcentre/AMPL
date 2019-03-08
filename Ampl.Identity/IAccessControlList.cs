@@ -2,7 +2,7 @@
 
 namespace Ampl.Identity
 {
-  public interface IAccessControlList
+    public interface IAccessControlList
   {
     int Position { get; set; }
 

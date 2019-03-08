@@ -1,6 +1,6 @@
 ﻿namespace Ampl.Configuration
 {
-  public interface IAppConfig
+    public interface IAppConfig
   {
     T Get<T>(string key, bool useResolvers = true);
 

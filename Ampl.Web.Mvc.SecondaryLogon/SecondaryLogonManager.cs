@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using Ampl.System;
+﻿using Ampl.Core;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System;
+using System.Collections.Generic;
+using System.Web;
 
 namespace Ampl.Web.Mvc.SecondaryLogon
 {
-  public class SecondaryLogonManager<TUser, TKey> : ISecondaryLogonManager<TKey>
+    public class SecondaryLogonManager<TUser, TKey> : ISecondaryLogonManager<TKey>
     where TUser : class, IUser<TKey>
     where TKey : IEquatable<TKey>
   {
