@@ -204,8 +204,8 @@ if /%2/==// (
 
         if /%2/==/core/ (
             echo [UpdatePackages] Updating packages ^(core^) for '%1'.
-            for /f "usebackq tokens=1,2,* delims= " %%i in (`dotnet list package --outdated ^| find ">"`) do (
-                dotnet add package %%j
+            for /f "usebackq tokens=1,2,3,4,5,* delims= " %%i in (`dotnet list package --outdated ^| find ">"`) do (
+                dotnet add package %%j --version %%m
                 if errorlevel 1 (
                     echo [UpdatePackages] ERROR: Error updating packages ^(core^) for '%1', package '%%j'.
                     endlocal & exit /b 1
