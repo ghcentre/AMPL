@@ -231,6 +231,11 @@ namespace Ampl.Core
             }
         }
 
+        /// <summary>
+        /// Removes HTML tags (if any) from the string.
+        /// </summary>
+        /// <param name="source">The string to remove tags from.</param>
+        /// <returns>A copy of the <paramref name="source"/> string with HTML tags removed.</returns>
         public static string RemoveHtmlTags(this string source)
         {
             if(string.IsNullOrEmpty(source))
