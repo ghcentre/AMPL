@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>7.3</LangVersion>
+    <DocumentationFile>bin\Debug\Ampl.Web.Http.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,8 +34,8 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=4.0.3.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
-      <HintPath>..\packages\Ampl.Core.4.0.3\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.0.5.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.0.5\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

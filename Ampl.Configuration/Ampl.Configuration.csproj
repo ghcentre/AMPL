@@ -25,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ampl.Core" Version="4.0.3" />
+    <PackageReference Include="Ampl.Core" Version="4.0.5" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
