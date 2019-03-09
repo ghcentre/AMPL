@@ -154,7 +154,7 @@ if /%2/==// (
     rem
     setlocal
         echo [BuildProject] Cleaning '%1'.
-        msbuild /t:clean
+        msbuild /t:clean %MsbuildParams%
         if errorlevel 1 (
             echo [BuildProject] ERROR: Error cleaning '%1'.
             endlocal & exit /b 1
@@ -162,7 +162,7 @@ if /%2/==// (
         
         if /%2/==/net/ (
             echo [BuildProject] Building ^(net^) '%1'.
-            msbuild /t:build /p:VersionAssembly=%Version%
+            msbuild /t:build /p:VersionAssembly=%Version% %MsbuildParams%
             if errorlevel 1 (
                 echo [BuildProject] ERROR: Error building ^(net^) '%1'.
                 endlocal & exit /b 1
@@ -171,7 +171,7 @@ if /%2/==// (
 
         if /%2/==/core/ (
             echo [BuildProject] Building ^(core^) '%1'.
-            msbuild /t:build /p:Version=%Version% /p:AssemblyVersion=%Version% /p:FileVersion=%Version%
+            msbuild /t:build /p:Version=%Version% /p:AssemblyVersion=%Version% /p:FileVersion=%Version% %MsbuildParams%
             if errorlevel 1 (
                 echo [BuildProject] ERROR: Error building ^(core^) for '%1'.
                 endlocal & exit /b 1
@@ -236,12 +236,18 @@ if /%2/==// (
     rem
     rem Sets variables.
     rem
+
     path "%~dp0";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin;%PATH%
     set Apikey=A2SvwIa3g0CpQR2GMcHv35h9nEv0RYbw
     set Source=https://nuget.ghcentre.com/api/v2/package
 
     set VersionFile=%~sdp0version.txt
     for /f "eol=# tokens=* delims=" %%i in (%VersionFile%) do set Version=%%i
+
+    set MsbuildParamsFile=%~sdp0msbuildparams.txt
+    set MsbuildParams=
+    for /f "delims=" %%i in (%MsbuildParamsFile%) do set MsbuildParams=%MsbuildParams% %%i
+
     set ProjectListFile=%~sdp0projects.txt
     exit /b 0
 
