@@ -60,5 +60,13 @@ namespace Ampl.Core.Tests
             // assert
             Assert.That(arg, Is.EqualTo(guid));
         }
+
+        [Test]
+        public void NewShortGuid_GeneratesValidResult()
+        {
+            var arg = ShortGuid.NewShortGuid();
+            var result = ShortGuid.Parse(arg.ToString());
+            Assert.That(arg.Guid, Is.EqualTo(result.Guid));
+        }
     }
 }
