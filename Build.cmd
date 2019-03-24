@@ -98,11 +98,43 @@ if /%2/==// (
             call :ProjectList %1
             if not /!Projects!/==// (
                 echo [Build] Building dependent projects: !Projects!
-                for %%i in (!Projects!) do call Build %%i
+                call :BuildDependentProjects !Projects!
+                if errorlevel 1 (set EL=1 & goto Build_End)
             )
         )
 
     :Build_End
+    endlocal & exit /b %EL%
+
+:BuildDependentProjects
+    rem
+    rem Builds, packs and pushes dependent projects
+    rem 
+    rem In:
+    rem     %* (required)   -- Dependent projects
+    rem Out:
+    rem     Errorlevel 0    -- Success
+    rem     Errorlevel 1    -- At least one project failed to build, pack, or push
+    setlocal
+        set EL=0
+
+        :BuildDependentProjects_Loop
+        if /%1/==// (
+            goto BuildDependentProjects_End
+        )
+
+        echo [BuildDependentProjects] Building dependent project: %1
+        call :Build %1
+        if errorlevel 1 (
+            echo [BuildDependentProjects] ERROR: Error building dependent project: %1
+            set EL=1
+            goto BuildDependentProjects_End
+        )
+
+        shift
+        goto BuildDependentProjects_Loop
+
+    :BuildDependentProjects_End
     endlocal & exit /b %EL%
 
 :PackProject
