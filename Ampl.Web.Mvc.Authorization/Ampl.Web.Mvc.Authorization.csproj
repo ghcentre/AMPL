@@ -42,8 +42,8 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.Authorization.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Annotations, Version=4.0.5.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
-      <HintPath>..\packages\Ampl.Annotations.4.0.5\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
+    <Reference Include="Ampl.Annotations, Version=4.1.8.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
+      <HintPath>..\packages\Ampl.Annotations.4.1.8\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Core, Version=4.0.5.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
@@ -54,8 +54,8 @@
       <HintPath>..\packages\Ampl.Identity.4.0.5\lib\net472\Ampl.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.0.5.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.0.5\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.1.8.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.1.8\lib\net472\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
