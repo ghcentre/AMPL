@@ -21,15 +21,17 @@ Ampl.Annotations              netstandard20
 
 Ampl.Configuration            netstandard20  Ampl.Core
 
-Ampl.Identity                 net472         Ampl.Core
+Ampl.Identity                 netstandard20
+
+Ampl.Identity.Claims          net472         Ampl.Core
 
 Ampl.Web.Http                 net472         Ampl.Core
 
-Ampl.Web.Http.Authorization   net472         Ampl.Core Ampl.Identity
+Ampl.Web.Http.Authorization   net472         Ampl.Identity.Claims
 
 Ampl.Web.Mvc                  net472         Ampl.Core Ampl.Annotations
 
-Ampl.Web.Mvc.Authorization    net472         Ampl.Core Ampl.Annotations Ampl.Identity Ampl.Web.Mvc
+Ampl.Web.Mvc.Authorization    net472         Ampl.Core Ampl.Annotations Ampl.Identity Ampl.Identity.Claims Ampl.Web.Mvc
 
 Ampl.Web.Mvc.SecondaryLogon   net472         Ampl.Core
 

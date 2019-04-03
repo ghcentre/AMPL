@@ -50,9 +50,11 @@
       <HintPath>..\packages\Ampl.Core.4.0.5\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=480e5d27837e45bf">
-      <HintPath>..\packages\Ampl.Identity.4.0.5\lib\net472\Ampl.Identity.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ampl.Identity, Version=4.2.0.0, Culture=neutral, PublicKeyToken=14d8090ce8b85adc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Identity.4.2.0\lib\netstandard2.0\Ampl.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Ampl.Identity.Claims, Version=4.2.0.0, Culture=neutral, PublicKeyToken=9d3a3f09b9fde8a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Identity.Claims.4.2.0\lib\net472\Ampl.Identity.Claims.dll</HintPath>
     </Reference>
     <Reference Include="Ampl.Web.Mvc, Version=4.1.8.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
       <HintPath>..\packages\Ampl.Web.Mvc.4.1.8\lib\net472\Ampl.Web.Mvc.dll</HintPath>

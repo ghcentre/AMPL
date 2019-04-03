@@ -13,6 +13,6 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2014-2019 GHCentre.com</copyright>
-    <tags>ghcentre ampl identity</tags>
+    <tags>ghcentre ampl identity claims</tags>
   </metadata>
 </package>

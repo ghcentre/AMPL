@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 
-namespace Ampl.Identity
+namespace Ampl.Identity.Claims
 {
     /// <summary>
     /// Provides direct access methods for evaluating authorization policy.
@@ -41,9 +41,9 @@ namespace Ampl.Identity
         // changed from new IdentityConfiguration().ClaimsAuthorizationManager to be IoC-aware
         //
         private static Lazy<ClaimsAuthorizationManager> _claimsAuthorizationManager =
-          new Lazy<ClaimsAuthorizationManager>(() => FederatedAuthentication.FederationConfiguration
-                                                                            .IdentityConfiguration
-                                                                            .ClaimsAuthorizationManager);
+            new Lazy<ClaimsAuthorizationManager>(
+                () => FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager
+            );
 
         /// <summary>
         /// Gets the registered authorization manager.

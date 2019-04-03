@@ -1,4 +1,5 @@
 ﻿using Ampl.Identity;
+using Ampl.Identity.Claims;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web.Http;

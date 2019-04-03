@@ -1,5 +1,4 @@
-﻿using Ampl.System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.ComponentModel.DataAnnotations;
 
 namespace Ampl.Annotations.Tests

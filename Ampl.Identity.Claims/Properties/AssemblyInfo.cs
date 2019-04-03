@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("AMPL Identity")]
-[assembly: AssemblyDescription("AMPL extensions for Windows Identity Foundation.")]
+[assembly: AssemblyDescription("AMPL extensions for Claims-based Identity in Windows Identity Foundation.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GHCentre")]
 [assembly: AssemblyProduct("GHC Advanced Multi-Purpose Library")]

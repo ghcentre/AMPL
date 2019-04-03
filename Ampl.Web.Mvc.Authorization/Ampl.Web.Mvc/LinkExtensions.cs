@@ -1,4 +1,4 @@
-﻿using Ampl.Identity;
+﻿using Ampl.Identity.Claims;
 using System.Web.Mvc;
 using System.Web.Routing;
 
