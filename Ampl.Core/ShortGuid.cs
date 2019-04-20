@@ -34,6 +34,7 @@ namespace Ampl.Core
             // "+" => "-"
             // "/" => "_"
             // (RFC 3548, par. 4).
+            // (RFC 1575, appendix C)
             //
             // remove trailing "==" as base-64 encoded GUID always ends with "=="
             //
