@@ -37,8 +37,9 @@
     <AssemblyOriginatorKeyFile>Ampl.Identity.Claims.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=4.0.5.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.4.0.5\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.2.9.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.2.9\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

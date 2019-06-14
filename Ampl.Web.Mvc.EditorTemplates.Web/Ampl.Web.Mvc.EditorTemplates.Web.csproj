@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -54,17 +54,17 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Annotations, Version=4.1.8.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Annotations.4.1.8\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
+    <Reference Include="Ampl.Annotations, Version=4.2.9.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Annotations.4.2.9\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Core, Version=4.0.5.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Core.4.0.5\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.2.9.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Core.4.2.9\lib\netstandard2.0\Ampl.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.1.8.0, Culture=neutral, PublicKeyToken=1f0335352aac49af, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.1.8\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.2.9.0, Culture=neutral, PublicKeyToken=1f0335352aac49af, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.2.9\lib\net472\Ampl.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Ampl.Web.Optimization, Version=4.0.5.0, Culture=neutral, PublicKeyToken=a933dcd56d45bdf4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ampl.Web.Optimization.4.0.5\lib\net472\Ampl.Web.Optimization.dll</HintPath>
+    <Reference Include="Ampl.Web.Optimization, Version=4.2.9.0, Culture=neutral, PublicKeyToken=a933dcd56d45bdf4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ampl.Web.Optimization.4.2.9\lib\net472\Ampl.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -77,7 +77,7 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -88,6 +88,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Threading.Thread" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -274,7 +277,6 @@
     <Content Include="Scripts\cldr\supplemental\weekData.json" />
     <Content Include="Scripts\cldr\supplemental\windowsZones.json" />
     <Content Include="Scripts\ampl.jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\cldr\unresolved.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -283,6 +285,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\cldr\unresolved.js" />
     <Content Include="Scripts\globalize.js" />
     <Content Include="Scripts\globalize\currency.js" />
     <Content Include="Scripts\globalize\date.js" />
@@ -291,11 +294,13 @@
     <Content Include="Scripts\globalize\plural.js" />
     <Content Include="Scripts\globalize\relative-time.js" />
     <Content Include="Scripts\globalize\unit.js" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.globalize.js" />
     <Content Include="Scripts\jquery.validate.globalize.min.js" />
@@ -361,8 +366,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\SimpleEditor\Index.cshtml" />
@@ -416,7 +419,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
