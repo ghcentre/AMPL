@@ -46,20 +46,20 @@
       <HintPath>..\packages\Ampl.Annotations.4.2.9\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Core, Version=4.2.9.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
-      <HintPath>..\packages\Ampl.Core.4.2.9\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.2.11.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.2.11\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Identity, Version=4.2.9.0, Culture=neutral, PublicKeyToken=14d8090ce8b85adc">
       <HintPath>..\packages\Ampl.Identity.4.2.9\lib\netstandard2.0\Ampl.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity.Claims, Version=4.2.9.0, Culture=neutral, PublicKeyToken=9d3a3f09b9fde8a0">
-      <HintPath>..\packages\Ampl.Identity.Claims.4.2.9\lib\net472\Ampl.Identity.Claims.dll</HintPath>
+    <Reference Include="Ampl.Identity.Claims, Version=4.2.11.0, Culture=neutral, PublicKeyToken=9d3a3f09b9fde8a0">
+      <HintPath>..\packages\Ampl.Identity.Claims.4.2.11\lib\net472\Ampl.Identity.Claims.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.2.9.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.2.9\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.2.11.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.2.11\lib\net472\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

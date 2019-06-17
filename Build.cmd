@@ -153,11 +153,22 @@ if /%2/==// (
     setlocal
         for %%i in (*.nupkg) do del %%i
 
-        echo [PackProject] Packing '%1'.
-        nuget pack %1
-        if errorlevel 1 (
-            echo [PackProject] ERROR: Error packing '%1'.
-            endlocal & exit /b 1
+        if /%2/==/net/ (
+            echo [PackProject] Packing ^(net^) '%1'.
+            nuget pack %NugetParams% %1
+            if errorlevel 1 (
+                echo [PackProject] ERROR: Error packing ^(net^) '%1'.
+                endlocal & exit /b 1
+            )
+        )
+
+        if /%2/==/core/ (
+            echo [PackProject] Packing ^(core^) '%1'.
+            dotnet pack /p:Version=%Version% /p:AssemblyVersion=%Version% /p:FileVersion=%Version% -o .\ %MsbuildParams%
+            if errorlevel 1 (
+                echo [PackProject] ERROR: Error packing ^(core^) for '%1'.
+                endlocal & exit /b 1
+            )
         )
 
         for %%i in (*.nupkg) do (
@@ -186,6 +197,7 @@ if /%2/==// (
     rem
     setlocal
         echo [BuildProject] Cleaning '%1'.
+        dotnet restore
         msbuild /t:clean %MsbuildParams%
         if errorlevel 1 (
             echo [BuildProject] ERROR: Error cleaning '%1'.
@@ -227,7 +239,7 @@ if /%2/==// (
     setlocal
         if /%2/==/net/ (
             echo [UpdatePackages] Updating packages ^(net^) for '%1'.
-            nuget update %1
+            nuget update %NugetParams% %1
             if errorlevel 1 (
                 echo [UpdatePackages] ERROR: Error updating packages ^(net^) for '%1'.
                 endlocal & exit /b 1
@@ -270,7 +282,8 @@ if /%2/==// (
     rem Sets variables.
     rem
 
-    path "%~dp0";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin;%PATH%
+    set MsbuildPath="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin"
+    path "%~dp0";%MsbuildPath%;%PATH%
     set Apikey=A2SvwIa3g0CpQR2GMcHv35h9nEv0RYbw
     set Source=https://nuget.ghcentre.com/api/v2/package
 
@@ -280,6 +293,8 @@ if /%2/==// (
     set MsbuildParamsFile=%~sdp0msbuildparams.txt
     set MsbuildParams=
     for /f "delims=" %%i in (%MsbuildParamsFile%) do set MsbuildParams=%MsbuildParams% %%i
+
+    set NugetParams=-MSBuildPath %MsbuildPath%
 
     set ProjectListFile=%~sdp0projects.txt
     exit /b 0

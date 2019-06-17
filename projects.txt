@@ -27,7 +27,7 @@ Ampl.Identity.Claims          net472         Ampl.Core
 
 Ampl.Web.Http                 net472         Ampl.Core
 
-Ampl.Web.Http.Authorization   net472         Ampl.Identity.Claims
+Ampl.Web.Http.Authorization   net472         Ampl.Core Ampl.Identity.Claims
 
 Ampl.Web.Mvc                  net472         Ampl.Core Ampl.Annotations
 

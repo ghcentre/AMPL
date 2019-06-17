@@ -4,20 +4,22 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Configuration.snk</AssemblyOriginatorKeyFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>0.0.0</Version>
     <Authors>GHCentre</Authors>
     <Company>GHCentre</Company>
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
     <Description>AMPL configuration related APIs.</Description>
     <Copyright>Copyright © 2014-2019 George Harder's Centre.</Copyright>
-    <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
     <PackageTags>ghcentre ampl configuration</PackageTags>
     <FileVersion>0.0.0</FileVersion>
     <AssemblyVersion>0.0.0</AssemblyVersion>
     <LangVersion>7.3</LangVersion>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,8 +27,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ampl.Core" Version="4.2.9" />
+    <PackageReference Include="Ampl.Core" Version="4.2.11" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
