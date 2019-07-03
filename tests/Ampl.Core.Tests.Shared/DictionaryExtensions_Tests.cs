@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using Ampl.Collections;
 using System.Collections.Generic;
 
 namespace Ampl.Core.Tests.Shared
@@ -71,7 +72,9 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_NullThis_Throws()
         {
             Dictionary<string, string> arg = null;
-            Assert.Throws<ArgumentNullException>(() => arg.GetValueOrDefault("test"));
+#pragma warning disable CS0618 // Type or member is obsolete
+            Assert.Throws<ArgumentNullException>(() => Collections.DictionaryExtensions.GetValueOrDefault(arg, "test"));
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         private Dictionary<int, string> _errorMessages = new Dictionary<int, string>() {
@@ -87,7 +90,9 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_ExistingKey_Returns()
         {
             int key = 3;
-            var result = _errorMessages.GetValueOrDefault(key);
+#pragma warning disable CS0618 // Type or member is obsolete
+            var result = Collections.DictionaryExtensions.GetValueOrDefault(_errorMessages, key);
+#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.EqualTo("Path not found"));
         }
 
@@ -95,7 +100,9 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_NonExistingKey_ReturnsNull()
         {
             int key = 1000;
-            var result = _errorMessages.GetValueOrDefault(key);
+#pragma warning disable CS0618 // Type or member is obsolete
+            var result = Collections.DictionaryExtensions.GetValueOrDefault(_errorMessages, key);
+#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.Null);
         }
 
@@ -108,7 +115,9 @@ namespace Ampl.Core.Tests.Shared
                 ["three"] = 3
             };
             string key = "four";
-            int result = dictionary.GetValueOrDefault(key);
+#pragma warning disable CS0618 // Type or member is obsolete
+            int result = Collections.DictionaryExtensions.GetValueOrDefault(dictionary, key);
+#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.EqualTo(default(int)));
         }
     }
