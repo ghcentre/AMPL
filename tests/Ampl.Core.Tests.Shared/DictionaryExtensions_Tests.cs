@@ -72,9 +72,7 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_NullThis_Throws()
         {
             Dictionary<string, string> arg = null;
-#pragma warning disable CS0618 // Type or member is obsolete
             Assert.Throws<ArgumentNullException>(() => Collections.DictionaryExtensions.GetValueOrDefault(arg, "test"));
-#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         private Dictionary<int, string> _errorMessages = new Dictionary<int, string>() {
@@ -90,9 +88,7 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_ExistingKey_Returns()
         {
             int key = 3;
-#pragma warning disable CS0618 // Type or member is obsolete
             var result = Collections.DictionaryExtensions.GetValueOrDefault(_errorMessages, key);
-#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.EqualTo("Path not found"));
         }
 
@@ -100,9 +96,7 @@ namespace Ampl.Core.Tests.Shared
         public void GetValueOrDefault_NonExistingKey_ReturnsNull()
         {
             int key = 1000;
-#pragma warning disable CS0618 // Type or member is obsolete
             var result = Collections.DictionaryExtensions.GetValueOrDefault(_errorMessages, key);
-#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.Null);
         }
 
@@ -115,9 +109,7 @@ namespace Ampl.Core.Tests.Shared
                 ["three"] = 3
             };
             string key = "four";
-#pragma warning disable CS0618 // Type or member is obsolete
             int result = Collections.DictionaryExtensions.GetValueOrDefault(dictionary, key);
-#pragma warning restore CS0618 // Type or member is obsolete
             Assert.That(result, Is.EqualTo(default(int)));
         }
     }

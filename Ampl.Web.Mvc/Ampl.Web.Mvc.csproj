@@ -43,12 +43,12 @@
     <AssemblyOriginatorKeyFile>Ampl.Web.Mvc.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Annotations, Version=4.3.0.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
-      <HintPath>..\packages\Ampl.Annotations.4.3.0\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
+    <Reference Include="Ampl.Annotations, Version=4.3.2.0, Culture=neutral, PublicKeyToken=bda675d4a7d42ab9">
+      <HintPath>..\packages\Ampl.Annotations.4.3.2\lib\netstandard2.0\Ampl.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
-      <HintPath>..\packages\Ampl.Core.4.3.0\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.3.2.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.3.2\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

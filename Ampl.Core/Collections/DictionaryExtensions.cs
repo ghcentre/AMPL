@@ -1,5 +1,4 @@
 ﻿using Ampl.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Ampl.Collections
@@ -24,11 +23,12 @@ namespace Ampl.Collections
         /// <param name="key">The key of the element to get.</param>
         /// <returns>The element with the specified key, or the default value of <typeparamref name="TKey"/> if the
         /// <paramref name="key"/> is not found.</returns>
-        [Obsolete(
-            "This method is obsolete. " +
-            "Use System.Collections.Generic.CollectionExtensions.GetValueOrDefault instead. " +
-            "If the method is not available on your platform, disable warning using #pragma warning disable CS0618."
-        )]
+        /// <remarks>Will become obsolete after the .NET Standard 3.0 release.</remarks>
+        //[Obsolete(
+        //    "This method is obsolete. " +
+        //    "Use System.Collections.Generic.CollectionExtensions.GetValueOrDefault instead. " +
+        //    "If the method is not available on your platform, disable warning using #pragma warning disable CS0618."
+        //)]
         public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         {
             Check.NotNull(dictionary, nameof(dictionary));
