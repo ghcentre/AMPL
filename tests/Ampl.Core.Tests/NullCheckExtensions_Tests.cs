@@ -35,6 +35,9 @@ namespace Ampl.Core.Tests
             };
         }
 
+
+        #region With
+
         [Test]
         public void With_NullThis_ReturnsNull()
         {
@@ -90,6 +93,10 @@ namespace Ampl.Core.Tests
             // assert
             Assert.That(result, Is.Null);
         }
+
+        #endregion
+
+        #region Do (one func)
 
         [Test]
         public void Do_NullThis_DoesNothing()
@@ -158,6 +165,40 @@ namespace Ampl.Core.Tests
             Assert.That(result, Is.SameAs(arg));
         }
 
+        #endregion
+
+        #region Do (2 funcs)
+
+        [Test]
+        public void Do2_NullThis2ndNotNull_Does2rd()
+        {
+            // arrange
+            string arg = null;
+            string sideEffect = null;
+            // act
+            var result = arg.Do(x => sideEffect = "side1", x => sideEffect = "side2");
+            // assert
+            Assert.That(sideEffect, Is.EqualTo("side2"));
+        }
+
+        [Test]
+        public void Do2_ActionsNull_DoesNothingDoesNotThrow()
+        {
+            // arrange
+            string arg1 = null;
+            string arg2 = "arg2";
+            // act
+            var result1 = arg1.Do(null, null);
+            var result2 = arg2.Do(null, null);
+            // assert
+            Assert.That(arg1, Is.Null);
+            Assert.That(arg2, Is.EqualTo("arg2"));
+        }
+
+        #endregion
+
+        #region Return (value)
+
         [Test]
         public void Return_NullThis_ReturnsDefault()
         {
@@ -215,6 +256,10 @@ namespace Ampl.Core.Tests
             Assert.That(result, Is.EqualTo(3));
         }
 
+        #endregion
+
+        #region Return (func)
+
         [Test]
         public void ReturnFunc_NotNull_ReturnsSameReference()
         {
@@ -226,6 +271,9 @@ namespace Ampl.Core.Tests
             Assert.That(result, Is.SameAs(arg));
         }
 
+        #endregion
+
+        #region If
 
         [Test]
         public void If_NullThis_ReturnsNull()
@@ -268,5 +316,7 @@ namespace Ampl.Core.Tests
             // assert
             Assert.That(result, Is.Null);
         }
+
+        #endregion
     }
 }

@@ -127,5 +127,32 @@ namespace Ampl.Core
             action(input);
             return input;
         }
+
+        /// <summary>
+        /// Evaluates one of the actions if input is or is not <see langword="null" />.
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="input"></param>
+        /// <param name="notNullAction">The action (<see cref="Action{T}"/>)
+        /// to be evaluated if the <paramref name="input"/> is <b>not</b> null.
+        /// The action can be <see langword="null" />; if so, nothing is evaluated.</param>
+        /// <param name="nullAction">The action (<see cref="Action{T}"/>)
+        /// to be evaluated if the <paramref name="input"/> is null.
+        /// The action can be <see langword="null" />; if so, nothing is evaluated.</param>
+        /// <returns>The method returns <paramref name="input"/>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TInput Do<TInput>(this TInput input, Action<TInput> notNullAction, Action<TInput> nullAction)
+        {
+            if(input != null)
+            {
+                notNullAction?.Invoke(input);
+            }
+            else
+            {
+                nullAction?.Invoke(input);
+            }
+
+            return input;
+        }
     }
 }

@@ -36,16 +36,16 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ampl.Core, Version=4.3.2.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
-      <HintPath>..\packages\Ampl.Core.4.3.2\lib\netstandard2.0\Ampl.Core.dll</HintPath>
+    <Reference Include="Ampl.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=81972e7a5f30c5f7">
+      <HintPath>..\packages\Ampl.Core.4.4.0\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity, Version=4.3.2.0, Culture=neutral, PublicKeyToken=14d8090ce8b85adc">
-      <HintPath>..\packages\Ampl.Identity.4.3.2\lib\netstandard2.0\Ampl.Identity.dll</HintPath>
+    <Reference Include="Ampl.Identity, Version=4.4.0.0, Culture=neutral, PublicKeyToken=14d8090ce8b85adc">
+      <HintPath>..\packages\Ampl.Identity.4.4.0\lib\netstandard2.0\Ampl.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Identity.Claims, Version=4.3.2.0, Culture=neutral, PublicKeyToken=9d3a3f09b9fde8a0">
-      <HintPath>..\packages\Ampl.Identity.Claims.4.3.2\lib\net472\Ampl.Identity.Claims.dll</HintPath>
+    <Reference Include="Ampl.Identity.Claims, Version=4.4.0.0, Culture=neutral, PublicKeyToken=9d3a3f09b9fde8a0">
+      <HintPath>..\packages\Ampl.Identity.Claims.4.4.0\lib\net472\Ampl.Identity.Claims.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
