@@ -1,30 +1,36 @@
 ﻿@{
-  ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-  <h1>AMPL</h1>
-  <p class="lead">
-    <b>A</b>dvanced <b>M</b>ulti-<b>P</b>urpose <b>L</b>ibrary is a set of classes and frameworks
-    to help build great web sites and applications</p>
-  <p><a href="http://projects.ghcentre.com/ampl/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>AMPL</h1>
+    <p class="lead">
+        <b>A</b>dvanced <b>M</b>ulti-<b>P</b>urpose <b>L</b>ibrary is a set of classes and frameworks
+        to help build great web sites and applications
+    </p>
+    <p><a href="http://projects.ghcentre.com/ampl/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
-  <div class="col-md-4">
-    <h2>Alerts</h2>
-    <p><code>ControllerBase.AddAlert()</code> example.</p>
-    <p>@Html.ActionLink("More »", "Index", "Alert", null, new { @class = "btn btn-default" })</p>
-  </div>
-  <div class="col-md-4">
-    <h2>Simple EditorTemplates</h2>
-    <p><code>EditorForModel()</code> for simple types.</p>
-    <p>@Html.ActionLink("More »", "Index", "SimpleEditor", null, new { @class = "btn btn-default" })</p>
-  </div>
-  <div class="col-md-4">
-    <h2>Complex EditorTemplates</h2>
-    <p><code>EditorForModel()</code> for complex types.</p>
-    <p>@Html.ActionLink("More »", "Index", "ComplexEditor", null, new { @class = "btn btn-default" })</p>
-  </div>
+    <div class="col-md-6">
+        <h2>Alerts</h2>
+        <p><code>ControllerBase.AddAlert()</code> example.</p>
+        <p>@Html.ActionLink("More »", "Index", "Alert", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Complex DisplayTemplates</h2>
+        <p><code>DisplayForModel()</code> example.</p>
+        <p>@Html.ActionLink("More »", "Index", "ComplexView", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Simple EditorTemplates</h2>
+        <p><code>EditorForModel()</code> for simple types.</p>
+        <p>@Html.ActionLink("More »", "Index", "SimpleEditor", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Complex EditorTemplates</h2>
+        <p><code>EditorForModel()</code> for complex types.</p>
+        <p>@Html.ActionLink("More »", "Index", "ComplexEditor", null, new { @class = "btn btn-default" })</p>
+    </div>
 </div>
 

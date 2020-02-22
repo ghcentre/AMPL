@@ -1,14 +1,16 @@
 ﻿@model bool?
+
 @{
-  var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
-               ?? EditorTemplateConfiguration.DefaultConfiguration;
+    var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+                 ?? EditorTemplateConfiguration.DefaultConfiguration;
 }
+
 <div class="checkbox">
-  <label>
-    @Html.CheckBox("", Model.HasValue && Model.Value)
-    @if(!config.SeparateCheckboxLabel)
-    {
-      @(Html.ViewData.ModelMetadata.DisplayName ?? Html.ViewData.ModelMetadata.PropertyName)
-    }
-  </label>
+    <label>
+        @Html.CheckBox("", Model.HasValue && Model.Value)
+        @if (!config.SeparateCheckboxLabel)
+        {
+            @(Html.ViewData.ModelMetadata.DisplayName ?? Html.ViewData.ModelMetadata.PropertyName)
+        }
+    </label>
 </div>

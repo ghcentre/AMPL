@@ -12,12 +12,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial Release.</releaseNotes>
-    <copyright>Copyright 2014-2016 GHCentre.com</copyright>
+    <copyright>Copyright 2014-2019 GHCentre.com</copyright>
     <tags>ghcentre ampl web mvc</tags>
   </metadata>
 
   <files>
     <file src="content\**\*" target="content\" />
-    <file src="bin\debug\ru\Ampl.Web.Mvc.resources.dll" target="lib\net471\ru"/>
+    <file src="bin\debug\ru\Ampl.Web.Mvc.resources.dll" target="lib\net472\ru"/>
   </files>
 </package>

@@ -16,7 +16,7 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Models
     {
       return new BranchInfo() {
         CountryCode = "RU",
-        CountryName = "Роисся"
+        Title = "Роисся"
       };
     }
   }

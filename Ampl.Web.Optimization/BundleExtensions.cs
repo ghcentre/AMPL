@@ -2,7 +2,7 @@
 
 namespace Ampl.Web.Optimization
 {
-  public static class BundleExtensions
+    public static class BundleExtensions
   {
     public static Bundle ForceOrder(this Bundle bundle)
     {

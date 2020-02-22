@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Ampl.Core;
+using System;
 using System.Web.Mvc;
-using Ampl.System;
 
 namespace Ampl.Web.Mvc.Html
 {
-  /// <summary>
-  /// Provides <see langword="static"/> methods for ModelState validation.
-  /// </summary>
-  public static class HtmlHelperValidationExtensions
+    /// <summary>
+    /// Provides <see langword="static"/> methods for ModelState validation.
+    /// </summary>
+    public static class HtmlHelperValidationExtensions
   {
     /// <summary>
     /// Check the Model to be non-null and the ModelState for an error.

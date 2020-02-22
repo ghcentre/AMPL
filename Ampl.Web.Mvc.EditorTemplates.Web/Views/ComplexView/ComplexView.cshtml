@@ -1,0 +1,17 @@
+﻿@using Ampl.Web.Mvc.EditorTemplates.Web.Models.ComplexView
+@model ComplexViewModel
+
+@{
+    ViewBag.Title = "DispayForModel";
+    ViewBag.SubTitle = "for complex model";
+}
+
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+
+
+@Html.DisplayForModel()
+
+Title:
+@Html.DisplayFor(model => model.Title)
+

@@ -1,7 +1,17 @@
 ﻿@model DateTime?
+
 @{
-  object htmlAttributes = ViewData.ModelMetadata.IsReadOnly
-    ? (object)new { @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark, @readonly = "readonly" }
-    : (object)new { @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark };
+    object htmlAttributes =
+        ViewData.ModelMetadata.IsReadOnly
+            ? (object)new {
+                @class = "form-control",
+                @placeholder = @ViewData.ModelMetadata.Watermark,
+                @readonly = "readonly"
+            }
+            : (object)new {
+                @class = "form-control",
+                @placeholder = @ViewData.ModelMetadata.Watermark
+            };
 }
+
 @Html.TextBox("", (Model.HasValue ? Model.Value.ToString("G") : ""), htmlAttributes)

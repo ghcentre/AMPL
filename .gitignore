@@ -195,6 +195,7 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+/Ampl.Documentation/Help
 /Ampl.Documentation.NET/Help
 /Ampl.Documentation.PCL/Help
 /Ampl.Documentation/Help

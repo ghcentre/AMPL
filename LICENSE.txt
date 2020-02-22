@@ -1,0 +1,2 @@
+The Advanced Multi-Purpose Library (AMPL) is distributed under GPL or commercial license.
+Contact GHCentre for more information.

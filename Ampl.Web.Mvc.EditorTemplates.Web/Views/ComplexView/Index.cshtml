@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "DisplayForModel";
+    ViewBag.SubTitle = "for complex types";
+}
+
+@section Heading { @ViewBag.Title }
+@section SubHeading { @ViewBag.SubTitle }
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="col-md-4">
+            <h2>Drop Down List</h2>
+            <p><code>DisplayForModel()</code> with drop down list</p>
+            <p>
+                @Html.ActionLink("Null model",
+                                 "ComplexView",
+                                 null,
+                                 new { useModel = false },
+                                 new { @class = "btn btn-default" })
+                @Html.ActionLink("Non-Null model",
+                                 "ComplexView",
+                                 null,
+                                 new { useModel = true },
+                                 new { @class = "btn btn-default" })
+            </p>
+        </div>
+    </div>
+</div>

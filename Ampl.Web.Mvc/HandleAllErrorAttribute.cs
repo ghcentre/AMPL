@@ -1,36 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Ampl.Core;
+using System;
 using System.Web;
 using System.Web.Mvc;
-using Ampl.System;
 
 namespace Ampl.Web.Mvc
 {
-  /// <summary>
-  /// <para>Represents an attribute that is used to handle an exception that is thrown by an action method.</para>
-  /// <para>Unlike the <see cref="HandleErrorAttribute"/>, this attribute handles all types of exceptions.</para>
-  /// </summary>
-  /// <example>
-  /// <para><b>Usage:</b></para>
-  /// <para>Change the <b>~/App_Code/FilterConfig.cs</b> as following:</para>
-  /// <code>
-  /// public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-  /// {
-  ///   filters.Add(new HandleAllErrorAttribute());
-  /// }
-  /// </code>
-  /// <para>In <b>web.config</b>, add the <b>customErrors</b> element to the <b>system.web</b> element:</para>
-  /// <code>
-  /// &lt;configuration&gt;
-  ///   &lt;system.web&gt;
-  ///     &lt;customErrors mode="On" /&gt;
-  ///   &lt;/system.web&gt;
-  /// &lt;/configuration&gt;
-  /// </code>
-  /// </example>
-  public class HandleAllErrorAttribute : HandleErrorAttribute
+    /// <summary>
+    /// <para>Represents an attribute that is used to handle an exception that is thrown by an action method.</para>
+    /// <para>Unlike the <see cref="HandleErrorAttribute"/>, this attribute handles all types of exceptions.</para>
+    /// </summary>
+    /// <example>
+    /// <para><b>Usage:</b></para>
+    /// <para>Change the <b>~/App_Code/FilterConfig.cs</b> as following:</para>
+    /// <code>
+    /// public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    /// {
+    ///   filters.Add(new HandleAllErrorAttribute());
+    /// }
+    /// </code>
+    /// <para>In <b>web.config</b>, add the <b>customErrors</b> element to the <b>system.web</b> element:</para>
+    /// <code>
+    /// &lt;configuration&gt;
+    ///   &lt;system.web&gt;
+    ///     &lt;customErrors mode="On" /&gt;
+    ///   &lt;/system.web&gt;
+    /// &lt;/configuration&gt;
+    /// </code>
+    /// </example>
+    public class HandleAllErrorAttribute : HandleErrorAttribute
   {
     /// <summary>
     /// Called when an exception occurs.
