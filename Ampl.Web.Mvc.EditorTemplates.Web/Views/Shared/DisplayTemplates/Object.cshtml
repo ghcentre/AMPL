@@ -1,61 +1,98 @@
 ﻿@model object
+
 @{
-  var viewData = Html.ViewContext.ViewData;
-  var templateInfo = viewData.TemplateInfo;
-  var modelMetadata = viewData.ModelMetadata;
-  var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
-               ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
-               ?? EditorTemplateConfiguration.DefaultConfiguration;
+    var viewData = Html.ViewContext.ViewData;
+    var templateInfo = viewData.TemplateInfo;
+    var modelMetadata = viewData.ModelMetadata;
+    var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+                 ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+                 ?? EditorTemplateConfiguration.DefaultConfiguration;
+    var modelType = modelMetadata.ModelType;
 
-  if(templateInfo.TemplateDepth > config.MaximumTemplateDepth)
-  {
-    <div class="form-control-static">
-      @if(modelMetadata.Model == null)
-      {
-        @modelMetadata.NullDisplayText
-      }
-      else
-      {
-        @(modelMetadata.HtmlEncode ? Html.Encode(modelMetadata.SimpleDisplayText) : modelMetadata.SimpleDisplayText)
-      }
-    </div>
-    return;
-  }
-
-  EditorTemplateHelpers.OverrideContainerProperties(true, Html.ViewDataContainer.ViewData, modelMetadata, templateInfo, config);
-}
-<div class="form form-horizontal">
-  @foreach(var propertyMetadata in modelMetadata.Properties
-                                             .Where(pm => EditorTemplateHelpers.ShouldDisplayProperty(pm, templateInfo)))
-  {
-    if(config.RenderNullProperties || propertyMetadata.Model != null)
+    if (templateInfo.TemplateDepth > config.MaximumTemplateDepth)
     {
-      string propertyName = propertyMetadata.PropertyName;
-      if(propertyMetadata.HideSurroundingHtml)
-      {
-        @Html.Display(propertyName)
-      }
-      else
-      {
-        <div class="form-group">
-          @if(!propertyMetadata.HideSurroundingHtml)
-          {
-            @Html.Label(propertyName, new { @class = $"{config.LabelClass} control-label" })
-          }
-          <div class="@config.EditorClass">
-            @if(propertyMetadata.IsComplexType)
+        <div class="form-control-static">
+            @if (modelMetadata.Model == null)
             {
-              @Html.Display(propertyName)
+                @modelMetadata.NullDisplayText
             }
             else
             {
-              <div class="form-control-static">
-                @Html.Display(propertyName)
-              </div>
+                @(modelMetadata.HtmlEncode ? Html.Encode(modelMetadata.SimpleDisplayText) : modelMetadata.SimpleDisplayText)
             }
-          </div>
         </div>
-      }
+
+        return;
     }
-  }
+
+    EditorTemplateHelpers.OverrideContainerProperties(true,
+                                                      Html.ViewDataContainer.ViewData,
+                                                      modelMetadata,
+                                                      templateInfo,
+                                                      config);
+    
+    var propertiesToDisplay =
+        modelMetadata.Properties
+            .Where(pm => EditorTemplateHelpers.ShouldDisplayProperty(pm, templateInfo));
+
+    var htmlHelper = Html.ForModelOfType(Model, modelType, ViewContext);
+}
+
+<div class="form form-horizontal">
+    @foreach (var propertyMetadata in propertiesToDisplay)
+    {
+        if (config.RenderNullProperties || propertyMetadata.Model != null)
+        {
+            string propertyName = propertyMetadata.PropertyName;
+
+            if (propertyMetadata.HideSurroundingHtml)
+            {
+                @Html.Display(propertyName)
+            }
+            else
+            {
+                <div class="form-group">
+                    @if (!propertyMetadata.HideSurroundingHtml)
+                    {
+                        if (config.UseStrongTypedHtmlHelpers)
+                        {
+                            @htmlHelper.LabelFor(modelType,
+                                                 propertyName,
+                                                 new { @class = $"{config.LabelClass} control-label" })
+                        }
+                        else
+                        {
+                            @Html.Label(propertyName, new { @class = $"{config.LabelClass} control-label" })
+                        }
+                    }
+                    <div class="@config.EditorClass">
+                        @if (propertyMetadata.IsComplexType)
+                        {
+                            if (config.UseStrongTypedHtmlHelpers)
+                            {
+                                @htmlHelper.DisplayFor(modelType, propertyName)
+                            }
+                            else
+                            {
+                                @Html.Display(propertyName)
+                            }
+                        }
+                        else
+                        {
+                            <div class="form-control-static">
+                                @if (config.UseStrongTypedHtmlHelpers)
+                                {
+                                    @htmlHelper.DisplayFor(modelType, propertyName)
+                                }
+                                else
+                                {
+                                    @Html.Display(propertyName)
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    }
 </div>

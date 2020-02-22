@@ -1,7 +1,9 @@
-﻿using Ampl.Web.Mvc.EditorTemplates.Web.Models;
+﻿using Ampl.Core;
+using Ampl.Web.Mvc.EditorTemplates.Web.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Web.Mvc;
 
@@ -55,19 +57,32 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
 
         private IEnumerable<CollectionEditorViewModel.BranchInfo> GetBranches()
         {
-            var wc = new WebClient() { Encoding = Encoding.UTF8 };
-            return wc.DownloadString("https://www.artlebedev.ru/tools/country-list/tab/")
-                      .Replace("\r", string.Empty)
-                      .Split('\n')
-                      .Select(x => x.Trim())
-                      .Where(x => !string.IsNullOrWhiteSpace(x))
-                      .Select(x => x.Split('\t'))
-                      .Where(x => x.Length >= 8 && x[7] == "Западная Европа")
-                      .Select(x => new CollectionEditorViewModel.BranchInfo() {
-                          CountryName = x[2],
-                          CountryCode = x[3],
-                          NumberOfEmployees = null
-                      });
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 |
+                                                   SecurityProtocolType.Tls12 |
+                                                   SecurityProtocolType.Tls11 |
+                                                   SecurityProtocolType.Tls;
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+
+            var response = client.GetAsync("https://www.artlebedev.ru/tools/country-list/tab/").Sync();
+            var content = response.Content.ReadAsStringAsync().Sync();
+
+            return content
+                .Replace("\r", string.Empty)
+                .Split('\n')
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Split('\t'))
+                .Where(x => x.Length >= 8 && x[7] == "Западная Европа")
+                .Select(
+                    x =>
+                    new CollectionEditorViewModel.BranchInfo() {
+                        Title = x[2],
+                        CountryCode = x[3],
+                        NumberOfEmployees = null
+                    }
+                );
         }
 
         public ActionResult FixedCollectionEditor(bool createModel)
@@ -95,6 +110,10 @@ namespace Ampl.Web.Mvc.EditorTemplates.Web.Controllers
 
         public ActionResult EditableCollectionEditor(bool createModel, bool generateInitialCollection = false)
         {
+            TempData["EditorTemplateConfiguration"] = new EditorTemplateConfiguration() {
+                UseStrongTypedHtmlHelpers = true
+            };
+
             return HandleGetAction(
               createModel,
               () => new EditableCollectionEditorViewModel() { Branches = generateInitialCollection ? GetBranches() : null }
