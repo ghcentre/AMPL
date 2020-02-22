@@ -60,8 +60,14 @@
                     <div style="display: none" class="_NewItemSource">
                         @{
                             var newModel = EditableCollectionHelpers.CreateCollectionItem(oldMetadata, typeInCollection);
-                            var newModelTypeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => newModel, typeInCollection);
-                            string newModelFieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, newItemIndex);
+                            var newModelTypeMetadata = ModelMetadataProviders.Current.GetMetadataForType(
+                                () => newModel,
+                                typeInCollection
+                            );
+                            string newModelFieldName = string.Format(CultureInfo.InvariantCulture,
+                                                                     "{0}[{1}]",
+                                                                     oldPrefix,
+                                                                     newItemIndex);
 
                             Html.ViewData.Model = newModel;
                             Html.ViewData.ModelMetadata = newModelTypeMetadata;
@@ -85,36 +91,45 @@
     using (Html.BeginDelayed())
     {
         <script type="text/javascript">
-      $(function()
-      {
-        $(document).on('click', '#@collectionHtmlID ._RemoveButton', function()
-        {
-          $(this).closest('._CollectionItem').remove();
-          return false;
-        });
+            $(function()
+            {
+                $(document).on(
+                    'click',
+                    '#@collectionHtmlID ._RemoveButton',
+                    function()
+                    {
+                        $(this).closest('._CollectionItem').remove();
+                        return false;
+                    });
 
-        $('#@collectionHtmlID ._AddButton').click(function()
-        {
-          var parent = $(this).closest('._AddButtonRow');
-          var source = parent.prev();
-          var clone = source.clone();
-          clone.insertBefore(source);
-          var text = parent.find('._NewItemSource')[0].textContent;
-          var id = Math.random().toString().replace('.', '');
-          text = text.split('@(newItemIndex)').join(id);
-          clone.find('._InsertTarget').append($(text));
-          clone.show();
-          if($.validator && $.validator.unobtrusive)
-          {
-            var form = clone.closest('form');
-            form.removeData('validator');
-            form.removeData('unobtrusiveValidation');
-            $.validator.unobtrusive.parse(form);
-            $.validator.unobtrusive.parse(document);
-          }
-          return false;
-        });
-      });
+                $('#@collectionHtmlID ._AddButton').click(
+                    function()
+                    {
+                        var parent = $(this).closest('._AddButtonRow');
+                        var source = parent.prev();
+
+                        var clone = source.clone();
+                        clone.insertBefore(source);
+
+                        var text = parent.find('._NewItemSource')[0].textContent;
+                        var id = Math.random().toString().replace('.', '');
+                        text = text.split('@(newItemIndex)').join(id);
+
+                        clone.find('._InsertTarget').append($(text));
+                        clone.show();
+
+                        if($.validator && $.validator.unobtrusive)
+                        {
+                            var form = clone.closest('form');
+                            form.removeData('validator');
+                            form.removeData('unobtrusiveValidation');
+                            $.validator.unobtrusive.parse(form);
+                            $.validator.unobtrusive.parse(document);
+                        }
+
+                        return false;
+                    });
+            });
         </script>
     }
 }

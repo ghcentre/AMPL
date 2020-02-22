@@ -1,14 +1,28 @@
 ﻿@model decimal?
+
 @{
-  if(Html.ViewContext.ViewData.TemplateInfo.FormattedModelValue == Html.ViewContext.ViewData.ModelMetadata.Model)
-  {
-    Html.ViewContext.ViewData.TemplateInfo.FormattedModelValue = string.Format(
-      System.Globalization.CultureInfo.CurrentCulture,
-      "{0:0.00}",
-      Html.ViewContext.ViewData.ModelMetadata.Model);
-  }
-  object htmlAttributes = ViewData.ModelMetadata.IsReadOnly
-    ? (object)new { @type = "text", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark, @readonly = "readonly" }
-    : (object)new { @type = "text", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark };
+    if (Html.ViewContext.ViewData.TemplateInfo.FormattedModelValue == Html.ViewContext.ViewData.ModelMetadata.Model)
+    {
+        Html.ViewContext.ViewData.TemplateInfo.FormattedModelValue = string.Format(
+            System.Globalization.CultureInfo.CurrentCulture,
+            "{0:0.00}",
+            Html.ViewContext.ViewData.ModelMetadata.Model
+        );
+    }
+
+    object htmlAttributes =
+        ViewData.ModelMetadata.IsReadOnly
+            ? (object)new {
+                @type = "text",
+                @class = "form-control",
+                @placeholder = ViewData.ModelMetadata.Watermark,
+                @readonly = "readonly"
+            }
+            : (object)new {
+                @type = "text",
+                @class = "form-control",
+                @placeholder = ViewData.ModelMetadata.Watermark
+            };
 }
+
 @Html.TextBox("", Model?.ToString() ?? "", htmlAttributes)

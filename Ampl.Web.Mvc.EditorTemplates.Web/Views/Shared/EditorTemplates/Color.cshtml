@@ -1,9 +1,11 @@
 ﻿@model System.Drawing.Color?
+
 @Html.TextBox(
-  "",
-  Model.HasValue
-    ? string.Format(System.Globalization.CultureInfo.InvariantCulture,
-                    "#{0:X2}{1:X2}{2:X2}",
-                    Model.Value.R, Model.Value.G, Model.Value.B)
-    : "",
-  new { @class = "form-control", @type = "color" })
+    "",
+    Model.HasValue
+        ? string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                        "#{0:X2}{1:X2}{2:X2}",
+                        Model.Value.R, Model.Value.G, Model.Value.B)
+        : "",
+    new { @class = "form-control", @type = "color" }
+)

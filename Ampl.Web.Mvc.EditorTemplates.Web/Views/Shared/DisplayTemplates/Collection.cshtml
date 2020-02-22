@@ -1,51 +1,52 @@
-﻿@model object
-@using System.Collections;
+﻿@using System.Collections;
 @using System.Globalization;
 @using Ampl.Core;
-@if(Model != null && (Model is IEnumerable))
+@model object
+
+@if (Model != null && (Model is IEnumerable))
 {
-  IEnumerable collection = (Model as IEnumerable);
-  string oldPrefix = ViewData.TemplateInfo.HtmlFieldPrefix;
-  int index = 0;
-  var typeInCollection = Model.GetType().ExtractGenericInterface(typeof(IEnumerable<>))?.GetGenericArguments()[0]
-                         ?? typeof(string);
-  bool isNullableType = Nullable.GetUnderlyingType(typeInCollection) != null;
-  var oldModel = Model;
-  var oldMetadata = Html.ViewData.ModelMetadata;
+    IEnumerable collection = (Model as IEnumerable);
+    string oldPrefix = ViewData.TemplateInfo.HtmlFieldPrefix;
+    int index = 0;
+    var typeInCollection = Model.GetType().ExtractGenericInterface(typeof(IEnumerable<>))?.GetGenericArguments()[0]
+                           ?? typeof(string);
+    bool isNullableType = Nullable.GetUnderlyingType(typeInCollection) != null;
+    var oldModel = Model;
+    var oldMetadata = Html.ViewData.ModelMetadata;
 
-  try
-  {
-    ViewData.TemplateInfo.HtmlFieldPrefix = "";
+    try
+    {
+        ViewData.TemplateInfo.HtmlFieldPrefix = "";
 
-    <div>
-      @foreach(object item in collection)
-      {
-        var itemType = (item != null && !isNullableType) ? item.GetType() : typeInCollection;
-        var typeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => item, itemType);
-        string fieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, index++);
+        <div>
+            @foreach (object item in collection)
+            {
+                var itemType = (item != null && !isNullableType) ? item.GetType() : typeInCollection;
+                var typeMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => item, itemType);
+                string fieldName = string.Format(CultureInfo.InvariantCulture, "{0}[{1}]", oldPrefix, index++);
 
-        Html.ViewData.Model = item;
-        Html.ViewData.ModelMetadata = typeMetadata;
+                Html.ViewData.Model = item;
+                Html.ViewData.ModelMetadata = typeMetadata;
 
-        if(typeMetadata.IsComplexType)
-        {
-          <div class="form-group" style="margin-left: 0; margin-right: 0">
-            @Html.DisplayFor(model => model, null, fieldName)
-          </div>
-        }
-        else
-        {
-          <div class="form-control-static">
-            @Html.DisplayFor(model => model, null, fieldName)
-          </div>
-        }
-      }
-    </div>
-  }
-  finally
-  {
-    ViewData.TemplateInfo.HtmlFieldPrefix = oldPrefix;
-    Html.ViewData.Model = oldModel;
-    Html.ViewData.ModelMetadata = oldMetadata;
-  }
+                if (typeMetadata.IsComplexType)
+                {
+                    <div class="form-group" style="margin-left: 0; margin-right: 0">
+                        @Html.DisplayFor(model => model, null, fieldName)
+                    </div>
+                }
+                else
+                {
+                    <div class="form-control-static">
+                        @Html.DisplayFor(model => model, null, fieldName)
+                    </div>
+                }
+            }
+        </div>
+    }
+    finally
+    {
+        ViewData.TemplateInfo.HtmlFieldPrefix = oldPrefix;
+        Html.ViewData.Model = oldModel;
+        Html.ViewData.ModelMetadata = oldMetadata;
+    }
 }
