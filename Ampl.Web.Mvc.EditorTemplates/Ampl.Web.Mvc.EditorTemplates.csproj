@@ -43,8 +43,8 @@
       <HintPath>..\packages\Ampl.Core.4.4.0\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.5.10.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.5.10\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.5.11.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.5.11\lib\net472\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a933dcd56d45bdf4">

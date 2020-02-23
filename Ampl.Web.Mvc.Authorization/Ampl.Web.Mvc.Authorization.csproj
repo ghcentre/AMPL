@@ -58,8 +58,8 @@
       <HintPath>..\packages\Ampl.Identity.Claims.4.4.0\lib\net472\Ampl.Identity.Claims.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.5.10.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.5.10\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.5.11.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.5.11\lib\net472\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
