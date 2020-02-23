@@ -1,41 +1,91 @@
 ﻿@model object
-@{
-  var viewData = Html.ViewContext.ViewData;
-  var templateInfo = viewData.TemplateInfo;
-  var modelMetadata = viewData.ModelMetadata;
-  var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
-               ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
-               ?? EditorTemplateConfiguration.DefaultConfiguration;
 
-  EditorTemplateHelpers.OverrideContainerProperties(false, Html.ViewDataContainer.ViewData, modelMetadata, templateInfo, config);
+@{
+    var viewData = Html.ViewContext.ViewData;
+    var templateInfo = viewData.TemplateInfo;
+    var modelMetadata = viewData.ModelMetadata;
+    var config = (ViewData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+                 ?? (TempData["EditorTemplateConfiguration"] as EditorTemplateConfiguration)
+                 ?? EditorTemplateConfiguration.DefaultConfiguration;
+    var modelType = modelMetadata.ModelType;
+
+    EditorTemplateHelpers.OverrideContainerProperties(false,
+                                                      Html.ViewDataContainer.ViewData,
+                                                      modelMetadata,
+                                                      templateInfo,
+                                                      config);
+    var propertiesToEdit =
+        modelMetadata.Properties
+            .Where(pm => EditorTemplateHelpers.ShouldEditProperty(pm, templateInfo));
+
+    var htmlHelper = Html.ForModelOfType(Model, modelMetadata.ModelType, ViewContext);
 }
-@foreach(var propertyMetadata in modelMetadata.Properties
-                                         .Where(pm => EditorTemplateHelpers.ShouldEditProperty(pm, templateInfo)))
+
+@foreach (var propertyMetadata in propertiesToEdit)
 {
-  bool skipLabel = new[] { typeof(bool), typeof(bool?) }.Any(t => t == propertyMetadata.ModelType) &&
-                                                                  !config.SeparateCheckboxLabel;
-  if(propertyMetadata.HideSurroundingHtml)
-  {
-    @Html.Editor(propertyMetadata.PropertyName)
-  }
-  else
-  {
-    <div class="form-group@(Html.ValidationErrorOrSuccess(propertyMetadata.PropertyName, " has-error", " has-success"))">
-      @if(!skipLabel)
-      {
-        @Html.Label(propertyMetadata.PropertyName, new { @class = $"{config.LabelClass} control-label" })
-      }
-      <div class="@config.EditorClass@(skipLabel ? config.EditorOffsetClass : "")">
-        @Html.Editor(propertyMetadata.PropertyName)
-        @if(!propertyMetadata.HideSurroundingHtml)
+    bool skipLabel = !config.SeparateCheckboxLabel &&
+                     (propertyMetadata.ModelType == typeof(bool) || propertyMetadata.ModelType == typeof(bool?));
+    string propertyName = propertyMetadata.PropertyName;
+
+    if (propertyMetadata.HideSurroundingHtml)
+    {
+        if (config.UseStrongTypedHtmlHelpers)
         {
-          @Html.ValidationMessage(propertyMetadata.PropertyName, new { @class = "help-block" })
-          if(!string.IsNullOrEmpty(ModelMetadata.FromStringExpression(propertyMetadata.PropertyName, ViewData).Description))
-          {
-            <div class="help-block">@ModelMetadata.FromStringExpression(propertyMetadata.PropertyName, ViewData).Description</div>
-          }
+            @Html.EditorFor(modelType, propertyName)
         }
-      </div>
-    </div>
-  }
+        else
+        {
+            @Html.Editor(propertyName)
+        }
+    }
+    else
+    {
+        <div class="form-group@(Html.ValidationErrorOrSuccess(propertyMetadata.PropertyName, " has-error", " has-success"))">
+            @if (!skipLabel)
+            {
+                if (config.UseStrongTypedHtmlHelpers)
+                {
+                    @htmlHelper.LabelFor(modelType,
+                                         propertyName,
+                                         new { @class = $"{config.LabelClass} control-label" })
+                }
+                else
+                {
+                    @Html.Label(propertyName, new { @class = $"{config.LabelClass} control-label" })
+                }
+            }
+
+            <div class="@config.EditorClass@(skipLabel ? config.EditorOffsetClass : "")">
+                @if (config.UseStrongTypedHtmlHelpers)
+                {
+                    @htmlHelper.EditorFor(modelType, propertyName)
+                }
+                else
+                {
+                    @Html.Editor(propertyName)
+                }
+
+                @if (!propertyMetadata.HideSurroundingHtml)
+                {
+                    if (config.UseStrongTypedHtmlHelpers)
+                    {
+                        @htmlHelper.ValidationMessageFor(modelType,
+                                                         propertyName,
+                                                         new { @class = "help-block" })
+                    }
+                    else
+                    {
+                        @Html.ValidationMessage(propertyName, new { @class = "help-block" })
+
+                    }
+
+                    string description = ModelMetadata.FromStringExpression(propertyName, ViewData).Description;
+                    if (!string.IsNullOrEmpty(description))
+                    {
+                        <div class="help-block">@description</div>
+                    }
+                }
+            </div>
+        </div>
+    }
 }

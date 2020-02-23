@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration>
-  <system.web>
+  
+<system.web>
     <compilation>
       <assemblies>
         <!--
@@ -17,13 +18,11 @@
         -->
       </assemblies>
     </compilation>
-  </system.web>
-  <system.web.webPages.razor>
+  </system.web><system.web.webPages.razor>
     <pages>
       <namespaces>
         <add namespace="Ampl.Web.Mvc" />
         <add namespace="Ampl.Web.Mvc.Html" />
       </namespaces>
     </pages>
-  </system.web.webPages.razor>
-</configuration>
+  </system.web.webPages.razor></configuration>

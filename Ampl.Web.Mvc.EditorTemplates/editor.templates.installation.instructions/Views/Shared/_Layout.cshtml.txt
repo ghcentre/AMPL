@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*
+        ViewBag.SubTitle is the second title part usually rendered as small text.
+    *@
+    <title>@ViewBag.Title @ViewBag.SubTitle</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @*
+        remove body-content class from the div below
+    *@
+    <div class="container">
+        @*
+            _AlertViewPartial.cshtml view renders AlertViewModel which is set by a call to ControllerBase.AddAlert()
+        *@
+        @Html.Partial("_AlertViewPartial")
+
+        @*
+            _HeadingViewPartial.cshtml renders Heading, SubHeading and LeadText sections
+        *@
+        @Html.Partial(
+            "_HeadingViewPartial",
+            new ViewDataDictionary() {
+                { "IsHeadingDefined", IsSectionDefined("Heading") },
+                { "IsSubHeadingDefined", IsSectionDefined("SubHeading") },
+                { "IsLeadTextDefined", IsSectionDefined("LeadText") },
+                { "HeadingRenderer", (Func<HelperResult>)(() => RenderSection("Heading")) },
+                { "SubHeadingRenderer", (Func<HelperResult>)(() => RenderSection("SubHeading")) },
+                { "LeadTextRenderer", (Func<HelperResult>)(() => RenderSection("LeadText")) }
+            }
+        )
+
+        <div class="row">
+            <div class="col-xs-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer class="navbar-default __margin-top-1em">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 __margin-top-1em __margin-bottom-1em">
+                    <p>&copy; @DateTime.Now.Year</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @*
+        Html.RenderDelayed() renders and outputs any content in Html.BeginDelayed() scope.
+    *@
+    @Html.RenderDelayed()
+</body>
+
+</html>

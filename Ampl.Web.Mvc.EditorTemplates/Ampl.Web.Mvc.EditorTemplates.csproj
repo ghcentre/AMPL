@@ -43,8 +43,8 @@
       <HintPath>..\packages\Ampl.Core.4.4.0\lib\netstandard2.0\Ampl.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ampl.Web.Mvc, Version=4.4.0.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
-      <HintPath>..\packages\Ampl.Web.Mvc.4.4.0\lib\net472\Ampl.Web.Mvc.dll</HintPath>
+    <Reference Include="Ampl.Web.Mvc, Version=4.5.10.0, Culture=neutral, PublicKeyToken=1f0335352aac49af">
+      <HintPath>..\packages\Ampl.Web.Mvc.4.5.10\lib\net472\Ampl.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ampl.Web.Optimization, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a933dcd56d45bdf4">
@@ -58,12 +58,13 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -119,11 +120,10 @@
     <Content Include="Views\Shared\EditorTemplates\UInt32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\UInt64.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_NumberPartial.cshtml" />
-    <Content Include="Views\Shared\_AlertViewPartial.cshtml" />
     <None Include="app.config" />
-    <Content Include="editor.templates.installation.instructions\Content\Site.css" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml" />
-    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml" />
+    <Content Include="editor.templates.installation.instructions\Content\Site.css.txt" />
+    <Content Include="editor.templates.installation.instructions\Views\Shared\_HeadingViewPartial.cshtml.txt" />
+    <Content Include="editor.templates.installation.instructions\Views\Shared\_Layout.cshtml.txt" />
     <Content Include="editor.templates.installation.instructions\Web.config" />
     <Content Include="editor.templates.installation.instructions\Web.Config.txt" />
     <Content Include="Scripts\ampl.globalize.fetch.js" />
@@ -233,6 +233,7 @@
     <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Upload.cshtml" />
+    <None Include="Views\web.config.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

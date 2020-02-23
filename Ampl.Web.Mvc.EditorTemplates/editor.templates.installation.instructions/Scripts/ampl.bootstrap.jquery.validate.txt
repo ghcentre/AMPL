@@ -2,9 +2,15 @@
 
 Include in in ~/App_Start/BundleConfig.cs as follows:
 
-      bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                  "~/Scripts/jquery.validate*",
-                  "~/Scripts/ampl.bootstrap.jquery.validate*").ForceOrder());
+    bundles.Add(
+        new ScriptBundle("~/bundles/jqueryval")
+            .Include(
+                "~/Scripts/jquery.validate*",
+                "~/Scripts/ampl.bootstrap.jquery.validate*"
+            )
+            .ForceOrder()
+    );
 
-Don't forget to ForceOrder() bundle items because the ampl.bootstrap.jquery.validate
-depends on jQuery.validate and must be referenced after it.
+Don't forget to ForceOrder() bundle items
+because the ampl.bootstrap.jquery.validate depends on jQuery.validate
+and MUST be referenced AFTER it.

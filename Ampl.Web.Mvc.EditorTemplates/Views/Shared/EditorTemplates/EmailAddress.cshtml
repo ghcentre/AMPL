@@ -1,7 +1,19 @@
 ﻿@model string
+
 @{
-  object htmlAttributes = ViewData.ModelMetadata.IsReadOnly
-    ? (object)new { @type = "email", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark, @readonly = "readonly" }
-    : (object)new { @type = "email", @class = "form-control", @placeholder = @ViewData.ModelMetadata.Watermark };
+    object htmlAttributes =
+        ViewData.ModelMetadata.IsReadOnly
+            ? (object)new {
+                @type = "email",
+                @class = "form-control",
+                @placeholder = ViewData.ModelMetadata.Watermark,
+                @readonly = "readonly"
+            }
+            : (object)new {
+                @type = "email",
+                @class = "form-control",
+                @placeholder = @ViewData.ModelMetadata.Watermark
+            };
 }
+
 @Html.TextBox("", Model ?? "", htmlAttributes)

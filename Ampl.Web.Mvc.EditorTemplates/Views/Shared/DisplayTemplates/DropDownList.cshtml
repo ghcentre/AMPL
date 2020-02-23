@@ -1,11 +1,12 @@
 ﻿@using System.Linq
-@if(Model == null)
+
+@if (Model == null)
 {
-  @ViewData.ModelMetadata.NullDisplayText
+    @ViewData.ModelMetadata.NullDisplayText
 }
 else
 {
-  @(Html.GetDropDownListItems().FirstOrDefault(x => x.Selected)?.Text)
+    @(Html.GetDropDownListItems().FirstOrDefault(x => x.Selected)?.Text)
 }
 
 

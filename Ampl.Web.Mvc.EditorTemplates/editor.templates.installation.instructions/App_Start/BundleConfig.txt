@@ -7,59 +7,84 @@ or CSS @import directive must be first in CSS file).
 Add the .ForceOrder() call to the ScriptBundle or StyleBundle
 to force the order of source files in the minified file:
 
-      bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                  "~/Scripts/jquery-{version}.js").ForceOrder());
+    bundles.Add(
+        new ScriptBundle("~/bundles/jquery")
+            .Include(
+                "~/Scripts/jquery-{version}.js"
+            )
+            .ForceOrder()                   // <<<<<<<<<< does the trick
+    );
 
 
 The recommended RegisterBundles method:
 
 
-    public static void RegisterBundles(BundleCollection bundles)
-    {
-      bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-        "~/Scripts/jquery-{version}.js"));
+public static void RegisterBundles(BundleCollection bundles)
+{
+    bundles.Add(
+        new ScriptBundle("~/bundles/jquery")
+            .Include(
+                "~/Scripts/jquery-{version}.js"
+            )
+    );
 
-      bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-        "~/Scripts/cldr.js",
-        "~/Scripts/cldr/*.js",
+    bundles.Add(
+        new ScriptBundle("~/bundles/jqueryval")
+            .Include(
+                "~/Scripts/cldr.js",
+                "~/Scripts/cldr/*.js",
 
-        "~/Scripts/globalize.js",
-        "~/Scripts/globalize/message.js",
-        "~/Scripts/globalize/number.js",
-        "~/Scripts/globalize/plural.js",
-        "~/Scripts/globalize/date.js",
-        "~/Scripts/globalize/currency.js",
-        "~/Scripts/globalize/relative-time.js",
-        "~/Scripts/globalize/*.js",
+                "~/Scripts/globalize.js",
+                "~/Scripts/globalize/message.js",
+                "~/Scripts/globalize/number.js",
+                "~/Scripts/globalize/plural.js",
+                "~/Scripts/globalize/date.js",
+                "~/Scripts/globalize/currency.js",
+                "~/Scripts/globalize/relative-time.js",
+                "~/Scripts/globalize/*.js",
 
-        "~/Scripts/ampl.globalize.fetch.js",
+                "~/Scripts/ampl.globalize.fetch.js",
 
-        "~/Scripts/jquery.validate.js",
-        "~/Scripts/jquery.validate.globalize.js",
-        "~/Scripts/jquery.validate.unobtrusive.js",
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.globalize.js",
+                "~/Scripts/jquery.validate.unobtrusive.js",
 
-        "~/Scripts/ampl.bootstrap.jquery.validate.js",
-        "~/Scripts/ampl.jquery.validate.unobtrusive.js"
-      ).ForceOrder());
+                "~/Scripts/ampl.bootstrap.jquery.validate.js",
+                "~/Scripts/ampl.jquery.validate.unobtrusive.js"
+            )
+            .ForceOrder()
+    );
 
-      bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-        "~/Scripts/modernizr-*"));
+    bundles.Add(
+        new ScriptBundle("~/bundles/modernizr")
+            .Include(
+                "~/Scripts/modernizr-*"
+            )
+    );
 
-      bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-        "~/Scripts/bootstrap.js",
-        "~/Scripts/respond.js"
-      ).ForceOrder());
+    bundles.Add(
+        new ScriptBundle("~/bundles/bootstrap")
+            .Include(
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/respond.js"
+            )
+            .ForceOrder()
+    );
 
-      bundles.Add(new StyleBundle("~/Content/css").Include(
-        "~/Content/Fonts.css",
-        "~/Content/bootstrap.css",
-        "~/Content/BootstrapFixes.css",
-        "~/Content/Site.css",
-        "~/Content/Classes.css",
-        "~/Content/Margins.css",
-        "~/Content/Paddings.css"
-      ).ForceOrder());
-    }
+    bundles.Add(
+        new StyleBundle("~/Content/css")
+            .Include(
+                "~/Content/Fonts.css",
+                "~/Content/bootstrap.css",
+                "~/Content/BootstrapFixes.css",
+                "~/Content/Site.css",
+                "~/Content/Classes.css",
+                "~/Content/Margins.css",
+                "~/Content/Paddings.css"
+            )
+            .ForceOrder()
+    );
+}
 
 
 
