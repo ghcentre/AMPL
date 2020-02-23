@@ -47,7 +47,14 @@
 
             if (propertyMetadata.HideSurroundingHtml)
             {
-                @Html.Display(propertyName)
+                if (config.UseStrongTypedHtmlHelpers)
+                {
+                    @htmlHelper.DisplayFor(modelType, propertyName)
+                }
+                else
+                {
+                    @Html.Display(propertyName)
+                }
             }
             else
             {

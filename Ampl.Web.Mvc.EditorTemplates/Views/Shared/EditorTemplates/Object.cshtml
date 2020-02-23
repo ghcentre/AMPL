@@ -31,7 +31,7 @@
     {
         if (config.UseStrongTypedHtmlHelpers)
         {
-            @Html.EditorFor(modelType, propertyName)
+            @htmlHelper.EditorFor(modelType, propertyName)
         }
         else
         {
@@ -76,7 +76,6 @@
                     else
                     {
                         @Html.ValidationMessage(propertyName, new { @class = "help-block" })
-
                     }
 
                     string description = ModelMetadata.FromStringExpression(propertyName, ViewData).Description;
