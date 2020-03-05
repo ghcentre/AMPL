@@ -20,23 +20,22 @@ namespace Ampl.Core
         /// <exception cref="ArgumentNullException">The <paramref name="interfaceType"/> is <see langword="null"/>.</exception>
         public static Type ExtractGenericInterface(this Type thisType, Type interfaceType)
         {
-            if(thisType == null)
+            if (thisType == null)
             {
                 return null;
             }
+
             Check.NotNull(interfaceType, nameof(interfaceType));
 
-            if(MatchesGenericTypeDefinition(thisType, interfaceType))
+            if (MatchesGenericTypeDefinition(thisType, interfaceType))
             {
                 return thisType;
             }
 
-            foreach(var implementedInterfaceType in
-                        thisType.GetTypeInfo().ImplementedInterfaces
-                   //thisType.GetInterfaces()
-                   )
+            var interfaces = thisType.GetTypeInfo().ImplementedInterfaces;
+            foreach (var implementedInterfaceType in interfaces)
             {
-                if(MatchesGenericTypeDefinition(implementedInterfaceType, interfaceType))
+                if (MatchesGenericTypeDefinition(implementedInterfaceType, interfaceType))
                 {
                     return implementedInterfaceType;
                 }
@@ -45,11 +44,13 @@ namespace Ampl.Core
             return null;
         }
 
+
         #region Interface Extraction
 
         private static bool MatchesGenericTypeDefinition(Type checkType, Type genericTypeDefinition)
         {
             var ti = checkType.GetTypeInfo();
+
             return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
             //return checkType.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
         }

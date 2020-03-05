@@ -36,10 +36,11 @@ namespace Ampl.Core
                                     .ToDictionary(prop => prop.Name.Between("<", ">i__Field"),
                                                   prop => prop.GetValue(anonymousType /*, null*/));
 
-            foreach(var item in dict)
+            foreach (var item in dict)
             {
                 dictionary[item.Key] = item.Value;
             }
+
             return dictionary;
         }
     }

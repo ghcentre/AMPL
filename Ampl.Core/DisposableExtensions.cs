@@ -36,13 +36,14 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TReturn Use<T, TReturn>(this T obj, Func<T, TReturn> func) where T : class, IDisposable
         {
-            if(obj == null)
+            if (obj == null)
             {
                 return default(TReturn);
             }
 
             Check.NotNull(func, nameof(func));
-            using(obj)
+
+            using (obj)
             {
                 return func(obj);
             }

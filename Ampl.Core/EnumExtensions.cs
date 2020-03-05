@@ -51,10 +51,11 @@ namespace Ampl.Core
           where T : struct, Enum
         {
             bool success = Enum.TryParse(source, ignoreCase, out T result);
-            if(!success)
+            if (!success)
             {
                 return null;
             }
+
             return result;
         }
     }
