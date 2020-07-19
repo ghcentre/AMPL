@@ -20,12 +20,12 @@ namespace Ampl.Annotations
             //              .FirstOrDefault();
 
             return source.GetType()
-                         .GetTypeInfo()
-                         .DeclaredMembers
-                         .First(x => x.Name == source.ToString())
-                         .GetCustomAttributes(typeof(DisplayAttribute), false)
-                         .Select(x => x as DisplayAttribute)
-                         .FirstOrDefault();
+                .GetTypeInfo()
+                .DeclaredMembers
+                .First(x => x.Name == source.ToString())
+                .GetCustomAttributes(typeof(DisplayAttribute), false)
+                .Select(x => x as DisplayAttribute)
+                .FirstOrDefault();
         }
 
         /// <summary>
