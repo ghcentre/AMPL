@@ -46,35 +46,40 @@ namespace Ampl.Web.Mvc
         public override void OnAuthorization(global::System.Web.Mvc.AuthorizationContext filterContext)
         {
             filterContext.HttpContext.Items[_label] = filterContext;
-            if(IsGlobalFilter)
+            if (IsGlobalFilter)
             {
                 bool skipAuthorization =
                     filterContext.ActionDescriptor.IsDefined(typeof(AuthorizeAttribute), true) ||
                     filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AuthorizeAttribute), true);
-                if(skipAuthorization)
+
+                if (skipAuthorization)
                 {
                     return;
                 }
             }
+
             base.OnAuthorization(filterContext);
         }
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            var principal = httpContext.User as ClaimsPrincipal;
-
-            if(principal == null || principal.Identity == null)
+            if (!(httpContext.User is ClaimsPrincipal principal) || principal.Identity == null)
             {
-                principal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>() { new Claim(ClaimTypes.Name, "") }));
+                principal = new ClaimsPrincipal(
+                    new ClaimsIdentity(
+                        new List<Claim>() { new Claim(ClaimTypes.Name, "") }
+                    )
+                );
             }
 
-            if(!string.IsNullOrWhiteSpace(_action))
+            if (!string.IsNullOrWhiteSpace(_action))
             {
                 return ClaimsAuthorization.CheckAccess(principal, _action, _resources);
             }
             else
             {
                 var filterContext = httpContext.Items[_label] as global::System.Web.Mvc.AuthorizationContext;
+                
                 return CheckAccess(principal, filterContext);
             }
         }

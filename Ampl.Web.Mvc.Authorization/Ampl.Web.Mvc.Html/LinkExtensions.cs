@@ -27,13 +27,15 @@ namespace Ampl.Web.Mvc.Html
                                                          string controllerName)
         {
             Check.NotNull(htmlHelper, nameof(htmlHelper));
+            
             string actualControllerName = controllerName
                                           ?? htmlHelper.ViewContext?.RouteData?.Values["controller"]?.ToString();
 
-            if(ClaimsAuthorization.CheckAccess(actionName, actualControllerName))
+            if (ClaimsAuthorization.CheckAccess(actionName, actualControllerName))
             {
                 return htmlHelper.ActionLink(linkText, actionName, actualControllerName);
             }
+
             return null;
         }
 
@@ -59,13 +61,15 @@ namespace Ampl.Web.Mvc.Html
                                                          object htmlAttributes)
         {
             Check.NotNull(htmlHelper, nameof(htmlHelper));
+            
             string actualControllerName = controllerName
                                           ?? htmlHelper.ViewContext?.RouteData?.Values["controller"]?.ToString();
 
-            if(ClaimsAuthorization.CheckAccess(actionName, actualControllerName))
+            if (ClaimsAuthorization.CheckAccess(actionName, actualControllerName))
             {
                 return htmlHelper.ActionLink(linkText, actionName, actualControllerName, routeVales, htmlAttributes);
             }
+
             return null;
         }
 

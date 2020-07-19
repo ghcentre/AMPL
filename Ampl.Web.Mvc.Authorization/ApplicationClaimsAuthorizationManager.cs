@@ -66,7 +66,7 @@ namespace Ampl.Web.Mvc
             //
             // empty ACL Action matches any action, even empty
             //
-            if(string.IsNullOrWhiteSpace(aclAction))
+            if (string.IsNullOrWhiteSpace(aclAction))
             {
                 return true;
             }
@@ -74,7 +74,7 @@ namespace Ampl.Web.Mvc
             //
             // '*' ACL Action mathes any non-empty action
             //
-            if(aclAction == "*")
+            if (aclAction == "*")
             {
                 return !string.IsNullOrWhiteSpace(actualAction);
             }
@@ -90,7 +90,7 @@ namespace Ampl.Web.Mvc
             //
             // empty ACL Resource mathes any resource, even empty
             //
-            if(string.IsNullOrWhiteSpace(aclResource))
+            if (string.IsNullOrWhiteSpace(aclResource))
             {
                 return true;
             }
@@ -98,7 +98,7 @@ namespace Ampl.Web.Mvc
             //
             // '*' ACL Resource matches any non-empty resource
             //
-            if(aclResource == "*")
+            if (aclResource == "*")
             {
                 return !string.IsNullOrWhiteSpace(actualResource);
             }
@@ -114,7 +114,7 @@ namespace Ampl.Web.Mvc
             //
             // empty ACL User matches any user name or an empty (anonymous, unauthenticated) user
             //
-            if(string.IsNullOrWhiteSpace(aclUser))
+            if (string.IsNullOrWhiteSpace(aclUser))
             {
                 return true;
             }
@@ -122,7 +122,7 @@ namespace Ampl.Web.Mvc
             //
             // '*' ACL User matches any anthenticated user
             //
-            if(aclUser == "*")
+            if (aclUser == "*")
             {
                 return principal.Identity.IsAuthenticated;
             }
@@ -138,7 +138,7 @@ namespace Ampl.Web.Mvc
             //
             // empty ACL Role matches any role, even empty
             //
-            if(string.IsNullOrWhiteSpace(aclRole))
+            if (string.IsNullOrWhiteSpace(aclRole))
             {
                 return true;
             }
@@ -146,7 +146,7 @@ namespace Ampl.Web.Mvc
             //
             // '*' ACL Role mathes if principal is in any role
             //
-            if(aclRole == "*")
+            if (aclRole == "*")
             {
                 return (principal.Claims ?? Enumerable.Empty<Claim>()).Any(x => x.Type == ClaimTypes.Role);
             }
@@ -159,18 +159,19 @@ namespace Ampl.Web.Mvc
 
         private bool IsAllowed(Claim action, Claim resource, List<IAccessControlList> acls, AuthorizationContext context)
         {
-            foreach(var acl in acls)
+            foreach (var acl in acls)
             {
                 bool matches = MatchesAction(acl.Actions, action.Value);
                 matches &= MatchesResource(acl.Resources, resource.Value);
                 matches &= MatchesUser(acl.Users, context.Principal);
                 matches &= MatchesRole(acl.Roles, context.Principal);
 
-                if(matches)
+                if (matches)
                 {
                     return acl.Allow;
                 }
             }
+
             return false;
         }
 
@@ -179,7 +180,7 @@ namespace Ampl.Web.Mvc
             //
             // allow all for Administrator
             //
-            if(context.Principal.Identity.Name == "Administrator")
+            if (context.Principal.Identity.Name == "Administrator")
             {
                 return true;
             }
@@ -193,9 +194,9 @@ namespace Ampl.Web.Mvc
             //  (Read,Balance) (Read,Accout) (Write,Balance) (Write,Account)
             //
             var acls = _authStore.GetAccessControlLists().OrderBy(acl => acl.Position).ToList();
-            foreach(var action in context.Action)
+            foreach (var action in context.Action)
             {
-                foreach(var resource in context.Resource)
+                foreach (var resource in context.Resource)
                 {
                     allowed &= IsAllowed(action, resource, acls, context);
                 }
@@ -208,32 +209,38 @@ namespace Ampl.Web.Mvc
 
         public override void LoadCustomConfiguration(XmlNodeList nodelist)
         {
-            foreach(XmlNode node in nodelist)
+            foreach (XmlNode node in nodelist)
             {
-                if(node.Name == "authorizationStore")
+                if (node.Name == "authorizationStore")
                 {
-                    foreach(XmlAttribute attribute in node.Attributes)
+                    foreach (XmlAttribute attribute in node.Attributes)
                     {
-                        if(attribute.Name == "type")
+                        if (attribute.Name == "type")
                         {
-                            Type type = (Type)new TypeNameConverter().ConvertFrom(attribute.Value);
+                            var type = (Type)new TypeNameConverter().ConvertFrom(attribute.Value);
                             _authStore = (Activator.CreateInstance(type) as IAuthorizationStore);
-                            if(_authStore == null)
+
+                            if (_authStore == null)
                             {
                                 throw new InvalidOperationException(
-                                  "The Authorization Store provided for ApplicationClaimsAuthorizationManager " +
-                                  "does not implement the IAuthorizationStore interface.");
+                                    "The Authorization Store provided for ApplicationClaimsAuthorizationManager " +
+                                    "does not implement the IAuthorizationStore interface."
+                                );
                             }
+
                             break;
                         }
                     }
+
                     break;
                 }
             }
-            if(_authStore == null)
+
+            if (_authStore == null)
             {
                 throw new InvalidOperationException(
-                  "No Authorization Store configured in ApplicationClaimsAuthorizationManager configuration.");
+                    "No Authorization Store configured in ApplicationClaimsAuthorizationManager configuration."
+                );
             }
         }
     }
