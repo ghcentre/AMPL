@@ -117,16 +117,17 @@ namespace Ampl.Core
         /// </code>
         /// </example>
         [SuppressMessage(
-          "Microsoft.Design",
-          "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         public static string Between(this string source,
                                      string start,
                                      string end,
                                      StringBetweenOptions options = StringBetweenOptions.None,
                                      StringComparison comparison = StringComparison.CurrentCulture)
         {
-            if(source == null)
+            if (source == null)
             {
                 return null;
             }
@@ -134,19 +135,19 @@ namespace Ampl.Core
             start = start ?? string.Empty;
             end = end ?? string.Empty;
 
-            if(start.Length == 0 && end.Length == 0)
+            if (start.Length == 0 && end.Length == 0)
             {
                 return source;
             }
 
             int startPosition = 0;
 
-            if(start.Length > 0)
+            if (start.Length > 0)
             {
                 startPosition = source.IndexOf(start, comparison);
-                if(startPosition == -1)
+                if (startPosition == -1)
                 {
-                    if((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
+                    if ((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
                     {
                         return string.Empty;
                     }
@@ -155,7 +156,7 @@ namespace Ampl.Core
                 }
                 else
                 {
-                    if((options & StringBetweenOptions.IncludeStart) != StringBetweenOptions.IncludeStart)
+                    if ((options & StringBetweenOptions.IncludeStart) != StringBetweenOptions.IncludeStart)
                     {
                         startPosition += start.Length;
                     }
@@ -164,12 +165,12 @@ namespace Ampl.Core
 
             int endPosition = source.Length;
 
-            if(end.Length > 0)
+            if (end.Length > 0)
             {
                 endPosition = source.IndexOf(end, startPosition, comparison);
-                if(endPosition == -1)
+                if (endPosition == -1)
                 {
-                    if((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
+                    if ((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
                     {
                         return string.Empty;
                     }
@@ -178,7 +179,7 @@ namespace Ampl.Core
                 }
                 else
                 {
-                    if((options & StringBetweenOptions.IncludeEnd) == StringBetweenOptions.IncludeEnd)
+                    if ((options & StringBetweenOptions.IncludeEnd) == StringBetweenOptions.IncludeEnd)
                     {
                         endPosition += end.Length;
                     }
@@ -204,26 +205,27 @@ namespace Ampl.Core
         {
             start = start ?? string.Empty;
             end = end ?? string.Empty;
-            if(start == string.Empty && end == string.Empty)
+
+            if (start == string.Empty && end == string.Empty)
             {
                 return source;
             }
 
-            while(true)
+            while (true)
             {
-                if(string.IsNullOrEmpty(source))
+                if (string.IsNullOrEmpty(source))
                 {
                     return source;
                 }
 
                 int startPos = source.IndexOf(start, comparison);
-                if(startPos == -1)
+                if (startPos == -1)
                 {
                     return source;
                 }
 
                 int endPos = string.IsNullOrEmpty(end) ? source.Length : source.IndexOf(end, startPos, comparison);
-                if(endPos == -1)
+                if (endPos == -1)
                 {
                     return source;
                 }
@@ -238,27 +240,32 @@ namespace Ampl.Core
         /// <returns>A copy of the <paramref name="source"/> string with HTML tags removed.</returns>
         public static string RemoveHtmlTags(this string source)
         {
-            if(string.IsNullOrEmpty(source))
+            if (string.IsNullOrEmpty(source))
             {
                 return source;
             }
+
             source = source.RemoveBetween("<!--", "-->");
             source = source.Replace("<", " <");
             source = source.RemoveBetween("<", ">");
             source = source.Replace("\n", " ");
             source = source.Replace("\r", string.Empty);
-            while(source.Contains("  "))
+
+            while (source.Contains("  "))
             {
                 source = source.Replace("  ", " ");
             }
-            if(source.StartsWith(" "))
+
+            if (source.StartsWith(" "))
             {
                 source = source.Substring(1);
             }
-            if(source.EndsWith(" "))
+
+            if (source.EndsWith(" "))
             {
                 source = source.Substring(0, source.Length - 1);
             }
+
             return source;
         }
 
@@ -287,18 +294,19 @@ namespace Ampl.Core
         /// in <paramref name="source"/>.</para>
         /// </remarks>
         [SuppressMessage(
-          "Microsoft.Naming",
-          "CA1720:IdentifiersShouldNotContainTypeNames",
-          MessageId = "int",
-          Justification = "The type name is important in the identifier.")]
+            "Microsoft.Naming",
+            "CA1720:IdentifiersShouldNotContainTypeNames",
+            MessageId = "int",
+            Justification = "The type name is important in the identifier."
+        )]
         [SuppressMessage(
-          "Microsoft.Design",
-          "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         public static int ToInt(this string source, int fallbackValue = 0)
         {
-            int result;
-            return ToIntInternal(source, out result) ? result : fallbackValue;
+            return ToIntInternal(source, out int result) ? result : fallbackValue;
         }
 
         /// <summary>
@@ -310,13 +318,12 @@ namespace Ampl.Core
         /// the method returns <see langword="null"/>.</returns>
         /// <remarks>
         /// <para>The method doesn't throw any exception.</para>
-        /// <para>Unlike the <see cref="Int32.Parse(String)"/> mehtod this method does not allow leading whitespaces
+        /// <para>Unlike the <see cref="Int32.Parse(String)"/> method this method does not allow leading whitespaces
         /// in <paramref name="source"/>.</para>
         /// </remarks>
         public static int? ToNullableInt(this string source)
         {
-            int result;
-            return ToIntInternal(source, out result) ? (int?)result : null;
+            return ToIntInternal(source, out int result) ? (int?)result : null;
         }
 
         #region ToInt - Internal
@@ -324,11 +331,13 @@ namespace Ampl.Core
         private static bool ToIntInternal(string source, out int result)
         {
             result = 0;
-            if(source == null)
+            
+            if (source == null)
             {
                 return false;
             }
-            if(string.IsNullOrWhiteSpace(source)) // string is empty - return false
+
+            if (string.IsNullOrWhiteSpace(source)) // string is empty - return false
             {
                 return false;
             }
@@ -336,9 +345,9 @@ namespace Ampl.Core
             bool minus = false;
             int position = 0;
 
-            if(source[0] == '-') // if first char is munus, assume negative value
+            if (source[0] == '-') // if first char is munus, assume negative value
             {
-                if(source.Length == 1) // negative values must have at least one digit
+                if (source.Length == 1) // negative values must have at least one digit
                 {
                     return false;
                 }
@@ -346,9 +355,9 @@ namespace Ampl.Core
                 position++;
             }
 
-            if(source[0] == '+') // if first char is munus, assume positive value
+            if (source[0] == '+') // if first char is munus, assume positive value
             {
-                if(source.Length == 1) // positive values must have at least one digit
+                if (source.Length == 1) // positive values must have at least one digit
                 {
                     return false;
                 }
@@ -361,10 +370,10 @@ namespace Ampl.Core
 
             try
             {
-                for(int i = position; i < length; ++i)
+                for (int i = position; i < length; ++i)
                 {
                     c = source[i];
-                    if(c < '0' || c > '9') // invalid character (not a number) - return default value
+                    if (c < '0' || c > '9') // invalid character (not a number) - return default value
                     {
                         return false;
                     }
@@ -372,12 +381,12 @@ namespace Ampl.Core
                     result = checked(result + ((int)c - '0'));
                 }
             }
-            catch(OverflowException) // overflow
+            catch (OverflowException) // overflow
             {
                 return false;
             }
 
-            if(minus)
+            if (minus)
             {
                 result = -result;
             }
@@ -403,14 +412,18 @@ namespace Ampl.Core
         /// <remarks>
         /// <para>The method doesn't throw any exception.</para>
         /// </remarks>
-        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "decimal",
-          Justification = "The type name is important in the identifier.")]
-        [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+        [SuppressMessage(
+            "Microsoft.Naming",
+            "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "decimal",
+            Justification = "The type name is important in the identifier."
+        )]
+        [SuppressMessage(
+            "Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         public static decimal ToDecimal(this string source, decimal fallbackValue = 0.0M, bool useFallbackCulture = true)
         {
-            decimal result;
-            return ToDecimalInternal(source, out result, useFallbackCulture) ? result : fallbackValue;
+            return ToDecimalInternal(source, out decimal result, useFallbackCulture) ? result : fallbackValue;
         }
 
         /// <summary>
@@ -424,8 +437,11 @@ namespace Ampl.Core
         /// <remarks>
         /// <para>The method doesn't throw any exception.</para>
         /// </remarks>
-        [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+        [SuppressMessage(
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
         {
             return ToDecimalInternal(source, out decimal result, useFallbackCulture) ? (decimal?)result : null;
@@ -433,16 +449,21 @@ namespace Ampl.Core
 
         #region ToDecimalInternal
 
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
-          Justification = "Catch block catches conversion exceptions only.")]
+        [SuppressMessage(
+            "Microsoft.Design",
+            "CA1031:DoNotCatchGeneralExceptionTypes",
+            Justification = "Catch block catches conversion exceptions only."
+        )]
         private static bool ToDecimalInternal(string source, out decimal result, bool useFallbackCulture)
         {
             result = 0.0M;
-            if(source == null)
+
+            if (source == null)
             {
                 return false;
             }
-            if(string.IsNullOrWhiteSpace(source)) // string is empty - return default value
+
+            if (string.IsNullOrWhiteSpace(source)) // string is empty - return default value
             {
                 return false;
             }
@@ -453,7 +474,7 @@ namespace Ampl.Core
             }
             catch
             {
-                if(!useFallbackCulture)
+                if (!useFallbackCulture)
                 {
                     return false;
                 }
@@ -467,6 +488,7 @@ namespace Ampl.Core
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -496,7 +518,8 @@ namespace Ampl.Core
         private static IEnumerable<string> GraphemeClusters(string s)
         {
             var enumerator = StringInfo.GetTextElementEnumerator(s);
-            while(enumerator.MoveNext())
+
+            while (enumerator.MoveNext())
             {
                 yield return (string)enumerator.Current;
             }
@@ -510,7 +533,7 @@ namespace Ampl.Core
         /// <remarks>Unicode surrogate pairs are processed correctly.</remarks>
         public static string Reverse(this string source)
         {
-            if(string.IsNullOrEmpty(source))
+            if (string.IsNullOrEmpty(source))
             {
                 return source;
             }

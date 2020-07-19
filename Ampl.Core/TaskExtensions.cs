@@ -22,6 +22,7 @@ namespace Ampl.Core
         public static T Sync<T>(this Task<T> task)
         {
             Check.NotNull(task, nameof(task));
+
             return task.ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
@@ -38,10 +39,12 @@ namespace Ampl.Core
         public static T Sync<T>(this Task<T> task, bool? configureAwait)
         {
             Check.NotNull(task, nameof(task));
-            if(configureAwait.HasValue)
+
+            if (configureAwait.HasValue)
             {
                 return task.ConfigureAwait(configureAwait.Value).GetAwaiter().GetResult();
             }
+
             return task.GetAwaiter().GetResult();
         }
     }

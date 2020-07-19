@@ -38,9 +38,11 @@ namespace Ampl.Core
             //
             // remove trailing "==" as base-64 encoded GUID always ends with "=="
             //
-            string result = Convert.ToBase64String(bytes).Replace("+", "-")
-                                                         .Replace("/", "_")
-                                                         .Replace("=", string.Empty);
+            string result = Convert.ToBase64String(bytes)
+                .Replace("+", "-")
+                .Replace("/", "_")
+                .Replace("=", string.Empty);
+
             return result;
         }
 
@@ -54,13 +56,15 @@ namespace Ampl.Core
         public static ShortGuid Parse(string shortGuid)
         {
             Check.NotNullOrEmptyString(shortGuid, nameof(shortGuid));
-            if(shortGuid.Length != 22)
+            if (shortGuid.Length != 22)
             {
                 throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
             }
+
             string value = shortGuid.Replace("-", "+").Replace("_", "/") + "==";
             byte[] bytes = Convert.FromBase64String(value);
             var guid = new Guid(bytes);
+
             return new ShortGuid(guid);
         }
 

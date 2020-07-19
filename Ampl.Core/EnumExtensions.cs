@@ -26,7 +26,7 @@ namespace Ampl.Core
         public static T ParseValue<T>(this T enumeration,
                                       string source,
                                       bool ignoreCase = false)
-          where T : struct, Enum
+            where T : struct, Enum
         {
             return (T)Enum.Parse(typeof(T), source, ignoreCase);
         }
@@ -51,10 +51,12 @@ namespace Ampl.Core
           where T : struct, Enum
         {
             bool success = Enum.TryParse(source, ignoreCase, out T result);
-            if(!success)
+
+            if (!success)
             {
                 return null;
             }
+
             return result;
         }
     }

@@ -29,12 +29,13 @@ namespace Ampl.Core
         public static TResult With<TInput, TResult>(this TInput input,
                                                     Func<TInput, TResult> evaluatorResult)
         {
-            if(input == null)
+            if (input == null)
             {
-                return default(TResult);
+                return default;
             }
 
             Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+
             return evaluatorResult(input);
         }
 
@@ -53,12 +54,13 @@ namespace Ampl.Core
                                                       Func<TInput, TResult> evaluatorResult,
                                                       TResult fallbackValue)
         {
-            if(input == null)
+            if (input == null)
             {
                 return fallbackValue;
             }
 
             Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+
             return evaluatorResult(input);
         }
 
@@ -78,13 +80,15 @@ namespace Ampl.Core
                                                       Func<TInput, TResult> evaluatorResult,
                                                       Func<TResult> fallbackResult)
         {
-            if(input == null)
+            if (input == null)
             {
                 Check.NotNull(fallbackResult, nameof(fallbackResult));
+
                 return fallbackResult();
             }
 
             Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+
             return evaluatorResult(input);
         }
 
@@ -99,13 +103,14 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TInput If<TInput>(this TInput input, Func<TInput, bool> predicate)
         {
-            if(input == null)
+            if (input == null)
             {
-                return default(TInput);
+                return default;
             }
 
             Check.NotNull(predicate, nameof(predicate));
-            return predicate(input) ? input : default(TInput);
+
+            return predicate(input) ? input : default;
         }
 
         /// <summary>
@@ -118,13 +123,14 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TInput Do<TInput>(this TInput input, Action<TInput> action)
         {
-            if(input == null)
+            if (input == null)
             {
-                return default(TInput);
+                return default;
             }
 
             Check.NotNull(action, nameof(action));
             action(input);
+
             return input;
         }
 
@@ -143,7 +149,7 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TInput Do<TInput>(this TInput input, Action<TInput> notNullAction, Action<TInput> nullAction)
         {
-            if(input != null)
+            if (input != null)
             {
                 notNullAction?.Invoke(input);
             }

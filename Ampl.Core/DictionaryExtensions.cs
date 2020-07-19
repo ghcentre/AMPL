@@ -27,19 +27,23 @@ namespace Ampl.Core
         {
             Check.NotNull(dictionary, nameof(dictionary));
             Check.NotNull(anonymousType, nameof(anonymousType));
-            var dict = anonymousType.GetType()
-                                    //.GetRuntimeProperties()
-                                    //.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                    //.ToDictionary(prop => prop.Name,
-                                    //              prop => prop.GetValue(anonymousType, null));
-                                    .GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                                    .ToDictionary(prop => prop.Name.Between("<", ">i__Field"),
-                                                  prop => prop.GetValue(anonymousType /*, null*/));
 
-            foreach(var item in dict)
+            var dict = anonymousType.GetType()
+                //.GetRuntimeProperties()
+                //.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                //.ToDictionary(prop => prop.Name,
+                //              prop => prop.GetValue(anonymousType, null));
+                .GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                .ToDictionary(
+                    prop => prop.Name.Between("<", ">i__Field"),
+                    prop => prop.GetValue(anonymousType /*, null*/)
+                );
+
+            foreach (var item in dict)
             {
                 dictionary[item.Key] = item.Value;
             }
+
             return dictionary;
         }
     }

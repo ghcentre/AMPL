@@ -58,7 +58,7 @@ namespace Ampl.Diagnostics
         {
             get
             {
-                lock(_lockerError)
+                lock (_lockerError)
                 {
                     return _error.ToString();
                 }
@@ -74,7 +74,7 @@ namespace Ampl.Diagnostics
         {
             get
             {
-                lock(_lockerOutput)
+                lock (_lockerOutput)
                 {
                     return _output.ToString();
                 }
@@ -91,7 +91,7 @@ namespace Ampl.Diagnostics
         {
             get
             {
-                lock(_lockerOutputAndError)
+                lock (_lockerOutputAndError)
                 {
                     return _outputAndError.ToString();
                 }
@@ -122,7 +122,7 @@ namespace Ampl.Diagnostics
         /// </remarks>
         public void Start()
         {
-            using(var process = new Process())
+            using (var process = new Process())
             {
                 _error = new StringBuilder();
                 _output = new StringBuilder();
@@ -161,12 +161,12 @@ namespace Ampl.Diagnostics
 
         void ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
-            lock(_lockerError)
+            lock (_lockerError)
             {
                 _error.Append(e.Data + Environment.NewLine);
             }
 
-            lock(_lockerOutputAndError)
+            lock (_lockerOutputAndError)
             {
                 _outputAndError.Append(e.Data + Environment.NewLine);
             }
@@ -174,12 +174,12 @@ namespace Ampl.Diagnostics
 
         void OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
-            lock(_lockerOutput)
+            lock (_lockerOutput)
             {
                 _output.Append(e.Data + Environment.NewLine);
             }
 
-            lock(_lockerOutputAndError)
+            lock (_lockerOutputAndError)
             {
                 _outputAndError.Append(e.Data + Environment.NewLine);
             }

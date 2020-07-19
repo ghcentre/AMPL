@@ -53,22 +53,25 @@ namespace Ampl.Core
         /// </code>
         /// </example>
         [SuppressMessage(
-          "Microsoft.Usage",
-          "CA2208:InstantiateArgumentExceptionsCorrectly",
-          Justification = "ArgumentNullException parameterless constructor called explicitly to indicate than no parameter name is given.")]
+            "Microsoft.Usage",
+            "CA2208:InstantiateArgumentExceptionsCorrectly",
+            Justification = "ArgumentNullException parameterless constructor called explicitly to indicate than no parameter name is given."
+        )]
         [SuppressMessage(
-          "Microsoft.Design",
-          "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
         {
-            if(argumentValue == null)
+            if (argumentValue == null)
             {
                 throw argumentName == null
-                  ? new ArgumentNullException()
-                  : new ArgumentNullException(argumentName);
+                        ? new ArgumentNullException()
+                        : new ArgumentNullException(argumentName);
             }
+
             return argumentValue;
         }
 
@@ -79,19 +82,21 @@ namespace Ampl.Core
         /// <param name="argumentName"></param>
         /// <returns></returns>
         [SuppressMessage(
-          "Microsoft.Design",
-          "CA1026:DefaultParametersShouldNotBeUsed",
-          Justification = "The default values assigned for optional parameters are always default values.")]
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
+            Justification = "The default values assigned for optional parameters are always default values."
+        )]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
         {
             NotNull(argumentValue, argumentName);
-            if(argumentValue.Length == 0)
+            if (argumentValue.Length == 0)
             {
                 throw argumentName == null
-                  ? new ArgumentException(Messages.ValueCannotBeAnEmptyString)
-                  : new ArgumentException(Messages.ValueCannotBeAnEmptyString, argumentName);
+                        ? new ArgumentException(Messages.ValueCannotBeAnEmptyString)
+                        : new ArgumentException(Messages.ValueCannotBeAnEmptyString, argumentName);
             }
+
             return argumentValue;
         }
     }
