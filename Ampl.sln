@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Web.Mvc", "Ampl.Web.Mvc\Ampl.Web.Mvc.csproj", "{72DBFD44-295F-4252-AFE4-2D3793755AA4}"
 EndProject
@@ -43,7 +43,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Ampl.Core.Tests.Shared", "t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Identity.Claims", "Ampl.Identity.Claims\Ampl.Identity.Claims.csproj", "{1C9E3BAB-A1A6-4BE5-A78D-30417BF49C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampl.Identity", "Ampl.Identity\Ampl.Identity.csproj", "{5FB6EE87-498E-462D-AD7A-B2D2E1C3A7BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ampl.Identity", "Ampl.Identity\Ampl.Identity.csproj", "{5FB6EE87-498E-462D-AD7A-B2D2E1C3A7BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{502BD6D0-DE8A-4F18-9156-82287ABA0B8D}"
+	ProjectSection(SolutionItems) = preProject
+		projects.txt = projects.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
