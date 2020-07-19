@@ -11,8 +11,10 @@ namespace Ampl.Configuration
     {
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(string));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) => entityValue;
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => (string)objectValue;
     }
@@ -25,8 +27,10 @@ namespace Ampl.Configuration
     {
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(int));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) => int.Parse(entityValue);
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => ((int)objectValue).ToString();
     }
@@ -39,10 +43,13 @@ namespace Ampl.Configuration
     {
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(int?));
+        
         /// <inheritdoc/>
-        public object ReadEntity(string entityValue) => string.IsNullOrEmpty(entityValue)
-          ? null
-          : (int?)int.Parse(entityValue);
+        public object ReadEntity(string entityValue) =>
+            string.IsNullOrEmpty(entityValue)
+                ? null
+                : (int?)int.Parse(entityValue);
+
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => ((int?)objectValue).ToString();
     }
@@ -55,8 +62,10 @@ namespace Ampl.Configuration
     {
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(bool));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) => bool.Parse(entityValue.ToLowerInvariant());
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => ((bool)objectValue).ToString();
     }
@@ -69,8 +78,10 @@ namespace Ampl.Configuration
     {
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(bool?));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) => string.IsNullOrEmpty(entityValue) ? null : (bool?)bool.Parse(entityValue);
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => ((bool?)objectValue).ToString();
     }
@@ -82,10 +93,13 @@ namespace Ampl.Configuration
     public class DecimalConverter : IAppConfigConverter
     {
         private readonly CultureInfo _convertCulture = new CultureInfo("en-US");
+        
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(decimal));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) => decimal.Parse(entityValue, _convertCulture);
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) => ((decimal)objectValue).ToString(_convertCulture);
     }
@@ -97,13 +111,16 @@ namespace Ampl.Configuration
     public class NullableDecimalConverter : IAppConfigConverter
     {
         private readonly CultureInfo _convertCulture = new CultureInfo("en-US");
+        
         /// <inheritdoc/>
         public bool CanConvert(Type type) => type.Equals(typeof(decimal?));
+        
         /// <inheritdoc/>
         public object ReadEntity(string entityValue) =>
             string.IsNullOrEmpty(entityValue)
                 ? null
                 : (decimal?)decimal.Parse(entityValue, _convertCulture);
+        
         /// <inheritdoc/>
         public string WriteEntity(object objectValue) =>
             ((decimal?)objectValue).HasValue

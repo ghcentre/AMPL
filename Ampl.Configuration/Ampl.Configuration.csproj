@@ -27,15 +27,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ampl.Core" Version="4.4.0" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <PackageReference Include="Ampl.Core" Version="4.5.13" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
 </Project>
