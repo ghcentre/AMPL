@@ -284,8 +284,9 @@ if /%2/==// (
 
     set MsbuildPath="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin"
     path "%~dp0";%MsbuildPath%;%PATH%
-    set Apikey=A2SvwIa3g0CpQR2GMcHv35h9nEv0RYbw
-    set Source=https://nuget.ghcentre.com/api/v2/package
+
+    set PrivateRepoParamsFile=%~sdp0privaterepositoryparams.txt
+    for /f "eol=# tokens=1,2 delims= " %%i in (%PrivateRepoParamsFile%) do set Source=%%i & set Apikey=%%j
 
     set VersionFile=%~sdp0version.txt
     for /f "eol=# tokens=* delims=" %%i in (%VersionFile%) do set Version=%%i
