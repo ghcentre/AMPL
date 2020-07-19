@@ -19,7 +19,7 @@ namespace Ampl.Web.Http
 
         public override void OnException(HttpActionExecutedContext context)
         {
-            if(_exceptionType.IsAssignableFrom(context.Exception.GetType()))
+            if (_exceptionType.IsAssignableFrom(context.Exception.GetType()))
             {
                 context.Response = context.Request.CreateErrorResponse(_statusCode, context.Exception.Message);
             }
