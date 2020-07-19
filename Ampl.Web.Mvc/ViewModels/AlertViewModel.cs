@@ -7,55 +7,55 @@ using System.Web;
 
 namespace Ampl.Web.Mvc.ViewModels
 {
-  /// <summary>
-  /// Represents the alert contextual class.
-  /// </summary>
-  public enum AlertContextualClass
-  {
     /// <summary>
-    /// Success.
+    /// Represents the alert contextual class.
     /// </summary>
-    Success = 0,
-    
-    /// <summary>
-    /// Information.
-    /// </summary>
-    Info,
+    public enum AlertContextualClass
+    {
+        /// <summary>
+        /// Success.
+        /// </summary>
+        Success = 0,
+
+        /// <summary>
+        /// Information.
+        /// </summary>
+        Info,
+
+        /// <summary>
+        /// Warning.
+        /// </summary>
+        Warning,
+
+        /// <summary>
+        /// Danger.
+        /// </summary>
+        Danger,
+    }
 
     /// <summary>
-    /// Warning.
+    /// Represents the Alert View Model.
     /// </summary>
-    Warning,
+    public sealed class AlertViewModel
+    {
+        /// <summary>
+        /// Alert Contextual Class.
+        /// </summary>
+        public AlertContextualClass ContextalClass { get; set; }
 
-    /// <summary>
-    /// Danger.
-    /// </summary>
-    Danger,
-  }
+        /// <summary>
+        /// Heading.
+        /// </summary>
+        public IHtmlString Heading { get; set; }
 
-  /// <summary>
-  /// Represents the Alert View Model.
-  /// </summary>
-  public sealed class AlertViewModel
-  {
-    /// <summary>
-    /// Alert Contextual Class.
-    /// </summary>
-    public AlertContextualClass ContextalClass { get; set; }
+        /// <summary>
+        /// Text.
+        /// </summary>
+        public IHtmlString Text { get; set; }
 
-    /// <summary>
-    /// Heading.
-    /// </summary>
-    public IHtmlString Heading { get; set; }
-
-    /// <summary>
-    /// Text.
-    /// </summary>
-    public IHtmlString Text { get; set; }
-
-    /// <summary>
-    /// Is Alert dismissible.
-    /// </summary>
-    public bool Dismissible { get; set; }
-  }
+        /// <summary>
+        /// Is Alert dismissible.
+        /// </summary>
+        public bool Dismissible { get; set; }
+    }
 }

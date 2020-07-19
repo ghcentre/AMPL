@@ -61,7 +61,7 @@ namespace Ampl.Web.Mvc
         /// <param name="metadata">The model metadata.</param>
         public void OnMetadataCreated(ModelMetadata metadata)
         {
-            if(metadata.TemplateHint == null)
+            if (metadata.TemplateHint == null)
             {
                 metadata.TemplateHint = "EditableCollection";
             }

@@ -21,10 +21,11 @@ namespace Ampl.Web.Mvc
                 return false;
             }
 
-            return modelMetadata.ShowForDisplay &&
-                   //metadata.ModelType != typeof(System.Data.Entity.EntityState) &&
-                   //!metadata.IsComplexType &&
-                   !templateInfo.Visited(modelMetadata);
+            return
+                modelMetadata.ShowForDisplay &&
+                //metadata.ModelType != typeof(System.Data.Entity.EntityState) &&
+                //!metadata.IsComplexType &&
+                !templateInfo.Visited(modelMetadata);
         }
 
         /// <summary>
@@ -40,10 +41,11 @@ namespace Ampl.Web.Mvc
                 return false;
             }
 
-            return modelMetadata.ShowForEdit &&
-                   //metadata.ModelType != typeof(System.Data.Entity.EntityState) &&
-                   //!metadata.IsComplexType &&
-                   !templateInfo.Visited(modelMetadata);
+            return
+                modelMetadata.ShowForEdit &&
+                //metadata.ModelType != typeof(System.Data.Entity.EntityState) &&
+                //!metadata.IsComplexType &&
+                !templateInfo.Visited(modelMetadata);
         }
 
         /// <summary>
@@ -70,15 +72,18 @@ namespace Ampl.Web.Mvc
             {
                 return;
             }
+            
             if (configuration.UseStrongTypedHtmlHelpers)
             {
                 return;
             }
 
             var props = modelMetadata.Properties
-                .Where(pm => readOnlyView
-                                ? ShouldDisplayProperty(pm, templateInfo)
-                                : ShouldEditProperty(pm, templateInfo));
+                .Where(
+                    pm => readOnlyView
+                            ? ShouldDisplayProperty(pm, templateInfo)
+                            : ShouldEditProperty(pm, templateInfo)
+                );
 
             foreach (var propertyMetadata in props)
             {

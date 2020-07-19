@@ -1,11 +1,8 @@
 ﻿using Ampl.Core;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -43,7 +40,7 @@ namespace Ampl.Web.Mvc.Html
             {
                 throw new InvalidOperationException("The type specified can not be used with the model specified.");
             }
-            
+
             var existingViewData = viewContext.ViewData;
 
             var viewDataDictionaryType = typeof(ViewDataDictionary<>)
@@ -70,6 +67,7 @@ namespace Ampl.Web.Mvc.Html
                                                                   modelViewContext,
                                                                   viewDataContainer,
                                                                   html.RouteCollection);
+            
             return htmlHelper;
         }
 
@@ -88,8 +86,8 @@ namespace Ampl.Web.Mvc.Html
 
             var lambda = MakeLambda(modelType, expression);
             var method = FindMethod(typeof(DisplayExtensions), "DisplayFor", 2, x => true, modelType, lambda.ReturnType);
-
             var content = (MvcHtmlString)method.Invoke(null, new object[] { html, lambda });
+            
             return content;
         }
 
@@ -108,8 +106,8 @@ namespace Ampl.Web.Mvc.Html
 
             var lambda = MakeLambda(modelType, expression);
             var method = FindMethod(typeof(EditorExtensions), "EditorFor", 2, x => true, modelType, lambda.ReturnType);
-
             var content = (MvcHtmlString)method.Invoke(null, new object[] { html, lambda });
+
             return content;
         }
 
@@ -135,8 +133,8 @@ namespace Ampl.Web.Mvc.Html
                                     x => x[2].ParameterType == typeof(object),
                                     modelType,
                                     lambda.ReturnType);
-
             var content = (MvcHtmlString)method.Invoke(null, new object[] { html, lambda, htmlAttributes });
+
             return content;
         }
 
@@ -165,8 +163,8 @@ namespace Ampl.Web.Mvc.Html
                                     x => x[2].ParameterType == typeof(string) && x[3].ParameterType == typeof(object),
                                     modelType,
                                     lambda.ReturnType);
-
             var content = (MvcHtmlString)method.Invoke(null, new object[] { html, lambda, null, htmlAttributes });
+
             return content;
         }
 
@@ -176,8 +174,8 @@ namespace Ampl.Web.Mvc.Html
             var parameter = Expression.Parameter(modelType, "model");
             var memberInfo = modelType.GetMembers().First(x => x.Name == expression);
             var memberAccess = Expression.MakeMemberAccess(parameter, memberInfo);
-
             var lambda = Expression.Lambda(memberAccess, parameter);
+
             return lambda;
         }
 
@@ -189,12 +187,14 @@ namespace Ampl.Web.Mvc.Html
                                              Type lambdaReturnType)
         {
             var method = classType.GetMethods()
-                .First(x => x.Name == methodName &&
-                            x.GetGenericArguments().Length == 2 &&
-                            x.GetParameters().Length == paramCount &&
-                            additionalChecks(x.GetParameters()));
-
+                .First(
+                    x => x.Name == methodName &&
+                         x.GetGenericArguments().Length == 2 &&
+                         x.GetParameters().Length == paramCount &&
+                         additionalChecks(x.GetParameters())
+                );
             var genericMethod = method.MakeGenericMethod(modelType, lambdaReturnType);
+
             return genericMethod;
         }
 

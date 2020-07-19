@@ -21,28 +21,31 @@ namespace Ampl.Web.Mvc
         /// <param name="heading">The alert heading. Default is no heading.</param>
         /// <param name="dismissible"><see langword="true" /> to make alert dismissible. The default
         /// is <see langword="false" /></param>
-        public static void AddAlert(
-          this ControllerBase controllerBase,
-          string text,
-          AlertContextualClass alertContextualClass = AlertContextualClass.Success,
-          string heading = null,
-          bool dismissible = false)
+        public static void AddAlert(this ControllerBase controllerBase,
+                                    string text,
+                                    AlertContextualClass alertContextualClass = AlertContextualClass.Success,
+                                    string heading = null,
+                                    bool dismissible = false)
         {
             Check.NotNull(controllerBase, nameof(controllerBase));
 
             var list = (controllerBase.TempData[AlertConfiguration.AlertTempDataKey] as List<AlertViewModel>);
-            if(list == null)
+            if (list == null)
             {
                 controllerBase.TempData[AlertConfiguration.AlertTempDataKey] = list = new List<AlertViewModel>();
             }
-            list.Add(new AlertViewModel() {
-                ContextalClass = alertContextualClass,
-                Dismissible = dismissible,
-                Heading = heading.With(x => new HtmlString(x)),
-                Text = text.With(x => new HtmlString(x)),
-            });
+
+            list.Add(
+                new AlertViewModel() {
+                    ContextalClass = alertContextualClass,
+                    Dismissible = dismissible,
+                    Heading = heading.With(x => new HtmlString(x)),
+                    Text = text.With(x => new HtmlString(x)),
+                }
+            );
         }
     }
+
 
     /// <summary>
     /// Alrert message configuration

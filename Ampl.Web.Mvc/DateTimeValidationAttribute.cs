@@ -24,14 +24,14 @@ namespace Ampl.Web.Mvc
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            if(_validationType == ValidationType.DateTime)
+            if (_validationType == ValidationType.DateTime)
             {
                 yield return new ModelClientValidationRule() {
                     ErrorMessage = string.Format(Messages.FieldMustBeADateTime, metadata.GetDisplayName()),
                     ValidationType = "datetime"
                 };
             }
-            else if(_validationType == ValidationType.Time)
+            else if (_validationType == ValidationType.Time)
             {
                 yield return new ModelClientValidationRule() {
                     ErrorMessage = string.Format(Messages.FieldMustBeATime, metadata.GetDisplayName()),
@@ -44,7 +44,7 @@ namespace Ampl.Web.Mvc
 
         public override bool IsValid(object value)
         {
-            if(value == null)
+            if (value == null)
             {
                 return true;
             }

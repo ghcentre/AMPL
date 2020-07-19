@@ -27,11 +27,12 @@ namespace Ampl.Web.Mvc.Html
 
             var containerType = htmlHelper.ViewData.ModelMetadata.ContainerType;
             var container = htmlHelper.ViewData.ModelMetadata.Container;
+            
             var dropDownListAttribute = containerType.GetProperty(htmlHelper.ViewData.ModelMetadata.PropertyName)
-                                                     .GetCustomAttributes(typeof(DropDownListAttribute), false)
-                                                     .Cast<DropDownListAttribute>()
-                                                     .FirstOrDefault();
-            if(dropDownListAttribute == null)
+                .GetCustomAttributes(typeof(DropDownListAttribute), false)
+                .Cast<DropDownListAttribute>()
+                .FirstOrDefault();
+            if (dropDownListAttribute == null)
             {
                 return Enumerable.Empty<SelectListItem>();
             }
@@ -39,19 +40,19 @@ namespace Ampl.Web.Mvc.Html
             IEnumerable<SelectListItem> items = null;
 
             Type enumType = dropDownListAttribute.EnumType;
-            if(enumType != null && typeof(Enum).IsAssignableFrom(enumType))
+            if (enumType != null && typeof(Enum).IsAssignableFrom(enumType))
             {
                 items = GetEnumerableItems(enumType);
             }
             else
             {
-                items = GetItemsFromMethodOrPropertyName(dropDownListAttribute, htmlHelper, containerType, container);
+                items = GetItemsFromMethodOrPropertyName(dropDownListAttribute, containerType, container);
             }
 
             var itemList = (items == null) ? new List<SelectListItem>() : items.ToList();
             bool hasDefault = !htmlHelper.ViewData.ModelMetadata.IsRequired ||
                               container == null;
-            if(hasDefault)
+            if (hasDefault)
             {
                 itemList.Insert(0, new SelectListItem() {
                     Value = string.Empty,
@@ -59,15 +60,15 @@ namespace Ampl.Web.Mvc.Html
                 });
             }
 
-            foreach(var item in itemList)
+            foreach (var item in itemList)
             {
                 item.Selected = false;
             }
 
             string modelValue = htmlHelper.ViewData.Model == null ? string.Empty : htmlHelper.ViewData.Model.ToString();
-            foreach(var item in itemList)
+            foreach (var item in itemList)
             {
-                if(item.Value == modelValue)
+                if (item.Value == modelValue)
                 {
                     item.Selected = true;
                     break;
@@ -77,44 +78,45 @@ namespace Ampl.Web.Mvc.Html
             return itemList;
         }
 
-        private static IEnumerable<SelectListItem> GetItemsFromMethodOrPropertyName<TModel>(
-                                                        DropDownListAttribute dropDownListAttribute,
-                                                        HtmlHelper<TModel> htmlHelper,
-                                                        Type containerType,
-                                                        object container
-                                                   )
+        private static IEnumerable<SelectListItem> GetItemsFromMethodOrPropertyName(DropDownListAttribute dropDownListAttribute,
+                                                                                    Type containerType,
+                                                                                    object container)
         {
             string methodOrPropertyName = dropDownListAttribute.ItemContainer.ToNullIfWhiteSpace();
-            if(methodOrPropertyName == null)
+            if (methodOrPropertyName == null)
             {
                 return Enumerable.Empty<SelectListItem>();
             }
 
             var methodInfo = containerType.GetMethod(methodOrPropertyName);
-            if(methodInfo != null)
+            if (methodInfo != null)
             {
-                if(!methodInfo.IsStatic && container == null)
+                if (!methodInfo.IsStatic && container == null)
                 {
                     return Enumerable.Empty<SelectListItem>();
                 }
+                
                 var items = (IEnumerable<SelectListItem>)methodInfo.Invoke(container, new object[] { });
+
                 return items;
             }
 
             var propertyInfo = containerType.GetProperty(methodOrPropertyName);
-            if(propertyInfo == null)
+            if (propertyInfo == null)
             {
                 return Enumerable.Empty<SelectListItem>();
             }
 
             var getMethodInfo = propertyInfo.GetGetMethod();
-            if(getMethodInfo != null)
+            if (getMethodInfo != null)
             {
-                if(!getMethodInfo.IsStatic && container == null)
+                if (!getMethodInfo.IsStatic && container == null)
                 {
                     return Enumerable.Empty<SelectListItem>();
                 }
+                
                 var items = (IEnumerable<SelectListItem>)propertyInfo.GetValue(container);
+
                 return items;
             }
 
@@ -124,13 +126,14 @@ namespace Ampl.Web.Mvc.Html
         private static IEnumerable<SelectListItem> GetEnumerableItems(Type enumType)
         {
             var values = Enum.GetValues(enumType);
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 var enumValue = (Enum)value;
                 var item = new SelectListItem() {
                     Value = enumValue.ToString(),
                     Text = enumValue.GetDisplayName() ?? enumValue.ToString()
                 };
+
                 yield return item;
             }
         }
