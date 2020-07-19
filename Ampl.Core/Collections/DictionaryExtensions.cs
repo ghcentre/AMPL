@@ -32,8 +32,13 @@ namespace Ampl.Collections
         public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         {
             Check.NotNull(dictionary, nameof(dictionary));
-            dictionary.TryGetValue(key, out var value);
-            return value;
+
+            if (dictionary.TryGetValue(key, out var value))
+            {
+                return value;
+            }
+
+            return default;
         }
     }
 }
