@@ -17,11 +17,13 @@ namespace Ampl.Core
             Guid = value;
         }
 
+
         /// <summary>
         /// Gets the GUID value.
         /// </summary>
         /// <value>The GUID value.</value>
         public Guid Guid { get; }
+
 
         /// <summary>
         /// Returns a string representation of the value of this instance.

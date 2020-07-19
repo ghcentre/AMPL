@@ -44,6 +44,7 @@ namespace Ampl.Core
             return null;
         }
 
+
         #region Interface Extraction
 
         private static bool MatchesGenericTypeDefinition(Type checkType, Type genericTypeDefinition)

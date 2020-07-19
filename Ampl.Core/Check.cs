@@ -17,6 +17,7 @@ namespace Ampl.Core
         {
         }
 
+
         /// <summary>
         /// Throws an <see cref="ArgumentNullException"/> if the given value is null.
         /// </summary>

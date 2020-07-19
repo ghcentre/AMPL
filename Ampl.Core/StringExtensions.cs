@@ -187,7 +187,9 @@ namespace Ampl.Core
             }
 
             int copyLength = endPosition - startPosition;
-            return source.Substring(startPosition, copyLength);
+            string substring = source.Substring(startPosition, copyLength);
+
+            return substring;
         }
 
         /// <summary>
@@ -229,6 +231,7 @@ namespace Ampl.Core
                 {
                     return source;
                 }
+
                 source = source.Remove(startPos, endPos + end.Length - startPos);
             }
         }
@@ -326,6 +329,7 @@ namespace Ampl.Core
             return ToIntInternal(source, out int result) ? (int?)result : null;
         }
 
+
         #region ToInt - Internal
 
         private static bool ToIntInternal(string source, out int result)
@@ -351,6 +355,7 @@ namespace Ampl.Core
                 {
                     return false;
                 }
+
                 minus = true;
                 position++;
             }
@@ -361,6 +366,7 @@ namespace Ampl.Core
                 {
                     return false;
                 }
+
                 minus = false;
                 position++;
             }
@@ -377,6 +383,10 @@ namespace Ampl.Core
                     {
                         return false;
                     }
+
+                    //
+                    // throw an OverflowException if overflow
+                    //
                     result = checked(result * 10);
                     result = checked(result + ((int)c - '0'));
                 }
@@ -390,6 +400,7 @@ namespace Ampl.Core
             {
                 result = -result;
             }
+
             return true;
         }
 
@@ -398,7 +409,7 @@ namespace Ampl.Core
         /// <summary>
         /// Fallback culture for ToDecimal() and ToDouble().
         /// </summary>
-        private static CultureInfo _fallbackCulture = new CultureInfo("en-US");
+        private static readonly CultureInfo _fallbackCulture = new CultureInfo("en-US");
 
         /// <summary>
         /// Converts the string representation of a number to its decimal equivalent.
@@ -414,16 +425,22 @@ namespace Ampl.Core
         /// </remarks>
         [SuppressMessage(
             "Microsoft.Naming",
-            "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "decimal",
+            "CA1720:IdentifiersShouldNotContainTypeNames",
+            MessageId = "decimal",
             Justification = "The type name is important in the identifier."
         )]
         [SuppressMessage(
-            "Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed",
+            "Microsoft.Design",
+            "CA1026:DefaultParametersShouldNotBeUsed",
             Justification = "The default values assigned for optional parameters are always default values."
         )]
-        public static decimal ToDecimal(this string source, decimal fallbackValue = 0.0M, bool useFallbackCulture = true)
+        public static decimal ToDecimal(this string source,
+                                        decimal fallbackValue = 0.0M,
+                                        bool useFallbackCulture = true)
         {
-            return ToDecimalInternal(source, out decimal result, useFallbackCulture) ? result : fallbackValue;
+            return ToDecimalInternal(source, out decimal result, useFallbackCulture)
+                        ? result
+                        : fallbackValue;
         }
 
         /// <summary>
@@ -444,8 +461,11 @@ namespace Ampl.Core
         )]
         public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
         {
-            return ToDecimalInternal(source, out decimal result, useFallbackCulture) ? (decimal?)result : null;
+            return ToDecimalInternal(source, out decimal result, useFallbackCulture)
+                        ? (decimal?)result
+                        : null;
         }
+
 
         #region ToDecimalInternal
 
@@ -494,6 +514,7 @@ namespace Ampl.Core
 
         #endregion
 
+
         /// <summary>
         /// Converts the specified string representation of a date and time to its <see cref="DateTime"/> equivalent.
         /// </summary>
@@ -539,6 +560,19 @@ namespace Ampl.Core
             }
 
             return GraphemeClusters(source).Reverse().JoinWith(string.Empty);
+        }
+
+
+        //
+        // http://stackoverflow.com/a/15111719
+        //
+        private static IEnumerable<string> GraphemeClusters(string s)
+        {
+            var enumerator = StringInfo.GetTextElementEnumerator(s);
+            while (enumerator.MoveNext())
+            {
+                yield return (string)enumerator.Current;
+            }
         }
     }
 }
