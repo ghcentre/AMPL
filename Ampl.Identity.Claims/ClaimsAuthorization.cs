@@ -77,6 +77,7 @@ namespace Ampl.Identity.Claims
             var context = CreateAuthorizationContext(principal,
                                                      action,
                                                      resources);
+            
             return CheckAccess(context);
         }
 
@@ -93,6 +94,7 @@ namespace Ampl.Identity.Claims
         {
             var claimsPrincipal = (principal as ClaimsPrincipal)
                                   ?? throw new InvalidOperationException("Principal is not a ClaimsPrincipal");
+            
             return CheckAccess(claimsPrincipal, action, resources);
         }
 
@@ -128,7 +130,8 @@ namespace Ampl.Identity.Claims
 
             var actionCollection = new Collection<Claim> { new Claim(ActionType, action) };
             var resourceCollection = new Collection<Claim>();
-            foreach(var resource in resources)
+            
+            foreach (var resource in resources)
             {
                 resourceCollection.Add(resource);
             }
@@ -154,6 +157,7 @@ namespace Ampl.Identity.Claims
 
             var resourceList = resources.ToList();
             resourceList.Add(new Claim(ResourceType, resource));
+            
             return CheckAccess(action, resourceList.ToArray());
         }
 
@@ -166,10 +170,10 @@ namespace Ampl.Identity.Claims
         {
             Check.NotNull(context, nameof(context));
 
-            if(EnforceAuthorizationManagerImplementation)
+            if (EnforceAuthorizationManagerImplementation)
             {
                 var authManagerType = AuthorizationManager.GetType().FullName;
-                if(authManagerType == "System.Security.Claims.ClaimsAuthorizationManager")
+                if (authManagerType == "System.Security.Claims.ClaimsAuthorizationManager")
                 {
                     throw new InvalidOperationException("No ClaimsAuthorizationManager implementation configured.");
                 }
@@ -195,10 +199,10 @@ namespace Ampl.Identity.Claims
 
             var resourceClaims = new Collection<Claim>();
 
-            if((resources?.Length ?? 0) > 0)
+            if ((resources?.Length ?? 0) > 0)
             {
                 resources.ToList()
-                         .ForEach(ar => resourceClaims.Add(new Claim(ResourceType, ar)));
+                    .ForEach(ar => resourceClaims.Add(new Claim(ResourceType, ar)));
             }
 
             return new AuthorizationContext(principal,
