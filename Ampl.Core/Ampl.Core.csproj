@@ -31,6 +31,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Messages.ru.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Messages.ru.resx">
+      <Generator></Generator>
+      <CustomToolNamespace></CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Messages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -40,13 +51,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Messages.resx">
+      <CustomToolNamespace></CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Ampl.System.Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Messages.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>Ampl.System.Resources</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

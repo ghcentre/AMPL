@@ -6,6 +6,8 @@ namespace Ampl.Core.Tests.Shared
     [TestFixture]
     public class Check_Tests
     {
+        #region NotNull
+
         [Test]
         public void Check_NotNull_NullArg_Throws()
         {
@@ -33,29 +35,34 @@ namespace Ampl.Core.Tests.Shared
                 // act
                 Check.NotNull(arg, "ThisIsTheArg");
             }
-            catch(ArgumentNullException e)
+            catch (ArgumentNullException e)
             {
                 // assert
                 Assert.That(e.Message, Does.Contain("ThisIsTheArg"));
             }
         }
 
-        [Test]
-        public void Check_NotNullOrEmptyString_NullArg_ThrowsArgumentNullException()
-        {
-            // arrange
-            string arg = null;
-            // act-assert
-            Assert.Throws<ArgumentNullException>(() => Check.NotNullOrEmptyString(arg));
-        }
+        #endregion
 
-        [Test]
-        public void Check_NotNullOrEmptyString_EmptyArg_ThrowsArgumentException()
+        #region NotNullOrEmptyString
+
+        [TestCase((string)null, "ArgumentNullException")]
+        [TestCase("", "ArgumentException")]
+        public void Check_NotNullOrEmptyString_InvalidArg_ThrowsCorrectException(string argument, string exceptionClassName)
         {
             // arrange
-            string arg = string.Empty;
-            // act-assert
-            Assert.Throws<ArgumentException>(() => Check.NotNullOrEmptyString(arg));
+            try
+            {
+                // act
+                var result = Check.NotNullOrEmptyString(argument);
+            }
+            catch (Exception exception)
+            {
+                var actualClassName = exception.GetType().Name;
+
+                // assert
+                Assert.That(actualClassName, Is.EqualTo(exceptionClassName));
+            }
         }
 
         [Test]
@@ -68,7 +75,7 @@ namespace Ampl.Core.Tests.Shared
                 // act
                 Check.NotNullOrEmptyString(arg, "ThisIsArgumentName");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 // assert
                 Assert.That(e.Message, Does.Contain("ThisIsArgumentName"));
@@ -82,5 +89,57 @@ namespace Ampl.Core.Tests.Shared
             string result = Check.NotNullOrEmptyString(arg, "ThisIsArgument");
             Assert.That(result, Is.SameAs(arg));
         }
+
+        #endregion
+
+        #region NotNullOrWhiteSpaceString
+
+        [TestCase((string)null)]
+        [TestCase("")]
+        [TestCase("  \r \n\t")]
+        public void Check_NotNullOrWhiteSpaceString_NullArgWithParamName_ThrowsWithParamNameInMessage(string arg)
+        {
+            // arrange
+            try
+            {
+                // act
+                Check.NotNullOrWhiteSpaceString(arg, "ThisIsArgumentName");
+            }
+            catch (Exception e)
+            {
+                // assert
+                Assert.That(e.Message, Does.Contain("ThisIsArgumentName"));
+            }
+        }
+
+        [TestCase((string)null, "ArgumentNullException")]
+        [TestCase("",           "ArgumentException")]
+        [TestCase("  \r \n\t",  "ArgumentException")]
+        public void Check_NotNullOrWhiteSpaceString_InvalidArg_ThrowsCorrectException(string argument, string exceptionClassName)
+        {
+            // arrange
+            try
+            {
+                // act
+                var result = Check.NotNullOrWhiteSpaceString(argument);
+            }
+            catch (Exception exception)
+            {
+                var actualClassName = exception.GetType().Name;
+
+                // assert
+                Assert.That(actualClassName, Is.EqualTo(exceptionClassName));
+            }
+        }
+
+        [Test]
+        public void Check_NotNullOrWhiteSpaceString_NotNullArg_ReturnsSameReference()
+        {
+            string arg = "This is some argument";
+            string result = Check.NotNullOrWhiteSpaceString(arg, "ThisIsArgument");
+            Assert.That(result, Is.SameAs(arg));
+        }
+
+        #endregion
     }
 }

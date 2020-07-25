@@ -1,5 +1,4 @@
-﻿using Ampl.Core.Resources;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
@@ -77,11 +76,16 @@ namespace Ampl.Core
         }
 
         /// <summary>
-        /// 
+        /// Throws an <see cref="ArgumentException"/> if the given value is null or an empty <see cref="System.String"/>.
         /// </summary>
-        /// <param name="argumentValue"></param>
-        /// <param name="argumentName"></param>
-        /// <returns></returns>
+        /// <param name="argumentValue">The argument value to check.</param>
+        /// <param name="argumentName">The optional argument name.</param>
+        /// <returns>The method return the value passed to the <paramref name="argumentName"/> parameter if the value is
+        /// not <see langword="null"/> or an empty string.
+        /// Otherwise, the method throws an <see cref="ArgumentException"/>.</returns>
+        /// <exception cref="ArgumentException">
+        /// The value passed to the <paramref name="argumentValue"/> is null or an empty string.
+        /// </exception>
         [SuppressMessage(
             "Microsoft.Design",
             "CA1026:DefaultParametersShouldNotBeUsed",
@@ -90,7 +94,8 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
         {
-            NotNull(argumentValue, argumentName);
+            NotNull(argumentValue, argumentName); // if null throw ArgumentNullException, not ArgumentException
+
             if (argumentValue.Length == 0)
             {
                 throw argumentName == null
@@ -99,6 +104,39 @@ namespace Ampl.Core
             }
 
             return argumentValue;
+        }
+
+        /// <summary>
+        /// Throws an <see cref="ArgumentException"/> if the given value is null or an empty <see cref="System.String"/>
+        /// or consists only of white-space characters.
+        /// </summary>
+        /// <param name="argumentValue">The argument value to check.</param>
+        /// <param name="argumentName">The optional argument name.</param>
+        /// <returns>The method return the value passed to the <paramref name="argumentName"/> parameter if the value is
+        /// not <see langword="null"/> or an empty string or a white-space string.
+        /// Otherwise, the method throws an <see cref="ArgumentException"/>.</returns>
+        /// <exception cref="ArgumentException">
+        /// The value passed to the <paramref name="argumentValue"/> is either <see langword="null" />,
+        /// or an empty string,
+        /// or consists only of white-space characters.
+        /// </exception>
+        public static string NotNullOrWhiteSpaceString(string argumentValue, string argumentName = null)
+        {
+            NotNull(argumentValue, argumentName); // if null throw ArgumentNullException
+
+            NotNullOrEmptyString(argumentValue, argumentName);
+
+            for (int i = 0; i < argumentValue.Length; i++)
+            {
+                if (!char.IsWhiteSpace(argumentValue[i]))
+                {
+                    return argumentValue;
+                }
+            }
+
+            throw argumentName == null
+                    ? new ArgumentException(Messages.ValueCannotBeAWhiteSpaceString)
+                    : new ArgumentException(Messages.ValueCannotBeAWhiteSpaceString, argumentName);
         }
     }
 }

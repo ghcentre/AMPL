@@ -123,4 +123,7 @@
   <data name="ValueCannotBeAnEmptyString" xml:space="preserve">
     <value>Value cannot be an empty string.</value>
   </data>
+  <data name="ValueCannotBeAWhiteSpaceString" xml:space="preserve">
+    <value>Value cannot be an empty or white space string.</value>
+  </data>
 </root>
