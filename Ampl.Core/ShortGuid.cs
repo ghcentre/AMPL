@@ -1,5 +1,4 @@
-﻿using Ampl.Core.Resources;
-using System;
+﻿using System;
 
 namespace Ampl.Core
 {

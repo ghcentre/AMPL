@@ -533,19 +533,6 @@ namespace Ampl.Core
             return DateTime.TryParse(source, out var result) ? (DateTime?)result : null;
         }
 
-        //
-        // http://stackoverflow.com/a/15111719
-        //
-        private static IEnumerable<string> GraphemeClusters(string s)
-        {
-            var enumerator = StringInfo.GetTextElementEnumerator(s);
-
-            while (enumerator.MoveNext())
-            {
-                yield return (string)enumerator.Current;
-            }
-        }
-
         /// <summary>
         /// Returns a copy of the source string with characters reversed.
         /// </summary>
