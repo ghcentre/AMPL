@@ -23,12 +23,13 @@ namespace Ampl.Core
         /// or only contains white space, or is a name, but not one of the named constants defined for the enumeration.</exception>
         /// <exception cref="OverflowException"><paramref name="source"/> value is outside the range of the
         /// underlying type of <typeparamref name="T"/>.</exception>
+        [Obsolete("Use Enums.Parse(). This method will be removed in next release.")]
         public static T ParseValue<T>(this T enumeration,
                                       string source,
                                       bool ignoreCase = false)
             where T : struct, Enum
         {
-            return (T)Enum.Parse(typeof(T), source, ignoreCase);
+            return Enums.Parse<T>(source, ignoreCase);
         }
 
         /// <summary>
@@ -45,19 +46,13 @@ namespace Ampl.Core
         /// is represented by <paramref name="source"/>.
         /// Otherwise, the method returns a a <see cref="Nullable{T}"/> whose value is <see langword="null"/>.</returns>
         /// <remarks>Unlike the <see cref="ParseValue{T}(T, string, bool)"/> this method does not throw an exception.</remarks>
+        [Obsolete("Use Enums.ParseAsNullable(). This method will be removed in next release.")]
         public static T? ParseAsNullable<T>(this T enumeration,
                                             string source,
                                             bool ignoreCase = false)
-          where T : struct, Enum
+            where T : struct, Enum
         {
-            bool success = Enum.TryParse(source, ignoreCase, out T result);
-
-            if (!success)
-            {
-                return null;
-            }
-
-            return result;
+            return Enums.ParseAsNullable<T>(source, ignoreCase);
         }
     }
 }
