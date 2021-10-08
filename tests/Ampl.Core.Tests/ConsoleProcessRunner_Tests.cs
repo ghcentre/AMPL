@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Ampl.Core.Tests
 {
@@ -44,6 +45,27 @@ namespace Ampl.Core.Tests
             }
         }
 
+        private ProcessArgs _processArgs;
+
+        [OneTimeSetUp]
+        public void OneTimeSetup()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
+
+        [SetUp]
+        public void Setup()
+        {
+            _processArgs = CreateOsDependentProcessArgs();
+        }
+
+        [TearDown]
+        public void Teardown()
+        {
+            _processArgs = null;
+        }
+
+
         [Test]
         public void Ctor_SetsDefaults()
         {
@@ -56,9 +78,9 @@ namespace Ampl.Core.Tests
         [Test]
         public void Start_Normal_WritesToOutput()
         {
-            var args = CreateOsDependentProcessArgs();
-            var runner = new ConsoleProcessRunner() {
-                StartInfo = new ProcessStartInfo(args.Program, args.Args)
+            var runner = new ConsoleProcessRunner()
+            {
+                StartInfo = new ProcessStartInfo(_processArgs.Program, _processArgs.Args)
             };
 
             runner.Start();
@@ -70,9 +92,9 @@ namespace Ampl.Core.Tests
         [Test]
         public void Start_Error_WritesToOutput()
         {
-            var args = CreateOsDependentProcessArgs();
-            var runner = new ConsoleProcessRunner() {
-                StartInfo = new ProcessStartInfo(args.Program, args.Args + " nonexistentfile")
+            var runner = new ConsoleProcessRunner()
+            {
+                StartInfo = new ProcessStartInfo(_processArgs.Program, _processArgs.Args + " nonexistentfile")
             };
 
             runner.Start();

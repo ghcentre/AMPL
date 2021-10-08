@@ -5,7 +5,14 @@ A collection of classes intended to speed-up console, web, and mobile developmen
 
 ## Updates
 
+> 2021-10-08: v5-alpha is here!
+
 > 2020-07-19: Moved from private repo to GitHub.
+
+
+## What's New in v5
+
+1. All .NET Standard projects now target
 
 
 ## About AMPL
