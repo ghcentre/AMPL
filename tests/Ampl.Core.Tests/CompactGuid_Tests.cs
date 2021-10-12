@@ -53,5 +53,26 @@ namespace Ampl.Core.Tests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void ToCompactString_SequentalGuids_ProducesSequentalStrings()
+        {
+            var g1 = Guid.Parse("00000000-0000-0000-0000-000000000001");
+            var s1 = g1.ToCompactString();
+
+            var g2 = Guid.Parse("00000000-0000-0000-0000-000000000002");
+            var s2 = g2.ToCompactString();
+
+            var g3 = Guid.Parse("00000000-0000-0000-0001-000000000000");
+            var s3 = g3.ToCompactString();
+
+            var actual1 = StringComparer.Ordinal.Compare(s1, s2);
+            var actual2 = StringComparer.Ordinal.Compare(s2, s3);
+            var actual3 = StringComparer.Ordinal.Compare(s1, s3);
+
+            Assert.That(actual1, Is.LessThan(0));
+            Assert.That(actual2, Is.LessThan(0));
+            Assert.That(actual3, Is.LessThan(0));
+        }
     }
 }
