@@ -116,11 +116,6 @@ namespace Ampl.Core
         /// }
         /// </code>
         /// </example>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
         public static string Between(this string source,
                                      string start,
                                      string end,
