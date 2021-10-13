@@ -25,7 +25,7 @@ namespace Ampl.Core
                 return null;
             }
 
-            Check.NotNull(interfaceType, nameof(interfaceType));
+            _ = interfaceType ?? throw new ArgumentNullException(nameof(interfaceType));
 
             if (MatchesGenericTypeDefinition(thisType, interfaceType))
             {
@@ -52,7 +52,6 @@ namespace Ampl.Core
             var ti = checkType.GetTypeInfo();
 
             return ti.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
-            //return checkType.IsGenericType && checkType.GetGenericTypeDefinition() == genericTypeDefinition;
         }
 
         #endregion

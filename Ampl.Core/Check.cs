@@ -63,6 +63,7 @@ namespace Ampl.Core
             Justification = "The default values assigned for optional parameters are always default values."
         )]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Obsolete("Use discard assignment with null coalesce operator and throw expression.")]
         public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
         {
             if (argumentValue == null)
@@ -94,7 +95,11 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
         {
-            NotNull(argumentValue, argumentName); // if null throw ArgumentNullException, not ArgumentException
+            //
+            // throw ArgumentNullException (not ArgumentException) if argument is null;
+            // throw ArgumentException otherwise
+            //
+            _ = argumentValue ?? throw new ArgumentNullException(nameof(argumentName));
 
             if (argumentValue.Length == 0)
             {
@@ -122,7 +127,11 @@ namespace Ampl.Core
         /// </exception>
         public static string NotNullOrWhiteSpaceString(string argumentValue, string argumentName = null)
         {
-            NotNull(argumentValue, argumentName); // if null throw ArgumentNullException
+            //
+            // throw ArgumentNullException (not ArgumentException) if argument is null;
+            // throw ArgumentException otherwise
+            //
+            _ = argumentValue ?? throw new ArgumentNullException(nameof(argumentName));
 
             NotNullOrEmptyString(argumentValue, argumentName);
 
