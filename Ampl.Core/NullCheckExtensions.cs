@@ -34,7 +34,7 @@ namespace Ampl.Core
                 return default;
             }
 
-            Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+            _ = evaluatorResult ?? throw new ArgumentNullException(nameof(evaluatorResult));
 
             return evaluatorResult(input);
         }
@@ -59,7 +59,7 @@ namespace Ampl.Core
                 return fallbackValue;
             }
 
-            Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+            _ = evaluatorResult ?? throw new ArgumentNullException(nameof(evaluatorResult));
 
             return evaluatorResult(input);
         }
@@ -82,12 +82,12 @@ namespace Ampl.Core
         {
             if (input == null)
             {
-                Check.NotNull(fallbackResult, nameof(fallbackResult));
+                _ = fallbackResult ?? throw new ArgumentNullException(nameof(fallbackResult));
 
                 return fallbackResult();
             }
 
-            Check.NotNull(evaluatorResult, nameof(evaluatorResult));
+            _ = evaluatorResult ?? throw new ArgumentNullException(nameof(evaluatorResult));
 
             return evaluatorResult(input);
         }
@@ -106,9 +106,10 @@ namespace Ampl.Core
             if (input == null)
             {
                 return default;
+
             }
 
-            Check.NotNull(predicate, nameof(predicate));
+            _ = predicate ?? throw new ArgumentNullException(nameof(predicate));
 
             return predicate(input) ? input : default;
         }
@@ -128,7 +129,7 @@ namespace Ampl.Core
                 return default;
             }
 
-            Check.NotNull(action, nameof(action));
+            _ = action ?? throw new ArgumentNullException(nameof(action));
             action(input);
 
             return input;
