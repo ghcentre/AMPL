@@ -41,7 +41,7 @@ namespace Ampl.Core
                 return default(TReturn);
             }
 
-            Check.NotNull(func, nameof(func));
+            _ = func ?? throw new ArgumentNullException(nameof(func));
 
             using (obj)
             {
