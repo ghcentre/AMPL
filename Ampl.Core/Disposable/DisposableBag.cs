@@ -65,6 +65,15 @@ namespace Ampl.Core
             return bag;
         }
 
+        /// <summary>
+        /// Adds the collection of disposables to the bag. Disposables are disposed when the bag is disposed.
+        /// </summary>
+        /// <typeparam name="T">The type of the value stored in the bag.</typeparam>
+        /// <param name="bag">The bag.</param>
+        /// <param name="disposables">Sequence of disposables.</param>
+        /// <returns>The bag.</returns>
+        /// <exception cref="ArgumentNullException">The bag is <see langword="null"/>,
+        /// or the sequence of disposables is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, params IDisposable[] disposables)
         {
             _ = bag ?? throw new ArgumentNullException(nameof(bag));
@@ -78,6 +87,14 @@ namespace Ampl.Core
             return bag;
         }
 
+        /// <summary>
+        /// Adds the collection of actions to the bag. Actions are executed when the bag is disposed.
+        /// </summary>
+        /// <typeparam name="T">The type of the value stored in the bag.</typeparam>
+        /// <param name="bag">The bag.</param>
+        /// <param name="actions">The sequence of actions.</param>
+        /// <exception cref="ArgumentNullException">The bag is <see langword="null"/>,
+        /// or the sequence of actions is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, params Action[] actions)
         {
             _ = bag ?? throw new ArgumentNullException(nameof(bag));
