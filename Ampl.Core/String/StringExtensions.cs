@@ -81,23 +81,8 @@ namespace Ampl.Core
         /// <para>This method returns the substring of the string specified in <b>source</b>. The start and end positions
         /// of the substring are the positions of the <b>start</b> and <b>end</b> substrings in the source string.</para>
         /// <para>If <i>one</i> of the <b>start</b> and <b>end</b> substrings is <i>not found</i> in the source string,
-        /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag:
-        /// <list type="table">
-        ///   <listheader>
-        ///     <term>FallbackToSource</term>
-        ///     <description>Return Value</description>
-        ///   </listheader>
-        ///   <item>
-        ///     <term>Not Set</term>
-        ///     <description>An empty string.</description>
-        ///   </item>
-        ///   <item>
-        ///     <term>Set</term>
-        ///     <description>A copy of the string specified in <b>source</b>.</description>
-        ///   </item>
-        /// </list>
-        /// </para>
-        /// <para>
+        /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag. If it is set,
+        /// the copy of the input string is returned, otherwise, an empty string.
         /// See the <see cref="StringBetweenOptions"/> enumeration for information about other options.
         /// </para>
         /// </remarks>
@@ -106,13 +91,13 @@ namespace Ampl.Core
         /// <code>
         /// public void Method1()
         /// {
-        ///   string source = "This is a test string.";
-        ///   string s1 = source.Between(null, "test"); // returns "This is a"
-        ///   string s2 = source.Between("test", null); // returns " string."
-        ///   string s3 = source.Between("One", null); // returns an empty string.
-        ///   string s4 = source.Between("One", null, StringBetweenOptions.FallbackToSource); // returns a copy of source
-        ///   string s5 = source.Between("This", "test", StringBetweenOptions.IncludeStart); // returns "This is a "
-        ///   string s6 = source.Between("thIS", "StR", StringBetweenOptions.None, StringComparison.CurrentCultureIgnoreCase; // return "is a test "
+        ///     string source = "This is a test string.";
+        ///     string s1 = source.Between(null, "test"); // returns "This is a"
+        ///     string s2 = source.Between("test", null); // returns " string."
+        ///     string s3 = source.Between("One", null); // returns an empty string.
+        ///     string s4 = source.Between("One", null, StringBetweenOptions.FallbackToSource); // returns a copy of source
+        ///     string s5 = source.Between("This", "test", StringBetweenOptions.IncludeStart); // returns "This is a "
+        ///     string s6 = source.Between("thIS", "StR", StringBetweenOptions.None, StringComparison.CurrentCultureIgnoreCase); // return " is a test "
         /// }
         /// </code>
         /// </example>
@@ -127,8 +112,8 @@ namespace Ampl.Core
                 return null;
             }
 
-            start = start ?? string.Empty;
-            end = end ?? string.Empty;
+            start ??= string.Empty;
+            end ??= string.Empty;
 
             if (start.Length == 0 && end.Length == 0)
             {
@@ -200,8 +185,8 @@ namespace Ampl.Core
                                            string end,
                                            StringComparison comparison = StringComparison.CurrentCulture)
         {
-            start = start ?? string.Empty;
-            end = end ?? string.Empty;
+            start ??= string.Empty;
+            end ??= string.Empty;
 
             if (start == string.Empty && end == string.Empty)
             {
@@ -291,18 +276,7 @@ namespace Ampl.Core
         /// <para>Unlike the <see cref="int.Parse(string)"/> mehtod this method does not allow leading whitespaces
         /// in <paramref name="source"/>.</para>
         /// </remarks>
-        [SuppressMessage(
-            "Microsoft.Naming",
-            "CA1720:IdentifiersShouldNotContainTypeNames",
-            MessageId = "int",
-            Justification = "The type name is important in the identifier."
-        )]
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
-        public static int ToInt(this string source, int fallbackValue = 0)
+        public static int ToInt(this string source, int fallbackValue = default)
         {
             return ToIntInternal(source, out int result) ? result : fallbackValue;
         }
@@ -418,19 +392,8 @@ namespace Ampl.Core
         /// <remarks>
         /// <para>The method doesn't throw any exception.</para>
         /// </remarks>
-        [SuppressMessage(
-            "Microsoft.Naming",
-            "CA1720:IdentifiersShouldNotContainTypeNames",
-            MessageId = "decimal",
-            Justification = "The type name is important in the identifier."
-        )]
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
         public static decimal ToDecimal(this string source,
-                                        decimal fallbackValue = 0.0M,
+                                        decimal fallbackValue = default,
                                         bool useFallbackCulture = true)
         {
             return ToDecimalInternal(source, out decimal result, useFallbackCulture)
@@ -449,11 +412,6 @@ namespace Ampl.Core
         /// <remarks>
         /// <para>The method doesn't throw any exception.</para>
         /// </remarks>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
         public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
         {
             return ToDecimalInternal(source, out decimal result, useFallbackCulture)
