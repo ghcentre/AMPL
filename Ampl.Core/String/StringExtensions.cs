@@ -3,54 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace Ampl.Core
 {
-    /// <summary>
-    /// <para>Specifies various options for the <see cref="StringExtensions.Between"/> method.</para>
-    /// <para>This enumeration has a <see cref="FlagsAttribute"/> attribute that allows a bitwise combination
-    /// of its member values.</para>
-    /// </summary>
-    /// <seealso cref="StringExtensions.Between"/>
-    /// <remarks>
-    /// <para>The <see cref="StringExtensions.Between"/> default behavior is:</para>
-    /// <list type="bullet">
-    ///   <item>If at least one substring specified by the <b>start</b> and <b>end</b> parameters is not found in the
-    ///   <b>source</b> string, the method return the empty string.</item>
-    ///   <item>The substrings specified by the <b>start</b> and <b>end</b> parameters are not included in the result substring.</item>
-    /// </list>
-    /// </remarks>
-    [Flags]
-    public enum StringBetweenOptions
-    {
-        /// <summary>
-        /// The <see cref="StringExtensions.Between"/> method uses it's default behavior.
-        /// </summary>
-        None = 0x0,
-
-        /// <summary>
-        /// The <see cref="StringExtensions.Between"/> method returns the copy of the <b>source</b> string if the
-        /// source string does not contain all of the substrings specified in <b>start</b> and <b>end</b> parameters.
-        /// </summary>
-        FallbackToSource = 0x01,
-
-        /// <summary>
-        /// The return value of the <see cref="StringExtensions.Between"/> method includes the value of the <b>start</b> substring.
-        /// </summary>
-        IncludeStart = 0x02,
-
-        /// <summary>
-        /// The return value of the <see cref="StringExtensions.Between"/> method includes the value of the <b>end</b> substring.
-        /// </summary>
-        IncludeEnd = 0x04,
-
-        /// <summary>
-        /// The return value of the <see cref="StringExtensions.Between"/> method includes both the values
-        /// of the <b>start</b> and <b>end</b> substrings.
-        /// </summary>
-        IncludeStartEnd = 0x06,
-    }
-
     /// <summary>
     /// Provides a set of <see langword="static"/> methods for <see cref="String">string</see>s.
     /// </summary>
@@ -241,12 +197,12 @@ namespace Ampl.Core
 
             if (source.StartsWith(" "))
             {
-                source = source.Substring(1);
+                source = source[1..];
             }
 
             if (source.EndsWith(" "))
             {
-                source = source.Substring(0, source.Length - 1);
+                source = source[0..^1];
             }
 
             return source;
@@ -329,7 +285,7 @@ namespace Ampl.Core
                 position++;
             }
 
-            if (source[0] == '+') // if first char is munus, assume positive value
+            if (source[0] == '+') // if first char is plus, assume positive value
             {
                 if (source.Length == 1) // positive values must have at least one digit
                 {
@@ -374,6 +330,7 @@ namespace Ampl.Core
         }
 
         #endregion
+
 
         /// <summary>
         /// Fallback culture for ToDecimal() and ToDouble().
@@ -513,6 +470,47 @@ namespace Ampl.Core
             {
                 yield return (string)enumerator.Current;
             }
+        }
+
+        /// <summary>
+        /// Returns a common prefix of the specified string with another string.
+        /// </summary>
+        /// <param name="value">The specified string.</param>
+        /// <param name="anotherValue">The anothe string.</param>
+        /// <returns>
+        /// <para>The string which is both strings specified in
+        /// <paramref name="value"/> and <paramref name="anotherValue"/> start with.</para>
+        /// <para>If the string specified in the <paramref name="value"/> is <see langword="null"/>,
+        /// the method returns <see langword="null"/>.</para>
+        /// <para>If the string specified in the <paramref name="anotherValue"/> is <see langword="null"/> or an empty string,
+        /// or the strings do not own a common prefix, the method returns an empty string.</para>
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// string filePath = @"C:\Windows\System32\library.dll";
+        /// string anotherPath = @"C:\Windows\System32\anotherlibrary.dll";
+        /// string commonPath = filePath.CommonPrefixWith(anotherPath); // returns "C:\Windows\System32\"
+        /// </code>
+        /// </example>
+        public static string CommonPrefixWith(this string value, string anotherValue)
+        {
+            if (value == null)
+            {
+                return null;
+            }
+            if (string.IsNullOrEmpty(anotherValue))
+            {
+                return string.Empty;
+            }
+
+            int min = Math.Min(value.Length, anotherValue.Length);
+            var sb = new StringBuilder(min);
+            for (int i = 0; i < min && value[i] == anotherValue[i]; i++)
+            {
+                sb.Append(value[i]);
+            }
+
+            return sb.ToString();
         }
     }
 }

@@ -699,5 +699,65 @@ namespace Ampl.Core.Tests
         }
 
         #endregion
+
+        #region CommonPrefixWith
+
+        [Test]
+        public void CommonPrefixWith_Null_ReturnsNull()
+        {
+            string arg = null;
+            var result = arg.CommonPrefixWith("value");
+            Assert.That(result, Is.Null);
+        }
+
+        [Test]
+        public void CommonPrefixWith_AnotherNull_ReturnsEmpty()
+        {
+            string arg = "This is a test string";
+            string another = null;
+
+            var result = arg.CommonPrefixWith(another);
+            var expected = string.Empty;
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void CommonPrefixWith_AnotherEmpty_ReturnsEmpty()
+        {
+            string arg = "This is a test string";
+            string another = string.Empty;
+
+            var result = arg.CommonPrefixWith(another);
+            var expected = string.Empty;
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void CommonPrefixWith_HasPrefix_Returns()
+        {
+            string arg = "This is a test string";
+            string another = "This is another test string";
+
+            var result = arg.CommonPrefixWith(another);
+            var expected = "This is a";
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void CommonPrefixWith_HasNoPrefix_ReturnsEmpty()
+        {
+            string arg = "This is a test string";
+            string another = "Something really different";
+
+            var result = arg.CommonPrefixWith(another);
+            var expected = string.Empty;
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        #endregion
     }
 }
