@@ -12,6 +12,7 @@ namespace Ampl.Core
         /// <summary>
         /// Informs FxCop that method parameter on which this attribute is applies is checked for null with custom method.
         /// </summary>
+        [AttributeUsage(AttributeTargets.All)]
         private sealed class ValidatedNotNullAttribute : Attribute
         {
         }
@@ -57,11 +58,6 @@ namespace Ampl.Core
             "CA2208:InstantiateArgumentExceptionsCorrectly",
             Justification = "ArgumentNullException parameterless constructor called explicitly to indicate than no parameter name is given."
         )]
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [Obsolete("Use Guard.Against.Null() or discard assignment with null coalesce operator and throw expression.")]
         public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
@@ -87,11 +83,6 @@ namespace Ampl.Core
         /// <exception cref="ArgumentException">
         /// The value passed to the <paramref name="argumentValue"/> is null or an empty string.
         /// </exception>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1026:DefaultParametersShouldNotBeUsed",
-            Justification = "The default values assigned for optional parameters are always default values."
-        )]
         [Obsolete("Use Guard.Against.NullOrEmpty().")]
         public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
         {
