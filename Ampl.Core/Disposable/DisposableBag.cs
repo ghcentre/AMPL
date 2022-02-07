@@ -38,8 +38,8 @@ namespace Ampl.Core
         /// or the disposable object is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, IDisposable disposable)
         {
-            _ = bag ?? throw new ArgumentNullException(nameof(bag));
-            _ = disposable ?? throw new ArgumentNullException(nameof(disposable));
+            Guard.Against.Null(bag, nameof(bag));
+            Guard.Against.Null(disposable, nameof(disposable));
 
             bag.Add(disposable.Dispose);
 
@@ -57,8 +57,8 @@ namespace Ampl.Core
         /// or the action is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, Action action)
         {
-            _ = bag ?? throw new ArgumentNullException(nameof(bag));
-            _ = action ?? throw new ArgumentNullException(nameof(action));
+            Guard.Against.Null(bag, nameof(bag));
+            Guard.Against.Null(action, nameof(action));
 
             bag.Add(action);
 
@@ -76,8 +76,8 @@ namespace Ampl.Core
         /// or the sequence of disposables is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, params IDisposable[] disposables)
         {
-            _ = bag ?? throw new ArgumentNullException(nameof(bag));
-            _ = disposables ?? throw new ArgumentNullException(nameof(disposables));
+            Guard.Against.Null(bag, nameof(bag));
+            Guard.Against.Null(disposables, nameof(disposables));
 
             foreach (var disposable in disposables)
             {
@@ -97,8 +97,8 @@ namespace Ampl.Core
         /// or the sequence of actions is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, params Action[] actions)
         {
-            _ = bag ?? throw new ArgumentNullException(nameof(bag));
-            _ = actions ?? throw new ArgumentNullException(nameof(actions));
+            Guard.Against.Null(bag, nameof(bag));
+            Guard.Against.Null(actions, nameof(actions));
 
             foreach (var action in actions)
             {

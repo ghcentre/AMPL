@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ampl.Core;
+using System;
 
 namespace Ampl.Core
 {
@@ -20,7 +21,7 @@ namespace Ampl.Core
         /// <exception cref="FormatException">Input is not in a recognized format.</exception>
         public static Guid Parse(string stringValue)
         {
-            _ = stringValue ?? throw new ArgumentNullException(nameof(stringValue));
+            Guard.Against.Null(stringValue, nameof(stringValue));
 
             if (stringValue.Length != _shortGuidLength)
             {

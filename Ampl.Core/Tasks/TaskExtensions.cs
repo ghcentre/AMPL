@@ -21,7 +21,7 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Sync<T>(this Task<T> task)
         {
-            _ = task ?? throw new ArgumentNullException(nameof(task));
+            Guard.Against.Null(task, nameof(task));
 
             return task.ConfigureAwait(false).GetAwaiter().GetResult();
         }
@@ -38,7 +38,7 @@ namespace Ampl.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Sync<T>(this Task<T> task, bool? configureAwait)
         {
-            _ = task ?? throw new ArgumentNullException(nameof(task));
+            Guard.Against.Null(task, nameof(task));
 
             if (configureAwait.HasValue)
             {

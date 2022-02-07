@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ampl.Core;
+using System;
 using System.Reflection;
 
 namespace Ampl.Core
@@ -25,7 +26,7 @@ namespace Ampl.Core
                 return null;
             }
 
-            _ = interfaceType ?? throw new ArgumentNullException(nameof(interfaceType));
+            Guard.Against.Null(interfaceType, nameof(interfaceType));
 
             if (MatchesGenericTypeDefinition(thisType, interfaceType))
             {

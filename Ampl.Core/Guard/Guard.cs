@@ -12,6 +12,6 @@
         /// <summary>
         /// An entry point to a set of Guard Clauses.
         /// </summary>
-        public static IGuardClause Against = new Guard();
+        public static readonly IGuardClause Against = new Guard();
     }
 }

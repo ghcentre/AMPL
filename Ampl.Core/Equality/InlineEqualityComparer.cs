@@ -21,8 +21,8 @@ namespace Ampl.Core
         /// <param name="getHashCode">The delegate implementing hash code generator.</param>
         public InlineEqualityComparer(Func<T, T, bool> equals, Func<T, int> getHashCode)
         {
-            _equals = equals ?? throw new ArgumentNullException(nameof(equals));
-            _getHashCode = getHashCode ?? throw new ArgumentNullException(nameof(getHashCode));
+            _equals = Guard.Against.Null(equals, nameof(equals));
+            _getHashCode = Guard.Against.Null(getHashCode, nameof(getHashCode));
         }
 
 

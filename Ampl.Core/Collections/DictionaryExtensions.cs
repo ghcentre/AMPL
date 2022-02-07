@@ -25,8 +25,8 @@ namespace Ampl.Core
         /// the <paramref name="anonymousType"/> is <see langword="null"/>.</exception>
         public static T IncludeObjectProperties<T>(this T dictionary, object anonymousType) where T : IDictionary<string, object>
         {
-            _ = dictionary ?? throw new ArgumentNullException(nameof(dictionary));
-            _ = anonymousType ?? throw new ArgumentNullException(nameof(anonymousType));
+            Guard.Against.Null(dictionary, nameof(dictionary));
+            Guard.Against.Null(anonymousType, nameof(anonymousType));
 
             var dict = anonymousType.GetType()
                 .GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)

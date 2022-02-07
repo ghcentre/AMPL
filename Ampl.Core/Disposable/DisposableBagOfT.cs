@@ -61,7 +61,7 @@ namespace Ampl.Core
         /// <param name="action">The action to add.</param>
         public virtual void Add(Action action)
         {
-            _ = action ?? throw new ArgumentNullException(nameof(action));
+            Guard.Against.Null(action, nameof(action));
             CheckDisposed();
             _actions.Push(action);
         }
