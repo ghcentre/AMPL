@@ -378,7 +378,7 @@ namespace Ampl.Core
         /// <summary>
         /// Fallback culture for ToDecimal() and ToDouble().
         /// </summary>
-        private static readonly CultureInfo _fallbackCulture = new CultureInfo("en-US");
+        private static readonly CultureInfo _fallbackCulture = CultureInfo.InvariantCulture;
 
         /// <summary>
         /// Converts the string representation of a number to its decimal equivalent.
