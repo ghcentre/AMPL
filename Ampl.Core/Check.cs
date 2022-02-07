@@ -63,7 +63,7 @@ namespace Ampl.Core
             Justification = "The default values assigned for optional parameters are always default values."
         )]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [Obsolete("Use discard assignment with null coalesce operator and throw expression.")]
+        [Obsolete("Use Guard.Against.Null() or discard assignment with null coalesce operator and throw expression.")]
         public static T NotNull<T>([ValidatedNotNull] T argumentValue, string argumentName = null)
         {
             if (argumentValue == null)
@@ -92,7 +92,7 @@ namespace Ampl.Core
             "CA1026:DefaultParametersShouldNotBeUsed",
             Justification = "The default values assigned for optional parameters are always default values."
         )]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Obsolete("Use Guard.Against.NullOrEmpty().")]
         public static string NotNullOrEmptyString(string argumentValue, string argumentName = null)
         {
             //
@@ -125,6 +125,7 @@ namespace Ampl.Core
         /// or an empty string,
         /// or consists only of white-space characters.
         /// </exception>
+        [Obsolete("Use Guard.Against.NullOrWhiteSpace().")]
         public static string NotNullOrWhiteSpaceString(string argumentValue, string argumentName = null)
         {
             //
