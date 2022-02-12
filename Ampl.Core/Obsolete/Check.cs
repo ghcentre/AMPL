@@ -7,6 +7,10 @@ namespace Ampl.Core
     /// <summary>
     /// Provides a set of <see langword="static" /> parameter checking routines.
     /// </summary>
+    /// <remarks>
+    /// This class is <b>obsolete</b> and generates a error if referenced.
+    /// </remarks>
+    [Obsolete("Use Guard Clauses", true)]
     public static class Check
     {
         /// <summary>

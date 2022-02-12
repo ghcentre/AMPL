@@ -131,13 +131,22 @@ namespace Ampl.Core
         }
 
         /// <summary>
-        /// TODO: RemoveBetween
+        /// Removes a part of a string between specified <c>start</c> and <c>end</c>.
         /// </summary>
-        /// <param name="source"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <param name="comparison"></param>
-        /// <returns></returns>
+        /// <param name="source">The source string.</param>
+        /// <param name="start">The start of the string to remove.</param>
+        /// <param name="end">The end of the string to remove</param>
+        /// <param name="comparison"><see cref="StringComparison"/>.</param>
+        /// <returns>
+        /// <para>If the string specified in <paramref name="source"/> is <see langword="null"/> or an empty string, the method returns
+        /// a reference to the source string.</para>
+        /// <para>If the strings specified in <paramref name="start"/> or <paramref name="end"/>
+        /// are not found in the <paramref name="source"/> string, the method returns a string that equals to the source string.
+        /// Note that return string may be not the same reference as the input string.</para>
+        /// <para>If the strings specified <paramref name="start"/> and <paramref name="end"/> are found in the
+        /// <paramref name="source"/> string, the method removes all characters starting from the <b>first</b> occurence
+        /// of the <c>start</c> to the <b>last</b> occurence of the <c>end</c> and returns the result.</para>
+        /// </returns>
         public static string RemoveBetween(this string source,
                                            string start,
                                            string end,

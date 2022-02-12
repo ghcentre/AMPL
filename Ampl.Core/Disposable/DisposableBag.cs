@@ -93,6 +93,7 @@ namespace Ampl.Core
         /// <typeparam name="T">The type of the value stored in the bag.</typeparam>
         /// <param name="bag">The bag.</param>
         /// <param name="actions">The sequence of actions.</param>
+        /// <returns>The bag.</returns>
         /// <exception cref="ArgumentNullException">The bag is <see langword="null"/>,
         /// or the sequence of actions is <see langword="null"/>.</exception>
         public static DisposableBag<T> With<T>(this DisposableBag<T> bag, params Action[] actions)

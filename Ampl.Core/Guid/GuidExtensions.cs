@@ -11,6 +11,8 @@ namespace Ampl.Core
         /// <summary>
         /// Returns a compact string representation of the <see cref="Guid"/> instance.
         /// </summary>
+        /// <param name="guid">The GUID instance.</param>
+        /// <returns>The method returns a <c>compact</c> representation of the GUID instance.</returns>
         /// <remarks>
         /// <para>The <c>compact</c> representation of a GUID is a base-64 representation of the GUID bytes
         /// with <c>+</c> converted to <c>-</c>, <c>/</c> converted to <c>_</c> (base64 URI)
@@ -20,9 +22,16 @@ namespace Ampl.Core
         ///     <item>(RFC 3548, par. 4).</item>
         ///     <item>(RFC 1575, appendix C)</item>
         /// </list>
+        /// <para>See <see cref="CompactGuid.Parse(string)"/> to convert the compact GUID representation
+        /// to the <see cref="Guid"/> value.</para>
         /// </remarks>
-        /// <param name="guid">The GUID instance.</param>
-        /// <returns>The method returns a <c>compact</c> representation of the GUID instance.</returns>
+        /// <example>
+        /// <code>
+        /// var guid = new Guid(Enumerable.Range(0, 16).Select(x => (byte)x).ToArray()); // {03020100-0504-0706-0809-0a0b0c0d0e0f}
+        /// string compactString = guid.ToCompactString(); // AAECAwQFBgcICQoLDA0ODw
+        /// </code>
+        /// <seealso cref="CompactGuid.Parse(string)"></seealso>
+        /// </example>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string ToCompactString(this Guid guid)
         {
