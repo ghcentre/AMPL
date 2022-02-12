@@ -7,7 +7,7 @@
         <Version>0.0.0</Version>
         <Company>GHCentre</Company>
         <Product>GHCentre Advanced Multi-Purpose Library</Product>
-        <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
+        <Description>AMPL Core</Description>
         <Authors>GHCentre</Authors>
         <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
         <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
