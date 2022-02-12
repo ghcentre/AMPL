@@ -68,33 +68,24 @@ namespace Ampl.Core.Tests
         [Test]
         public void Yield_NullThis_ReturnsEnumerableWith1Element()
         {
-            // arrange
             string arg = null;
-            // act
             var result = arg.Yield();
-            // assert
             Assert.That(result.Count, Is.EqualTo(1));
         }
 
         [Test]
         public void Yield_NullThis_ReturnsEnumerableFirstIsArg()
         {
-            // arrange
             string arg = null;
-            // act
             var result = arg.Yield();
-            // assert
             Assert.That(result.First(), Is.EqualTo(arg));
         }
 
         [Test]
         public void Yield_NotNullThis_ReturnsEnumerableFirstIsArg()
         {
-            // arrange
             string arg = "arg";
-            // act
             var result = arg.Yield();
-            // assert
             Assert.That(result.First(), Is.EqualTo(arg));
         }
 
@@ -114,7 +105,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void JoinWith_Objects_ResultEqualsStringJoin()
         {
-            object[] arg = new[] { (object)"The string", (object)2, (object)DateTime.Now, (object)7.0 };
+            object[] arg = new[] { "The string", 2, DateTime.Now, (object)7.0 };
             string result = arg.JoinWith(", ");
             string matchResult = string.Join(", ", arg);
             Assert.AreEqual(result, matchResult);

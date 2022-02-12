@@ -98,17 +98,5 @@ namespace Ampl.Core.Tests
         }
 
         #endregion
-
-        //[Test]
-        //public void NullOrEmpty_Null_NullMessageReplacedWithBuildIn()
-        //{
-        //    // arrange
-        //    string arg = null;
-        //    string defaultMessage = Messages.
-
-        //    // act
-        //    // assert
-        //    //Assert.That();
-        //}
     }
 }

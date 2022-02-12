@@ -1,15 +1,14 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ampl.Core.Tests
 {
     [TestFixture]
     public class InlineEqualityComparer_Tests
     {
+        #region Ctor
+
         [Test]
         public void Ctor_EqualsIsNull_Throws()
         {
@@ -22,11 +21,15 @@ namespace Ampl.Core.Tests
             Assert.Throws<ArgumentNullException>(() => new InlineEqualityComparer<int>((x, y) => x.Equals(y), null));
         }
 
+        #endregion
+
+        #region GroupBy with InlineEqualityComparer
+
         [Test]
         public void GroupBy_CaseInsensitiveString_GroupsCaseInsensitive()
         {
             // arrange
-            var items = new(string, int)[]
+            var items = new (string, int)[]
             {
                 ("One", 1),
                 ("Two", 2),   ("two", 22),
@@ -47,5 +50,7 @@ namespace Ampl.Core.Tests
             Assert.That(twos.Count(), Is.EqualTo(2));
             Assert.That(threes.Count(), Is.EqualTo(3));
         }
+
+        #endregion
     }
 }

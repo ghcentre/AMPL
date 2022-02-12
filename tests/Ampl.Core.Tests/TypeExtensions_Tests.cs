@@ -7,6 +7,8 @@ namespace Ampl.Core.Tests
     [TestFixture]
     public class TypeExtensions_Tests
     {
+        #region ExtractGenericInterface
+
         [Test]
         public void ExtractGeneticInterface_NullExtension_ReturnsNull()
         {
@@ -52,5 +54,7 @@ namespace Ampl.Core.Tests
             Type result = someType.ExtractGenericInterface(typeof(string));
             Assert.IsNull(result);
         }
+
+        #endregion
     }
 }

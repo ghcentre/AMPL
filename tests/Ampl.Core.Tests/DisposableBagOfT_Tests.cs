@@ -7,7 +7,17 @@ namespace Ampl.Core.Tests
     [TestFixture]
     public class DisposableBagOfT_Tests
     {
+        #region Utility classes and fields
+
         private readonly List<string> _messages = new();
+
+        private class BagObject
+        {
+        }
+
+        #endregion
+
+        #region Setup
 
         [SetUp]
         public void Setup()
@@ -15,11 +25,10 @@ namespace Ampl.Core.Tests
             _messages.Clear();
         }
 
+        #endregion
 
-        private class BagObject
-        {
-        }
 
+        #region Ctor
 
         [Test]
         public void Ctor_Value_SameReference()
@@ -39,6 +48,10 @@ namespace Ampl.Core.Tests
             var actual = bag.Value;
             Assert.That(actual, Is.Null);
         }
+
+        #endregion
+
+        #region Add
 
         [Test]
         public void Add_Action_Executes()
@@ -62,6 +75,10 @@ namespace Ampl.Core.Tests
 
             Assert.Throws<ObjectDisposedException>(() => bag.Add(action));
         }
+
+        #endregion
+
+        #region Dispose
 
         [Test]
         public void Dispose_ExecutedOnce()
@@ -93,5 +110,7 @@ namespace Ampl.Core.Tests
             Assert.That(_messages[1], Is.EqualTo("2"));
             Assert.That(_messages[2], Is.EqualTo("1"));
         }
+
+        #endregion    
     }
-}
+    }

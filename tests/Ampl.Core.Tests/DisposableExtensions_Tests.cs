@@ -7,6 +7,8 @@ namespace Ampl.Core.Tests
     [TestFixture]
     public class DisposableExtensions_Tests
     {
+        #region Utility classes
+
         internal class DisposableClass : IDisposable
         {
             public string Property => "StringValue";
@@ -18,6 +20,10 @@ namespace Ampl.Core.Tests
                 Disposed = true;
             }
         }
+
+        #endregion
+
+        #region Use
 
         [Test]
         public void Use_ThisNull_ReturnsDefault()
@@ -39,23 +45,21 @@ namespace Ampl.Core.Tests
         [Test]
         public void Use_AccessProperty_Returns()
         {
-            // arrange-act
             string result = new DisposableClass().Use(x => x.Property);
-            // assert
             Assert.That(result, Is.EqualTo("StringValue"));
         }
 
         [Test]
         public void Use_Use_Disposes()
         {
-            // arrange
             var disposable = new DisposableClass();
             Assert.That(disposable.Disposed, Is.False);
-            // act
+
             var result = disposable.Use(x => x.Property);
-            // assert
+
             Assert.That(disposable.Disposed, Is.True);
         }
 
+        #endregion
     }
 }

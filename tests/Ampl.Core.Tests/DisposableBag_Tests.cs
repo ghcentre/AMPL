@@ -6,6 +6,8 @@ namespace Ampl.Core.Tests
     [TestFixture]
     public class DisposableBag_Tests
     {
+        #region Utility Classes
+
         private class DisposableActionWrapper : IDisposable
         {
             private readonly Action _actionOnDispose;
@@ -21,6 +23,9 @@ namespace Ampl.Core.Tests
             }
         }
 
+        #endregion
+
+        #region Create
 
         [Test]
         public void Create_WithoutParameter_ValueIsNull()
@@ -38,6 +43,10 @@ namespace Ampl.Core.Tests
             Assert.That(actual, Is.Not.Null);
         }
 
+        #endregion
+
+        #region With
+
         [Test]
         public void With_AnyArg_ReturnsSameBag()
         {
@@ -45,5 +54,7 @@ namespace Ampl.Core.Tests
             var actual = bag.With(() => { });
             Assert.That(actual, Is.SameAs(bag));
         }
+
+        #endregion
     }
 }

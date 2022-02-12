@@ -9,31 +9,36 @@ namespace Ampl.Core.Tests
     [TestFixture]
     public class ConsoleProcessRunner_Tests
     {
+        #region Utility classes and methods
+
         private class ProcessArgs
         {
             public string Program { get; set; }
             public string Args { get; set; }
         }
 
-        private ProcessArgs CreateOsDependentProcessArgs()
+        private static ProcessArgs CreateOsDependentProcessArgs()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                return new ProcessArgs() {
+                return new ProcessArgs()
+                {
                     Program = "cmd.exe",
                     Args = "/c dir"
                 };
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                return new ProcessArgs() {
+                return new ProcessArgs()
+                {
                     Program = "/bin/bash",
                     Args = "-c ls -la"
                 };
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                return new ProcessArgs() {
+                return new ProcessArgs()
+                {
                     Program = "/bin/zsh",
                     Args = "-c ls -la"
                 };
@@ -45,6 +50,10 @@ namespace Ampl.Core.Tests
         }
 
         private ProcessArgs _processArgs;
+
+        #endregion
+
+        #region Setup
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -64,6 +73,9 @@ namespace Ampl.Core.Tests
             _processArgs = null;
         }
 
+        #endregion
+
+        #region Ctor
 
         [Test]
         public void Ctor_SetsDefaults()
@@ -73,6 +85,10 @@ namespace Ampl.Core.Tests
             Assert.IsTrue(runner.ExitCode == 0);
             Assert.IsFalse(runner.IsRunning);
         }
+
+        #endregion
+
+        #region Start
 
         [Test]
         public void Start_Normal_WritesToOutput()
@@ -101,5 +117,7 @@ namespace Ampl.Core.Tests
             string s = runner.Error;
             Assert.IsFalse(string.IsNullOrEmpty(s));
         }
+
+        #endregion
     }
-}
+    }

@@ -22,8 +22,10 @@ namespace Ampl.Core.Tests
         public void Between_Start_Null_equals_empty()
         {
             string argument = "This is a test string";
+
             string result1 = argument.Between(null, "st");
             string result2 = argument.Between("", "st");
+
             Assert.AreEqual(result1, result2);
         }
 
@@ -31,8 +33,10 @@ namespace Ampl.Core.Tests
         public void Between_End_Null_equals_empty()
         {
             string argument = "This is a test string";
+
             string result1 = argument.Between("is", null);
             string result2 = argument.Between("is", "");
+
             Assert.AreEqual(result1, result2);
         }
 
@@ -48,6 +52,7 @@ namespace Ampl.Core.Tests
         public void Between_Start_Found_End_Null()
         {
             string argument = "This is a test string";
+
             string result = argument.Between("This", null);
             Assert.AreEqual(result, " is a test string");
 
@@ -75,6 +80,7 @@ namespace Ampl.Core.Tests
         public void Between_Start_Null_End_Found()
         {
             string argument = "This is a test string";
+
             string result = argument.Between(null, "string");
             Assert.AreEqual(result, "This is a test ");
 
@@ -134,6 +140,7 @@ namespace Ampl.Core.Tests
         public void Between_IncludeStart()
         {
             string argument = "This is a test string.";
+
             string result = argument.Between("is", null, StringBetweenOptions.IncludeStart);
             Assert.AreEqual("is is a test string.", result);
 
@@ -145,6 +152,7 @@ namespace Ampl.Core.Tests
         public void Between_IncludeEnd()
         {
             string argument = "This is a test string.";
+
             string result = argument.Between(null, "test", StringBetweenOptions.IncludeEnd);
             Assert.AreEqual("This is a test", result);
 
@@ -168,8 +176,10 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_All_args_Removes_between_start_end()
         {
             string argument = "This is a test string";
+
             string result1 = argument.RemoveBetween("is", "test");
             string result2 = argument.RemoveBetween("iS", "tESt", StringComparison.CurrentCultureIgnoreCase);
+
             Assert.AreEqual("Th string", result1);
             Assert.AreEqual("Th string", result2);
         }
@@ -178,8 +188,10 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_Start_null_Removes_from_start_of_string()
         {
             string argument = "This is a test string";
+
             string result1 = argument.RemoveBetween(null, "test");
             string result2 = argument.RemoveBetween(null, "Test", StringComparison.CurrentCultureIgnoreCase);
+
             Assert.AreEqual(" string", result1);
             Assert.AreEqual(" string", result2);
         }
@@ -188,8 +200,10 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_End_null_Removes_to_end_of_string()
         {
             string argument = "This is a test string";
+
             string result1 = argument.RemoveBetween("test", null);
             string result2 = argument.RemoveBetween("tEST", null, StringComparison.CurrentCultureIgnoreCase);
+
             Assert.AreEqual("This is a ", result1);
             Assert.AreEqual("This is a ", result2);
         }
@@ -198,8 +212,10 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_End_before_and_after_start_Removes_from_start_to_second_end()
         {
             string argument = "This string is a test string, English characters only.";
+
             string result1 = argument.RemoveBetween("is a", "ing");
             string result2 = argument.RemoveBetween("is A", "ing", StringComparison.CurrentCultureIgnoreCase);
+
             Assert.AreEqual("This string , English characters only.", result1);
             Assert.AreEqual("This string , English characters only.", result2);
         }
@@ -208,9 +224,11 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_Start_or_end_not_found_returns_original()
         {
             string argument = "This is a test string.";
+
             string result1 = argument.RemoveBetween("123", "ing");
             string result2 = argument.RemoveBetween("is", "123");
             string result3 = argument.RemoveBetween("123", "456");
+
             Assert.AreEqual(argument, result1);
             Assert.AreEqual(argument, result2);
             Assert.AreEqual(argument, result3);
@@ -229,8 +247,10 @@ namespace Ampl.Core.Tests
         {
             string argument1 = @"This is a <a href=""some"">test</a> string.";
             string argument2 = @"1st Begin Test One end 2nd bEgin teSt twO End 3rd begin";
+
             string result1 = argument1.RemoveBetween("<", ">");
             string result2 = argument2.RemoveBetween("begin", "end", StringComparison.CurrentCultureIgnoreCase);
+
             Assert.AreEqual("This is a test string.", result1);
             Assert.AreEqual("1st  2nd  3rd begin", result2);
         }
@@ -276,6 +296,7 @@ namespace Ampl.Core.Tests
 </html>";
             string result = argument.RemoveHtmlTags();
             string expected = @"Title one text two text three text four text alert('hello');";
+
             Assert.AreEqual(expected, result);
         }
 
@@ -455,6 +476,7 @@ namespace Ampl.Core.Tests
         public void ToDecimal_Source_Null_returns_default()
         {
             string argument = null;
+
             decimal result1 = argument.ToDecimal();
             Assert.IsTrue(result1 == 0);
 
@@ -475,7 +497,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345,67";
+
             decimal result = argument.ToDecimal();
+
             Assert.IsTrue(result == 12345.67M);
         }
 
@@ -484,7 +508,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345.67";
+
             decimal result = argument.ToDecimal();
+
             Assert.IsTrue(result == 12345.67M);
         }
 
@@ -493,7 +519,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345.67";
+
             decimal result = argument.ToDecimal(1, false);
+
             Assert.IsTrue(result == 1);
         }
 
@@ -530,7 +558,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345,67";
+
             decimal? result = argument.ToNullableDecimal();
+
             Assert.IsTrue(result == 12345.67M);
         }
 
@@ -539,7 +569,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345.67";
+
             decimal? result = argument.ToNullableDecimal();
+
             Assert.IsTrue(result == 12345.67M);
         }
 
@@ -548,7 +580,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "12345.67";
+
             decimal? result = argument.ToNullableDecimal(false);
+
             Assert.IsTrue(result == null);
         }
 
@@ -583,7 +617,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "11.12.2015";
+
             DateTime? result = argument.ToNullableDateTime();
+
             Assert.IsTrue(result == new DateTime(2015, 12, 11));
         }
 
@@ -600,7 +636,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "17:25:01";
+
             DateTime? result = argument.ToNullableDateTime();
+
             Assert.IsTrue(result.Value.TimeOfDay == new TimeSpan(17, 25, 1));
         }
 
@@ -617,7 +655,9 @@ namespace Ampl.Core.Tests
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
             string argument = "7.12.1972 17:25:01";
+
             DateTime? result = argument.ToNullableDateTime();
+
             Assert.IsTrue(result == new DateTime(1972, 12, 7, 17, 25, 1));
         }
 

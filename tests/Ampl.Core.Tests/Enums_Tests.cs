@@ -14,8 +14,11 @@ namespace Ampl.Core.Tests
             Four,
         }
 
+
+        #region Parse
+
         [Test]
-        public void ParseValue_Existing_ReturnsValue()
+        public void Parse_Existing_ReturnsValue()
         {
             var arg = "Two";
             var result = Enums.Parse<TestEnum>(arg);
@@ -23,37 +26,39 @@ namespace Ampl.Core.Tests
         }
 
         [Test]
-        public void ParseValue_LowercaseCaseSensitive_Throws()
+        public void Parse_LowercaseCaseSensitive_Throws()
         {
-            // arrange
             var arg = "two";
-            // act-assert
             Assert.Throws<ArgumentException>(() => Enums.Parse<TestEnum>(arg));
         }
 
         [Test]
-        public void ParseValue_LowercaseIgnoreCase_Returns()
+        public void Parse_LowercaseIgnoreCase_Returns()
         {
             var arg = "two";
-            var result =  Enums.Parse<TestEnum>(arg, true);
+            var result = Enums.Parse<TestEnum>(arg, true);
             Assert.That(result, Is.EqualTo(TestEnum.Two));
         }
 
         [Test]
-        public void ParseValue_NonExistent_Throws()
+        public void Parse_NonExistent_Throws()
         {
             var arg = "abc";
             Assert.Throws<ArgumentException>(() => Enums.Parse<TestEnum>(arg));
         }
 
+        #endregion
+
+
+        #region ParseAsNullable
+
         [Test]
         public void ParseAsNullable_Existing_ReturnsNotNull()
         {
-            // arrange
             var arg = "Two";
-            // act
+
             var result = Enums.ParseAsNullable<TestEnum>(arg);
-            // assert
+
             Assert.That(result, Is.Not.Null);
             Assert.That(result, Is.EqualTo(TestEnum.Two));
         }
@@ -81,5 +86,7 @@ namespace Ampl.Core.Tests
             var result = Enums.ParseAsNullable<TestEnum>(arg, true);
             Assert.That(result, Is.EqualTo(TestEnum.Two));
         }
+
+        #endregion
     }
 }
