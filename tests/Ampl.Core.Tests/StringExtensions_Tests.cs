@@ -700,6 +700,53 @@ namespace Ampl.Core.Tests
 
         #endregion
 
+        #region FastReverse
+
+        [Test]
+        public void FastReverse_Null_ReturnsNull()
+        {
+            string arg = null;
+            string res = arg.FastReverse();
+            Assert.IsNull(res);
+        }
+
+        [Test]
+        public void FastReverse_Empty_ReturnsEmpty()
+        {
+            string arg = string.Empty;
+            string res = arg.FastReverse();
+            Assert.AreEqual(string.Empty, res);
+        }
+
+        [Test]
+        public void FastReverse_English_ReturnsReversed()
+        {
+            string arg = "This is a string";
+            string res = arg.FastReverse();
+            Assert.AreEqual("gnirts a si sihT", res);
+        }
+
+        [Test]
+        public void FastReverse_Russian_ReturnsReversed()
+        {
+            string arg = "Это просто строка";
+            string res = arg.FastReverse();
+            Assert.AreEqual("акортс отсорп отЭ", res);
+        }
+
+        //
+        // http://stackoverflow.com/a/15111719
+        //
+        [Test]
+        public void FastReverse_UnicodePairs_ReturnsDifferentReversed()
+        {
+            string arg = "Les Mise\u0301rablès";
+            string res = arg.FastReverse();
+            Assert.That(res, Is.Not.EqualTo("sèlbare\u0301siM seL"));
+        }
+
+        #endregion
+
         #region CommonPrefixWith
 
         [Test]
@@ -754,6 +801,18 @@ namespace Ampl.Core.Tests
 
             var result = arg.CommonPrefixWith(another);
             var expected = string.Empty;
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void CommonPrefixWith_UnicodePairs_Ignores()
+        {
+            string arg = "Les Mise\u0301rablès";
+            string another = "Les Mise";
+
+            var result = arg.CommonPrefixWith(another);
+            var expected = another;
 
             Assert.That(result, Is.EqualTo(expected));
         }
