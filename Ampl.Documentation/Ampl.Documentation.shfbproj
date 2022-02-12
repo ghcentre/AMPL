@@ -13,7 +13,7 @@
     <RootNamespace>Ampl.Documentation</RootNamespace>
     <Name>Ampl.Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.7.2</FrameworkVersion>
+    <FrameworkVersion>.NET Core/.NET Standard/.NET 5.0+</FrameworkVersion>
     <OutputPath>.\Help\</OutputPath>
     <HtmlHelpName>Ampl.Documentation</HtmlHelpName>
     <Language>en-US</Language>
@@ -34,24 +34,7 @@
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <CleanIntermediates>True</CleanIntermediates>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Identity\bin\Debug\Ampl.Identity.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc\bin\Debug\Ampl.Web.Mvc.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.Authorization\bin\Debug\Ampl.Web.Mvc.Authorization.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.Authorization\bin\Debug\Ampl.Web.Mvc.Authorization.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.SecondaryLogon\bin\Debug\Ampl.Web.Mvc.SecondaryLogon.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Mvc.SecondaryLogon\bin\Debug\Ampl.Web.Mvc.SecondaryLogon.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Optimization\bin\Debug\Ampl.Web.Optimization.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Annotations\bin\Debug\netstandard2.0\Ampl.Annotations.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Annotations\bin\Debug\netstandard2.0\Ampl.Annotations.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\netstandard2.0\Ampl.Configuration.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Configuration\bin\Debug\netstandard2.0\Ampl.Configuration.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\netstandard2.0\Ampl.Core.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Core\bin\Debug\netstandard2.0\Ampl.Core.xml" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Http.Authorization\bin\Debug\Ampl.Web.Http.Authorization.dll" />
-      <DocumentationSource sourceFile="..\Ampl.Web.Http.Authorization\bin\Debug\Ampl.Web.Http.Authorization.xml" />
+      <DocumentationSource sourceFile="..\Ampl.Core\Ampl.Core.csproj" />
     </DocumentationSources>
     <PlugInConfigurations>
       <PlugInConfig id="Assembly Binding Redirection" enabled="True">
@@ -68,7 +51,7 @@
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>
-    <SyntaxFilters>Standard</SyntaxFilters>
+    <SyntaxFilters>C#, Visual Basic, F#</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -79,7 +62,7 @@
     <FooterText>
     </FooterText>
     <CopyrightHref>https://projects.ghcentre.com/ampl/license/</CopyrightHref>
-    <CopyrightText>Copyright 2014-2018 GHCentre.</CopyrightText>
+    <CopyrightText>Copyright 2014-2022 GHCentre.</CopyrightText>
     <FeedbackEMailAddress>developers%40ghcentre.com</FeedbackEMailAddress>
     <FeedbackEMailLinkText>Feedback</FeedbackEMailLinkText>
   </PropertyGroup>

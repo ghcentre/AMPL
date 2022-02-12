@@ -8,7 +8,7 @@
     <Product>GHCentre Advanced Multi-Purpose Library</Product>
     <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
     <Authors>GHCentre</Authors>
-    <Copyright>Copyright © 2014-2021 George Harder's Centre.</Copyright>
+    <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
     <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
     <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
     <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\Ampl.Core.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard2.1\Ampl.Core.xml</DocumentationFile>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NETSTANDARD1_4</DefineConstants>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>

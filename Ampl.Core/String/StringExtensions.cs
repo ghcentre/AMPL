@@ -17,30 +17,32 @@ namespace Ampl.Core
         /// </summary>
         /// <param name="source">The string to retrieve substring from.</param>
         /// <param name="start">The substring in the source string that is used as the start of resulting substring.
-        /// If the parameter is <see langword="null"/> or empty string value,
-        /// the substring is retrieved from the start of the source string.</param>
+        /// If the parameter is <see langword="null"/> or empty string value, the substring is retrieved from the start
+        /// of the source string.</param>
         /// <param name="end">The substring in the source string that is used as the end of resulting substring.
-        /// If the parameter is <see langword="null"/> or empty string value,
-        /// the substring is retrieved until the end of the source string.</param>
+        /// If the parameter is <see langword="null"/> or empty string value, the substring is retrieved until the end
+        /// of the source string.</param>
         /// <param name="options">The <see cref="StringBetweenOptions"/> enumerations that specifies various options.
         /// The default value is <see cref="StringBetweenOptions.None"/>.</param>
-        /// <param name="comparison">The <see cref="StringComparison"/> enumerations that specifies string comparison
-        /// options. The default value is <see cref="StringComparison.CurrentCulture"/>.</param>
+        /// <param name="comparison">The <see cref="StringComparison"/> enumerations that specifies string comparison options.
+        /// The default value is <see cref="StringComparison.CurrentCulture"/>.</param>
         /// <returns>
-        /// <para>A string that is equivalent to substring that begins at position of the <b>start</b> substring and
-        /// ends at position of the <b>end</b> substring.</para>
+        /// <para>A string that is equivalent to substring that begins at position of the <paramref name="start"/> substring
+        /// and ends at position of the <paramref name="end"/> substring.</para>
         /// <para><em>-or-</em></para>
-        /// <para>the empty string.</para>
+        /// <para>the empty string ("").</para>
         /// <para><i>See the remarks section.</i></para>
         /// </returns>
         /// <remarks>
-        /// <para>This method returns the substring of the string specified in <b>source</b>. The start and end positions
-        /// of the substring are the positions of the <b>start</b> and <b>end</b> substrings in the source string.</para>
+        /// <para>This method returns the substring of the string specified in <paramref name="source"/>.
+        /// The start and end positions of the substring are the positions of the <paramref name="start"/> and <paramref name="end"/>
+        /// substrings in the source string.</para>
         /// <para>If <i>one</i> of the <b>start</b> and <b>end</b> substrings is <i>not found</i> in the source string,
         /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag. If it is set,
-        /// the copy of the input string is returned, otherwise, an empty string.
-        /// See the <see cref="StringBetweenOptions"/> enumeration for information about other options.
-        /// </para>
+        /// the copy of the input string is returned, otherwise, an empty string ("").</para>
+        /// <para>See the <see cref="StringBetweenOptions"/> enumeration for information about other options.</para>
+        /// <seealso cref="StringBetweenOptions"/>
+        /// <seealso cref="RemoveBetween(string, string, string, StringComparison)"/>
         /// </remarks>
         /// <example>
         /// The following code demonstrates usage of the <b>Between</b> method:
@@ -445,6 +447,45 @@ namespace Ampl.Core
 
         /// <summary>
         /// Returns a copy of the source string with characters reversed.
+        /// This method is faster than <see cref="Reverse(string)"/>
+        /// but does not process Unicode surrogate pairs correctly.
+        /// </summary>
+        /// <param name="source">The source string.</param>
+        /// <returns>The copy of the <paramref name="source"/> with characters reversed.</returns>
+        /// <remarks>
+        /// <para>Unicode surrogate pairs are <b>not</b> processed correctly.</para>
+        /// <para>This methos should be used if sure that the string specified in <paramref name="source"/> does not contain
+        /// Unicode surrogate pairs.</para>
+        /// <para>Alternatively, the caller should normalize Unicode strings.
+        /// See the <see cref="string.Normalize()"/> method.</para>
+        /// </remarks>
+        public static string FastReverse(this string source)
+        {
+            if (string.IsNullOrEmpty(source))
+            {
+                return source;
+            }
+
+            int length = source.Length;
+            int halfLength = source.Length / 2;
+            char[] chars = source.ToCharArray();
+
+            for (int i = 0; i < halfLength; i++)
+            {
+                int revIndex = length - i - 1;
+                char temp = chars[i];
+                chars[i] = chars[revIndex];
+                chars[revIndex] = temp;
+            }
+
+            string result = new string(chars);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns a copy of the source string with characters reversed.
+        /// This method is slower than <see cref="FastReverse(string)"/>
+        /// but processes Unicode surrogate pairs correctly.
         /// </summary>
         /// <param name="source">The source string.</param>
         /// <returns>The copy of the <paramref name="source"/> with characters reversed.</returns>
@@ -485,10 +526,13 @@ namespace Ampl.Core
         /// <para>If the string specified in the <paramref name="anotherValue"/> is <see langword="null"/> or an empty string,
         /// or the strings do not own a common prefix, the method returns an empty string.</para>
         /// </returns>
+        /// <remarks>The method ignores Unicode surrogate pairs.
+        /// The caller should use normalized Unicode strings.
+        /// See the <see cref="string.Normalize()"/> method.</remarks>
         /// <example>
         /// <code>
         /// string filePath = @"C:\Windows\System32\library.dll";
-        /// string anotherPath = @"C:\Windows\System32\anotherlibrary.dll";
+        /// string anotherPath = @"C:s\Windows\System32\anotherlibrary.dll";
         /// string commonPath = filePath.CommonPrefixWith(anotherPath); // returns "C:\Windows\System32\"
         /// </code>
         /// </example>
