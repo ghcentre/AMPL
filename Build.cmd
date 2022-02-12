@@ -206,7 +206,7 @@ if /%2/==// (
         
         if /%2/==/net/ (
             echo [BuildProject] Building ^(net^) '%1'.
-            msbuild /t:build /p:VersionAssembly=%Version% %MsbuildParams%
+            msbuild /t:build /p:VersionAssembly=%VersionDigits% %MsbuildParams%
             if errorlevel 1 (
                 echo [BuildProject] ERROR: Error building ^(net^) '%1'.
                 endlocal & exit /b 1
@@ -215,7 +215,7 @@ if /%2/==// (
 
         if /%2/==/core/ (
             echo [BuildProject] Building ^(core^) '%1'.
-            msbuild /t:build /p:Version=%Version% /p:AssemblyVersion=%Version% /p:FileVersion=%Version% %MsbuildParams%
+            msbuild /t:build /p:Version=%VersionDigits% /p:AssemblyVersion=%VersionDigits% /p:FileVersion=%VersionDigits% %MsbuildParams%
             if errorlevel 1 (
                 echo [BuildProject] ERROR: Error building ^(core^) for '%1'.
                 endlocal & exit /b 1
@@ -282,7 +282,7 @@ if /%2/==// (
     rem Sets variables.
     rem
 
-    set MsbuildPath="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin"
+    set MsbuildPath="C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin"
     path "%~dp0";%MsbuildPath%;%PATH%
 
     set PrivateRepoParamsFile=%~sdp0privaterepositoryparams.txt
@@ -290,6 +290,9 @@ if /%2/==// (
 
     set VersionFile=%~sdp0version.txt
     for /f "eol=# tokens=* delims=" %%i in (%VersionFile%) do set Version=%%i
+
+    set VersionDigits=%Version%
+    if not /%VersionDigits:-alpha=%/==/%VersionDigits%/ set VersionDigits=%Version:-alpha=%
 
     set MsbuildParamsFile=%~sdp0msbuildparams.txt
     set MsbuildParams=

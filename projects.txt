@@ -15,7 +15,7 @@
 #   Dependencies in build order
 #
 
-Ampl.Core                     netstandard20
+Ampl.Core                     netstandard21
 
 Ampl.Annotations              netstandard20
 
