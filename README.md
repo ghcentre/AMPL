@@ -12,7 +12,7 @@ A collection of classes intended to speed-up console, web, and mobile developmen
 
 ## What's New in v5
 
-1. All .NET Standard projects now target
+1. All .NET Standard projects now target version 2.1
 
 
 ## About AMPL

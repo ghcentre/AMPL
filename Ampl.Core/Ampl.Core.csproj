@@ -1,60 +1,61 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>Ampl.Core</RootNamespace>
-    <Version>0.0.0</Version>
-    <Company>GHCentre</Company>
-    <Product>GHCentre Advanced Multi-Purpose Library</Product>
-    <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
-    <Authors>GHCentre</Authors>
-    <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
-    <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
-    <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
-    <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
-    <PackageTags>ghcentre ampl core portable netstandard</PackageTags>
-    <NeutralLanguage>en</NeutralLanguage>
-    <FileVersion>0.0.0</FileVersion>
-    <AssemblyVersion>0.0.0</AssemblyVersion>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <EnableNETAnalyzers>True</EnableNETAnalyzers>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <RootNamespace>Ampl.Core</RootNamespace>
+        <Version>0.0.0</Version>
+        <Company>GHCentre</Company>
+        <Product>GHCentre Advanced Multi-Purpose Library</Product>
+        <Description>AMPL .NET Standard compatible core with a set of classes common to all frameworks.</Description>
+        <Authors>GHCentre</Authors>
+        <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
+        <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
+        <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
+        <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
+        <PackageTags>ghcentre ampl core portable netstandard</PackageTags>
+        <NeutralLanguage>en</NeutralLanguage>
+        <FileVersion>0.0.0</FileVersion>
+        <AssemblyVersion>0.0.0</AssemblyVersion>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.1\Ampl.Core.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NETSTANDARD1_4</DefineConstants>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <DebugType>full</DebugType>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DocumentationFile>bin\Debug\netstandard2.1\Ampl.Core.xml</DocumentationFile>
+        <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NETSTANDARD1_4</DefineConstants>
+        <RunCodeAnalysis>false</RunCodeAnalysis>
+        <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+        <DebugType>full</DebugType>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Remove="Messages.ru.resx" />
-  </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Remove="Messages.ru.resx" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Messages.ru.resx">
-      <Generator></Generator>
-      <CustomToolNamespace></CustomToolNamespace>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="Messages.ru.resx">
+            <Generator></Generator>
+            <CustomToolNamespace></CustomToolNamespace>
+        </None>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Messages.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Messages.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Messages.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Messages.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Messages.resx">
-      <CustomToolNamespace></CustomToolNamespace>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Messages.resx">
+            <CustomToolNamespace></CustomToolNamespace>
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
 
 </Project>

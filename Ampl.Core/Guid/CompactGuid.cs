@@ -1,39 +1,37 @@
-﻿using Ampl.Core;
-using System;
+﻿using System;
 
-namespace Ampl.Core
+namespace Ampl.Core;
+
+/// <summary>
+/// Contains a set of <see langword="static"/> methots that converts the <see cref="Guid"/> compact string representation
+/// to the Guid instance.
+/// </summary>
+public static class CompactGuid
 {
+    private const int _shortGuidLength = 22;
+    private const string _terminator = "==";
+
     /// <summary>
-    /// Contains a set of <see langword="static"/> methots that converts the <see cref="Guid"/> compact string representation
-    /// to the Guid instance.
+    /// Converts the compact string representation of a GUID to the equivalent <see cref="Guid"/> structure.
     /// </summary>
-    public static class CompactGuid
+    /// <param name="stringValue">The string to convert.</param>
+    /// <returns>A structure that contains the value that was parsed.</returns>
+    /// <exception cref="ArgumentNullException">Input is <see langword="null"/>.</exception>
+    /// <exception cref="FormatException">Input is not in a recognized format.</exception>
+    public static Guid Parse(string stringValue)
     {
-        private const int _shortGuidLength = 22;
-        private const string _terminator = "==";
+        Guard.Against.Null(stringValue, nameof(stringValue));
 
-        /// <summary>
-        /// Converts the compact string representation of a GUID to the equivalent <see cref="Guid"/> structure.
-        /// </summary>
-        /// <param name="stringValue">The string to convert.</param>
-        /// <returns>A structure that contains the value that was parsed.</returns>
-        /// <exception cref="ArgumentNullException">Input is <see langword="null"/>.</exception>
-        /// <exception cref="FormatException">Input is not in a recognized format.</exception>
-        public static Guid Parse(string stringValue)
+        if (stringValue.Length != _shortGuidLength)
         {
-            Guard.Against.Null(stringValue, nameof(stringValue));
-
-            if (stringValue.Length != _shortGuidLength)
-            {
-                throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
-            }
-
-            string value = stringValue.Replace("-", "+").Replace("_", "/") + _terminator;
-
-            byte[] bytes = Convert.FromBase64String(value);
-            var guid = new Guid(bytes);
-
-            return guid;
+            throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
         }
+
+        string value = stringValue.Replace("-", "+").Replace("_", "/") + _terminator;
+
+        byte[] bytes = Convert.FromBase64String(value);
+        var guid = new Guid(bytes);
+
+        return guid;
     }
 }
