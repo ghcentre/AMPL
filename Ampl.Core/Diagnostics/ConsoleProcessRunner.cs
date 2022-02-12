@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 
-namespace Ampl.Diagnostics
+namespace Ampl.Core
 {
     /// <summary>
     /// Starts a console process and captures its output and error streams.
@@ -49,6 +49,7 @@ namespace Ampl.Diagnostics
         /// <summary>
         /// Gets or sets the properties to pass to the Start method of the Process
         /// </summary>
+        /// <value>The <see cref="ProcessStartInfo"/> object.</value>
         public ProcessStartInfo StartInfo { get; set; }
 
         /// <summary>
@@ -109,53 +110,53 @@ namespace Ampl.Diagnostics
         /// <summary>
         /// Gets the value indicating whether the process is running.
         /// </summary>
-        /// <value><c>true</c> if the process is still running or <c>false</c> otherwise.</value>
+        /// <value><see langword="true"/> if the process is still running or <see langword="false"/> otherwise.</value>
         public bool IsRunning { get; private set; }
 
         /// <summary>
-        /// Start the process and waits for it to exit.
+        /// Starts the process and waits for its exit.
         /// </summary>
         /// <remarks>
-        /// <para>The method is not thread-safe.</para>
-        /// <para>Calling <b>Start</b> from another thread when <b>IsRunning</b>
-        /// is <see langword="true"/> produces unexpected results.</para>
+        /// <para>The method is <b>not</b> thread-safe.</para>
+        /// <para>Calling <see cref="Start"/> from another thread when <see cref="IsRunning"/> is <see langword="true"/>
+        /// produces unexpected results.</para>
+        /// <para>The method sets the code page for standard output and standard error to the OEM code page
+        /// (<c>CultureInfo.CurrentCulture.TextInfo.OEMCodePage</c>) which is may not available on all platforms.</para>
         /// </remarks>
         public void Start()
         {
-            using (var process = new Process())
+            using var process = new Process();
+
+            _error = new StringBuilder();
+            _output = new StringBuilder();
+            _outputAndError = new StringBuilder();
+
+            process.StartInfo = StartInfo;
+            process.StartInfo.UseShellExecute = false;
+
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
+
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
+
+            process.OutputDataReceived += new DataReceivedEventHandler(OutputDataReceived);
+            process.ErrorDataReceived += new DataReceivedEventHandler(ErrorDataReceived);
+
+            process.Start();
+            IsRunning = true;
+
+            try
             {
-                _error = new StringBuilder();
-                _output = new StringBuilder();
-                _outputAndError = new StringBuilder();
+                process.BeginErrorReadLine();
+                process.BeginOutputReadLine();
 
-                process.StartInfo = StartInfo;
-                process.StartInfo.UseShellExecute = false;
-
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.StandardOutputEncoding =
-                  Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
-
-                process.StartInfo.RedirectStandardError = true;
-                process.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
-
-                process.OutputDataReceived += new DataReceivedEventHandler(OutputDataReceived);
-                process.ErrorDataReceived += new DataReceivedEventHandler(ErrorDataReceived);
-
-                process.Start();
-                IsRunning = true;
-
-                try
-                {
-                    process.BeginErrorReadLine();
-                    process.BeginOutputReadLine();
-
-                    process.WaitForExit();
-                    ExitCode = process.ExitCode;
-                }
-                finally
-                {
-                    IsRunning = false;
-                }
+                process.WaitForExit();
+                ExitCode = process.ExitCode;
+            }
+            finally
+            {
+                IsRunning = false;
             }
         }
 
