@@ -3,6 +3,9 @@ using System;
 using System.Globalization;
 using System.Threading;
 
+using SBO = Ampl.Core.StringBetweenOptions;
+using SC = System.StringComparison;
+
 namespace Ampl.Core.Tests
 {
     [TestFixture]
@@ -10,154 +13,51 @@ namespace Ampl.Core.Tests
     {
         #region Between
 
-        [Test]
-        public void Between_Source_Null_returns_null()
+        // null or empty source -> return source
+        [TestCase(null,                     "any", "str",   null,                   SBO.None, SC.CurrentCulture)]
+        [TestCase("",                       "any", "str",   "",                     SBO.None, SC.CurrentCulture)]
+        // null or empty start and/or end -> return source
+        [TestCase("01234567890123456789",   null,   null,   "01234567890123456789", SBO.None, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "",     null,   "01234567890123456789", SBO.None, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   null,   "",     "01234567890123456789", SBO.None, SC.CurrentCulture)]
+        // return non-greedy from start to end
+        [TestCase("01234567890123456789",   "23",   "89",   "4567",                 SBO.None, SC.CurrentCulture)]
+        // return non-greedy from start (including) to end (including)
+        [TestCase("01234567890123456789",   "23",   "89",   "234567",               SBO.IncludeStart, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "23",   "89",   "456789",               SBO.IncludeEnd, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "23",   "89",   "23456789",             SBO.IncludeStartEnd, SC.CurrentCulture)]
+        // one of non-empty start/end not found -> return "" or source depending on options
+        [TestCase("01234567890123456789",   "ab",   "89",   "",                     SBO.None, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "ab",   "89",   "01234567890123456789", SBO.FallbackToSource, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "23",   "bc",   "",                     SBO.None, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "23",   "bc",   "01234567890123456789", SBO.FallbackToSource, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "ab",   "bc",   "",                     SBO.None, SC.CurrentCulture)]
+        [TestCase("01234567890123456789",   "ab",   "bc",   "01234567890123456789", SBO.FallbackToSource, SC.CurrentCulture)]
+        // end before start -> ""
+        [TestCase("0123456789",             "45",   "12",   "",                     SBO.None, SC.CurrentCulture)]
+        // second end after start -> substring
+        [TestCase("01234567890123456789",   "45",   "12",   "67890",                SBO.None, SC.CurrentCulture)]
+        // start and end overlap -> ""
+        [TestCase("0123456789",             "234",  "345",  "",                     SBO.None, SC.CurrentCulture)]
+        // end until end of source -> in range
+        [TestCase("0123456789",             "012",  "789",  "3456789",              SBO.IncludeEnd, SC.CurrentCulture)]
+        // consecutive start-end -> "" or source depending on options
+        [TestCase("01234567890123456789",   "12",   "34",   "",                     SBO.None, SC.CurrentCulture)]
+        // case sensitive comparison
+        [TestCase("abcdefgabcdefg",         "Bc",   "ef",   "",                     SBO.IncludeStartEnd, SC.CurrentCulture)]
+        // case insensitive comparison
+        [TestCase("abcdefgabcdefg",         "Bc",   "ef",   "bcdef",                SBO.IncludeStartEnd, SC.CurrentCultureIgnoreCase)]
+        // case insensitive comparison and start equals end -> searches for end from end-of-start
+        [TestCase("abcdefgabcdefg",         "dE",   "de",   "fgabc",                SBO.None, SC.CurrentCultureIgnoreCase)]
+        public void Between_Returns_Expected(string source,
+                                             string start,
+                                             string end,
+                                             string expected,
+                                             StringBetweenOptions options,
+                                             StringComparison comparison)
         {
-            string argument = null;
-            string result = argument.Between("start", "end");
-            Assert.IsNull(result);
-        }
-
-        [Test]
-        public void Between_Start_Null_equals_empty()
-        {
-            string argument = "This is a test string";
-
-            string result1 = argument.Between(null, "st");
-            string result2 = argument.Between("", "st");
-
-            Assert.AreEqual(result1, result2);
-        }
-
-        [Test]
-        public void Between_End_Null_equals_empty()
-        {
-            string argument = "This is a test string";
-
-            string result1 = argument.Between("is", null);
-            string result2 = argument.Between("is", "");
-
-            Assert.AreEqual(result1, result2);
-        }
-
-        [Test]
-        public void Between_Start_and_End_both_empty_returns_source()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between(null, null);
-            Assert.AreEqual(result, argument);
-        }
-
-        [Test]
-        public void Between_Start_Found_End_Null()
-        {
-            string argument = "This is a test string";
-
-            string result = argument.Between("This", null);
-            Assert.AreEqual(result, " is a test string");
-
-            string result2 = argument.Between("is", null);
-            Assert.AreEqual(result2, " is a test string");
-        }
-
-        [Test]
-        public void Between_Start_NotFound_NotKeep_Returns_Empty()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("NotExist", null);
-            Assert.AreEqual(result, string.Empty);
-        }
-
-        [Test]
-        public void Between_Start_NotFound_Keep_Returns_Same()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("NotExist", null, StringBetweenOptions.FallbackToSource);
-            Assert.AreEqual(result, argument);
-        }
-
-        [Test]
-        public void Between_Start_Null_End_Found()
-        {
-            string argument = "This is a test string";
-
-            string result = argument.Between(null, "string");
-            Assert.AreEqual(result, "This is a test ");
-
-            string result2 = argument.Between(null, "st");
-            Assert.AreEqual(result2, "This is a te");
-        }
-
-        [Test]
-        public void Between_End_NotFound_NotKeep_Returns_Empty()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between(null, "NotExist");
-            Assert.AreEqual(result, string.Empty);
-        }
-
-        [Test]
-        public void Between_End_NotFound_Keep_Returns_Same()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between(null, "NotExist", StringBetweenOptions.FallbackToSource);
-            Assert.AreEqual(result, argument);
-        }
-
-        [Test]
-        public void Between_Start_End_Found()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("is", "st");
-            Assert.AreEqual(result, " is a te");
-        }
-
-        [Test]
-        public void Between_Start_NotFound_End_Found()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("Hello", "st", StringBetweenOptions.FallbackToSource);
-            Assert.AreEqual(result, "This is a te");
-        }
-
-        [Test]
-        public void Between_Start_NotFound_End_NotFound()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("1", "2", StringBetweenOptions.FallbackToSource);
-            Assert.AreEqual(result, argument);
-        }
-
-        [Test]
-        public void Between_IgnoreCase()
-        {
-            string argument = "This is a test string";
-            string result = argument.Between("THIS", "InG", StringBetweenOptions.FallbackToSource, StringComparison.CurrentCultureIgnoreCase);
-            Assert.AreEqual(result, " is a test str");
-        }
-
-        [Test]
-        public void Between_IncludeStart()
-        {
-            string argument = "This is a test string.";
-
-            string result = argument.Between("is", null, StringBetweenOptions.IncludeStart);
-            Assert.AreEqual("is is a test string.", result);
-
-            string result2 = argument.Between("is", "st", StringBetweenOptions.IncludeStart);
-            Assert.AreEqual("is is a te", result2);
-        }
-
-        [Test]
-        public void Between_IncludeEnd()
-        {
-            string argument = "This is a test string.";
-
-            string result = argument.Between(null, "test", StringBetweenOptions.IncludeEnd);
-            Assert.AreEqual("This is a test", result);
-
-            string result2 = argument.Between("is", "st", StringBetweenOptions.IncludeEnd);
-            Assert.AreEqual(" is a test", result2);
+            var result = source.Between(start, end, options, comparison);
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         #endregion

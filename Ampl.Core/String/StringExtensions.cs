@@ -17,7 +17,7 @@ public static class StringExtensions
     /// </summary>
     /// <param name="source">The string to retrieve substring from.</param>
     /// <param name="start">The substring in the source string that is used as the start of resulting substring.
-    /// If the parameter is <see langword="null"/> or empty string value, the substring is retrieved from the start
+    /// If the parameter is <see langword="null"/> or empty string (""), the substring is retrieved from the start
     /// of the source string.</param>
     /// <param name="end">The substring in the source string that is used as the end of resulting substring.
     /// If the parameter is <see langword="null"/> or empty string value, the substring is retrieved until the end
@@ -30,16 +30,16 @@ public static class StringExtensions
     /// <para>A string that is equivalent to substring that begins at position of the <paramref name="start"/> substring
     /// and ends at position of the <paramref name="end"/> substring.</para>
     /// <para><em>-or-</em></para>
-    /// <para>the empty string ("").</para>
+    /// <para>an empty string ("").</para>
     /// <para><i>See the remarks section.</i></para>
     /// </returns>
     /// <remarks>
     /// <para>This method returns the substring of the string specified in <paramref name="source"/>.
     /// The start and end positions of the substring are the positions of the <paramref name="start"/> and <paramref name="end"/>
     /// substrings in the source string.</para>
-    /// <para>If <i>one</i> of the <b>start</b> and <b>end</b> substrings is <i>not found</i> in the source string,
-    /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag. If it is set,
-    /// the copy of the input string is returned, otherwise, an empty string ("").</para>
+    /// <para>If the non-empty <c>start</c>, or non-empty <c>end</c>, or both substrings are <i>not</i> found  in the source string,
+    /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag.
+    /// If it is set, the original string is returned, otherwise, an empty string ("").</para>
     /// <para>See the <see cref="StringBetweenOptions"/> enumeration for information about other options.</para>
     /// <seealso cref="StringBetweenOptions"/>
     /// <seealso cref="RemoveBetween(string, string, string, StringComparison)"/>
@@ -65,68 +65,42 @@ public static class StringExtensions
                                   StringBetweenOptions options = StringBetweenOptions.None,
                                   StringComparison comparison = StringComparison.CurrentCulture)
     {
-        if (source == null)
-        {
-            return null;
-        }
-
-        start ??= string.Empty;
-        end ??= string.Empty;
-
-        if (start.Length == 0 && end.Length == 0)
+        if (string.IsNullOrEmpty(source))
         {
             return source;
         }
+        
+        start ??= string.Empty;
+        end ??= string.Empty;
 
-        int startPosition = 0;
+        static bool IsEmpty(string s) => s.Length == 0;
+        static bool Found(int position) => position != -1;
+        static bool ShouldIncludeStart(StringBetweenOptions o) =>
+            (o & StringBetweenOptions.IncludeStart) == StringBetweenOptions.IncludeStart;
+        static bool ShouldIncludeEnd(StringBetweenOptions o) =>
+            (o & StringBetweenOptions.IncludeEnd) == StringBetweenOptions.IncludeEnd;
+        static bool ShouldFallbackToSource(StringBetweenOptions o) =>
+            (o & StringBetweenOptions.FallbackToSource) == StringBetweenOptions.FallbackToSource;
 
-        if (start.Length > 0)
+        int startPosition = IsEmpty(start) ? 0 : source.IndexOf(start, comparison);
+        if (!Found(startPosition))
         {
-            startPosition = source.IndexOf(start, comparison);
-            if (startPosition == -1)
-            {
-                if ((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
-                {
-                    return string.Empty;
-                }
+            return ShouldFallbackToSource(options) ? source : string.Empty;
+        }
+        startPosition += start.Length;
 
-                startPosition = 0;
-            }
-            else
-            {
-                if ((options & StringBetweenOptions.IncludeStart) != StringBetweenOptions.IncludeStart)
-                {
-                    startPosition += start.Length;
-                }
-            }
+        int endPosition = IsEmpty(end) ? source.Length : source.IndexOf(end, startPosition, comparison);
+        if (!Found(endPosition))
+        {
+            return ShouldFallbackToSource(options) ? source : string.Empty;
         }
 
-        int endPosition = source.Length;
+        startPosition = ShouldIncludeStart(options) ? startPosition - start.Length : startPosition;
+        endPosition = ShouldIncludeEnd(options) ? endPosition + end.Length : endPosition;
 
-        if (end.Length > 0)
-        {
-            endPosition = source.IndexOf(end, startPosition, comparison);
-            if (endPosition == -1)
-            {
-                if ((options & StringBetweenOptions.FallbackToSource) != StringBetweenOptions.FallbackToSource)
-                {
-                    return string.Empty;
-                }
-
-                endPosition = source.Length;
-            }
-            else
-            {
-                if ((options & StringBetweenOptions.IncludeEnd) == StringBetweenOptions.IncludeEnd)
-                {
-                    endPosition += end.Length;
-                }
-            }
-        }
-
-        int copyLength = endPosition - startPosition;
-        string substring = source.Substring(startPosition, copyLength);
-
+        int length = endPosition - startPosition;
+        
+        string substring = source.Substring(startPosition, length);
         return substring;
     }
 
