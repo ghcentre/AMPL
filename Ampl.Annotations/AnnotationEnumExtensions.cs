@@ -40,6 +40,21 @@ public static class AnnotationEnumExtensions
         return GetFirstDisplayAttribute(source)?.GetDescription();
     }
 
+    /// <summary>
+    /// Gets the <see cref="DisplayAttribute.ShortName"/> property of the <see cref="DisplayAttribute"/> attached
+    /// to the enum value.
+    /// </summary>
+    /// <param name="source">The enum value.</param>
+    /// <returns>
+    /// <para>The contents of the <c>ShortName</c> property of the first <see cref="DisplayAttribute"/>
+    /// attached to the enum value.</para>
+    /// <para>If there is no attribute, the method returns <see langword="null"/>.</para>
+    /// </returns>
+    public static string? GetDisplayShortName(this Enum source)
+    {
+        return GetFirstDisplayAttribute(source)?.GetShortName();
+    }
+
 
     private static DisplayAttribute? GetFirstDisplayAttribute(Enum source)
     {

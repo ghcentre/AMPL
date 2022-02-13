@@ -123,4 +123,7 @@
   <data name="String2" xml:space="preserve">
     <value>String2 value</value>
   </data>
+  <data name="String3" xml:space="preserve">
+    <value>String3 value</value>
+  </data>
 </root>

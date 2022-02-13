@@ -77,5 +77,14 @@ namespace Ampl.Annotations.Tests {
                 return ResourceManager.GetString("String2", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String3 value.
+        /// </summary>
+        public static string String3 {
+            get {
+                return ResourceManager.GetString("String3", resourceCulture);
+            }
+        }
     }
 }
