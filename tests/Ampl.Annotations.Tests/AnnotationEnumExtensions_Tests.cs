@@ -16,7 +16,7 @@ namespace Ampl.Annotations.Tests
 
             Three,
 
-            [Display(ResourceType = typeof(Properties.Resources), Name = "String1", Description = "String2")]
+            [Display(ResourceType = typeof(Resources), Name = "String1", Description = "String2")]
             Four,
         }
 

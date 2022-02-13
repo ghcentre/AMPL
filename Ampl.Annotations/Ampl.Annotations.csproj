@@ -1,32 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
-    <RootNamespace>Ampl.System</RootNamespace>
-    <Version>0.0.0</Version>
-    <Authors>GHCentre</Authors>
-    <Company>GHCentre</Company>
-    <Product>GHCentre Advanced Multi-Purpose Library</Product>
-    <Description>AMPL Extensions for Component Metadata Annotations</Description>
-    <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
-    <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
-    <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
-    <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
-    <PackageTags>ghcentre ampl annotations metadata</PackageTags>
-    <AssemblyVersion>0.0.0</AssemblyVersion>
-    <FileVersion>0.0.0</FileVersion>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <LangVersion>7.3</LangVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>Ampl.Annotations.snk</AssemblyOriginatorKeyFile>
+        <RootNamespace>Ampl.Annotations</RootNamespace>
+        <Version>0.0.0</Version>
+        <Authors>GHCentre</Authors>
+        <Company>GHCentre</Company>
+        <Product>GHCentre Advanced Multi-Purpose Library</Product>
+        <Description>AMPL Extensions for Component Metadata Annotations</Description>
+        <Copyright>Copyright © 2014-2022 George Harder's Centre.</Copyright>
+        <PackageLicenseUrl>https://projects.ghcentre.com/ampl/license/</PackageLicenseUrl>
+        <PackageProjectUrl>https://projects.ghcentre.com/ampl/</PackageProjectUrl>
+        <PackageIconUrl>https://projects.ghcentre.com/ampl/icon/</PackageIconUrl>
+        <PackageTags>ghcentre ampl annotations metadata</PackageTags>
+        <AssemblyVersion>0.0.0</AssemblyVersion>
+        <FileVersion>0.0.0</FileVersion>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.1\Ampl.Annotations.xml</DocumentationFile>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DocumentationFile>bin\Debug\netstandard2.1\Ampl.Annotations.xml</DocumentationFile>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    </ItemGroup>
 
 </Project>
