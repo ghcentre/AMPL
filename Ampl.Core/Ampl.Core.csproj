@@ -21,6 +21,7 @@
         <AssemblyOriginatorKeyFile>Ampl.Core.snk</AssemblyOriginatorKeyFile>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <EnableNETAnalyzers>True</EnableNETAnalyzers>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

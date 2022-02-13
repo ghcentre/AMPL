@@ -52,7 +52,7 @@ public static class DictionaryExtensions
 
         foreach (var item in dict)
         {
-            dictionary[item.Key] = item.Value;
+            dictionary[item.Key!] = item.Value;
         }
 
         return dictionary;

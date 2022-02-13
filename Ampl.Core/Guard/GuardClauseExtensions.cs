@@ -21,9 +21,9 @@ public static class GuardClauseExtensions
     /// <exception cref="ArgumentNullException">The input is <see langword="null"/>.</exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T Null<T>(this IGuardClause guard,
-                            T input,
-                            string parameterName,
-                            string message = null)
+                            T? input,
+                            string? parameterName,
+                            string? message = null)
     {
         if (!(input is null))
         {
@@ -55,7 +55,7 @@ public static class GuardClauseExtensions
         //
         if (!string.IsNullOrEmpty(message))
         {
-            throw new ArgumentNullException(message, (Exception)null);
+            throw new ArgumentNullException(message, (Exception)null!);
         }
 
         //
@@ -75,13 +75,16 @@ public static class GuardClauseExtensions
     /// the value of the input.</returns>
     /// <exception cref="ArgumentNullException">The <paramref name="input"/> is <see langword="null"/>.</exception>
     /// <exception cref="ArgumentException">The <paramref name="input"/> is an empty string.</exception>
-    public static string NullOrEmpty(this IGuardClause guard, string input, string parameterName, string message = null)
+    public static string NullOrEmpty(this IGuardClause guard,
+                                     string? input,
+                                     string? parameterName,
+                                     string? message = null)
     {
         string actualMessage = message ?? Messages.ValueCannotBeAnEmptyString;
 
         Guard.Against.Null(input, parameterName, actualMessage);
 
-        if (input.Length > 0)
+        if (input!.Length > 0)
         {
             return input;
         }
@@ -105,7 +108,10 @@ public static class GuardClauseExtensions
     /// the method returns a value of the input.</returns>
     /// <exception cref="ArgumentNullException">The <paramref name="input"/> is <see langword="null"/>.</exception>
     /// <exception cref="ArgumentException">The <paramref name="input"/> is an empty, or white space string.</exception>
-    public static string NullOrWhiteSpace(this IGuardClause guard, string input, string parameterName, string message = null)
+    public static string NullOrWhiteSpace(this IGuardClause guard,
+                                          string? input,
+                                          string? parameterName,
+                                          string? message = null)
     {
         string actualMessage = message ?? Messages.ValueCannotBeAWhiteSpaceString;
 

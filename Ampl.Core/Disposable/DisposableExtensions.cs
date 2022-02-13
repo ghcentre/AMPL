@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ampl.Core;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace Ampl.Core;
@@ -34,14 +35,15 @@ public static class DisposableExtensions
     /// </code>
     /// </example>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static TReturn Use<T, TReturn>(this T obj, Func<T, TReturn> func) where T : class, IDisposable
+    public static TReturn? Use<T, TReturn>(this T? obj, Func<T, TReturn?> func)
+        where T : class, IDisposable
     {
         if (obj == null)
         {
-            return default(TReturn);
+            return default;
         }
 
-        _ = func ?? throw new ArgumentNullException(nameof(func));
+        Guard.Against.Null(func, nameof(func));
 
         using (obj)
         {

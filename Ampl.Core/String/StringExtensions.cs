@@ -59,11 +59,11 @@ public static class StringExtensions
     /// }
     /// </code>
     /// </example>
-    public static string Between(this string source,
-                                 string start,
-                                 string end,
-                                 StringBetweenOptions options = StringBetweenOptions.None,
-                                 StringComparison comparison = StringComparison.CurrentCulture)
+    public static string? Between(this string? source,
+                                  string? start,
+                                  string? end,
+                                  StringBetweenOptions options = StringBetweenOptions.None,
+                                  StringComparison comparison = StringComparison.CurrentCulture)
     {
         if (source == null)
         {
@@ -225,7 +225,7 @@ public static class StringExtensions
     /// <param name="source">The string to test and convert.</param>
     /// <returns><see langword="null" /> if the string in <paramref name="source"/> is <see langword="null" />,
     /// empty or whitespace string, otherwise, the value of <paramref name="source"/>.</returns>
-    public static string ToNullIfWhiteSpace(this string source)
+    public static string? ToNullIfWhiteSpace(this string? source)
     {
         return string.IsNullOrWhiteSpace(source) ? null : source;
     }
@@ -545,7 +545,7 @@ public static class StringExtensions
     /// string commonPath = filePath.CommonPrefixWith(anotherPath); // returns "C:\Windows\System32\"
     /// </code>
     /// </example>
-    public static string CommonPrefixWith(this string value, string anotherValue)
+    public static string? CommonPrefixWith(this string? value, string? anotherValue)
     {
         if (value == null)
         {

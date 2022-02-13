@@ -19,14 +19,14 @@ public static class TypeExtensions
     /// the interface.</returns>                                         
     /// <remarks>The method returns <see langword="null"/> if <paramref name="thisType"/> is null.</remarks>
     /// <exception cref="ArgumentNullException">The <paramref name="interfaceType"/> is <see langword="null"/>.</exception>
-    public static Type ExtractGenericInterface(this Type thisType, Type interfaceType)
+    public static Type? ExtractGenericInterface(this Type? thisType, Type? interfaceType)
     {
         if (thisType == null)
         {
             return null;
         }
 
-        Guard.Against.Null(interfaceType, nameof(interfaceType));
+        interfaceType = Guard.Against.Null(interfaceType, nameof(interfaceType));
 
         if (MatchesGenericTypeDefinition(thisType, interfaceType))
         {

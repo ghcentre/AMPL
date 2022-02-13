@@ -44,13 +44,14 @@ namespace Ampl.Core;
 /// </example>
 public class DisposableBag<T> : IDisposable
 {
-    private readonly Stack<Action> _actions = new Stack<Action>();
+    private readonly Stack<Action> _actions = new();
+
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DisposableBag{T}"/> class.
     /// </summary>
     /// <param name="value">The value to store in the bag.</param>
-    public DisposableBag(T value)
+    public DisposableBag(T? value)
     {
         Value = value;
     }
@@ -62,6 +63,7 @@ public class DisposableBag<T> : IDisposable
     public virtual void Add(Action action)
     {
         Guard.Against.Null(action, nameof(action));
+
         CheckDisposed();
         _actions.Push(action);
     }
@@ -71,7 +73,7 @@ public class DisposableBag<T> : IDisposable
     /// Gets the value stored in the bag.
     /// </summary>
     /// <value>The value stored in the bag.</value>
-    public T Value { get; }
+    public T? Value { get; }
 
 
     /// <summary>

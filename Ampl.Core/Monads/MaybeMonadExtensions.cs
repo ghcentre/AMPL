@@ -58,8 +58,8 @@ public static class MaybeMonadExtensions
     /// <example>
     /// See the <see cref="MaybeMonadExtensions"/> class documentation for the examples.
     /// </example>
-    public static TResult With<TInput, TResult>(this TInput input,
-                                                Func<TInput, TResult> evaluator)
+    public static TResult? With<TInput, TResult>(this TInput? input,
+                                                 Func<TInput, TResult?> evaluator)
     {
         if (input == null)
         {
@@ -143,8 +143,8 @@ public static class MaybeMonadExtensions
     /// <example>
     /// See the <see cref="MaybeMonadExtensions"/> class documentation for the examples.
     /// </example>
-    public static TInput If<TInput>(this TInput input,
-                                    Func<TInput, bool> predicate)
+    public static TInput? If<TInput>(this TInput? input,
+                                     Func<TInput, bool> predicate)
     {
         if (input == null)
         {
@@ -168,8 +168,8 @@ public static class MaybeMonadExtensions
     /// <example>
     /// See the <see cref="MaybeMonadExtensions"/> class documentation for the examples.
     /// </example>
-    public static TInput Do<TInput>(this TInput input,
-                                    Action<TInput> action)
+    public static TInput? Do<TInput>(this TInput? input,
+                                     Action<TInput> action)
     {
         if (input == null)
         {
