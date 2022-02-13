@@ -63,34 +63,6 @@ namespace Ampl.Core.Tests
 
         #endregion
 
-        #region Yield
-
-        [Test]
-        public void Yield_NullThis_ReturnsEnumerableWith1Element()
-        {
-            string arg = null;
-            var result = arg.Yield();
-            Assert.That(result.Count, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void Yield_NullThis_ReturnsEnumerableFirstIsArg()
-        {
-            string arg = null;
-            var result = arg.Yield();
-            Assert.That(result.First(), Is.EqualTo(arg));
-        }
-
-        [Test]
-        public void Yield_NotNullThis_ReturnsEnumerableFirstIsArg()
-        {
-            string arg = "arg";
-            var result = arg.Yield();
-            Assert.That(result.First(), Is.EqualTo(arg));
-        }
-
-        #endregion
-
         #region JoinWith
 
         [Test]

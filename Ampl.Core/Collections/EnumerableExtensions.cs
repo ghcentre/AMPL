@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Ampl.Core;
@@ -8,21 +9,6 @@ namespace Ampl.Core;
 /// </summary>
 public static class EnumerableExtensions
 {
-    /*
-    /// <summary>
-    /// Converts the <see langword="null"/> reference to the <see cref="IEnumerable{T}"/> to the empty enumerable.
-    /// </summary>
-    /// <typeparam name="T">The type of the enumerable to convert.</typeparam>
-    /// <param name="source">The reference to convert.</param>
-    /// <returns>If the reference passed in <paramref name="source"/> is <see langword="null"/>, the method
-    /// returns the empty <see cref="IEnumerable{T}"/>. Otherwise, the method returns the same reference as passed
-    /// in <paramref name="source"/>.</returns>
-    public static IEnumerable<T> ToEmptyIfNull<T>(this IEnumerable<T> source)
-    {
-      return source ?? Enumerable.Empty<T>();
-    }
-    */
-
     /// <summary>
     /// Determines whether an array contains a specified element by using the default equality comparer.
     /// </summary>
@@ -55,6 +41,7 @@ public static class EnumerableExtensions
     /// <typeparam name="T">The type of the value.</typeparam>
     /// <param name="source">The source value.</param>
     /// <returns>The sequence conaining exactly on element of source.</returns>
+    [Obsolete("Use new[] { source }")]
     public static T[] Yield<T>(this T source)
     {
         return new[] { source };
