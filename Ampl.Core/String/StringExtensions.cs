@@ -37,6 +37,8 @@ public static class StringExtensions
     /// <para>This method returns the substring of the string specified in <paramref name="source"/>.
     /// The start and end positions of the substring are the positions of the <paramref name="start"/> and <paramref name="end"/>
     /// substrings in the source string.</para>
+    /// <para>The method performs a <b>non-greedy</b> search; that is, searches for <c>end</c> that is most close to
+    /// (but not before and not overlap with) <c>start</c></para>
     /// <para>If the non-empty <c>start</c>, or non-empty <c>end</c>, or both substrings are <i>not</i> found  in the source string,
     /// the return value depends on the <see cref="StringBetweenOptions.FallbackToSource"/> flag.
     /// If it is set, the original string is returned, otherwise, an empty string ("").</para>

@@ -35,6 +35,7 @@
     <CleanIntermediates>True</CleanIntermediates>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\Ampl.Core\Ampl.Core.csproj" />
+      <DocumentationSource sourceFile="..\Ampl.Annotations\Ampl.Annotations.csproj" />
     </DocumentationSources>
     <PlugInConfigurations>
       <PlugInConfig id="Assembly Binding Redirection" enabled="True">
