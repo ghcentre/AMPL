@@ -10,24 +10,6 @@ namespace Ampl.Annotations;
 /// </summary>
 public static class AnnotationEnumExtensions
 {
-    private static DisplayAttribute GetFirstDisplayAttribute(Enum source)
-    {
-        //return source?.GetType()
-        //              .GetTypeInfo()
-        //              .GetDeclaredField(source.ToString())
-        //              .GetCustomAttributes(typeof(DisplayAttribute), false)
-        //              .Select(x => x as DisplayAttribute)
-        //              .FirstOrDefault();
-
-        return source.GetType()
-            .GetTypeInfo()
-            .DeclaredMembers
-            .First(x => x.Name == source.ToString())
-            .GetCustomAttributes(typeof(DisplayAttribute), false)
-            .Select(x => x as DisplayAttribute)
-            .FirstOrDefault();
-    }
-
     /// <summary>
     /// Gets the <see cref="DisplayAttribute.Name"/> property of the <see cref="DisplayAttribute"/> attached
     /// to the enum value.
@@ -38,7 +20,7 @@ public static class AnnotationEnumExtensions
     /// attached to the enum value.</para>
     /// <para>If there is no attribute, the method returns <see langword="null"/>.</para>
     /// </returns>
-    public static string GetDisplayName(this Enum source)
+    public static string? GetDisplayName(this Enum source)
     {
         return GetFirstDisplayAttribute(source)?.GetName();
     }
@@ -53,9 +35,21 @@ public static class AnnotationEnumExtensions
     /// attached to the enum value.</para>
     /// <para>If there is no attribute, the method returns <see langword="null"/>.</para>
     /// </returns>
-    public static string GetDisplayDescription(this Enum source)
+    public static string? GetDisplayDescription(this Enum source)
     {
         return GetFirstDisplayAttribute(source)?.GetDescription();
+    }
+
+
+    private static DisplayAttribute? GetFirstDisplayAttribute(Enum source)
+    {
+        return source.GetType()
+            .GetTypeInfo()
+            .DeclaredMembers
+            .First(x => x.Name == source.ToString())
+            .GetCustomAttributes(typeof(DisplayAttribute), false)
+            .Select(x => x as DisplayAttribute)
+            .FirstOrDefault();
     }
 }
 
