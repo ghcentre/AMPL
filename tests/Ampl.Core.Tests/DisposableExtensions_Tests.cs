@@ -28,7 +28,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Use_ThisNull_ReturnsDefault()
         {
-            Stream stream = null;
+            Stream? stream = null;
             int result = stream.Use(x => x.ReadByte());
             Assert.That(result, Is.EqualTo(default(int)));
         }
@@ -39,13 +39,13 @@ namespace Ampl.Core.Tests
             // arrange
             Stream stream = new MemoryStream();
             // act-assert
-            Assert.Throws<ArgumentNullException>(() => stream.Use<Stream, int>(null));
+            Assert.Throws<ArgumentNullException>(() => stream.Use<Stream, int>(null!));
         }
 
         [Test]
         public void Use_AccessProperty_Returns()
         {
-            string result = new DisposableClass().Use(x => x.Property);
+            string? result = new DisposableClass().Use(x => x.Property);
             Assert.That(result, Is.EqualTo("StringValue"));
         }
 

@@ -11,37 +11,21 @@ namespace Ampl.Core.Tests
     {
         #region Utility classes and methods
 
-        private class ProcessArgs
-        {
-            public string Program { get; set; }
-            public string Args { get; set; }
-        }
+        private record ProcessArgs(string Program, string Args);
 
         private static ProcessArgs CreateOsDependentProcessArgs()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                return new ProcessArgs()
-                {
-                    Program = "cmd.exe",
-                    Args = "/c dir"
-                };
+                return new ProcessArgs("cmd.exe", "/c dir");
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                return new ProcessArgs()
-                {
-                    Program = "/bin/bash",
-                    Args = "-c ls -la"
-                };
+                return new ProcessArgs("/bin/bash", "-c ls -la");
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                return new ProcessArgs()
-                {
-                    Program = "/bin/zsh",
-                    Args = "-c ls -la"
-                };
+                return new ProcessArgs("/bin/zsh", "-c ls -la");
             }
             else
             {
@@ -49,7 +33,7 @@ namespace Ampl.Core.Tests
             }
         }
 
-        private ProcessArgs _processArgs;
+        private ProcessArgs _processArgs = new("invalid", "invalid");
 
         #endregion
 
@@ -70,7 +54,7 @@ namespace Ampl.Core.Tests
         [TearDown]
         public void Teardown()
         {
-            _processArgs = null;
+            _processArgs = default!;
         }
 
         #endregion
@@ -120,4 +104,4 @@ namespace Ampl.Core.Tests
 
         #endregion
     }
-    }
+}

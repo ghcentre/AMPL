@@ -13,7 +13,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void In_NullThis_ReturnsFalse()
         {
-            string arg = null;
+            string? arg = null;
             bool result = arg.In("One", "Two", "Three");
             Assert.That(result, Is.False);
         }
@@ -39,8 +39,8 @@ namespace Ampl.Core.Tests
         public void In_NullEnumerable_ReturnsFalse()
         {
             double arg = 123.45;
-            double[] checks = null;
-            var result = arg.In(checks);
+            double[]? checks = null;
+            var result = arg.In(checks!);
             Assert.That(result, Is.False);
         }
 

@@ -55,7 +55,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void CompactGuidParse_Null_Throws()
         {
-            Assert.Throws<ArgumentNullException>(() => CompactGuid.Parse(null));
+            Assert.Throws<ArgumentNullException>(() => CompactGuid.Parse(null!));
         }
 
         [Test]

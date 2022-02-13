@@ -10,20 +10,20 @@ namespace Ampl.Core.Tests
         
         public class ViewModel
         {
-            public Response Response { get; set; }
+            public Response? Response { get; set; }
         }
 
         public class Response
         {
-            public Error Error { get; set; }
+            public Error? Error { get; set; }
         }
 
         public class Error
         {
-            public Exception Exception { get; set; }
+            public Exception? Exception { get; set; }
         }
 
-        private ViewModel _model;
+        private ViewModel _model = default!;
 
         #endregion
 
@@ -51,10 +51,10 @@ namespace Ampl.Core.Tests
         [Test]
         public void With_NullThis_ReturnsNull()
         {
-            string arg = null;
+            string? arg = null;
 
-            string result1 = arg.With(x => x + "string");
-            string result2 = arg.With<string, string>(null);
+            string? result1 = arg.With(x => x + "string");
+            string? result2 = arg.With<string, string>(null!);
 
             Assert.That(result1, Is.Null);
             Assert.That(result2, Is.Null);
@@ -72,7 +72,7 @@ namespace Ampl.Core.Tests
         public void With_NullFunc_Throws()
         {
             string arg = "The string";
-            Assert.Throws<ArgumentNullException>(() => arg.With<string, string>(null));
+            Assert.Throws<ArgumentNullException>(() => arg.With<string, string>(null!));
         }
 
         [Test]
@@ -80,14 +80,14 @@ namespace Ampl.Core.Tests
         {
             var arg = _model;
             var result = arg.With(x => x.Response).With(x => x.Error).With(x => x.Exception);
-            Assert.That(result, Is.SameAs(_model.Response.Error.Exception));
+            Assert.That(result, Is.SameAs(_model.Response!.Error!.Exception));
         }
 
         [Test]
         public void With_ChainingNullInsideChain_ReturnsNull()
         {
             var arg = _model;
-            arg.Response.Error = null;
+            arg.Response!.Error = null;
             
             var result = arg.With(x => x.Response).With(x => x.Error).With(x => x.Exception);
             
@@ -101,8 +101,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void Do_NullThis_DoesNothing()
         {
-            string arg = null;
-            string sideEffect = null;
+            string? arg = null;
+            string? sideEffect = null;
 
             var result = arg.Do(x => sideEffect = "side");
 
@@ -113,7 +113,7 @@ namespace Ampl.Core.Tests
         public void Do_NullNullable_DoesNothing()
         {
             int? arg = null;
-            string sideEffect = null;
+            string? sideEffect = null;
 
             var result = arg.Do(x => sideEffect = "side");
 
@@ -123,7 +123,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Do_NullThis_ReturnsNull()
         {
-            string arg = null;
+            string? arg = null;
             var result = arg.Do(x => { });
             Assert.That(result, Is.Null);
         }
@@ -132,14 +132,14 @@ namespace Ampl.Core.Tests
         public void Do_NullAction_Throws()
         {
             string arg = "arg";
-            Assert.Throws<ArgumentNullException>(() => arg.Do(null));
+            Assert.Throws<ArgumentNullException>(() => arg.Do(null!));
         }
 
         [Test]
         public void Do_NotNull_DoesSideEffects()
         {
             string arg = "arg";
-            string sideEffect = null;
+            string? sideEffect = null;
 
             var result = arg.Do(x => sideEffect = "side");
 
@@ -161,8 +161,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void Do2_NullThis2ndNotNull_Does2rd()
         {
-            string arg = null;
-            string sideEffect = null;
+            string? arg = null;
+            string? sideEffect = null;
 
             var result = arg.Do(x => sideEffect = "side1", x => sideEffect = "side2");
 
@@ -172,7 +172,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Do2_ActionsNull_DoesNothingDoesNotThrow()
         {
-            string arg1 = null;
+            string? arg1 = null;
             string arg2 = "arg2";
 
             var result1 = arg1.Do(null, null);
@@ -189,10 +189,10 @@ namespace Ampl.Core.Tests
         [Test]
         public void Return_NullThis_ReturnsDefault()
         {
-            string arg = null;
+            string? arg = null;
             int def = -1;
 
-            int result = arg.Return(x => x.Length, def);
+            int result = arg.Return(x => x!.Length, def);
 
             Assert.That(result, Is.EqualTo(def));
         }
@@ -200,10 +200,10 @@ namespace Ampl.Core.Tests
         [Test]
         public void ReturnWithFunc_NullThis_ReturnsFuncResult()
         {
-            string arg = null;
+            string? arg = null;
             Func<int> def = () => 42;
 
-            int result = arg.Return(x => x.Length, def);
+            int result = arg.Return(x => x!.Length, def);
 
             Assert.That(result, Is.EqualTo(42));
         }
@@ -211,22 +211,22 @@ namespace Ampl.Core.Tests
         [Test]
         public void ReturnWithFunc_NullThisNullFunc_Throws()
         {
-            string arg = null;
-            Assert.Throws<ArgumentNullException>(() => arg.Return(x => x.Length, null));
+            string? arg = null;
+            Assert.Throws<ArgumentNullException>(() => arg.Return(x => x!.Length, null!));
         }
 
         [Test]
         public void Return_NullFunc_Throws()
         {
             string arg = "arg";
-            Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null, 1));
+            Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null!, 1));
         }
 
         [Test]
         public void ReturnWithFunc_NullFunc_Throws()
         {
             string arg = "arg";
-            Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null, () => 1));
+            Assert.Throws<ArgumentNullException>(() => arg.Return<string, int>(null!, () => 1));
         }
 
         [Test]
@@ -259,8 +259,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void If_NullThis_ReturnsNull()
         {
-            string arg = null;
-            var result = arg.If(null);
+            string? arg = null;
+            var result = arg.If(null!);
             Assert.That(result, Is.Null);
         }
 
@@ -268,7 +268,7 @@ namespace Ampl.Core.Tests
         public void If_NotNullThisNullPredicate_Throws()
         {
             string arg = "string";
-            Assert.Throws<ArgumentNullException>(() => arg.If(null));
+            Assert.Throws<ArgumentNullException>(() => arg.If(null!));
         }
 
         [Test]

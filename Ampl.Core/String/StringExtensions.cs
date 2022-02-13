@@ -217,7 +217,7 @@ public static class StringExtensions
     /// <para>Unlike the <see cref="int.Parse(string)"/> mehtod this method does not allow leading whitespaces
     /// in <paramref name="source"/>.</para>
     /// </remarks>
-    public static int ToInt(this string source, int fallbackValue = default)
+    public static int ToInt(this string? source, int fallbackValue = default)
     {
         return ToIntInternal(source, out int result) ? result : fallbackValue;
     }
@@ -234,7 +234,7 @@ public static class StringExtensions
     /// <para>Unlike the <see cref="Int32.Parse(String)"/> method this method does not allow leading whitespaces
     /// in <paramref name="source"/>.</para>
     /// </remarks>
-    public static int? ToNullableInt(this string source)
+    public static int? ToNullableInt(this string? source)
     {
         return ToIntInternal(source, out int result) ? (int?)result : null;
     }
@@ -242,7 +242,7 @@ public static class StringExtensions
 
     #region ToInt - Internal
 
-    private static bool ToIntInternal(string source, out int result)
+    private static bool ToIntInternal(string? source, out int result)
     {
         result = 0;
 
@@ -334,7 +334,7 @@ public static class StringExtensions
     /// <remarks>
     /// <para>The method doesn't throw any exception.</para>
     /// </remarks>
-    public static decimal ToDecimal(this string source,
+    public static decimal ToDecimal(this string? source,
                                     decimal fallbackValue = default,
                                     bool useFallbackCulture = true)
     {
@@ -354,7 +354,7 @@ public static class StringExtensions
     /// <remarks>
     /// <para>The method doesn't throw any exception.</para>
     /// </remarks>
-    public static decimal? ToNullableDecimal(this string source, bool useFallbackCulture = true)
+    public static decimal? ToNullableDecimal(this string? source, bool useFallbackCulture = true)
     {
         return ToDecimalInternal(source, out decimal result, useFallbackCulture)
                     ? (decimal?)result
@@ -364,12 +364,7 @@ public static class StringExtensions
 
     #region ToDecimalInternal
 
-    [SuppressMessage(
-        "Microsoft.Design",
-        "CA1031:DoNotCatchGeneralExceptionTypes",
-        Justification = "Catch block catches conversion exceptions only."
-    )]
-    private static bool ToDecimalInternal(string source, out decimal result, bool useFallbackCulture)
+    private static bool ToDecimalInternal(string? source, out decimal result, bool useFallbackCulture)
     {
         result = 0.0M;
 
@@ -423,7 +418,7 @@ public static class StringExtensions
     /// is an empty string (""), or does not contain a valid string
     /// representation of a date and time.</para>
     /// </remarks>
-    public static DateTime? ToNullableDateTime(this string source)
+    public static DateTime? ToNullableDateTime(this string? source)
     {
         return DateTime.TryParse(source, out var result) ? (DateTime?)result : null;
     }

@@ -12,19 +12,19 @@ namespace Ampl.Core.Tests
         [Test]
         public void IncludeObjectProperties_NullThis_Throws()
         {
-            Dictionary<string, object> dic = null;
+            Dictionary<string, object>? dic = null;
             var anon = new { IntProp = 5, StringProp = "String" };
 
-            Assert.Throws<ArgumentNullException>(() => dic.IncludeObjectProperties(anon));
+            Assert.Throws<ArgumentNullException>(() => dic!.IncludeObjectProperties(anon));
         }
 
         [Test]
         public void IncludeObjectPropertis_NullArg_Throws()
         {
             var dic = new Dictionary<string, object>();
-            object anon = null;
+            object? anon = null;
 
-            Assert.Throws<ArgumentNullException>(() => dic.IncludeObjectProperties(anon));
+            Assert.Throws<ArgumentNullException>(() => dic.IncludeObjectProperties(anon!));
         }
 
         [Test]

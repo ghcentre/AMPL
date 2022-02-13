@@ -12,13 +12,13 @@ namespace Ampl.Core.Tests
         [Test]
         public void Ctor_EqualsIsNull_Throws()
         {
-            Assert.Throws<ArgumentNullException>(() => new InlineEqualityComparer<int>(null, x => x.GetHashCode()));
+            Assert.Throws<ArgumentNullException>(() => new InlineEqualityComparer<int>(null!, x => x.GetHashCode()));
         }
 
         [Test]
         public void Ctor_GethashcodeEqualsNull_Throws()
         {
-            Assert.Throws<ArgumentNullException>(() => new InlineEqualityComparer<int>((x, y) => x.Equals(y), null));
+            Assert.Throws<ArgumentNullException>(() => new InlineEqualityComparer<int>((x, y) => x.Equals(y), null!));
         }
 
         #endregion

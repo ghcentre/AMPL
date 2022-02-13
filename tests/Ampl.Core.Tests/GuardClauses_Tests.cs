@@ -11,7 +11,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Null_BothParametersNull_ThrowsParamNameNull()
         {
-            string arg = null;
+            string? arg = null;
 
             try
             {
@@ -26,7 +26,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Null_ParamNameNotNull_ThrowsParamNameNotNull()
         {
-            string arg = null;
+            string? arg = null;
 
             try
             {
@@ -41,7 +41,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Null_ParamNameNullCustomMessage_ThrowsParamNameNullCustomMessage()
         {
-            string arg = null;
+            string? arg = null;
 
             try
             {
@@ -57,7 +57,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void Null_ParamNameNotNullCustomMessage_ThrowsParamNameNotNullCustomMessage()
         {
-            string arg = null;
+            string? arg = null;
 
             try
             {
@@ -81,7 +81,7 @@ namespace Ampl.Core.Tests
         [TestCase("arg", "message")]
         public void NullOrEmpty_Null_ThrowsArgumentNullException(string argName, string message)
         {
-            string arg = null;
+            string? arg = null;
 
             Assert.Throws<ArgumentNullException>(() => Guard.Against.NullOrEmpty(arg, argName, message));
         }

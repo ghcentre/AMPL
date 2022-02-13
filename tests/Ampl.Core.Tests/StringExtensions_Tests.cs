@@ -67,8 +67,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void RemoveBetween_Source_Null_returns_null()
         {
-            string argument = null;
-            string result = argument.RemoveBetween("start", "end");
+            string? argument = null;
+            string result = argument!.RemoveBetween("start", "end");
             Assert.IsNull(result);
         }
 
@@ -89,8 +89,8 @@ namespace Ampl.Core.Tests
         {
             string argument = "This is a test string";
 
-            string result1 = argument.RemoveBetween(null, "test");
-            string result2 = argument.RemoveBetween(null, "Test", StringComparison.CurrentCultureIgnoreCase);
+            string result1 = argument.RemoveBetween(null!, "test");
+            string result2 = argument.RemoveBetween(null!, "Test", StringComparison.CurrentCultureIgnoreCase);
 
             Assert.AreEqual(" string", result1);
             Assert.AreEqual(" string", result2);
@@ -101,8 +101,8 @@ namespace Ampl.Core.Tests
         {
             string argument = "This is a test string";
 
-            string result1 = argument.RemoveBetween("test", null);
-            string result2 = argument.RemoveBetween("tEST", null, StringComparison.CurrentCultureIgnoreCase);
+            string result1 = argument.RemoveBetween("test", null!);
+            string result2 = argument.RemoveBetween("tEST", null!, StringComparison.CurrentCultureIgnoreCase);
 
             Assert.AreEqual("This is a ", result1);
             Assert.AreEqual("This is a ", result2);
@@ -138,7 +138,7 @@ namespace Ampl.Core.Tests
         public void RemoveBetween_Start_end_null_returns_original()
         {
             string argument = "This is a test string.";
-            string result = argument.RemoveBetween(null, null);
+            string result = argument.RemoveBetween(null!, null!);
             Assert.AreEqual(argument, result);
         }
 
@@ -162,8 +162,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void RemoveHtmlTags_Source_Null_returns_null()
         {
-            string argument = null;
-            string result = argument.RemoveHtmlTags();
+            string? argument = null;
+            string result = argument!.RemoveHtmlTags();
             Assert.IsNull(result);
         }
 
@@ -207,8 +207,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToNullIfWhiteSpace_Null_ReturnsNull()
         {
-            string arg = null;
-            string result = arg.ToNullIfWhiteSpace();
+            string? arg = null;
+            string? result = arg.ToNullIfWhiteSpace();
             Assert.IsTrue(result == null);
         }
 
@@ -216,7 +216,7 @@ namespace Ampl.Core.Tests
         public void ToNullIfWhiteSpace_Empty_ReturnsNull()
         {
             string arg = string.Empty;
-            string result = arg.ToNullIfWhiteSpace();
+            string? result = arg.ToNullIfWhiteSpace();
             Assert.IsTrue(result == null);
         }
 
@@ -224,7 +224,7 @@ namespace Ampl.Core.Tests
         public void ToNullIfWhiteSpace_Spaces_ReturnsNull()
         {
             string arg = " \t\r\n";
-            string result = arg.ToNullIfWhiteSpace();
+            string? result = arg.ToNullIfWhiteSpace();
             Assert.IsTrue(result == null);
         }
 
@@ -232,7 +232,7 @@ namespace Ampl.Core.Tests
         public void ToNullIfWhiteSpace_Nonspace_ReturnsSame()
         {
             string arg = "\tThis\r\nis a test\t string";
-            string result = arg.ToNullIfWhiteSpace();
+            string? result = arg.ToNullIfWhiteSpace();
             Assert.That(result, Is.SameAs(arg));
         }
 
@@ -243,7 +243,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToInt_Source_Null_returns_default()
         {
-            string argument = null;
+            string? argument = null;
             int result1 = argument.ToInt();
             Assert.IsTrue(result1 == 0);
 
@@ -310,7 +310,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToNullableInt_Source_Null_returns_null()
         {
-            string argument = null;
+            string? argument = null;
             int? result1 = argument.ToNullableInt();
             Assert.IsTrue(result1 == null);
         }
@@ -375,7 +375,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToDecimal_Source_Null_returns_default()
         {
-            string argument = null;
+            string? argument = null;
 
             decimal result1 = argument.ToDecimal();
             Assert.IsTrue(result1 == 0);
@@ -440,7 +440,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToNullableDecimal_Source_Null_returns_null()
         {
-            string argument = null;
+            string? argument = null;
             decimal? result1 = argument.ToNullableDecimal();
             Assert.IsTrue(result1 == null);
         }
@@ -501,7 +501,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void ToNullableDateTime_Source_Null_returns_null()
         {
-            string argument = null;
+            string? argument = null;
             DateTime? result1 = argument.ToNullableDateTime();
             Assert.IsTrue(result1 == null);
         }
@@ -539,7 +539,7 @@ namespace Ampl.Core.Tests
 
             DateTime? result = argument.ToNullableDateTime();
 
-            Assert.IsTrue(result.Value.TimeOfDay == new TimeSpan(17, 25, 1));
+            Assert.IsTrue(result!.Value.TimeOfDay == new TimeSpan(17, 25, 1));
         }
 
         [Test]
@@ -547,7 +547,7 @@ namespace Ampl.Core.Tests
         {
             string argument = "17:25:01";
             DateTime? result = argument.ToNullableDateTime();
-            Assert.IsTrue(result.Value.TimeOfDay == new TimeSpan(17, 25, 1));
+            Assert.IsTrue(result!.Value.TimeOfDay == new TimeSpan(17, 25, 1));
         }
 
         [Test]
@@ -598,8 +598,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void Reverse_Null_ReturnsNull()
         {
-            string arg = null;
-            string res = arg.Reverse();
+            string? arg = null;
+            string res = arg!.Reverse();
             Assert.IsNull(res);
         }
 
@@ -645,8 +645,8 @@ namespace Ampl.Core.Tests
         [Test]
         public void FastReverse_Null_ReturnsNull()
         {
-            string arg = null;
-            string res = arg.FastReverse();
+            string? arg = null;
+            string res = arg!.FastReverse();
             Assert.IsNull(res);
         }
 
@@ -692,7 +692,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void CommonPrefixWith_Null_ReturnsNull()
         {
-            string arg = null;
+            string? arg = null;
             var result = arg.CommonPrefixWith("value");
             Assert.That(result, Is.Null);
         }
@@ -701,7 +701,7 @@ namespace Ampl.Core.Tests
         public void CommonPrefixWith_AnotherNull_ReturnsEmpty()
         {
             string arg = "This is a test string";
-            string another = null;
+            string? another = null;
 
             var result = arg.CommonPrefixWith(another);
             var expected = string.Empty;
