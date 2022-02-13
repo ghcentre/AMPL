@@ -198,17 +198,17 @@ public static class MaybeMonadExtensions
     /// <example>
     /// See the <see cref="MaybeMonadExtensions"/> class documentation for the examples.
     /// </example>
-    public static TInput Do<TInput>(this TInput input,
-                                    Action<TInput> notNullAction,
-                                    Action<TInput> nullAction)
+    public static TInput? Do<TInput>(this TInput? input,
+                                     Action<TInput>? notNullAction,
+                                     Action<TInput?>? nullAction)
     {
-        if (input != null)
+        if (input == null)
         {
-            notNullAction?.Invoke(input);
+            nullAction?.Invoke(input);
             return input;
         }
 
-        nullAction?.Invoke(input);
+        notNullAction?.Invoke(input);
         return input;
     }
 }
