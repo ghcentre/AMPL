@@ -164,7 +164,7 @@ if /%2/==// (
 
         if /%2/==/core/ (
             echo [PackProject] Packing ^(core^) '%1'.
-            dotnet pack /p:Version=%Version% /p:AssemblyVersion=%Version% /p:FileVersion=%Version% -o .\ %MsbuildParams%
+            dotnet pack /p:Version=%Version% /p:AssemblyVersion=%VersionDigits% /p:FileVersion=%VersionDigits% -o .\ %MsbuildParams%
             if errorlevel 1 (
                 echo [PackProject] ERROR: Error packing ^(core^) for '%1'.
                 endlocal & exit /b 1

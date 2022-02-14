@@ -17,7 +17,7 @@
 
 Ampl.Core                     netstandard21
 
-Ampl.Annotations              netstandard20
+Ampl.Annotations              netstandard21
 
 Ampl.Configuration            netstandard20  Ampl.Core
 
