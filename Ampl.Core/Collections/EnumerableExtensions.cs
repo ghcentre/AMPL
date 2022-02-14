@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ampl.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -59,5 +60,24 @@ public static class EnumerableExtensions
     public static string JoinWith<T>(this IEnumerable<T> values, string separator)
     {
         return string.Join(separator, values);
+    }
+
+    /// <summary>
+    /// Returns an <see cref="IEnumerable{T}"/> based on traversing the "linked list" represented by the head <paramref name="node"/>
+    /// and the <paramref name="next"/> delegate. The sequence terminates when a <see langword="null"/> node is reached.
+    /// </summary>
+    /// <typeparam name="T">The type of node in the list.</typeparam>
+    /// <param name="node">The head node of the list</param>
+    /// <param name="next">A delegate that, given a node in the sequence, generates the next node in the sequence.</param>
+    /// <returns><see cref="IEnumerable{T}"/></returns>
+    /// <exception cref="ArgumentNullException">The <paramref name="next"/> is <see langword="null"/>.</exception>
+    public static IEnumerable<T> Traverse<T>(this T? node, Func<T?, T?> next)
+    {
+        Guard.Against.Null(next, nameof(next));
+
+        for (var current = node; current != null; current = next(current))
+        {
+            yield return current;
+        }
     }
 }

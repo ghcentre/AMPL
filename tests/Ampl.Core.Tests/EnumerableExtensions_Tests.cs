@@ -84,5 +84,40 @@ namespace Ampl.Core.Tests
         }
 
         #endregion
+
+        #region Traverse
+
+        [Test]
+        public void Traverse_NullThis_ReturnsEmptySequence()
+        {
+            object? arg = null;
+            var result = arg.Traverse(x => x);
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        public void Traverse_NullNext_Throws()
+        {
+            Assert.Throws<ArgumentNullException>(() => "hello".Traverse(null!).ToList());
+        }
+
+        [Test]
+        public void Traverse_InnerProps_ReturnsExpected()
+        {
+            var exception = new InvalidOperationException(
+                "Could not find specified directory.",
+                new System.IO.DirectoryNotFoundException(
+                    "Directory not found.",
+                    new UnauthorizedAccessException("Access denied")));
+
+            var result = exception.Traverse<Exception>(x => x?.InnerException).Select(x => x.Message).ToList();
+
+            Assert.That(result.Count, Is.EqualTo(3));
+            Assert.That(result[0], Is.EqualTo(exception.Message));
+            Assert.That(result[1], Is.EqualTo(exception.InnerException?.Message));
+            Assert.That(result[2], Is.EqualTo(exception.InnerException?.InnerException?.Message));
+        }
+
+        #endregion
     }
 }
