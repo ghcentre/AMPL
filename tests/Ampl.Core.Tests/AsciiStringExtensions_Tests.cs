@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Ampl.Core.Tests
 {
@@ -8,11 +9,10 @@ namespace Ampl.Core.Tests
         #region FoldToAscii
 
         [Test]
-        public void FoldToAscii_Null_ReturnsNull()
+        public void FoldToAscii_Null_Throws()
         {
             var arg = (string)null!;
-            var result = arg.FoldToAscii();
-            Assert.That(result, Is.Null);
+            Assert.Throws<ArgumentNullException>(() => arg.FoldToAscii());
         }
 
         [Test]
