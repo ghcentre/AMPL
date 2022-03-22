@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Ampl.Configuration.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -17,7 +17,7 @@
     <PackageTags>ghcentre ampl configuration</PackageTags>
     <FileVersion>0.0.0</FileVersion>
     <AssemblyVersion>0.0.0</AssemblyVersion>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
     <PackageLicenseExpression></PackageLicenseExpression>
   </PropertyGroup>
 
