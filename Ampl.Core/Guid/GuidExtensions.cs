@@ -23,7 +23,7 @@ public static class GuidExtensions
     ///     <item>(RFC 3548, par. 4).</item>
     ///     <item>(RFC 1575, appendix C)</item>
     /// </list>
-    /// <para>See <see cref="CompactGuid.Parse(string)"/> to convert the compact GUID representation
+    /// <para>See <see cref="CompactGuid.Parse(ReadOnlySpan{char})"/> to convert the compact GUID representation
     /// to the <see cref="Guid"/> value.</para>
     /// </remarks>
     /// <example>
@@ -31,7 +31,7 @@ public static class GuidExtensions
     /// var guid = new Guid(Enumerable.Range(0, 16).Select(x => (byte)x).ToArray()); // {03020100-0504-0706-0809-0a0b0c0d0e0f}
     /// string compactString = guid.ToCompactString(); // AAECAwQFBgcICQoLDA0ODw
     /// </code>
-    /// <seealso cref="CompactGuid.Parse(string)"></seealso>
+    /// <seealso cref="CompactGuid.Parse(ReadOnlySpan{char})"></seealso>
     /// </example>
     public static string ToCompactString(this Guid guid)
     {
@@ -53,7 +53,7 @@ public static class GuidExtensions
             };
         }
 
-        string result = new string(resultChars);
+        string result = new(resultChars);
         return result;
     }
 }
