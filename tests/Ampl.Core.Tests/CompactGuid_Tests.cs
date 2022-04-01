@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using Ampl.Core;
 
 namespace Ampl.Core.Tests
 {
@@ -19,12 +18,21 @@ namespace Ampl.Core.Tests
         }
 
         [Test]
-        public void DefaultGuid_ToCompactString_GeneratesAAAs()
+        public void ToCompactString_DefaultGuid_GeneratesAAAs()
         {
             var guid = default(Guid);
             var stringValue = guid.ToCompactString();
 
             Assert.That(stringValue, Is.EqualTo("AAAAAAAAAAAAAAAAAAAAAA"));
+        }
+
+        [TestCase("48e42ef1-ddcf-4e1f-9f93-d31ab170dd03", "8S7kSM_dH06fk9MasXDdAw")]
+        [TestCase("7fc0ad61-dd49-4f69-888b-268454469041", "Ya3Af0ndaU-IiyaEVEaQQQ")]
+        public void ToCompactString_Guid_ReplacesCorrectly(string guidString, string expected)
+        {
+            var arg = new Guid(guidString);
+            var result = arg.ToCompactString();
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Test]
@@ -55,7 +63,7 @@ namespace Ampl.Core.Tests
         [Test]
         public void CompactGuidParse_Null_Throws()
         {
-            Assert.Throws<ArgumentNullException>(() => CompactGuid.Parse(null!));
+            Assert.Throws<FormatException>(() => CompactGuid.Parse(null!));
         }
 
         [Test]

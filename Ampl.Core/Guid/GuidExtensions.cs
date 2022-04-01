@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
+using System.Buffers.Text;
+using System.Runtime.InteropServices;
 
 namespace Ampl.Core;
 
@@ -32,26 +33,27 @@ public static class GuidExtensions
     /// </code>
     /// <seealso cref="CompactGuid.Parse(string)"></seealso>
     /// </example>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string ToCompactString(this Guid guid)
     {
-        byte[] bytes = guid.ToByteArray();
+        Span<byte> guidBytes = stackalloc byte[CompactGuidConstants.GuidByteArrayLength];
+        Span<byte> base64Bytes = stackalloc byte[CompactGuidConstants.Base64GuidStringLength];
 
-        //
-        // "+" => "-"
-        // "/" => "_"
-        // (RFC 3548, par. 4).
-        // (RFC 1575, appendix C)
-        //
-        string stringValue = Convert.ToBase64String(bytes)
-            .Replace("+", "-")
-            .Replace("/", "_");
+        MemoryMarshal.TryWrite(guidBytes, ref guid);
+        Base64.EncodeToUtf8(guidBytes, base64Bytes, out int bytesConsumed, out int bytesWritten);
 
-        //
-        // remove trailing "==" as base-64 encoded GUID always ends with "=="
-        //
-        string compactValue = stringValue[..^2];
+        Span<char> resultChars = stackalloc char[CompactGuidConstants.CompactGuidStringLength];
 
-        return compactValue;
+        for (int i = 0; i < CompactGuidConstants.CompactGuidStringLength; i++)
+        {
+            resultChars[i] = base64Bytes[i] switch
+            {
+                CompactGuidConstants.Bytes.Plus => CompactGuidConstants.Chars.Minus,
+                CompactGuidConstants.Bytes.Slash => CompactGuidConstants.Chars.Underscore,
+                _ => (char)base64Bytes[i]
+            };
+        }
+
+        string result = new string(resultChars);
+        return result;
     }
 }
