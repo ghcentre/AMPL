@@ -447,18 +447,14 @@ public static class StringExtensions
         }
 
         int length = source.Length;
-        int halfLength = source.Length / 2;
-        char[] chars = source.ToCharArray();
+        Span<char> chars = stackalloc char[length];
 
-        for (int i = 0; i < halfLength; i++)
+        for (int i = 0; i < length; i++)
         {
-            int revIndex = length - i - 1;
-            char temp = chars[i];
-            chars[i] = chars[revIndex];
-            chars[revIndex] = temp;
+            chars[length - i - 1] = source[i];
         }
 
-        string result = new string(chars);
+        string result = new(chars);
         return result;
     }
 
