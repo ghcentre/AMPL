@@ -90,5 +90,42 @@ namespace Ampl.Core.Tests
         }
 
         #endregion
+
+        #region CompactGuid.TryParse
+
+        [Test]
+        public void CompactGuidTryParse_Null_ReturnsFalseAndResultIsEmpty()
+        {
+            Assert.That(CompactGuid.TryParse(null!, out var result), Is.False);
+            Assert.That(result, Is.EqualTo(Guid.Empty));
+        }
+
+        [Test]
+        public void CompactGuidTryParse_LengthNot22_ReturnsFalseAndResultIsEmpty()
+        {
+            Assert.That(CompactGuid.TryParse("12345", out var result), Is.False);
+            Assert.That(result, Is.EqualTo(Guid.Empty));
+        }
+
+        [Test]
+        public void CompactGuidTryParse_InvalidChars_ReturnsFalseAndResultIsEmpty()
+        {
+            Assert.That(CompactGuid.TryParse("!@#$%67890123456789012", out var result), Is.False);
+            Assert.That(result, Is.EqualTo(Guid.Empty));
+        }
+
+        [Test]
+        public void ToCompactString_CompactGuidTryParse_Equals()
+        {
+            var expected = Guid.NewGuid();
+            var compactString = expected.ToCompactString();
+
+            var result = CompactGuid.TryParse(compactString, out var actual);
+
+            Assert.That(result, Is.True);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        #endregion
     }
 }

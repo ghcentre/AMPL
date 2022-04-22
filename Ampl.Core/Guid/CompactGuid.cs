@@ -20,9 +20,30 @@ public static class CompactGuid
     /// <exception cref="FormatException">Input is not in a recognized format.</exception>
     public static Guid Parse(ReadOnlySpan<char> stringValue)
     {
+        if (TryParse(stringValue, out var guid))
+        {
+            return guid;
+        }
+
+        throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
+    }
+
+    /// <summary>
+    /// Converts the compact string representation of a GUID to the equivalent <see cref="Guid"/> structure.
+    /// </summary>
+    /// <param name="stringValue">The string to convert.</param>
+    /// <param name="result">When this method returns, contains the parsed value.
+    /// If the method returns <see langword="true"/>, result contains a valid <see cref="Guid"/>.
+    /// If the method returns <see langword="false"/>, result equals <see cref="Guid.Empty"/>.</param>
+    /// <returns><see langword="true"/> if the parse operation was successful;
+    /// otherwise, <see langword="false"/>.</returns>
+    public static bool TryParse(ReadOnlySpan<char> stringValue, out Guid result)
+    {
+        result = Guid.Empty;
+
         if (stringValue.Length != CompactGuidConstants.CompactGuidStringLength)
         {
-            throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
+            return false;
         }
 
         Span<char> base64Chars = stackalloc char[CompactGuidConstants.Base64GuidStringLength];
@@ -45,10 +66,10 @@ public static class CompactGuid
 
         if (bytesWritten != CompactGuidConstants.GuidByteArrayLength)
         {
-            throw new FormatException(Messages.InputStringWasNotInACorrectFormat);
+            return false;
         }
 
-        var guid = new Guid(guidBytes);
-        return guid;
+        result = new Guid(guidBytes);
+        return true;
     }
 }
