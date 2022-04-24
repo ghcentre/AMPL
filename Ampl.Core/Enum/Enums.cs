@@ -45,9 +45,14 @@ public static class Enums
     /// Otherwise, the method returns a a <see cref="Nullable{T}"/> whose value is <see langword="null"/>.</returns>
     /// <remarks>Unlike the <see cref="Parse{T}(string, bool)"/> this method does not throw an exception.</remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T? ParseAsNullable<T>(string source, bool ignoreCase = false)
+    public static T? ParseAsNullable<T>(string? source, bool ignoreCase = false)
         where T : struct, Enum
     {
+        if (source == null)
+        {
+            return default;
+        }
+
         return Enum.TryParse(source, ignoreCase, out T result)
                     ? (T?)result
                     : null;
